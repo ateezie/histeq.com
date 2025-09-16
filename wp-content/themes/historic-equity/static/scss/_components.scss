@@ -1,0 +1,730 @@
+// =============================================================================
+// COMPONENTS - Historic Equity Inc.
+// =============================================================================
+
+// Import dependencies
+@import 'variables';
+@import 'mixins';
+
+// -----------------------------------------------------------------------------
+// BUTTON COMPONENTS
+// -----------------------------------------------------------------------------
+.btn {
+  @include button-base;
+  @include button-md;
+
+  // Size variations
+  &--sm {
+    @include button-sm;
+  }
+
+  &--lg {
+    @include button-lg;
+  }
+
+  &--xl {
+    @include button-xl;
+  }
+
+  // Style variations
+  &--primary {
+    @include button-primary;
+  }
+
+  &--secondary {
+    @include button-secondary;
+  }
+
+  &--outline {
+    @include button-outline;
+  }
+
+  &--ghost {
+    @include button-ghost;
+  }
+
+  // Full width button
+  &--full {
+    width: 100%;
+  }
+
+  // Button with icon
+  &--icon {
+    display: inline-flex;
+    align-items: center;
+    gap: map-get($spacing, 2);
+
+    .icon {
+      width: 1em;
+      height: 1em;
+      fill: currentColor;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// CARD COMPONENTS
+// -----------------------------------------------------------------------------
+.card {
+  @include card;
+
+  &__header {
+    padding-bottom: map-get($spacing, 4);
+    margin-bottom: map-get($spacing, 4);
+    border-bottom: 1px solid $gray-200;
+  }
+
+  &__title {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-semibold;
+    color: $charade-base;
+    margin-bottom: map-get($spacing, 2);
+  }
+
+  &__subtitle {
+    font-size: $font-size-sm;
+    color: $gray-600;
+    margin-bottom: 0;
+  }
+
+  &__body {
+    flex: 1 1 auto;
+  }
+
+  &__footer {
+    padding-top: map-get($spacing, 4);
+    margin-top: map-get($spacing, 4);
+    border-top: 1px solid $gray-200;
+  }
+
+  // Card variations
+  &--brand {
+    @include brand-card;
+  }
+
+  &--featured {
+    border: 2px solid $primary;
+    box-shadow: $shadow-xl;
+
+    .card__title {
+      color: $primary;
+    }
+  }
+
+  &--testimonial {
+    @include trust-indicator;
+    border: none;
+
+    .card__body {
+      font-style: italic;
+      font-size: $font-size-lg;
+      margin-bottom: map-get($spacing, 4);
+    }
+
+    .card__footer {
+      border: none;
+      padding-top: 0;
+      margin-top: 0;
+      text-align: center;
+
+      .author {
+        font-weight: $font-weight-semibold;
+        color: $charade-base;
+      }
+
+      .role {
+        font-size: $font-size-sm;
+        color: $gray-600;
+      }
+    }
+  }
+
+  &--project {
+    overflow: hidden;
+
+    .project-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: $border-radius-lg $border-radius-lg 0 0;
+      margin: (-#{map-get($spacing, 6)}) (-#{map-get($spacing, 6)}) map-get($spacing, 4);
+    }
+
+    .project-meta {
+      display: flex;
+      gap: map-get($spacing, 3);
+      margin-bottom: map-get($spacing, 3);
+    }
+
+    .project-tag {
+      display: inline-block;
+      padding: map-get($spacing, 1) map-get($spacing, 3);
+      background-color: rgba($primary, 0.1);
+      color: $primary;
+      font-size: $font-size-xs;
+      font-weight: $font-weight-medium;
+      text-transform: uppercase;
+      letter-spacing: $letter-spacing-wide;
+      border-radius: $border-radius-full;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// FORM COMPONENTS
+// -----------------------------------------------------------------------------
+.form-group {
+  @include form-group;
+}
+
+.form-label {
+  @include form-label;
+
+  &--required::after {
+    content: ' *';
+    color: $error;
+  }
+}
+
+.form-control {
+  @include form-control;
+}
+
+.form-text {
+  margin-top: map-get($spacing, 1);
+  font-size: $font-size-sm;
+  color: $gray-600;
+
+  &.text-error {
+    color: $error;
+  }
+
+  &.text-success {
+    color: $success;
+  }
+}
+
+.form-check {
+  position: relative;
+  display: block;
+  margin-bottom: map-get($spacing, 3);
+  padding-left: map-get($spacing, 6);
+
+  .form-check-input {
+    position: absolute;
+    top: 0.25rem;
+    left: 0;
+    width: 1rem;
+    height: 1rem;
+    accent-color: $primary;
+  }
+
+  .form-check-label {
+    font-size: $font-size-base;
+    font-weight: $font-weight-normal;
+    cursor: pointer;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// HEADER COMPONENTS (Following Styleguide)
+// -----------------------------------------------------------------------------
+
+// Logo and branding components (Fixed sizing to match styleguide)
+.logo-icon {
+  width: 2rem;           // Reduced from 3rem mobile (32px)
+  height: 2rem;          // Reduced from 3rem mobile (32px)
+
+  @include desktop-up {
+    width: 2.5rem;       // Reduced from 4rem desktop (40px)
+    height: 2.5rem;      // Reduced from 4rem desktop (40px)
+  }
+
+  &:hover {
+    box-shadow: $shadow-md;  // Reduced from $shadow-lg
+    transform: translateY(-1px);
+    transition: $transition-base;
+  }
+}
+
+.logo-svg {
+  width: 1rem;           // Reduced from 1.5rem mobile (16px)
+  height: 1.25rem;       // Reduced from 2rem mobile (20px)
+
+  @include desktop-up {
+    width: 1.25rem;      // Reduced from 2rem desktop (20px)
+    height: 1.5rem;      // Reduced from 2.5rem desktop (24px)
+  }
+}
+
+.logo-title {
+  font-size: $font-size-base;  // Reduced from $font-size-lg (16px)
+  font-weight: $font-weight-semibold;
+  color: $dark;
+  line-height: 1.2;
+
+  @include desktop-up {
+    font-size: $font-size-lg;  // Reduced from $font-size-xl (18px)
+  }
+
+  .group:hover & {
+    color: $primary;
+    transition: $transition-colors;
+  }
+}
+
+.logo-subtitle {
+  font-size: 0.688rem;   // Reduced from $font-size-xs (11px)
+  font-weight: $font-weight-medium;
+  color: $neutral;
+  line-height: 1.2;
+
+  @include desktop-up {
+    font-size: $font-size-xs;  // Reduced from $font-size-sm (12px)
+  }
+}
+
+// Mobile menu button
+.mobile-menu-btn {
+  width: 2rem;
+  height: 2rem;
+  gap: map-get($spacing, 1);
+}
+
+.hamburger-line {
+  width: 1.5rem;
+  height: 0.125rem;
+
+  &:hover {
+    background-color: $primary;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// NAVIGATION COMPONENTS
+// -----------------------------------------------------------------------------
+.nav {
+  @include reset-list;
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    margin-right: map-get($spacing, 6);
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: map-get($spacing, 3) 0;
+    color: $charade-base;
+    text-decoration: none;
+    font-weight: $font-weight-medium;
+    transition: $transition-colors;
+    border-bottom: 2px solid transparent;
+
+    &:hover,
+    &:focus {
+      color: $primary;
+      border-bottom-color: $primary;
+    }
+
+    &.active {
+      color: $primary;
+      border-bottom-color: $primary;
+    }
+  }
+
+  // Vertical navigation
+  &--vertical {
+    flex-direction: column;
+
+    .nav__item {
+      margin-right: 0;
+      margin-bottom: map-get($spacing, 2);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .nav__link {
+      padding: map-get($spacing, 3);
+      border-bottom: none;
+      border-left: 2px solid transparent;
+
+      &:hover,
+      &:focus,
+      &.active {
+        border-left-color: $primary;
+      }
+    }
+  }
+}
+
+// Breadcrumb navigation
+.breadcrumb {
+  @include reset-list;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: $font-size-sm;
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child)::after {
+      content: '/';
+      margin: 0 map-get($spacing, 2);
+      color: $gray-400;
+    }
+  }
+
+  &__link {
+    color: $gray-600;
+    text-decoration: none;
+
+    &:hover {
+      color: $primary;
+      text-decoration: underline;
+    }
+  }
+
+  &__current {
+    color: $charade-base;
+    font-weight: $font-weight-medium;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// HERO COMPONENTS
+// -----------------------------------------------------------------------------
+.hero {
+  @include hero-section;
+
+  &__content {
+    @include container;
+    text-align: center;
+    color: $white;
+  }
+
+  &__title {
+    font-size: $font-size-h1-mobile;
+    font-weight: $font-weight-extrabold;
+    margin-bottom: map-get($spacing, 6);
+    text-shadow: 0 2px 4px rgba($black, 0.3);
+
+    @include desktop-up {
+      font-size: $font-size-h1-desktop;
+    }
+  }
+
+  &__subtitle {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-normal;
+    margin-bottom: map-get($spacing, 8);
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include desktop-up {
+      font-size: $font-size-xl;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    gap: map-get($spacing, 4);
+    align-items: center;
+
+    @include tablet-up {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+
+  // Hero variations
+  &--gradient {
+    background: linear-gradient(135deg, $primary 0%, $secondary 50%, $accent 100%);
+  }
+
+  &--overlay {
+    @include overlay($charade-base, 0.6);
+    background-image: url('/wp-content/themes/historic-equity/static/images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  &--compact {
+    min-height: 40vh;
+    padding: map-get($spacing, 12) 0;
+
+    @include mobile-only {
+      min-height: 30vh;
+      padding: map-get($spacing, 8) 0;
+    }
+
+    .hero__title {
+      font-size: $font-size-h2-mobile;
+
+      @include desktop-up {
+        font-size: $font-size-h2-desktop;
+      }
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// SECTION COMPONENTS
+// -----------------------------------------------------------------------------
+.section {
+  padding: map-get($spacing, 16) 0;
+
+  @include mobile-only {
+    padding: map-get($spacing, 12) 0;
+  }
+
+  &__container {
+    @include container;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: map-get($spacing, 12);
+
+    @include mobile-only {
+      margin-bottom: map-get($spacing, 8);
+    }
+  }
+
+  &__title {
+    font-size: $font-size-h2-mobile;
+    font-weight: $font-weight-bold;
+    color: $charade-base;
+    margin-bottom: map-get($spacing, 4);
+
+    @include desktop-up {
+      font-size: $font-size-h2-desktop;
+    }
+  }
+
+  &__subtitle {
+    font-size: $font-size-lg;
+    color: $gray-600;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  // Section variations
+  &--branded {
+    @include brand-section;
+  }
+
+  &--dark {
+    background-color: $charade-base;
+    color: $white;
+
+    .section__title {
+      color: $white;
+    }
+
+    .section__subtitle {
+      color: rgba($white, 0.8);
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// STATISTIC COMPONENTS
+// -----------------------------------------------------------------------------
+.stats {
+  @include grid-responsive(1, 2, 4);
+
+  &__item {
+    @include trust-indicator;
+  }
+
+  &__number {
+    font-size: $font-size-h1-mobile;
+    font-weight: $font-weight-extrabold;
+    color: $primary;
+    line-height: 1;
+    margin-bottom: map-get($spacing, 2);
+
+    @include desktop-up {
+      font-size: $font-size-h1-desktop;
+    }
+
+    &--secondary {
+      color: $secondary;
+    }
+
+    &--accent {
+      color: $accent;
+    }
+  }
+
+  &__label {
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+    color: $ronchi-dark;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-wide;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// FEATURE COMPONENTS
+// -----------------------------------------------------------------------------
+.features {
+  @include grid-responsive(1, 2, 3);
+
+  &__item {
+    text-align: center;
+    padding: map-get($spacing, 6);
+  }
+
+  &__icon {
+    width: 4rem;
+    height: 4rem;
+    margin: 0 auto map-get($spacing, 4);
+    background-color: rgba($primary, 0.1);
+    border-radius: $border-radius-full;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $primary;
+    font-size: 2rem;
+  }
+
+  &__title {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-semibold;
+    color: $charade-base;
+    margin-bottom: map-get($spacing, 3);
+  }
+
+  &__description {
+    color: $gray-600;
+    line-height: $line-height-relaxed;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// ALERT COMPONENTS
+// -----------------------------------------------------------------------------
+.alert {
+  padding: map-get($spacing, 4) map-get($spacing, 6);
+  margin-bottom: map-get($spacing, 4);
+  border: 1px solid transparent;
+  border-radius: $border-radius-lg;
+  position: relative;
+
+  &__title {
+    font-weight: $font-weight-semibold;
+    margin-bottom: map-get($spacing, 1);
+  }
+
+  &__message {
+    margin-bottom: 0;
+  }
+
+  // Alert variations
+  &--info {
+    background-color: $info-light;
+    border-color: $info;
+    color: $info-dark;
+  }
+
+  &--success {
+    background-color: $success-light;
+    border-color: $success;
+    color: $success-dark;
+  }
+
+  &--warning {
+    background-color: $warning-light;
+    border-color: $warning;
+    color: $warning-dark;
+  }
+
+  &--error {
+    background-color: $error-light;
+    border-color: $error;
+    color: $error-dark;
+  }
+
+  // Dismissible alert
+  &--dismissible {
+    padding-right: map-get($spacing, 12);
+
+    .alert__close {
+      position: absolute;
+      top: map-get($spacing, 4);
+      right: map-get($spacing, 6);
+      @include reset-button;
+      font-size: $font-size-lg;
+      line-height: 1;
+      color: inherit;
+      opacity: 0.5;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// UTILITY COMPONENTS
+// -----------------------------------------------------------------------------
+.divider {
+  height: 1px;
+  background-color: $gray-200;
+  margin: map-get($spacing, 8) 0;
+
+  &--branded {
+    height: 2px;
+    background: linear-gradient(90deg, $primary 0%, $secondary 50%, $accent 100%);
+  }
+
+  &--vertical {
+    width: 1px;
+    height: auto;
+    margin: 0 map-get($spacing, 4);
+    align-self: stretch;
+  }
+}
+
+.loading {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid $gray-200;
+  border-radius: 50%;
+  border-top-color: $primary;
+  animation: spin 1s ease-in-out infinite;
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &--lg {
+    width: 3rem;
+    height: 3rem;
+    border-width: 3px;
+  }
+
+  &--sm {
+    width: 1rem;
+    height: 1rem;
+    border-width: 1px;
+  }
+}

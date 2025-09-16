@@ -1,0 +1,560 @@
+// =============================================================================
+// MIXINS - Historic Equity Inc.
+// =============================================================================
+
+// Import variables
+@import 'variables';
+
+// -----------------------------------------------------------------------------
+// LAYOUT MIXINS
+// -----------------------------------------------------------------------------
+
+// Container mixin
+@mixin container($max-width: map-get($breakpoints, xl)) {
+  width: 100%;
+  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: map-get($spacing, 4);
+  padding-right: map-get($spacing, 4);
+
+  @include tablet-up {
+    padding-left: map-get($spacing, 6);
+    padding-right: map-get($spacing, 6);
+  }
+
+  @include desktop-up {
+    padding-left: map-get($spacing, 8);
+    padding-right: map-get($spacing, 8);
+  }
+}
+
+// Flexbox mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-column-center {
+  @include flex-column;
+  align-items: center;
+  justify-content: center;
+}
+
+// Grid mixins
+@mixin grid($columns: 12, $gap: map-get($spacing, 6)) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+}
+
+@mixin grid-responsive($mobile-cols: 1, $tablet-cols: 2, $desktop-cols: 3, $gap: map-get($spacing, 6)) {
+  display: grid;
+  gap: $gap;
+  grid-template-columns: repeat($mobile-cols, 1fr);
+
+  @include tablet-up {
+    grid-template-columns: repeat($tablet-cols, 1fr);
+  }
+
+  @include desktop-up {
+    grid-template-columns: repeat($desktop-cols, 1fr);
+  }
+}
+
+// Aspect ratio mixin
+@mixin aspect-ratio($width: 16, $height: 9) {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-top: percentage($height / $width);
+  }
+
+  > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// VISUAL MIXINS
+// -----------------------------------------------------------------------------
+
+// Button base mixin (following styleguide design)
+@mixin button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $font-family-primary;    // Montserrat from styleguide
+  font-weight: $font-weight-semibold;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  border: 2px solid transparent;
+  border-radius: $border-radius-lg;     // Rounded buttons as shown in styleguide
+  transition: $transition-base;
+  white-space: nowrap;
+
+  &:focus {
+    outline: 2px solid $accent;
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+// Button size variations
+@mixin button-sm {
+  padding: map-get($spacing, 2) map-get($spacing, 4);
+  font-size: $font-size-sm;
+  min-height: 2rem;
+}
+
+@mixin button-md {
+  padding: map-get($spacing, 3) map-get($spacing, 6);
+  font-size: $font-size-base;
+  min-height: 2.5rem;
+}
+
+@mixin button-lg {
+  padding: map-get($spacing, 4) map-get($spacing, 8);
+  font-size: $font-size-lg;
+  min-height: 3rem;
+}
+
+@mixin button-xl {
+  padding: map-get($spacing, 5) map-get($spacing, 10);
+  font-size: $font-size-xl;
+  min-height: 3.5rem;
+}
+
+// Button style variations (matching styleguide specifications)
+@mixin button-primary {
+  background-color: $primary;    // #BD572B from styleguide
+  color: $white;
+  border-color: $primary;
+
+  &:hover,
+  &:focus {
+    background-color: $primary-dark;
+    border-color: $primary-dark;
+    transform: translateY(-1px);
+    box-shadow: $shadow-lg;
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: $shadow-md;
+  }
+}
+
+@mixin button-secondary {
+  background-color: $secondary;
+  color: $charade-base;
+  border-color: $secondary;
+
+  &:hover,
+  &:focus {
+    background-color: $secondary-dark;
+    border-color: $secondary-dark;
+    color: $white;
+    transform: translateY(-1px);
+    box-shadow: $shadow-lg;
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: $shadow-md;
+  }
+}
+
+@mixin button-outline {
+  background-color: transparent;
+  color: $primary;
+  border-color: $primary;
+
+  &:hover,
+  &:focus {
+    background-color: $primary;
+    color: $white;
+    transform: translateY(-1px);
+    box-shadow: $shadow-lg;
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: $shadow-md;
+  }
+}
+
+@mixin button-ghost {
+  background-color: transparent;
+  color: $primary;
+  border-color: transparent;
+
+  &:hover,
+  &:focus {
+    background-color: rgba($primary, 0.1);
+    color: $primary-dark;
+  }
+
+  &:active {
+    background-color: rgba($primary, 0.2);
+  }
+}
+
+// Card mixin
+@mixin card($padding: map-get($spacing, 6), $shadow: $shadow-base, $radius: $border-radius-xl) {
+  background-color: $white;
+  border-radius: $radius;
+  box-shadow: $shadow;
+  padding: $padding;
+  transition: $transition-base;
+
+  &:hover {
+    box-shadow: $shadow-lg;
+    transform: translateY(-2px);
+  }
+}
+
+// Hero section mixin
+@mixin hero-section($min-height: 60vh, $padding: map-get($spacing, 16)) {
+  min-height: $min-height;
+  padding: $padding 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+
+  @include mobile-only {
+    min-height: 50vh;
+    padding: map-get($spacing, 12) 0;
+  }
+}
+
+// Overlay mixin
+@mixin overlay($color: $black, $opacity: 0.5) {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba($color, $opacity);
+    z-index: 1;
+  }
+
+  > * {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// FORM MIXINS
+// -----------------------------------------------------------------------------
+
+@mixin form-control {
+  display: block;
+  width: 100%;
+  padding: map-get($spacing, 3) map-get($spacing, 4);
+  font-family: $font-family-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-normal;
+  color: $charade-base;
+  background-color: $white;
+  background-clip: padding-box;
+  border: 2px solid $gray-300;
+  border-radius: $border-radius-lg;
+  transition: $transition-base;
+
+  &:focus {
+    color: $charade-base;
+    background-color: $white;
+    border-color: $primary;
+    outline: 0;
+    box-shadow: 0 0 0 3px rgba($primary, 0.1);
+  }
+
+  &::placeholder {
+    color: $gray-500;
+    opacity: 1;
+  }
+
+  &:disabled,
+  &[readonly] {
+    background-color: $gray-100;
+    opacity: 1;
+  }
+
+  &.is-invalid {
+    border-color: $error;
+
+    &:focus {
+      border-color: $error;
+      box-shadow: 0 0 0 3px rgba($error, 0.1);
+    }
+  }
+
+  &.is-valid {
+    border-color: $success;
+
+    &:focus {
+      border-color: $success;
+      box-shadow: 0 0 0 3px rgba($success, 0.1);
+    }
+  }
+}
+
+@mixin form-label {
+  display: block;
+  margin-bottom: map-get($spacing, 2);
+  font-family: $font-family-primary;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $charade-base;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-wide;
+}
+
+@mixin form-group {
+  margin-bottom: map-get($spacing, 5);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// ANIMATION MIXINS
+// -----------------------------------------------------------------------------
+
+@mixin fade-in($duration: $transition-duration-300) {
+  animation: fadeIn $duration $transition-timing-ease-out;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+@mixin slide-up($duration: $transition-duration-500, $distance: 30px) {
+  animation: slideUp $duration $transition-timing-ease-out;
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY($distance);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@mixin scale-in($duration: $transition-duration-300) {
+  animation: scaleIn $duration $transition-timing-ease-out;
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+// Hover animations
+@mixin hover-lift {
+  transition: $transition-base;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-xl;
+  }
+}
+
+@mixin hover-scale {
+  transition: $transition-base;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+// -----------------------------------------------------------------------------
+// UTILITY MIXINS
+// -----------------------------------------------------------------------------
+
+// Visually hidden (for screen readers)
+@mixin sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// Truncate text
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Multi-line text truncate
+@mixin text-clamp($lines: 3) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+  overflow: hidden;
+}
+
+// Clearfix
+@mixin clearfix {
+  &::after {
+    display: block;
+    clear: both;
+    content: '';
+  }
+}
+
+// Reset list styles
+@mixin reset-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+// Image replacement
+@mixin image-replacement {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+// Reset button styles
+@mixin reset-button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+// -----------------------------------------------------------------------------
+// BRAND-SPECIFIC MIXINS
+// -----------------------------------------------------------------------------
+
+// Historic Equity brand card
+@mixin brand-card($scheme: 1) {
+  @include card;
+  border-top: 4px solid $primary;
+
+  @if $scheme == 2 {
+    border-top-color: $secondary;
+  } @else if $scheme == 3 {
+    border-top-color: $accent;
+  }
+}
+
+// Section with brand background
+@mixin brand-section($scheme: 1) {
+  padding: map-get($spacing, 16) 0;
+
+  @if $scheme == 1 {
+    background: linear-gradient(135deg, rgba($primary, 0.05) 0%, rgba($secondary, 0.05) 100%);
+  } @else if $scheme == 2 {
+    background: linear-gradient(135deg, rgba($neutral, 0.05) 0%, rgba($primary, 0.05) 100%);
+  } @else if $scheme == 3 {
+    background: linear-gradient(135deg, rgba($accent, 0.05) 0%, rgba($secondary, 0.05) 100%);
+  }
+
+  @include mobile-only {
+    padding: map-get($spacing, 12) 0;
+  }
+}
+
+// Trust indicator styling (for testimonials, stats, etc.)
+@mixin trust-indicator {
+  text-align: center;
+  padding: map-get($spacing, 8) map-get($spacing, 6);
+  background: $white;
+  border-radius: $border-radius-2xl;
+  box-shadow: $shadow-lg;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, $primary 0%, $secondary 100%);
+    border-radius: $border-radius-full;
+    transform: translateX(-50%);
+  }
+
+  .number {
+    font-size: $font-size-h2-desktop;
+    font-weight: $font-weight-extrabold;
+    color: $primary;
+    line-height: 1;
+    margin-bottom: map-get($spacing, 2);
+
+    @include mobile-only {
+      font-size: $font-size-h2-mobile;
+    }
+  }
+
+  .label {
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+    color: $ronchi-dark;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-wide;
+  }
+}

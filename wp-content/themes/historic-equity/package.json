@@ -1,0 +1,25 @@
+{
+  "name": "historic-equity-theme",
+  "version": "1.0.0",
+  "description": "Historic Equity Inc. WordPress Theme with TailwindCSS",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tailwindcss -i ./static/css/input.css -o ./static/css/style.css --watch",
+    "build": "tailwindcss -i ./static/css/input.css -o ./static/css/style.css --minify",
+    "build-dev": "tailwindcss -i ./static/css/input.css -o ./static/css/style.css"
+  },
+  "keywords": [
+    "wordpress",
+    "theme",
+    "tailwindcss",
+    "historic-equity"
+  ],
+  "author": "Historic Equity Inc.",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^3.4.0",
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.10",
+    "@tailwindcss/aspect-ratio": "^0.4.2"
+  }
+}

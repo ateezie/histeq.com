@@ -1,0 +1,55 @@
+# Dependencies
+node_modules/
+vendor/
+
+# Build outputs
+dist/
+build/
+
+# Environment files
+.env
+.env.local
+.env.production
+
+# IDE files
+.DS_Store
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# nyc test coverage
+.nyc_output
+
+# Temporary folders
+tmp/
+temp/
+
+# OS generated files
+Thumbs.db
+
+# WordPress specific
+wp-config.php
+.htaccess
+
+# Test artifacts
+test-results/
+*.png
+!design/*.png
+!wp-content/themes/historic-equity/static/images/*.png
+
+# Playwright
+playwright-report/

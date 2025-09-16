@@ -1,0 +1,120 @@
+{#
+  Historic Equity Hero Component
+  Main hero section with compelling headline, description, and CTA
+#}
+
+{% set hero_image = hero_image|default('/static/images/hero-historic-building.jpg') %}
+{% set hero_title = hero_title|default('Preserving History, Empowering Communities Through Strategic Investment') %}
+{% set hero_subtitle = hero_subtitle|default('Maximizing State Historic Tax Credit benefits for property owners and developers across 17+ states with over $1 billion in qualified rehabilitation expenditures.') %}
+{% set hero_cta_text = hero_cta_text|default('Start Your Project') %}
+{% set hero_cta_url = hero_cta_url|default('/contact') %}
+
+<section class="hero-section relative overflow-hidden">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-0">
+        <img src="{{ hero_image }}"
+             alt="Historic building rehabilitation project"
+             class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-charade bg-opacity-60"></div>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="relative z-10">
+        <div class="container-custom">
+            <div class="min-h-screen flex items-center py-20 lg:py-0">
+                <div class="grid lg:grid-cols-2 gap-12 items-center w-full">
+
+                    <!-- Text Content -->
+                    <div class="text-center lg:text-left">
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight mb-6 animate-fade-in">
+                            {{ hero_title }}
+                        </h1>
+
+                        <p class="text-lg lg:text-xl text-neutral-lighter leading-relaxed mb-8 max-w-2xl animate-slide-up">
+                            {{ hero_subtitle }}
+                        </p>
+
+                        <!-- CTA Buttons -->
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-slide-up">
+                            <a href="{{ hero_cta_url }}"
+                               class="btn-primary text-center transform hover:scale-105 transition-all duration-200">
+                                {{ hero_cta_text }}
+                            </a>
+                            <a href="/about"
+                               class="btn-outline border-white text-white hover:bg-white hover:text-charade text-center">
+                                Learn More
+                            </a>
+                        </div>
+
+                        <!-- Key Stats -->
+                        <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 animate-slide-up">
+                            <div class="text-center lg:text-left">
+                                <div class="text-2xl lg:text-3xl font-bold text-arrowtown">17+</div>
+                                <div class="text-sm text-neutral-lighter">States Served</div>
+                            </div>
+                            <div class="text-center lg:text-left">
+                                <div class="text-2xl lg:text-3xl font-bold text-arrowtown">200+</div>
+                                <div class="text-sm text-neutral-lighter">Projects Completed</div>
+                            </div>
+                            <div class="text-center lg:text-left">
+                                <div class="text-2xl lg:text-3xl font-bold text-arrowtown">$1B+</div>
+                                <div class="text-sm text-neutral-lighter">QRE Invested</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hero Image/Visual Element (Optional) -->
+                    <div class="hidden lg:block">
+                        <div class="relative">
+                            <!-- Decorative elements or additional imagery can go here -->
+                            <div class="w-full h-96 bg-gradient-to-br from-tuscany to-tuscany-dark rounded-2xl opacity-20"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
+        <a href="#content" class="text-white hover:text-arrowtown transition-colors duration-200">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </a>
+    </div>
+</section>
+
+{# Alternative Hero Variant - Centered Layout #}
+{% if hero_variant == 'centered' %}
+<section class="hero-section-centered relative min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- Background -->
+    <div class="absolute inset-0 z-0">
+        <img src="{{ hero_image }}"
+             alt="Historic building rehabilitation"
+             class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-b from-charade-dark via-charade to-charade-dark opacity-80"></div>
+    </div>
+
+    <!-- Centered Content -->
+    <div class="relative z-10 text-center container-custom px-4">
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 max-w-4xl mx-auto">
+            {{ hero_title }}
+        </h1>
+
+        <p class="text-xl lg:text-2xl text-neutral-lighter leading-relaxed mb-10 max-w-3xl mx-auto">
+            {{ hero_subtitle }}
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="{{ hero_cta_url }}" class="btn-primary px-8 py-4 text-lg">
+                {{ hero_cta_text }}
+            </a>
+            <a href="/projects" class="btn-outline border-white text-white hover:bg-white hover:text-charade px-8 py-4 text-lg">
+                View Portfolio
+            </a>
+        </div>
+    </div>
+</section>
+{% endif %}

@@ -1,0 +1,546 @@
+// =============================================================================
+// COLORS - Historic Equity Inc.
+// =============================================================================
+
+// Import variables
+@import 'variables';
+
+// -----------------------------------------------------------------------------
+// COLOR UTILITY MIXINS
+// -----------------------------------------------------------------------------
+
+// Background color mixin
+@mixin bg-color($color, $hover-color: null) {
+  background-color: $color;
+
+  @if $hover-color {
+    &:hover {
+      background-color: $hover-color;
+    }
+  }
+}
+
+// Text color mixin
+@mixin text-color($color, $hover-color: null) {
+  color: $color;
+
+  @if $hover-color {
+    &:hover {
+      color: $hover-color;
+    }
+  }
+}
+
+// Border color mixin
+@mixin border-color($color) {
+  border-color: $color;
+}
+
+// -----------------------------------------------------------------------------
+// BRAND COLOR UTILITIES
+// -----------------------------------------------------------------------------
+
+// Primary Colors (Tuscany - Orange)
+.text-primary {
+  @include text-color($primary, $primary-dark);
+}
+
+.bg-primary {
+  @include bg-color($primary, $primary-dark);
+  color: $white;
+}
+
+.border-primary {
+  @include border-color($primary);
+}
+
+// Primary variations
+.text-primary-light {
+  @include text-color($primary-light, $primary);
+}
+
+.bg-primary-light {
+  @include bg-color($primary-light, $primary);
+  color: $charade-base;
+}
+
+.text-primary-dark {
+  @include text-color($primary-dark, $primary);
+}
+
+.bg-primary-dark {
+  @include bg-color($primary-dark, $tuscany-darker);
+  color: $white;
+}
+
+// Secondary Colors (Arrowtown - Gold)
+.text-secondary {
+  @include text-color($secondary, $secondary-dark);
+}
+
+.bg-secondary {
+  @include bg-color($secondary, $secondary-dark);
+  color: $charade-base;
+}
+
+.border-secondary {
+  @include border-color($secondary);
+}
+
+// Secondary variations
+.text-secondary-light {
+  @include text-color($secondary-light, $secondary);
+}
+
+.bg-secondary-light {
+  @include bg-color($secondary-light, $secondary);
+  color: $charade-base;
+}
+
+.text-secondary-dark {
+  @include text-color($secondary-dark, $secondary);
+}
+
+.bg-secondary-dark {
+  @include bg-color($secondary-dark, $arrowtown-darker);
+  color: $white;
+}
+
+// Accent Colors (Polo Blue)
+.text-accent {
+  @include text-color($accent, $accent-dark);
+}
+
+.bg-accent {
+  @include bg-color($accent, $accent-dark);
+  color: $white;
+}
+
+.border-accent {
+  @include border-color($accent);
+}
+
+// Accent variations
+.text-accent-light {
+  @include text-color($accent-light, $accent);
+}
+
+.bg-accent-light {
+  @include bg-color($accent-light, $accent);
+  color: $charade-base;
+}
+
+.text-accent-dark {
+  @include text-color($accent-dark, $accent);
+}
+
+.bg-accent-dark {
+  @include bg-color($accent-dark, $polo-blue-darker);
+  color: $white;
+}
+
+// Neutral Colors (Ronchi - Brown)
+.text-neutral {
+  @include text-color($neutral, $neutral-dark);
+}
+
+.bg-neutral {
+  @include bg-color($neutral, $neutral-dark);
+  color: $white;
+}
+
+.border-neutral {
+  @include border-color($neutral);
+}
+
+// Neutral variations
+.text-neutral-light {
+  @include text-color($neutral-light, $neutral);
+}
+
+.bg-neutral-light {
+  @include bg-color($neutral-light, $neutral);
+  color: $charade-base;
+}
+
+.text-neutral-dark {
+  @include text-color($neutral-dark, $neutral);
+}
+
+.bg-neutral-dark {
+  @include bg-color($neutral-dark, $ronchi-darker);
+  color: $white;
+}
+
+// Dark Colors (Charade - Navy)
+.text-dark {
+  @include text-color($dark, $charade-dark);
+}
+
+.bg-dark {
+  @include bg-color($dark, $charade-dark);
+  color: $white;
+}
+
+.border-dark {
+  @include border-color($dark);
+}
+
+// Off-white
+.text-off-white {
+  @include text-color($off-white);
+}
+
+.bg-off-white {
+  @include bg-color($off-white);
+  color: $charade-base;
+}
+
+.border-off-white {
+  @include border-color($off-white);
+}
+
+// -----------------------------------------------------------------------------
+// COMPLETE COLOR FAMILY UTILITIES
+// -----------------------------------------------------------------------------
+
+// Tuscany Color Family
+.text-tuscany-lightest { color: $tuscany-lightest; }
+.text-tuscany-lighter { color: $tuscany-lighter; }
+.text-tuscany-light { color: $tuscany-light; }
+.text-tuscany { color: $tuscany-base; }
+.text-tuscany-dark { color: $tuscany-dark; }
+.text-tuscany-darker { color: $tuscany-darker; }
+.text-tuscany-darkest { color: $tuscany-darkest; }
+
+.bg-tuscany-lightest { background-color: $tuscany-lightest; color: $charade-base; }
+.bg-tuscany-lighter { background-color: $tuscany-lighter; color: $charade-base; }
+.bg-tuscany-light { background-color: $tuscany-light; color: $charade-base; }
+.bg-tuscany { background-color: $tuscany-base; color: $white; }
+.bg-tuscany-dark { background-color: $tuscany-dark; color: $white; }
+.bg-tuscany-darker { background-color: $tuscany-darker; color: $white; }
+.bg-tuscany-darkest { background-color: $tuscany-darkest; color: $white; }
+
+.border-tuscany-lightest { border-color: $tuscany-lightest; }
+.border-tuscany-lighter { border-color: $tuscany-lighter; }
+.border-tuscany-light { border-color: $tuscany-light; }
+.border-tuscany { border-color: $tuscany-base; }
+.border-tuscany-dark { border-color: $tuscany-dark; }
+.border-tuscany-darker { border-color: $tuscany-darker; }
+.border-tuscany-darkest { border-color: $tuscany-darkest; }
+
+// Arrowtown Color Family
+.text-arrowtown-lightest { color: $arrowtown-lightest; }
+.text-arrowtown-lighter { color: $arrowtown-lighter; }
+.text-arrowtown-light { color: $arrowtown-light; }
+.text-arrowtown { color: $arrowtown-base; }
+.text-arrowtown-dark { color: $arrowtown-dark; }
+.text-arrowtown-darker { color: $arrowtown-darker; }
+.text-arrowtown-darkest { color: $arrowtown-darkest; }
+
+.bg-arrowtown-lightest { background-color: $arrowtown-lightest; color: $charade-base; }
+.bg-arrowtown-lighter { background-color: $arrowtown-lighter; color: $charade-base; }
+.bg-arrowtown-light { background-color: $arrowtown-light; color: $charade-base; }
+.bg-arrowtown { background-color: $arrowtown-base; color: $charade-base; }
+.bg-arrowtown-dark { background-color: $arrowtown-dark; color: $white; }
+.bg-arrowtown-darker { background-color: $arrowtown-darker; color: $white; }
+.bg-arrowtown-darkest { background-color: $arrowtown-darkest; color: $white; }
+
+.border-arrowtown-lightest { border-color: $arrowtown-lightest; }
+.border-arrowtown-lighter { border-color: $arrowtown-lighter; }
+.border-arrowtown-light { border-color: $arrowtown-light; }
+.border-arrowtown { border-color: $arrowtown-base; }
+.border-arrowtown-dark { border-color: $arrowtown-dark; }
+.border-arrowtown-darker { border-color: $arrowtown-darker; }
+.border-arrowtown-darkest { border-color: $arrowtown-darkest; }
+
+// Ronchi Color Family
+.text-ronchi-lightest { color: $ronchi-lightest; }
+.text-ronchi-lighter { color: $ronchi-lighter; }
+.text-ronchi-light { color: $ronchi-light; }
+.text-ronchi { color: $ronchi-base; }
+.text-ronchi-dark { color: $ronchi-dark; }
+.text-ronchi-darker { color: $ronchi-darker; }
+.text-ronchi-darkest { color: $ronchi-darkest; }
+
+.bg-ronchi-lightest { background-color: $ronchi-lightest; color: $charade-base; }
+.bg-ronchi-lighter { background-color: $ronchi-lighter; color: $charade-base; }
+.bg-ronchi-light { background-color: $ronchi-light; color: $charade-base; }
+.bg-ronchi { background-color: $ronchi-base; color: $white; }
+.bg-ronchi-dark { background-color: $ronchi-dark; color: $white; }
+.bg-ronchi-darker { background-color: $ronchi-darker; color: $white; }
+.bg-ronchi-darkest { background-color: $ronchi-darkest; color: $white; }
+
+.border-ronchi-lightest { border-color: $ronchi-lightest; }
+.border-ronchi-lighter { border-color: $ronchi-lighter; }
+.border-ronchi-light { border-color: $ronchi-light; }
+.border-ronchi { border-color: $ronchi-base; }
+.border-ronchi-dark { border-color: $ronchi-dark; }
+.border-ronchi-darker { border-color: $ronchi-darker; }
+.border-ronchi-darkest { border-color: $ronchi-darkest; }
+
+// Charade Color Family
+.text-charade-lightest { color: $charade-lightest; }
+.text-charade-lighter { color: $charade-lighter; }
+.text-charade-light { color: $charade-light; }
+.text-charade { color: $charade-base; }
+.text-charade-dark { color: $charade-dark; }
+.text-charade-darker { color: $charade-darker; }
+.text-charade-darkest { color: $charade-darkest; }
+
+.bg-charade-lightest { background-color: $charade-lightest; color: $charade-base; }
+.bg-charade-lighter { background-color: $charade-lighter; color: $charade-base; }
+.bg-charade-light { background-color: $charade-light; color: $charade-base; }
+.bg-charade { background-color: $charade-base; color: $white; }
+.bg-charade-dark { background-color: $charade-dark; color: $white; }
+.bg-charade-darker { background-color: $charade-darker; color: $white; }
+.bg-charade-darkest { background-color: $charade-darkest; color: $white; }
+
+.border-charade-lightest { border-color: $charade-lightest; }
+.border-charade-lighter { border-color: $charade-lighter; }
+.border-charade-light { border-color: $charade-light; }
+.border-charade { border-color: $charade-base; }
+.border-charade-dark { border-color: $charade-dark; }
+.border-charade-darker { border-color: $charade-darker; }
+.border-charade-darkest { border-color: $charade-darkest; }
+
+// Polo Blue Color Family
+.text-polo-blue-lightest { color: $polo-blue-lightest; }
+.text-polo-blue-lighter { color: $polo-blue-lighter; }
+.text-polo-blue-light { color: $polo-blue-light; }
+.text-polo-blue { color: $polo-blue-base; }
+.text-polo-blue-dark { color: $polo-blue-dark; }
+.text-polo-blue-darker { color: $polo-blue-darker; }
+.text-polo-blue-darkest { color: $polo-blue-darkest; }
+
+.bg-polo-blue-lightest { background-color: $polo-blue-lightest; color: $charade-base; }
+.bg-polo-blue-lighter { background-color: $polo-blue-lighter; color: $charade-base; }
+.bg-polo-blue-light { background-color: $polo-blue-light; color: $charade-base; }
+.bg-polo-blue { background-color: $polo-blue-base; color: $white; }
+.bg-polo-blue-dark { background-color: $polo-blue-dark; color: $white; }
+.bg-polo-blue-darker { background-color: $polo-blue-darker; color: $white; }
+.bg-polo-blue-darkest { background-color: $polo-blue-darkest; color: $white; }
+
+.border-polo-blue-lightest { border-color: $polo-blue-lightest; }
+.border-polo-blue-lighter { border-color: $polo-blue-lighter; }
+.border-polo-blue-light { border-color: $polo-blue-light; }
+.border-polo-blue { border-color: $polo-blue-base; }
+.border-polo-blue-dark { border-color: $polo-blue-dark; }
+.border-polo-blue-darker { border-color: $polo-blue-darker; }
+.border-polo-blue-darkest { border-color: $polo-blue-darkest; }
+
+// -----------------------------------------------------------------------------
+// GRAY SCALE UTILITIES
+// -----------------------------------------------------------------------------
+.text-white { color: $white; }
+.text-gray-50 { color: $gray-50; }
+.text-gray-100 { color: $gray-100; }
+.text-gray-200 { color: $gray-200; }
+.text-gray-300 { color: $gray-300; }
+.text-gray-400 { color: $gray-400; }
+.text-gray-500 { color: $gray-500; }
+.text-gray-600 { color: $gray-600; }
+.text-gray-700 { color: $gray-700; }
+.text-gray-800 { color: $gray-800; }
+.text-gray-900 { color: $gray-900; }
+.text-black { color: $black; }
+
+.bg-white { background-color: $white; color: $charade-base; }
+.bg-gray-50 { background-color: $gray-50; color: $charade-base; }
+.bg-gray-100 { background-color: $gray-100; color: $charade-base; }
+.bg-gray-200 { background-color: $gray-200; color: $charade-base; }
+.bg-gray-300 { background-color: $gray-300; color: $charade-base; }
+.bg-gray-400 { background-color: $gray-400; color: $white; }
+.bg-gray-500 { background-color: $gray-500; color: $white; }
+.bg-gray-600 { background-color: $gray-600; color: $white; }
+.bg-gray-700 { background-color: $gray-700; color: $white; }
+.bg-gray-800 { background-color: $gray-800; color: $white; }
+.bg-gray-900 { background-color: $gray-900; color: $white; }
+.bg-black { background-color: $black; color: $white; }
+
+.border-white { border-color: $white; }
+.border-gray-50 { border-color: $gray-50; }
+.border-gray-100 { border-color: $gray-100; }
+.border-gray-200 { border-color: $gray-200; }
+.border-gray-300 { border-color: $gray-300; }
+.border-gray-400 { border-color: $gray-400; }
+.border-gray-500 { border-color: $gray-500; }
+.border-gray-600 { border-color: $gray-600; }
+.border-gray-700 { border-color: $gray-700; }
+.border-gray-800 { border-color: $gray-800; }
+.border-gray-900 { border-color: $gray-900; }
+.border-black { border-color: $black; }
+
+// -----------------------------------------------------------------------------
+// SEMANTIC COLOR UTILITIES
+// -----------------------------------------------------------------------------
+
+// Success colors
+.text-success {
+  @include text-color($success, $success-dark);
+}
+
+.bg-success {
+  @include bg-color($success, $success-dark);
+  color: $white;
+}
+
+.bg-success-light {
+  @include bg-color($success-light);
+  color: $success-dark;
+}
+
+.border-success {
+  @include border-color($success);
+}
+
+// Warning colors
+.text-warning {
+  @include text-color($warning, $warning-dark);
+}
+
+.bg-warning {
+  @include bg-color($warning, $warning-dark);
+  color: $charade-base;
+}
+
+.bg-warning-light {
+  @include bg-color($warning-light);
+  color: $warning-dark;
+}
+
+.border-warning {
+  @include border-color($warning);
+}
+
+// Error colors
+.text-error {
+  @include text-color($error, $error-dark);
+}
+
+.bg-error {
+  @include bg-color($error, $error-dark);
+  color: $white;
+}
+
+.bg-error-light {
+  @include bg-color($error-light);
+  color: $error-dark;
+}
+
+.border-error {
+  @include border-color($error);
+}
+
+// Info colors
+.text-info {
+  @include text-color($info, $info-dark);
+}
+
+.bg-info {
+  @include bg-color($info, $info-dark);
+  color: $white;
+}
+
+.bg-info-light {
+  @include bg-color($info-light);
+  color: $info-dark;
+}
+
+.border-info {
+  @include border-color($info);
+}
+
+// -----------------------------------------------------------------------------
+// GRADIENT UTILITIES
+// -----------------------------------------------------------------------------
+.bg-gradient-primary {
+  background: linear-gradient(135deg, $tuscany-light 0%, $tuscany-base 50%, $tuscany-dark 100%);
+  color: $white;
+}
+
+.bg-gradient-secondary {
+  background: linear-gradient(135deg, $arrowtown-light 0%, $arrowtown-base 50%, $arrowtown-dark 100%);
+  color: $charade-base;
+}
+
+.bg-gradient-hero {
+  background: linear-gradient(135deg, $tuscany-base 0%, $arrowtown-base 50%, $polo-blue-base 100%);
+  color: $white;
+}
+
+.bg-gradient-sunset {
+  background: linear-gradient(135deg, $tuscany-light 0%, $arrowtown-base 100%);
+  color: $charade-base;
+}
+
+.bg-gradient-earth {
+  background: linear-gradient(135deg, $ronchi-light 0%, $ronchi-base 50%, $ronchi-dark 100%);
+  color: $white;
+}
+
+// -----------------------------------------------------------------------------
+// OPACITY UTILITIES
+// -----------------------------------------------------------------------------
+.bg-opacity-10 { background-color: rgba(0, 0, 0, 0.1); }
+.bg-opacity-20 { background-color: rgba(0, 0, 0, 0.2); }
+.bg-opacity-30 { background-color: rgba(0, 0, 0, 0.3); }
+.bg-opacity-40 { background-color: rgba(0, 0, 0, 0.4); }
+.bg-opacity-50 { background-color: rgba(0, 0, 0, 0.5); }
+.bg-opacity-60 { background-color: rgba(0, 0, 0, 0.6); }
+.bg-opacity-70 { background-color: rgba(0, 0, 0, 0.7); }
+.bg-opacity-80 { background-color: rgba(0, 0, 0, 0.8); }
+.bg-opacity-90 { background-color: rgba(0, 0, 0, 0.9); }
+
+.text-opacity-10 { color: rgba(0, 0, 0, 0.1); }
+.text-opacity-20 { color: rgba(0, 0, 0, 0.2); }
+.text-opacity-30 { color: rgba(0, 0, 0, 0.3); }
+.text-opacity-40 { color: rgba(0, 0, 0, 0.4); }
+.text-opacity-50 { color: rgba(0, 0, 0, 0.5); }
+.text-opacity-60 { color: rgba(0, 0, 0, 0.6); }
+.text-opacity-70 { color: rgba(0, 0, 0, 0.7); }
+.text-opacity-80 { color: rgba(0, 0, 0, 0.8); }
+.text-opacity-90 { color: rgba(0, 0, 0, 0.9); }
+
+// Color-specific opacity utilities
+.bg-primary-10 { background-color: rgba($primary, 0.1); }
+.bg-primary-20 { background-color: rgba($primary, 0.2); }
+.bg-primary-30 { background-color: rgba($primary, 0.3); }
+
+.bg-secondary-10 { background-color: rgba($secondary, 0.1); }
+.bg-secondary-20 { background-color: rgba($secondary, 0.2); }
+.bg-secondary-30 { background-color: rgba($secondary, 0.3); }
+
+.bg-accent-10 { background-color: rgba($accent, 0.1); }
+.bg-accent-20 { background-color: rgba($accent, 0.2); }
+.bg-accent-30 { background-color: rgba($accent, 0.3); }
+
+// -----------------------------------------------------------------------------
+// HOVER STATES
+// -----------------------------------------------------------------------------
+.hover\:bg-primary:hover {
+  background-color: $primary;
+  color: $white;
+}
+
+.hover\:bg-secondary:hover {
+  background-color: $secondary;
+  color: $charade-base;
+}
+
+.hover\:bg-accent:hover {
+  background-color: $accent;
+  color: $white;
+}
+
+.hover\:text-primary:hover {
+  color: $primary;
+}
+
+.hover\:text-secondary:hover {
+  color: $secondary;
+}
+
+.hover\:text-accent:hover {
+  color: $accent;
+}

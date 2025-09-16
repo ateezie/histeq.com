@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Historic Equity Custom Base Styles */
+@layer base {
+  html {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  body {
+    @apply text-charade bg-neutral-white leading-relaxed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-charade;
+  }
+
+  h1 {
+    @apply text-5xl lg:text-6xl xl:text-7xl;
+  }
+
+  h2 {
+    @apply text-4xl lg:text-5xl;
+  }
+
+  h3 {
+    @apply text-3xl lg:text-4xl;
+  }
+
+  h4 {
+    @apply text-2xl lg:text-3xl;
+  }
+
+  h5 {
+    @apply text-xl lg:text-2xl;
+  }
+
+  h6 {
+    @apply text-lg lg:text-xl;
+  }
+}
+
+/* Historic Equity Custom Components */
+@layer components {
+  .btn-primary {
+    @apply bg-tuscany text-white px-6 py-3 rounded-lg font-semibold hover:bg-tuscany-dark transition-colors duration-200;
+  }
+
+  .btn-secondary {
+    @apply bg-arrowtown text-charade px-6 py-3 rounded-lg font-semibold hover:bg-arrowtown-dark transition-colors duration-200;
+  }
+
+  .btn-outline {
+    @apply border-2 border-tuscany text-tuscany px-6 py-3 rounded-lg font-semibold hover:bg-tuscany hover:text-white transition-all duration-200;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-lg overflow-hidden;
+  }
+
+  .section-padding {
+    @apply py-16 lg:py-24;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* Custom scrollbar for webkit browsers */
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: theme('colors.tuscany') theme('colors.neutral.lighter');
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: theme('colors.neutral.lighter');
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: theme('colors.tuscany');
+    border-radius: 3px;
+  }
+}

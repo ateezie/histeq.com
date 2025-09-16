@@ -1,0 +1,171 @@
+/*
+Theme Name: Historic Equity
+Description: Custom WordPress theme for Historic Equity Inc. - State Historic Tax Credit investor
+Version: 1.0.0
+Author: Historic Equity Inc.
+Text Domain: historic-equity
+Domain Path: /languages
+
+Historic Equity Inc. bridges history & progress with a bold brand identity that honors the past while embracing the future.
+*/
+
+:root {
+  --primary-orange: #BD572B;
+  --primary-gold: #E6CD41;
+  --primary-brown: #95816E;
+  --light-blue: #83ACD1;
+  --off-white: #FEFFF8;
+  --dark-navy: #2D2E3D;
+}
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--dark-navy);
+  background-color: var(--off-white);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Styles */
+.site-header {
+  background-color: var(--dark-navy);
+  color: var(--off-white);
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-title a {
+  color: var(--primary-gold);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.main-navigation .menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.menu-link {
+  color: var(--off-white);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.menu-link:hover {
+  color: var(--primary-gold);
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, var(--primary-orange), var(--primary-brown));
+  color: var(--off-white);
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary-gold);
+  color: var(--dark-navy);
+}
+
+.btn-primary:hover {
+  background-color: var(--light-blue);
+  transform: translateY(-2px);
+}
+
+/* Posts Section */
+.posts {
+  padding: 3rem 0;
+}
+
+.post {
+  background: white;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  border-left: 4px solid var(--primary-orange);
+}
+
+.post h2 {
+  color: var(--dark-navy);
+  margin-bottom: 1rem;
+}
+
+.post h2 a {
+  color: var(--primary-orange);
+  text-decoration: none;
+}
+
+.post h2 a:hover {
+  color: var(--primary-brown);
+}
+
+/* Footer */
+.site-footer {
+  background-color: var(--dark-navy);
+  color: var(--off-white);
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: 3rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .site-header .container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .main-navigation .menu {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

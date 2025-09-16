@@ -1,0 +1,524 @@
+// =============================================================================
+// MAIN STYLESHEET - Historic Equity Inc.
+// =============================================================================
+//
+// This file serves as the main entry point for all SCSS styles in the
+// Historic Equity Inc. WordPress theme. It imports all necessary partials
+// in the correct order to ensure proper cascade and override behavior.
+//
+// Structure:
+// 1. Variables and configuration
+// 2. Mixins and functions
+// 3. Base styles and typography
+// 4. Component styles
+// 5. Utility classes
+// 6. Page-specific styles
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// 1. VARIABLES AND CONFIGURATION
+// -----------------------------------------------------------------------------
+// Import all variables first - colors, typography, spacing, breakpoints, etc.
+// These are used throughout all other files and must be loaded first.
+@import 'variables';
+
+// -----------------------------------------------------------------------------
+// 2. MIXINS AND FUNCTIONS
+// -----------------------------------------------------------------------------
+// Import mixins and functions that will be used in components and utilities.
+// These provide reusable patterns and helper functions.
+@import 'mixins';
+
+// -----------------------------------------------------------------------------
+// 3. BASE STYLES AND TYPOGRAPHY
+// -----------------------------------------------------------------------------
+// Base styles provide the foundation for all elements. Typography sets up
+// text styles, headings, and responsive typography system.
+@import 'typography';
+@import 'colors';
+
+// -----------------------------------------------------------------------------
+// 4. COMPONENT STYLES
+// -----------------------------------------------------------------------------
+// Component styles define reusable UI components like buttons, cards, forms,
+// navigation, hero sections, etc. These are the building blocks of the site.
+@import 'components';
+
+// -----------------------------------------------------------------------------
+// 5. UTILITY CLASSES
+// -----------------------------------------------------------------------------
+// Utility classes provide single-purpose styles for spacing, positioning,
+// display, colors, etc. These are used to fine-tune layouts and designs.
+@import 'utilities';
+
+// -----------------------------------------------------------------------------
+// 6. WORDPRESS INTEGRATION
+// -----------------------------------------------------------------------------
+// WordPress-specific styles including blocks, widgets, comments, and core
+// WordPress functionality styling.
+@import 'wordpress';
+
+// -----------------------------------------------------------------------------
+// 7. CUSTOM STYLES AND OVERRIDES
+// -----------------------------------------------------------------------------
+// Custom styles specific to the Historic Equity brand and any necessary
+// overrides for third-party plugins or WordPress core styles.
+
+// WordPress core overrides
+.wp-block-image {
+  margin-bottom: map-get($spacing, 6);
+
+  img {
+    border-radius: $border-radius-lg;
+  }
+
+  &.is-style-rounded img {
+    border-radius: $border-radius-full;
+  }
+}
+
+.wp-block-quote {
+  border-left: 4px solid $primary;
+  padding-left: map-get($spacing, 6);
+  margin: map-get($spacing, 8) 0;
+  font-style: italic;
+  color: $ronchi-dark;
+
+  cite {
+    color: $gray-600;
+    font-style: normal;
+    font-size: $font-size-sm;
+    margin-top: map-get($spacing, 2);
+    display: block;
+
+    &::before {
+      content: '— ';
+    }
+  }
+}
+
+.wp-block-button {
+  .wp-block-button__link {
+    @include button-base;
+    @include button-primary;
+    @include button-md;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+
+    &.has-background {
+      background-color: var(--wp--preset--color--primary, $primary);
+    }
+  }
+}
+
+// WordPress alignment classes
+.alignleft {
+  float: left;
+  margin-right: map-get($spacing, 6);
+  margin-bottom: map-get($spacing, 4);
+}
+
+.alignright {
+  float: right;
+  margin-left: map-get($spacing, 6);
+  margin-bottom: map-get($spacing, 4);
+}
+
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: map-get($spacing, 6);
+}
+
+.alignwide {
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+
+.alignfull {
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+
+// WordPress gallery styles
+.wp-block-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: map-get($spacing, 4);
+  margin-bottom: map-get($spacing, 8);
+
+  .wp-block-image {
+    margin-bottom: 0;
+  }
+
+  img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: $border-radius-lg;
+  }
+}
+
+// Contact Form 7 styling
+.wpcf7-form {
+  .wpcf7-form-control-wrap {
+    position: relative;
+    display: block;
+    margin-bottom: map-get($spacing, 4);
+  }
+
+  .wpcf7-form-control {
+    @include form-control;
+
+    &.wpcf7-textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    &.wpcf7-select {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+      background-position: right 0.5rem center;
+      background-repeat: no-repeat;
+      background-size: 1.5em 1.5em;
+      padding-right: map-get($spacing, 10);
+    }
+  }
+
+  .wpcf7-submit {
+    @include button-base;
+    @include button-primary;
+    @include button-lg;
+  }
+
+  .wpcf7-response-output {
+    border: 1px solid $gray-300;
+    padding: map-get($spacing, 4);
+    margin-top: map-get($spacing, 4);
+    border-radius: $border-radius-lg;
+
+    &.wpcf7-mail-sent-ok {
+      background-color: $success-light;
+      border-color: $success;
+      color: $success-dark;
+    }
+
+    &.wpcf7-validation-errors,
+    &.wpcf7-mail-sent-ng {
+      background-color: $error-light;
+      border-color: $error;
+      color: $error-dark;
+    }
+  }
+
+  .wpcf7-not-valid-tip {
+    color: $error;
+    font-size: $font-size-sm;
+    margin-top: map-get($spacing, 1);
+  }
+}
+
+// Historic Equity specific styles (Updated for styleguide compliance)
+.site-header {
+  background-color: $white;
+  box-shadow: $shadow-sm;
+  position: sticky;
+  top: 0;
+  z-index: $z-index-sticky;
+  border-bottom: 1px solid rgba($gray-200, 0.5);
+
+  .site-branding {
+    a.group {
+      &:hover .logo-icon {
+        transform: translateY(-1px);
+        transition: $transition-base;
+      }
+    }
+  }
+
+  .navbar-brand {
+    img {
+      max-height: 40px;  // Reduced from 60px to match styleguide
+      width: auto;
+    }
+  }
+
+  .navbar-nav {
+    .nav-link {
+      font-weight: $font-weight-medium;
+      color: $charade-base;
+      padding: map-get($spacing, 3) map-get($spacing, 4);
+      border-bottom: 2px solid transparent;
+      transition: $transition-colors;
+
+      &:hover,
+      &:focus,
+      &.active {
+        color: $primary;
+        border-bottom-color: $primary;
+      }
+    }
+  }
+}
+
+.site-footer {
+  background: linear-gradient(135deg, $charade-base 0%, $charade-dark 100%);
+  color: $white;
+  padding: map-get($spacing, 16) 0 map-get($spacing, 8);
+
+  .footer-logo {
+    img {
+      max-height: 80px;
+      width: auto;
+      margin-bottom: map-get($spacing, 6);
+    }
+  }
+
+  .footer-nav {
+    .nav-link {
+      color: rgba($white, 0.8);
+      padding: map-get($spacing, 1) 0;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba($white, 0.1);
+    margin-top: map-get($spacing, 8);
+    padding-top: map-get($spacing, 6);
+    text-align: center;
+    color: rgba($white, 0.6);
+  }
+}
+
+// Project showcase styles
+.projects-grid {
+  @include grid-responsive(1, 2, 3);
+
+  .project-card {
+    @include card;
+    @include hover-lift;
+    overflow: hidden;
+
+    .project-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      margin: (-#{map-get($spacing, 6)}) (-#{map-get($spacing, 6)}) map-get($spacing, 4);
+    }
+
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: map-get($spacing, 2);
+      margin-bottom: map-get($spacing, 3);
+    }
+
+    .project-tag {
+      display: inline-block;
+      padding: map-get($spacing, 1) map-get($spacing, 3);
+      background-color: rgba($primary, 0.1);
+      color: $primary;
+      font-size: $font-size-xs;
+      font-weight: $font-weight-medium;
+      text-transform: uppercase;
+      letter-spacing: $letter-spacing-wide;
+      border-radius: $border-radius-full;
+
+      &--state {
+        background-color: rgba($secondary, 0.1);
+        color: $secondary-dark;
+      }
+
+      &--value {
+        background-color: rgba($accent, 0.1);
+        color: $accent-dark;
+      }
+    }
+
+    .project-title {
+      font-size: $font-size-xl;
+      font-weight: $font-weight-semibold;
+      color: $charade-base;
+      margin-bottom: map-get($spacing, 2);
+
+      a {
+        color: inherit;
+        text-decoration: none;
+
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+
+    .project-location {
+      color: $gray-600;
+      font-size: $font-size-sm;
+      margin-bottom: map-get($spacing, 3);
+    }
+
+    .project-description {
+      color: $ronchi-dark;
+      line-height: $line-height-relaxed;
+      @include text-clamp(3);
+    }
+  }
+}
+
+// Team member styles
+.team-member {
+  text-align: center;
+  margin-bottom: map-get($spacing, 8);
+
+  .member-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: $border-radius-full;
+    object-fit: cover;
+    margin: 0 auto map-get($spacing, 4);
+    border: 4px solid $primary;
+  }
+
+  .member-name {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-semibold;
+    color: $charade-base;
+    margin-bottom: map-get($spacing, 1);
+  }
+
+  .member-title {
+    color: $primary;
+    font-weight: $font-weight-medium;
+    margin-bottom: map-get($spacing, 3);
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-wide;
+    font-size: $font-size-sm;
+  }
+
+  .member-bio {
+    color: $ronchi-dark;
+    line-height: $line-height-relaxed;
+  }
+}
+
+// State pages specific styles
+.state-hero {
+  background: linear-gradient(135deg, rgba($primary, 0.9) 0%, rgba($secondary, 0.8) 100%);
+  color: $white;
+  text-align: center;
+  padding: map-get($spacing, 16) 0;
+
+  .state-name {
+    font-size: $font-size-h1-mobile;
+    font-weight: $font-weight-extrabold;
+    margin-bottom: map-get($spacing, 4);
+
+    @include desktop-up {
+      font-size: $font-size-h1-desktop;
+    }
+  }
+
+  .state-tagline {
+    font-size: $font-size-lg;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+
+    @include desktop-up {
+      font-size: $font-size-xl;
+    }
+  }
+}
+
+// Responsive adjustments
+@include mobile-only {
+  .hero__actions {
+    .btn {
+      width: 100%;
+      margin-bottom: map-get($spacing, 3);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Print styles
+@media print {
+  .site-header,
+  .site-footer,
+  .btn,
+  .nav {
+    display: none !important;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+    color: $black;
+    background: $white;
+  }
+
+  .container {
+    max-width: none;
+    padding: 0;
+  }
+
+  .card {
+    box-shadow: none;
+    border: 1px solid $gray-400;
+    break-inside: avoid;
+  }
+}
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  .btn--outline {
+    border-width: 2px;
+  }
+
+  .card {
+    border: 1px solid $gray-400;
+  }
+
+  .form-control {
+    border-width: 2px;
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// =============================================================================
+// END OF STYLESHEET
+// =============================================================================

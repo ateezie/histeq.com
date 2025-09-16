@@ -1,0 +1,29 @@
+{
+  "name": "historic-equity-scss",
+  "version": "1.0.0",
+  "description": "SCSS styleguide for Historic Equity Inc. WordPress theme",
+  "main": "main.scss",
+  "scripts": {
+    "build": "sass main.scss ../css/style.css --style=compressed --source-map",
+    "dev": "sass --watch main.scss:../css/style.css --source-map",
+    "build-expanded": "sass main.scss ../css/style.css --style=expanded --source-map"
+  },
+  "devDependencies": {
+    "sass": "^1.69.0"
+  },
+  "keywords": [
+    "scss",
+    "css",
+    "wordpress",
+    "theme",
+    "historic-equity",
+    "design-system"
+  ],
+  "author": "Historic Equity Inc.",
+  "license": "MIT",
+  "browserslist": [
+    "last 2 versions",
+    "> 1%",
+    "not dead"
+  ]
+}

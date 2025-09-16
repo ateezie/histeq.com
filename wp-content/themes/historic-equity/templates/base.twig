@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html {{ site.language_attributes }} class="scroll-smooth">
+<head>
+    <meta charset="{{ site.charset }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Historic Equity Inc. - State Historic Tax Credit investment specialists. Maximizing benefits for historic rehabilitation projects across 17+ states.">
+    <title>{{ wp_title }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="{{ site.theme.link }}/static/css/style.css?v={{ "now"|date('U') }}">
+    {{ wp_head }}
+</head>
+<body class="{{ body_class }} bg-neutral-50 text-navy-900 font-sans antialiased">
+
+    <!-- Header Component -->
+    {% include 'components/header.twig' %}
+
+    <!-- Main Content Area -->
+    <main id="main-content" class="site-content">
+        {% block content %}
+            <!-- Content goes here -->
+        {% endblock %}
+    </main>
+
+    <!-- Footer Component -->
+    {% include 'components/footer.twig' %}
+
+    {{ wp_footer }}
+</body>
+</html>

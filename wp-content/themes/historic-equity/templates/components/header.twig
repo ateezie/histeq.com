@@ -1,0 +1,169 @@
+{#
+  Historic Equity Header Component
+  Professional navigation with logo and responsive mobile menu
+#}
+
+<header class="site-header bg-white shadow-sm sticky top-0 z-50">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="flex items-center justify-between py-3">
+            <!-- Logo Section -->
+            <div class="site-branding">
+                <a href="{{ site.url }}" class="inline-flex items-center group" title="Historic Equity Inc. - Home">
+                    <div class="flex-shrink-0">
+                        {# Historic Equity Logo - Actual logo image #}
+                        <img src="{{ site.theme.path }}/static/images/logo__black.png"
+                             alt="Historic Equity Inc. Logo"
+                             class="h-8 lg:h-10 w-auto transition-all duration-200 group-hover:opacity-80">
+                    </div>
+                </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="main-navigation hidden lg:block" role="navigation" aria-label="Primary Navigation">
+                <ul class="flex items-center space-x-6 lg:space-x-8 xl:space-x-10">
+                    <li class="menu-item">
+                        <a href="{{ site.url }}"
+                           class="menu-link text-base font-medium text-navy-900 hover:text-primary-600 transition-colors duration-200 relative group">
+                            Home
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-600 group-hover:w-full transition-all duration-300"></span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="/meet-our-team"
+                           class="menu-link text-base font-medium text-navy-900 hover:text-primary-600 transition-colors duration-200 relative group">
+                            Meet Our Team
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-600 group-hover:w-full transition-all duration-300"></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- CTA Button (Desktop) -->
+            <div class="hidden lg:block">
+                <a href="/contact" class="inline-flex items-center justify-center px-6 py-2.5 bg-primary-600 text-white text-sm font-medium rounded-lg hover:bg-primary-700 transition-colors duration-200">
+                    Contact
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-toggle"
+                    class="lg:hidden flex flex-col items-center justify-center w-8 h-8 space-y-1 group"
+                    aria-label="Toggle mobile menu">
+                <span class="w-6 h-0.5 bg-navy-900 group-hover:bg-primary-600 transition-colors duration-200"></span>
+                <span class="w-6 h-0.5 bg-navy-900 group-hover:bg-primary-600 transition-colors duration-200"></span>
+                <span class="w-6 h-0.5 bg-navy-900 group-hover:bg-primary-600 transition-colors duration-200"></span>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="lg:hidden hidden border-t border-neutral-200" role="navigation" aria-label="Mobile Navigation">
+            <nav class="py-4">
+                <ul class="space-y-2">
+                    <li class="menu-item">
+                        <a href="{{ site.url }}"
+                           class="block py-3 px-2 text-base font-medium text-navy-900 hover:text-primary-600 hover:bg-neutral-50 rounded-md transition-all duration-200">
+                            Home
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="/meet-our-team"
+                           class="block py-3 px-2 text-base font-medium text-navy-900 hover:text-primary-600 hover:bg-neutral-50 rounded-md transition-all duration-200">
+                            Meet Our Team
+                        </a>
+                    </li>
+                    <li class="pt-4 mt-4 border-t border-neutral-200">
+                        <a href="/contact" class="inline-flex items-center justify-center w-full px-6 py-3 bg-primary-600 text-white text-sm font-medium rounded-lg hover:bg-primary-700 transition-colors duration-200">
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+{# Mobile Menu Toggle Script #}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileMenuToggle && mobileMenu) {
+        let isMenuOpen = false;
+
+        // Toggle menu function
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('hidden');
+                mobileMenuToggle.setAttribute('aria-expanded', 'true');
+                mobileMenuToggle.setAttribute('aria-label', 'Close mobile menu');
+
+                // Animate hamburger to X
+                const spans = mobileMenuToggle.querySelectorAll('span');
+                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+
+                // Add slide-down animation
+                mobileMenu.style.maxHeight = '0';
+                requestAnimationFrame(() => {
+                    mobileMenu.style.transition = 'max-height 0.3s ease-in-out';
+                    mobileMenu.style.maxHeight = '500px';
+                });
+            } else {
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                mobileMenuToggle.setAttribute('aria-label', 'Open mobile menu');
+
+                // Animate X back to hamburger
+                const spans = mobileMenuToggle.querySelectorAll('span');
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+
+                // Add slide-up animation
+                mobileMenu.style.maxHeight = '0';
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.style.maxHeight = '';
+                    mobileMenu.style.transition = '';
+                }, 300);
+            }
+        }
+
+        // Click event
+        mobileMenuToggle.addEventListener('click', toggleMenu);
+
+        // Keyboard support
+        mobileMenuToggle.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleMenu();
+            }
+        });
+
+        // Close menu when clicking on menu links
+        const menuLinks = mobileMenu.querySelectorAll('a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (isMenuOpen) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        // Close menu on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && isMenuOpen) {
+                toggleMenu();
+            }
+        });
+
+        // Initialize ARIA attributes
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        mobileMenuToggle.setAttribute('aria-label', 'Open mobile menu');
+        mobileMenuToggle.setAttribute('aria-controls', 'mobile-menu');
+    }
+});
+</script>

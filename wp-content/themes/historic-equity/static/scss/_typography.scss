@@ -1,0 +1,537 @@
+// =============================================================================
+// TYPOGRAPHY - Historic Equity Inc.
+// =============================================================================
+
+// Import variables
+@import 'variables';
+
+// -----------------------------------------------------------------------------
+// FONT LOADING (Styleguide Specifications)
+// -----------------------------------------------------------------------------
+// Import Montserrat from Google Fonts (as specified in styleguide)
+// Styleguide shows Montserrat for both headings and body text
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap');
+
+// -----------------------------------------------------------------------------
+// BASE TYPOGRAPHY RESET
+// -----------------------------------------------------------------------------
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  font-family: $font-family-base;
+  font-size: 16px; // Base font size
+  line-height: $line-height-relaxed;
+  color: $charade-base;
+
+  @include mobile-only {
+    font-size: 14px; // Slightly smaller base on mobile
+  }
+}
+
+body {
+  font-family: $font-family-base;
+  font-weight: $font-weight-normal;
+  font-size: $font-size-base;
+  line-height: $line-height-relaxed;
+  color: $charade-base;
+  background-color: $off-white;
+}
+
+// -----------------------------------------------------------------------------
+// TYPOGRAPHY MIXINS
+// -----------------------------------------------------------------------------
+
+// Responsive heading mixin
+@mixin responsive-heading($desktop-size, $mobile-size, $weight: $font-weight-bold, $line-height: $line-height-tight) {
+  font-family: $font-family-primary;
+  font-weight: $weight;
+  line-height: $line-height;
+  color: $charade-base;
+  margin-bottom: map-get($spacing, 6);
+
+  font-size: $mobile-size;
+
+  @include tablet-up {
+    font-size: $desktop-size;
+  }
+}
+
+// Text style mixins
+@mixin text-extra-bold {
+  font-weight: $font-weight-extrabold;
+}
+
+@mixin text-bold {
+  font-weight: $font-weight-bold;
+}
+
+@mixin text-semi-bold {
+  font-weight: $font-weight-semibold;
+}
+
+@mixin text-medium {
+  font-weight: $font-weight-medium;
+}
+
+@mixin text-normal {
+  font-weight: $font-weight-normal;
+}
+
+@mixin text-light {
+  font-weight: $font-weight-light;
+}
+
+@mixin text-italic {
+  font-style: italic;
+}
+
+// Typography utility mixin
+@mixin text-style($size: $font-size-base, $weight: $font-weight-normal, $line-height: $line-height-relaxed, $color: $charade-base) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+  color: $color;
+}
+
+// Subheading mixin (using Sportscenter font)
+@mixin subheading-style($size: $font-size-lg, $weight: $font-weight-semibold) {
+  font-family: $font-family-secondary;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height-normal;
+  color: $primary;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-wide;
+}
+
+// Quote mixin
+@mixin quote-style($size: $font-size-lg) {
+  font-family: $font-family-primary;
+  font-style: italic;
+  font-size: $size;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-loose;
+  color: $ronchi-dark;
+}
+
+// Caption mixin
+@mixin caption-style($size: $font-size-sm) {
+  font-family: $font-family-primary;
+  font-weight: $font-weight-light;
+  font-size: $size;
+  line-height: $line-height-normal;
+  color: $gray-600;
+}
+
+// -----------------------------------------------------------------------------
+// HEADING STYLES
+// -----------------------------------------------------------------------------
+h1, .h1 {
+  @include responsive-heading($font-size-h1-desktop, $font-size-h1-mobile, $font-weight-bold, $line-height-tight);
+  margin-bottom: map-get($spacing, 8);
+
+  &.display {
+    @include text-extra-bold;
+    letter-spacing: $letter-spacing-tight;
+  }
+}
+
+h2, .h2 {
+  @include responsive-heading($font-size-h2-desktop, $font-size-h2-mobile, $font-weight-bold, $line-height-tight);
+}
+
+h3, .h3 {
+  @include responsive-heading($font-size-h3-desktop, $font-size-h3-mobile, $font-weight-semibold, $line-height-tight);
+}
+
+h4, .h4 {
+  @include responsive-heading($font-size-h4-desktop, $font-size-h4-mobile, $font-weight-semibold, $line-height-tight);
+}
+
+h5, .h5 {
+  @include responsive-heading($font-size-h5-desktop, $font-size-h5-mobile, $font-weight-semibold, $line-height-normal);
+}
+
+h6, .h6 {
+  @include responsive-heading($font-size-h6-desktop, $font-size-h6-mobile, $font-weight-semibold, $line-height-normal);
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-wide;
+}
+
+// -----------------------------------------------------------------------------
+// BODY TEXT STYLES
+// -----------------------------------------------------------------------------
+p, .text-base {
+  font-family: $font-family-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-relaxed;
+  color: $charade-base;
+  margin-bottom: map-get($spacing, 4);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.lead {
+  @include text-style($font-size-xl, $font-weight-normal, $line-height-relaxed, $ronchi-dark);
+  margin-bottom: map-get($spacing, 6);
+}
+
+// -----------------------------------------------------------------------------
+// TEXT SIZE UTILITIES
+// -----------------------------------------------------------------------------
+.text-xs {
+  @include text-style($font-size-xs, $font-weight-normal, $line-height-normal);
+}
+
+.text-sm {
+  @include text-style($font-size-sm, $font-weight-normal, $line-height-normal);
+}
+
+.text-base {
+  @include text-style($font-size-base, $font-weight-normal, $line-height-relaxed);
+}
+
+.text-lg {
+  @include text-style($font-size-lg, $font-weight-normal, $line-height-relaxed);
+}
+
+.text-xl {
+  @include text-style($font-size-xl, $font-weight-normal, $line-height-relaxed);
+}
+
+// -----------------------------------------------------------------------------
+// FONT WEIGHT UTILITIES
+// -----------------------------------------------------------------------------
+.font-light {
+  @include text-light;
+}
+
+.font-normal {
+  @include text-normal;
+}
+
+.font-medium {
+  @include text-medium;
+}
+
+.font-semibold {
+  @include text-semi-bold;
+}
+
+.font-bold {
+  @include text-bold;
+}
+
+.font-extrabold {
+  @include text-extra-bold;
+}
+
+.italic {
+  @include text-italic;
+}
+
+// -----------------------------------------------------------------------------
+// SPECIALIZED TEXT STYLES
+// -----------------------------------------------------------------------------
+
+// Subheadings (using Sportscenter font)
+.subheading {
+  @include subheading-style;
+
+  &--sm {
+    @include subheading-style($font-size-base, $font-weight-medium);
+  }
+
+  &--lg {
+    @include subheading-style($font-size-xl, $font-weight-bold);
+  }
+}
+
+// Quotes
+.quote {
+  @include quote-style;
+
+  &--sm {
+    @include quote-style($font-size-base);
+  }
+
+  &--lg {
+    @include quote-style($font-size-xl);
+  }
+}
+
+blockquote {
+  @include quote-style($font-size-lg);
+  padding: map-get($spacing, 6) map-get($spacing, 8);
+  margin: map-get($spacing, 8) 0;
+  border-left: 4px solid $primary;
+  background-color: rgba($arrowtown-base, 0.05);
+  border-radius: $border-radius-lg;
+
+  &::before {
+    content: '"';
+    font-size: 2em;
+    color: $primary;
+    opacity: 0.5;
+  }
+
+  &::after {
+    content: '"';
+    font-size: 2em;
+    color: $primary;
+    opacity: 0.5;
+  }
+
+  cite {
+    @include text-style($font-size-sm, $font-weight-medium, $line-height-normal, $ronchi-dark);
+    display: block;
+    margin-top: map-get($spacing, 4);
+    font-style: normal;
+
+    &::before {
+      content: '— ';
+    }
+  }
+}
+
+// Captions
+.caption {
+  @include caption-style;
+
+  &--xs {
+    @include caption-style($font-size-xs);
+  }
+
+  &--sm {
+    @include caption-style($font-size-sm);
+  }
+}
+
+// -----------------------------------------------------------------------------
+// LINK STYLES
+// -----------------------------------------------------------------------------
+a {
+  color: $primary;
+  text-decoration: none;
+  transition: $transition-colors;
+
+  &:hover,
+  &:focus {
+    color: $primary-dark;
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: $primary-dark;
+  }
+}
+
+// Link variations
+.link {
+  &--secondary {
+    color: $polo-blue-base;
+
+    &:hover,
+    &:focus {
+      color: $polo-blue-dark;
+    }
+  }
+
+  &--neutral {
+    color: $ronchi-base;
+
+    &:hover,
+    &:focus {
+      color: $ronchi-dark;
+    }
+  }
+
+  &--underline {
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// LIST STYLES
+// -----------------------------------------------------------------------------
+ul, ol {
+  margin-bottom: map-get($spacing, 4);
+  padding-left: map-get($spacing, 6);
+}
+
+ul {
+  list-style-type: disc;
+
+  ul {
+    list-style-type: circle;
+
+    ul {
+      list-style-type: square;
+    }
+  }
+}
+
+ol {
+  list-style-type: decimal;
+
+  ol {
+    list-style-type: lower-alpha;
+
+    ol {
+      list-style-type: lower-roman;
+    }
+  }
+}
+
+li {
+  margin-bottom: map-get($spacing, 2);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Custom list styles
+.list {
+  &--unstyled {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  &--inline {
+    list-style: none;
+    padding-left: 0;
+
+    li {
+      display: inline-block;
+      margin-right: map-get($spacing, 4);
+      margin-bottom: 0;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &--spaced {
+    li {
+      margin-bottom: map-get($spacing, 4);
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// TEXT ALIGNMENT UTILITIES
+// -----------------------------------------------------------------------------
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+// -----------------------------------------------------------------------------
+// LINE HEIGHT UTILITIES
+// -----------------------------------------------------------------------------
+.leading-tight {
+  line-height: $line-height-tight;
+}
+
+.leading-normal {
+  line-height: $line-height-normal;
+}
+
+.leading-relaxed {
+  line-height: $line-height-relaxed;
+}
+
+.leading-loose {
+  line-height: $line-height-loose;
+}
+
+// -----------------------------------------------------------------------------
+// LETTER SPACING UTILITIES
+// -----------------------------------------------------------------------------
+.tracking-tight {
+  letter-spacing: $letter-spacing-tight;
+}
+
+.tracking-normal {
+  letter-spacing: $letter-spacing-normal;
+}
+
+.tracking-wide {
+  letter-spacing: $letter-spacing-wide;
+}
+
+// -----------------------------------------------------------------------------
+// TEXT TRANSFORM UTILITIES
+// -----------------------------------------------------------------------------
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.normal-case {
+  text-transform: none;
+}
+
+// -----------------------------------------------------------------------------
+// RESPONSIVE TYPOGRAPHY UTILITIES
+// -----------------------------------------------------------------------------
+@include mobile-only {
+  .text-sm\@mobile {
+    font-size: $font-size-sm;
+  }
+
+  .text-base\@mobile {
+    font-size: $font-size-base;
+  }
+
+  .text-lg\@mobile {
+    font-size: $font-size-lg;
+  }
+}
+
+@include tablet-up {
+  .text-lg\@tablet {
+    font-size: $font-size-lg;
+  }
+
+  .text-xl\@tablet {
+    font-size: $font-size-xl;
+  }
+}
+
+@include desktop-up {
+  .text-xl\@desktop {
+    font-size: $font-size-xl;
+  }
+}
