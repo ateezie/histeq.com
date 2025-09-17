@@ -34,13 +34,60 @@ function historic_equity_theme_setup() {
         'caption',
     ));
 
+    // Add image sizes for responsive design
+    add_image_size('project-thumbnail', 400, 300, true);
+    add_image_size('project-featured', 800, 600, true);
+    add_image_size('hero-image', 1920, 1080, true);
+
+    // Enable responsive images
+    add_theme_support('responsive-embeds');
+
     // Register navigation menus
     register_nav_menus(array(
         'primary' => __('Primary Menu', 'historic-equity'),
         'footer' => __('Footer Menu', 'historic-equity'),
+        'mobile' => __('Mobile Menu', 'historic-equity'),
+    ));
+
+    // Add title tag support
+    add_theme_support('title-tag');
+
+    // Add custom logo support
+    add_theme_support('custom-logo', array(
+        'height' => 100,
+        'width' => 300,
+        'flex-height' => true,
+        'flex-width' => true,
     ));
 }
 add_action('after_setup_theme', 'historic_equity_theme_setup');
+
+// Enqueue scripts and styles
+function historic_equity_scripts() {
+    // TailwindCSS and compiled assets
+    wp_enqueue_style('historic-equity-style', get_template_directory_uri() . '/static/css/style.css', array(), '1.0.0');
+
+    // Main JavaScript
+    wp_enqueue_script('historic-equity-script', get_template_directory_uri() . '/static/js/main.js', array('jquery'), '1.0.0', true);
+
+    // Contact form script
+    wp_enqueue_script('historic-equity-forms', get_template_directory_uri() . '/static/js/contact-forms.js', array('jquery'), '1.0.0', true);
+
+    // Project filtering
+    wp_enqueue_script('historic-equity-filters', get_template_directory_uri() . '/static/js/project-filtering.js', array('jquery'), '1.0.0', true);
+
+    // Localize script for AJAX
+    wp_localize_script('historic-equity-forms', 'historic_equity_ajax', array(
+        'ajax_url' => admin_url('admin-ajax.php'),
+        'nonce' => wp_create_nonce('historic_equity_nonce'),
+        'rest_url' => esc_url_raw(rest_url()),
+        'rest_nonce' => wp_create_nonce('wp_rest'),
+    ));
+
+    // Google Fonts - Montserrat and Sportscenter (if available)
+    wp_enqueue_style('historic-equity-fonts', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap', array(), null);
+}
+add_action('wp_enqueue_scripts', 'historic_equity_scripts');
 
 // Add to context - only if Timber is available
 if (class_exists('Timber\Timber')) {
@@ -208,3 +255,6 @@ function historic_equity_fallback_menu() {
 
     return $fallback_items;
 }
+
+// Load theme setup and custom post types
+require_once get_template_directory() . '/lib/theme-setup.php';
