@@ -3,41 +3,163 @@
 {% block content %}
     <main class="main-content">
 
-        {# Hero Section #}
-        <section class="hero-section relative overflow-hidden">
-            <!-- Background Image with Overlay -->
+        {# Hero Section - Modern & Professional #}
+        <section class="hero-section relative overflow-hidden bg-gradient-to-br from-navy-900 via-navy-800 to-primary-900" data-testid="hero-section">
+            <!-- Background Pattern -->
             <div class="absolute inset-0 z-0">
-                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1920&h=1080&fit=crop&crop=center"
-                     alt="Professional team discussing historic tax credit projects"
-                     class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-navy-900 bg-opacity-50"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-navy-900/90 to-primary-900/80"></div>
+                <!-- Subtle geometric pattern for modern feel -->
+                <div class="absolute inset-0 opacity-10">
+                    <svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                        <g fill="none" fill-rule="evenodd">
+                            <g fill="#BD572B" fill-opacity="0.1">
+                                <path d="M0 0h60v60H0z"/>
+                                <circle cx="30" cy="30" r="15"/>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
             </div>
 
             <!-- Hero Content -->
             <div class="relative z-10">
                 <div class="container mx-auto px-4 lg:px-8">
                     <div class="min-h-screen flex items-center py-20 lg:py-32">
-                        <div class="max-w-4xl">
-                            <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight mb-6">
-                                Preserving History,<br>
-                                Empowering Communities<br>
-                                Through Strategic<br>
-                                Investment
-                            </h1>
+                        <div class="grid lg:grid-cols-2 gap-12 items-center w-full">
+                            <!-- Main Hero Content -->
+                            <div class="max-w-2xl">
+                                <!-- Trust Indicators -->
+                                <div class="flex items-center space-x-6 mb-8" data-testid="trust-indicators">
+                                    <div class="text-center">
+                                        <div class="text-2xl font-bold text-secondary-500">{{ company_info.years_experience }}+</div>
+                                        <div class="text-sm text-neutral-300">Years Experience</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="text-2xl font-bold text-secondary-500">${{ company_info.total_investment }}</div>
+                                        <div class="text-sm text-neutral-300">QRE Invested</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="text-2xl font-bold text-secondary-500">{{ company_info.states_served }}+</div>
+                                        <div class="text-sm text-neutral-300">States Served</div>
+                                    </div>
+                                </div>
 
-                            <p class="text-xl lg:text-2xl text-neutral-100 leading-relaxed mb-8 max-w-2xl">
-                                Maximizing State Historic Tax Credit benefits for property owners and developers across 17+ states.
-                            </p>
+                                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 font-montserrat">
+                                    Maximize Your<br>
+                                    <span class="text-secondary-500">Historic Tax Credits</span><br>
+                                    With Expert Investment
+                                </h1>
 
-                            <div class="flex flex-col sm:flex-row gap-4">
-                                <a href="/contact"
-                                   class="inline-flex items-center justify-center px-8 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors duration-200">
-                                    Contact
-                                </a>
-                                <a href="/about-our-team"
-                                   class="inline-flex items-center justify-center px-8 py-3 border-2 border-white text-white font-medium rounded-lg hover:bg-white hover:text-navy-900 transition-colors duration-200">
-                                    Learn more
-                                </a>
+                                <p class="text-xl lg:text-2xl text-neutral-100 leading-relaxed mb-8">
+                                    {{ company_info.name }} specializes in State Historic Tax Credit investments,
+                                    helping property owners preserve historic buildings while maximizing financial returns.
+                                </p>
+
+                                <!-- Portfolio Metrics -->
+                                <div class="mb-8" data-testid="portfolio-metrics">
+                                    <div class="grid grid-cols-2 gap-6 text-center">
+                                        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                                            <div class="text-2xl font-bold text-white">{{ company_info.total_projects }}</div>
+                                            <div class="text-sm text-neutral-300">Successful Projects</div>
+                                        </div>
+                                        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                                            <div class="text-2xl font-bold text-white">{{ company_info.total_investment }}</div>
+                                            <div class="text-sm text-neutral-300">QRE Portfolio</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Primary CTA -->
+                                <div class="flex flex-col sm:flex-row gap-4">
+                                    <a href="#contact-form"
+                                       class="inline-flex items-center justify-center px-8 py-4 bg-secondary-500 text-navy-900 font-semibold rounded-lg hover:bg-secondary-400 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                                       data-testid="hero-cta">
+                                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-3.582 8-8 8a8.955 8.955 0 01-2.212-.273l-3.181.638a2 2 0 01-2.238-2.238l.638-3.181A8.955 8.955 0 013 12a8 8 0 018-8 8 8 0 018 8z"/>
+                                        </svg>
+                                        Start Your Project Consultation
+                                    </a>
+                                    <a href="#services"
+                                       class="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-navy-900 transition-all duration-300">
+                                        Learn About SHTC Process
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Hero Contact Form -->
+                            <div class="bg-white/95 backdrop-blur-sm rounded-xl p-8 shadow-2xl" data-testid="contact-form">
+                                <h3 class="text-2xl font-bold text-navy-900 mb-6">Get Your Project Evaluated</h3>
+                                <form class="space-y-4" action="/wp-json/historic-equity/v1/contact" method="POST">
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <div>
+                                            <label for="first_name" class="block text-sm font-medium text-navy-900 mb-2">First Name *</label>
+                                            <input type="text" id="first_name" name="first_name" required
+                                                   class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                                                   autocomplete="given-name">
+                                        </div>
+                                        <div>
+                                            <label for="last_name" class="block text-sm font-medium text-navy-900 mb-2">Last Name *</label>
+                                            <input type="text" id="last_name" name="last_name" required
+                                                   class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                                                   autocomplete="family-name">
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <label for="email" class="block text-sm font-medium text-navy-900 mb-2">Email Address *</label>
+                                        <input type="email" id="email" name="email" required
+                                               class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                                               autocomplete="email">
+                                    </div>
+
+                                    <div>
+                                        <label for="phone" class="block text-sm font-medium text-navy-900 mb-2">Phone Number</label>
+                                        <input type="tel" id="phone" name="phone"
+                                               class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                                               autocomplete="tel">
+                                    </div>
+
+                                    <div>
+                                        <label for="project_location" class="block text-sm font-medium text-navy-900 mb-2">Project Location *</label>
+                                        <input type="text" id="project_location" name="project_location" required
+                                               placeholder="City, State"
+                                               class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                                    </div>
+
+                                    <div>
+                                        <label for="property_type" class="block text-sm font-medium text-navy-900 mb-2">Property Type *</label>
+                                        <select id="property_type" name="property_type" required
+                                                class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                                            <option value="">Select Property Type</option>
+                                            {% for property_type in contact_form_config.property_types %}
+                                                <option value="{{ property_type }}">{{ property_type }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+
+                                    <div>
+                                        <label for="message" class="block text-sm font-medium text-navy-900 mb-2">Project Description *</label>
+                                        <textarea id="message" name="message" rows="3" required
+                                                  placeholder="Brief description of your historic rehabilitation project..."
+                                                  class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"></textarea>
+                                    </div>
+
+                                    <div class="flex items-start">
+                                        <input type="checkbox" id="consent_marketing" name="consent_marketing"
+                                               class="mt-1 h-4 w-4 text-primary-600 focus:ring-primary-500 border-neutral-300 rounded">
+                                        <label for="consent_marketing" class="ml-2 text-sm text-neutral-600">
+                                            I agree to receive marketing communications about SHTC opportunities and Historic Equity services.
+                                        </label>
+                                    </div>
+
+                                    <button type="submit"
+                                            class="w-full bg-primary-600 text-white font-semibold py-4 px-6 rounded-lg hover:bg-primary-700 transition-colors duration-200 flex items-center justify-center">
+                                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                                        </svg>
+                                        Get Project Evaluation
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -54,33 +176,357 @@
             </div>
         </section>
 
-        {# Mission Section #}
-        <section id="mission" class="py-16 lg:py-24 bg-neutral-50">
+        {# SHTC Services Overview Section #}
+        <section id="services" class="py-16 lg:py-24 bg-off-white" data-testid="services-overview">
             <div class="container mx-auto px-4 lg:px-8">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl lg:text-4xl font-bold text-navy-900 mb-6">
-                        Our historic mission
+                    <span class="inline-block px-4 py-2 bg-secondary-500 text-navy-900 font-semibold rounded-full text-sm mb-4">
+                        State Historic Tax Credits
+                    </span>
+                    <h2 class="text-3xl lg:text-5xl font-bold text-navy-900 mb-6 max-w-4xl mx-auto">
+                        Maximize Your Investment with Expert SHTC Partnership
                     </h2>
+                    <p class="text-xl text-navy-700 leading-relaxed max-w-3xl mx-auto">
+                        Historic Equity specializes in State Historic Tax Credit investments, helping property owners
+                        unlock the full financial potential of their historic rehabilitation projects.
+                    </p>
+                    <div class="w-24 h-1 bg-primary-600 mx-auto mt-8"></div>
+                </div>
+
+                <!-- SHTC Benefits -->
+                <div class="mb-16" data-testid="shtc-benefits">
+                    <div class="grid lg:grid-cols-3 gap-8">
+                        <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mb-6">
+                                <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-navy-900 mb-4">Tax Credit Monetization</h3>
+                            <p class="text-navy-700 leading-relaxed">
+                                Convert your 20% federal and state historic tax credits into immediate cash flow to fund your rehabilitation project.
+                            </p>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <div class="w-16 h-16 bg-secondary-100 rounded-full flex items-center justify-center mb-6">
+                                <svg class="w-8 h-8 text-secondary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-4m-5 0H9m0 0H7m2 0v-6a2 2 0 012-2h2a2 2 0 012 2v6m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V9a2 2 0 00-2-2H9a2 2 0 00-2 2v8"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-navy-900 mb-4">Historic Preservation</h3>
+                            <p class="text-navy-700 leading-relaxed">
+                                Preserve architectural heritage while meeting modern functionality requirements with our experienced rehabilitation guidance.
+                            </p>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <div class="w-16 h-16 bg-light-blue-100 rounded-full flex items-center justify-center mb-6">
+                                <svg class="w-8 h-8 text-light-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-navy-900 mb-4">Market Expertise</h3>
+                            <p class="text-navy-700 leading-relaxed">
+                                Navigate complex SHTC regulations across {{ company_info.states_served }}+ states with our deep market knowledge and proven track record.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Investment Process -->
+                <div class="mb-16" data-testid="investment-process">
+                    <div class="text-center mb-12">
+                        <h3 class="text-3xl font-bold text-navy-900 mb-4">Our SHTC Investment Process</h3>
+                        <p class="text-lg text-navy-700 max-w-2xl mx-auto">
+                            Streamlined approach to maximize your historic tax credit benefits
+                        </p>
+                    </div>
+
+                    <div class="grid lg:grid-cols-4 gap-8">
+                        <div class="text-center relative">
+                            <div class="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
+                            <h4 class="text-xl font-semibold text-navy-900 mb-2">Project Evaluation</h4>
+                            <p class="text-navy-700">Comprehensive assessment of SHTC eligibility and financial viability</p>
+                            <!-- Connection line -->
+                            <div class="hidden lg:block absolute top-8 left-full w-8 h-0.5 bg-neutral-300 transform translate-x-0"></div>
+                        </div>
+
+                        <div class="text-center relative">
+                            <div class="w-16 h-16 bg-secondary-500 text-navy-900 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
+                            <h4 class="text-xl font-semibold text-navy-900 mb-2">Investment Structuring</h4>
+                            <p class="text-navy-700">Optimal deal structure to maximize returns and minimize risk</p>
+                            <div class="hidden lg:block absolute top-8 left-full w-8 h-0.5 bg-neutral-300 transform translate-x-0"></div>
+                        </div>
+
+                        <div class="text-center relative">
+                            <div class="w-16 h-16 bg-light-blue-400 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
+                            <h4 class="text-xl font-semibold text-navy-900 mb-2">Capital Deployment</h4>
+                            <p class="text-navy-700">Strategic funding to support your rehabilitation timeline</p>
+                            <div class="hidden lg:block absolute top-8 left-full w-8 h-0.5 bg-neutral-300 transform translate-x-0"></div>
+                        </div>
+
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-navy-900 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">4</div>
+                            <h4 class="text-xl font-semibold text-navy-900 mb-2">Project Completion</h4>
+                            <p class="text-navy-700">Ongoing support through certification and credit realization</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA for Services -->
+                <div class="text-center">
+                    <a href="#contact-form"
+                       class="inline-flex items-center px-8 py-4 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors duration-200"
+                       data-testid="service-cta">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-3.582 8-8 8a8.955 8.955 0 01-2.212-.273l-3.181.638a2 2 0 01-2.238-2.238l.638-3.181A8.955 8.955 0 013 12a8 8 0 018-8 8 8 0 018 8z"/>
+                        </svg>
+                        Discuss Your Project Today
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        {# Featured Projects Showcase Section #}
+        <section class="py-16 lg:py-24 bg-gray-50" data-testid="projects-showcase">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-navy-900 mb-6 font-montserrat">
+                        Featured Historic Preservation Projects
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+                        Discover our portfolio of successful SHTC investments across 17+ states,
+                        showcasing how we maximize benefits for property owners while preserving America's architectural heritage.
+                    </p>
                     <div class="w-24 h-1 bg-primary-600 mx-auto"></div>
                 </div>
 
-                <div class="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-                    <div>
-                        <p class="text-lg text-navy-700 leading-relaxed mb-6">
-                            For over two decades, Historic Equity Inc. has been the trusted partner for property owners and developers seeking to maximize the benefits of State Historic Tax Credit programs.
-                        </p>
-                        <p class="text-lg text-navy-700 leading-relaxed mb-6">
-                            We specialize in strategic investment solutions that preserve our nation's historic architecture while empowering communities through economic development and job creation.
-                        </p>
-                        <p class="text-lg text-navy-700 leading-relaxed">
-                            Our proven track record spans 17+ states with over $1 billion in qualified rehabilitation expenditures, making us the premier choice for historic tax credit investment.
-                        </p>
+                {# Project Grid #}
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                    {% if featured_projects %}
+                        {% for project in featured_projects|slice(0, 6) %}
+                            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300"
+                                 data-testid="project-card">
+                                {% if project.featured_image %}
+                                    <div class="aspect-w-16 aspect-h-12 bg-gray-200">
+                                        <img src="{{ project.featured_image.src|resize(400, 300) }}"
+                                             alt="{{ project.featured_image.alt ?: project.title }}"
+                                             class="w-full h-48 object-cover"/>
+                                    </div>
+                                {% endif %}
+                                <div class="p-6">
+                                    <div class="flex items-center justify-between mb-3">
+                                        <span class="inline-block px-3 py-1 bg-primary-100 text-primary-800 text-sm font-medium rounded-full">
+                                            {{ project.meta('project_state') ?: 'Missouri' }}
+                                        </span>
+                                        <span class="text-secondary-600 font-semibold text-sm">
+                                            {{ project.meta('project_value') ?: '$2.5M QRE' }}
+                                        </span>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-navy-900 mb-2 font-montserrat">
+                                        {{ project.title }}
+                                    </h3>
+                                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                        {{ project.meta('project_description') ?: project.preview(120) }}
+                                    </p>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-sm text-gray-500">
+                                            Built {{ project.meta('construction_year') ?: '1920s' }}
+                                        </span>
+                                        <a href="{{ project.link }}"
+                                           class="text-primary-600 hover:text-primary-700 font-medium text-sm">
+                                            View Project →
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        {# Fallback project cards for demonstration #}
+                        {% for i in 1..3 %}
+                            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300"
+                                 data-testid="project-card-demo">
+                                <div class="aspect-w-16 aspect-h-12 bg-gradient-to-br from-primary-400 to-secondary-500 h-48 flex items-center justify-center">
+                                    <svg class="w-16 h-16 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                              d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-4m-5 0H9m0 0H5m14 0v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5m0 0H5"/>
+                                    </svg>
+                                </div>
+                                <div class="p-6">
+                                    <div class="flex items-center justify-between mb-3">
+                                        <span class="inline-block px-3 py-1 bg-primary-100 text-primary-800 text-sm font-medium rounded-full">
+                                            {% if i == 1 %}Missouri{% elseif i == 2 %}Iowa{% else %}Kansas{% endif %}
+                                        </span>
+                                        <span class="text-secondary-600 font-semibold text-sm">
+                                            {% if i == 1 %}$3.2M QRE{% elseif i == 2 %}$1.8M QRE{% else %}$4.1M QRE{% endif %}
+                                        </span>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-navy-900 mb-2 font-montserrat">
+                                        {% if i == 1 %}Historic Warehouse Lofts{% elseif i == 2 %}Downtown Office Building{% else %}Art Deco Theater{% endif %}
+                                    </h3>
+                                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                        {% if i == 1 %}Industrial warehouse converted to luxury residential lofts with maximized SHTC benefits and modern amenities.{%
+                                        elseif i == 2 %}Historic office building rehabilitation preserving original architecture while creating modern workspace.{%
+                                        else %}Restored 1930s theater bringing cultural heritage back to downtown district with full SHTC utilization.{% endif %}
+                                    </p>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-sm text-gray-500">
+                                            Built {% if i == 1 %}1920s{% elseif i == 2 %}1910s{% else %}1930s{% endif %}
+                                        </span>
+                                        <a href="/projects"
+                                           class="text-primary-600 hover:text-primary-700 font-medium text-sm">
+                                            View Project →
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+
+                {# Call to Action #}
+                <div class="text-center">
+                    <a href="/projects"
+                       class="inline-flex items-center px-8 py-4 bg-navy-900 text-white font-semibold rounded-lg hover:bg-navy-800 transition-colors duration-200"
+                       data-testid="projects-cta">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2v16z"/>
+                        </svg>
+                        View Full Project Portfolio
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        {# Company Credibility & Trust Section #}
+        <section class="py-16 lg:py-24 bg-navy-900" data-testid="company-credibility">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-white mb-6 font-montserrat">
+                        Trusted SHTC Investment Partner Since 2001
+                    </h2>
+                    <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                        With over two decades of expertise, Historic Equity has established itself as the premier
+                        State Historic Tax Credit investment firm, delivering exceptional results across America.
+                    </p>
+                </div>
+
+                {# Credibility Stats Grid #}
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                    <div class="text-center" data-testid="stat-years">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-primary-600 rounded-full mb-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <div class="text-4xl font-bold text-secondary-500 mb-2">{{ trust_indicators.years_experience }}+</div>
+                        <div class="text-white font-medium">Years Experience</div>
+                        <div class="text-gray-400 text-sm">Industry Leadership</div>
                     </div>
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800&h=600&fit=crop&crop=center"
-                             alt="Historic building under rehabilitation"
-                             class="w-full h-80 object-cover rounded-lg shadow-lg">
-                        <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-transparent to-transparent rounded-lg"></div>
+
+                    <div class="text-center" data-testid="stat-investment">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-primary-600 rounded-full mb-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/>
+                            </svg>
+                        </div>
+                        <div class="text-4xl font-bold text-secondary-500 mb-2">$1B+</div>
+                        <div class="text-white font-medium">QRE Portfolio</div>
+                        <div class="text-gray-400 text-sm">Total Investment</div>
+                    </div>
+
+                    <div class="text-center" data-testid="stat-states">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-primary-600 rounded-full mb-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                        </div>
+                        <div class="text-4xl font-bold text-secondary-500 mb-2">17+</div>
+                        <div class="text-white font-medium">States Served</div>
+                        <div class="text-gray-400 text-sm">National Coverage</div>
+                    </div>
+
+                    <div class="text-center" data-testid="stat-projects">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-primary-600 rounded-full mb-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-4m-5 0H9m0 0H5m14 0v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5m0 0H5"/>
+                            </svg>
+                        </div>
+                        <div class="text-4xl font-bold text-secondary-500 mb-2">200+</div>
+                        <div class="text-white font-medium">Projects Completed</div>
+                        <div class="text-gray-400 text-sm">Successful Outcomes</div>
+                    </div>
+                </div>
+
+                {# Client Testimonial or Key Benefits #}
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-6 font-montserrat">
+                            Why Property Owners Choose Historic Equity
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 w-6 h-6 bg-secondary-500 rounded-full flex items-center justify-center mt-1">
+                                    <svg class="w-4 h-4 text-navy-900" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="text-white font-semibold mb-1">Maximum Credit Value</div>
+                                    <div class="text-gray-300 text-sm">We secure the highest possible SHTC benefits for every project</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 w-6 h-6 bg-secondary-500 rounded-full flex items-center justify-center mt-1">
+                                    <svg class="w-4 h-4 text-navy-900" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="text-white font-semibold mb-1">Expert Guidance</div>
+                                    <div class="text-gray-300 text-sm">24+ years of SHTC expertise and state regulatory knowledge</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 w-6 h-6 bg-secondary-500 rounded-full flex items-center justify-center mt-1">
+                                    <svg class="w-4 h-4 text-navy-900" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="text-white font-semibold mb-1">Proven Results</div>
+                                    <div class="text-gray-300 text-sm">200+ successful projects with $1B+ in qualified expenditures</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-secondary-500 rounded-full flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-navy-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-3.582 8-8 8a8.955 8.955 0 01-2.212-.273l-3.181.638a2 2 0 01-2.238-2.238l.638-3.181A8.955 8.955 0 013 12a8 8 0 018-8 8 8 0 018 8z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="text-white font-bold text-lg">Ready to Start?</div>
+                                <div class="text-gray-300 text-sm">Get your project evaluation today</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 mb-6 leading-relaxed">
+                            Our SHTC experts are standing by to evaluate your historic property and
+                            design an investment strategy that maximizes your tax credit benefits.
+                        </p>
+                        <a href="#contact-form"
+                           class="inline-flex items-center px-6 py-3 bg-secondary-500 text-navy-900 font-semibold rounded-lg hover:bg-secondary-400 transition-colors duration-200 w-full justify-center"
+                           data-testid="credibility-cta">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                            Get Your Free Consultation
+                        </a>
                     </div>
                 </div>
             </div>
@@ -140,126 +586,53 @@
             </div>
         </section>
 
-        {# Statistics Section #}
-        <section class="py-16 lg:py-24 bg-navy-900">
-            <div class="container mx-auto px-4 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl lg:text-4xl font-bold text-white mb-6">
-                        Our successful preservation stories
-                    </h2>
-                    <div class="w-24 h-1 bg-secondary-500 mx-auto mb-6"></div>
-                    <p class="text-xl text-neutral-200 max-w-3xl mx-auto">
-                        Dedicated to preserving history while maximizing financial benefits for our partners across multiple states.
-                    </p>
+        {# Final Call-to-Action Section #}
+        <section class="py-16 lg:py-24 bg-gradient-to-br from-primary-600 via-primary-700 to-secondary-600" data-testid="final-cta">
+            <div class="container mx-auto px-4 lg:px-8 text-center">
+                <h2 class="text-3xl lg:text-4xl font-bold text-white mb-6 font-montserrat">
+                    Ready to Maximize Your Historic Tax Credits?
+                </h2>
+                <p class="text-xl text-white/90 max-w-3xl mx-auto mb-8">
+                    Our SHTC experts have helped property owners secure over $1 billion in qualified expenditures.
+                    Let us evaluate your project and design a strategy that maximizes your benefits.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#contact-form"
+                       class="inline-flex items-center px-8 py-4 bg-white text-primary-700 font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-200 shadow-lg"
+                       data-testid="final-contact-cta">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                        Get Your Free Consultation
+                    </a>
+                    <a href="/projects"
+                       class="inline-flex items-center px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-primary-700 transition-colors duration-200"
+                       data-testid="final-projects-cta">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2v16z"/>
+                        </svg>
+                        View Our Portfolio
+                    </a>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div class="mt-12 grid md:grid-cols-3 gap-8 max-w-3xl mx-auto">
                     <div class="text-center">
-                        <div class="text-4xl lg:text-5xl font-bold text-secondary-500 mb-2">17+</div>
-                        <div class="text-lg text-neutral-200 font-medium">States Served</div>
-                        <div class="text-sm text-neutral-300 mt-2">Comprehensive coverage across major markets</div>
+                        <div class="text-3xl font-bold text-white mb-2">24+</div>
+                        <div class="text-white/80 text-sm uppercase tracking-wide">Years Experience</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-4xl lg:text-5xl font-bold text-secondary-500 mb-2">200+</div>
-                        <div class="text-lg text-neutral-200 font-medium">Projects Completed</div>
-                        <div class="text-sm text-neutral-300 mt-2">Successfully preserved historic properties</div>
+                        <div class="text-3xl font-bold text-white mb-2">$1B+</div>
+                        <div class="text-white/80 text-sm uppercase tracking-wide">QRE Invested</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-4xl lg:text-5xl font-bold text-secondary-500 mb-2">$1B+</div>
-                        <div class="text-lg text-neutral-200 font-medium">QRE Invested</div>
-                        <div class="text-sm text-neutral-300 mt-2">Qualified rehabilitation expenditures</div>
-                    </div>
-                </div>
-
-                <div class="mt-16">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=600&fit=crop&crop=center"
-                         alt="Historic Equity team collaborating on projects"
-                         class="w-full max-w-4xl mx-auto h-80 object-cover rounded-lg shadow-lg">
-                </div>
-            </div>
-        </section>
-
-        {# Benefits Section #}
-        <section class="py-16 lg:py-24 bg-neutral-50">
-            <div class="container mx-auto px-4 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl lg:text-4xl font-bold text-navy-900 mb-6">
-                        Why partner with Historic Equity Inc
-                    </h2>
-                    <div class="w-24 h-1 bg-primary-600 mx-auto"></div>
-                </div>
-
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                    <div class="text-center p-6">
-                        <div class="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-semibold text-navy-900 mb-4">Community engagement</h3>
-                        <p class="text-navy-700 leading-relaxed">
-                            We foster meaningful community connections while preserving historical significance and cultural heritage.
-                        </p>
-                    </div>
-
-                    <div class="text-center p-6">
-                        <div class="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-semibold text-navy-900 mb-4">Educational investments</h3>
-                        <p class="text-navy-700 leading-relaxed">
-                            Supporting educational initiatives that promote historical awareness and preservation best practices.
-                        </p>
-                    </div>
-
-                    <div class="text-center p-6">
-                        <div class="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-semibold text-navy-900 mb-4">Sustainable projects</h3>
-                        <p class="text-navy-700 leading-relaxed">
-                            Implementing environmentally conscious rehabilitation practices for long-term sustainability and value.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        {# Call to Action Section #}
-        <section class="py-16 lg:py-24 bg-white">
-            <div class="container mx-auto px-4 lg:px-8">
-                <div class="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-                    <div>
-                        <h2 class="text-3xl lg:text-4xl font-bold text-navy-900 mb-6">
-                            Join our preservation mission
-                        </h2>
-                        <p class="text-lg text-navy-700 leading-relaxed mb-8">
-                            Ready to maximize your historic rehabilitation project's potential? Our expert team is here to guide you through the State Historic Tax Credit process and unlock significant financial benefits.
-                        </p>
-                        <div class="flex flex-col sm:flex-row gap-4">
-                            <a href="/contact"
-                               class="inline-flex items-center justify-center px-8 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors duration-200">
-                                Contact
-                            </a>
-                            <a href="/about-our-team"
-                               class="inline-flex items-center justify-center px-8 py-3 border-2 border-primary-600 text-primary-600 font-medium rounded-lg hover:bg-primary-600 hover:text-white transition-colors duration-200">
-                                Learn more
-                            </a>
-                        </div>
-                    </div>
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=600&fit=crop&crop=center"
-                             alt="Historic building restoration showcase"
-                             class="w-full h-80 object-cover rounded-lg shadow-lg">
-                        <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-transparent to-transparent rounded-lg opacity-30"></div>
+                        <div class="text-3xl font-bold text-white mb-2">17+</div>
+                        <div class="text-white/80 text-sm uppercase tracking-wide">States Served</div>
                     </div>
                 </div>
             </div>
         </section>
 
     </main>
+
 {% endblock %}

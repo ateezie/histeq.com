@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "archon": {
+      "transport": "http",
+      "url": "http://localhost:8051/mcp"
+    },
+    "figma": {
+      "command": "figma-mcp-pro",
+      "args": [],
+      "env": {
+        "FIGMA_ACCESS_TOKEN": "YOUR_FIGMA_TOKEN_HERE"
+      }
+    }
+  }
+}
