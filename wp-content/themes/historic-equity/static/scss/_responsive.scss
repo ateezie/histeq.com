@@ -1,0 +1,712 @@
+// =============================================================================
+// RESPONSIVE DESIGN - Historic Equity Inc.
+// =============================================================================
+
+// Import variables
+@import 'variables';
+
+// -----------------------------------------------------------------------------
+// MOBILE-FIRST RESPONSIVE BREAKPOINTS
+// -----------------------------------------------------------------------------
+
+// Base breakpoints defined in _variables.scss:
+// - $breakpoint-sm: 640px   (mobile)
+// - $breakpoint-md: 768px   (tablet)
+// - $breakpoint-lg: 1024px  (desktop)
+// - $breakpoint-xl: 1280px  (large desktop)
+// - $breakpoint-2xl: 1536px (extra large)
+
+// -----------------------------------------------------------------------------
+// RESPONSIVE TYPOGRAPHY
+// -----------------------------------------------------------------------------
+
+// Mobile-first heading sizes
+h1, .h1 {
+  font-size: 2rem; // 32px
+  line-height: 1.2;
+
+  @include tablet-up {
+    font-size: 2.5rem; // 40px
+  }
+
+  @include desktop-up {
+    font-size: 3rem; // 48px
+  }
+
+  @include large-up {
+    font-size: 3.5rem; // 56px
+  }
+
+  // Hero heading sizes
+  &.hero-heading {
+    font-size: 2.5rem; // 40px
+
+    @include tablet-up {
+      font-size: 3.5rem; // 56px
+    }
+
+    @include desktop-up {
+      font-size: 4rem; // 64px
+    }
+
+    @include large-up {
+      font-size: 4.5rem; // 72px
+    }
+  }
+}
+
+h2, .h2 {
+  font-size: 1.75rem; // 28px
+  line-height: 1.3;
+
+  @include tablet-up {
+    font-size: 2rem; // 32px
+  }
+
+  @include desktop-up {
+    font-size: 2.25rem; // 36px
+  }
+
+  @include large-up {
+    font-size: 2.5rem; // 40px
+  }
+}
+
+h3, .h3 {
+  font-size: 1.5rem; // 24px
+  line-height: 1.3;
+
+  @include tablet-up {
+    font-size: 1.75rem; // 28px
+  }
+
+  @include desktop-up {
+    font-size: 2rem; // 32px
+  }
+}
+
+h4, .h4 {
+  font-size: 1.25rem; // 20px
+  line-height: 1.4;
+
+  @include tablet-up {
+    font-size: 1.375rem; // 22px
+  }
+
+  @include desktop-up {
+    font-size: 1.5rem; // 24px
+  }
+}
+
+// Body text responsive sizing
+.text-lead {
+  font-size: 1.125rem; // 18px
+  line-height: 1.6;
+
+  @include tablet-up {
+    font-size: 1.25rem; // 20px
+  }
+
+  @include desktop-up {
+    font-size: 1.375rem; // 22px
+  }
+}
+
+// -----------------------------------------------------------------------------
+// RESPONSIVE SPACING
+// -----------------------------------------------------------------------------
+
+// Section padding
+.section {
+  padding-top: 3rem; // 48px
+  padding-bottom: 3rem; // 48px
+
+  @include tablet-up {
+    padding-top: 4rem; // 64px
+    padding-bottom: 4rem; // 64px
+  }
+
+  @include desktop-up {
+    padding-top: 5rem; // 80px
+    padding-bottom: 5rem; // 80px
+  }
+
+  @include large-up {
+    padding-top: 6rem; // 96px
+    padding-bottom: 6rem; // 96px
+  }
+
+  &--hero {
+    padding-top: 4rem; // 64px
+    padding-bottom: 4rem; // 64px
+
+    @include tablet-up {
+      padding-top: 6rem; // 96px
+      padding-bottom: 6rem; // 96px
+    }
+
+    @include desktop-up {
+      padding-top: 8rem; // 128px
+      padding-bottom: 8rem; // 128px
+    }
+  }
+
+  &--compact {
+    padding-top: 2rem; // 32px
+    padding-bottom: 2rem; // 32px
+
+    @include tablet-up {
+      padding-top: 3rem; // 48px
+      padding-bottom: 3rem; // 48px
+    }
+  }
+}
+
+// Container responsive padding
+.container {
+  padding-left: 1rem; // 16px
+  padding-right: 1rem; // 16px
+
+  @include tablet-up {
+    padding-left: 1.5rem; // 24px
+    padding-right: 1.5rem; // 24px
+  }
+
+  @include desktop-up {
+    padding-left: 2rem; // 32px
+    padding-right: 2rem; // 32px
+  }
+}
+
+// -----------------------------------------------------------------------------
+// RESPONSIVE GRID SYSTEMS
+// -----------------------------------------------------------------------------
+
+// Responsive grid utilities
+.grid-responsive {
+  display: grid;
+  gap: 1rem; // 16px
+
+  @include tablet-up {
+    gap: 1.5rem; // 24px
+  }
+
+  @include desktop-up {
+    gap: 2rem; // 32px
+  }
+
+  // Auto-fit responsive columns
+  &--auto-fit {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+    @include tablet-up {
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+
+    @include desktop-up {
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+  }
+
+  // Project showcase grid
+  &--projects {
+    grid-template-columns: 1fr;
+
+    @include tablet-up {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include desktop-up {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include large-up {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  // Service grid
+  &--services {
+    grid-template-columns: 1fr;
+
+    @include tablet-up {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include large-up {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  // Two column layout with sidebar
+  &--sidebar {
+    grid-template-columns: 1fr;
+
+    @include desktop-up {
+      grid-template-columns: 2fr 1fr;
+      gap: 3rem; // 48px
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// RESPONSIVE COMPONENT ADJUSTMENTS
+// -----------------------------------------------------------------------------
+
+// Hero section responsive adjustments
+.hero-section {
+  min-height: 60vh;
+
+  @include tablet-up {
+    min-height: 70vh;
+  }
+
+  @include desktop-up {
+    min-height: 80vh;
+  }
+
+  @include large-up {
+    min-height: 90vh;
+  }
+
+  // Hero content grid
+  .hero-content {
+    display: grid;
+    gap: 2rem; // 32px
+    align-items: center;
+
+    @include desktop-up {
+      grid-template-columns: 1fr 400px;
+      gap: 3rem; // 48px
+    }
+
+    @include large-up {
+      grid-template-columns: 1fr 450px;
+      gap: 4rem; // 64px
+    }
+  }
+}
+
+// Navigation responsive behavior
+.main-nav {
+  .nav-menu {
+    display: none;
+
+    @include desktop-up {
+      display: flex;
+      align-items: center;
+      gap: 2rem; // 32px
+    }
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+
+    @include desktop-up {
+      display: none;
+    }
+  }
+
+  // Mobile menu
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: $navy-900;
+    z-index: 9999;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+
+    &.is-open {
+      transform: translateX(0);
+    }
+
+    @include desktop-up {
+      display: none;
+    }
+  }
+}
+
+// Card components responsive
+.card {
+  padding: 1.5rem; // 24px
+
+  @include tablet-up {
+    padding: 2rem; // 32px
+  }
+
+  @include desktop-up {
+    padding: 2.5rem; // 40px
+  }
+
+  // Card grid responsive
+  &-grid {
+    display: grid;
+    gap: 1.5rem; // 24px
+    grid-template-columns: 1fr;
+
+    @include tablet-up {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem; // 32px
+    }
+
+    @include desktop-up {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include large-up {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+// Button responsive adjustments
+.btn {
+  padding: 0.75rem 1.5rem; // 12px 24px
+  font-size: 0.875rem; // 14px
+
+  @include tablet-up {
+    padding: 0.875rem 1.75rem; // 14px 28px
+    font-size: 1rem; // 16px
+  }
+
+  @include desktop-up {
+    padding: 1rem 2rem; // 16px 32px
+  }
+
+  &--hero {
+    padding: 1rem 2rem; // 16px 32px
+    font-size: 1rem; // 16px
+
+    @include tablet-up {
+      padding: 1.25rem 2.5rem; // 20px 40px
+      font-size: 1.125rem; // 18px
+    }
+  }
+
+  &--mobile-full {
+    @include mobile-only {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}
+
+// Form components responsive
+.form-group {
+  margin-bottom: 1rem; // 16px
+
+  @include tablet-up {
+    margin-bottom: 1.25rem; // 20px
+  }
+
+  @include desktop-up {
+    margin-bottom: 1.5rem; // 24px
+  }
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+  padding: 0.75rem; // 12px
+  font-size: 0.875rem; // 14px
+
+  @include tablet-up {
+    padding: 0.875rem; // 14px
+    font-size: 1rem; // 16px
+  }
+
+  @include desktop-up {
+    padding: 1rem; // 16px
+  }
+}
+
+// Contact form responsive layout
+.contact-form {
+  .form-row {
+    display: grid;
+    gap: 1rem; // 16px
+
+    @include tablet-up {
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem; // 24px
+    }
+
+    &--single {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// RESPONSIVE IMAGE HANDLING
+// -----------------------------------------------------------------------------
+
+// Responsive image container
+.img-responsive {
+  position: relative;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  // Aspect ratio containers
+  &--square {
+    aspect-ratio: 1 / 1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &--landscape {
+    aspect-ratio: 16 / 9;
+
+    @include tablet-up {
+      aspect-ratio: 4 / 3;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &--portrait {
+    aspect-ratio: 3 / 4;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// RESPONSIVE UTILITIES
+// -----------------------------------------------------------------------------
+
+// Show/hide on specific breakpoints
+@include mobile-only {
+  .show-mobile {
+    display: block !important;
+  }
+
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+@include tablet-only {
+  .show-tablet {
+    display: block !important;
+  }
+
+  .hide-tablet {
+    display: none !important;
+  }
+}
+
+@include desktop-up {
+  .show-desktop {
+    display: block !important;
+  }
+
+  .hide-desktop {
+    display: none !important;
+  }
+}
+
+@include large-up {
+  .show-large {
+    display: block !important;
+  }
+
+  .hide-large {
+    display: none !important;
+  }
+}
+
+// Text alignment responsive utilities
+@include mobile-only {
+  .text-center\@mobile {
+    text-align: center;
+  }
+
+  .text-left\@mobile {
+    text-align: left;
+  }
+}
+
+@include tablet-up {
+  .text-center\@tablet {
+    text-align: center;
+  }
+
+  .text-left\@tablet {
+    text-align: left;
+  }
+}
+
+@include desktop-up {
+  .text-center\@desktop {
+    text-align: center;
+  }
+
+  .text-left\@desktop {
+    text-align: left;
+  }
+}
+
+// Responsive flex direction
+@include mobile-only {
+  .flex-col\@mobile {
+    flex-direction: column;
+  }
+}
+
+@include tablet-up {
+  .flex-row\@tablet {
+    flex-direction: row;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// HISTORIC EQUITY SPECIFIC RESPONSIVE COMPONENTS
+// -----------------------------------------------------------------------------
+
+// SHTC Services responsive grid
+.shtc-services {
+  display: grid;
+  gap: 1.5rem; // 24px
+  grid-template-columns: 1fr;
+
+  @include tablet-up {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem; // 32px
+  }
+
+  @include large-up {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem; // 40px
+  }
+}
+
+// Project showcase responsive layout
+.project-showcase {
+  display: grid;
+  gap: 1.5rem; // 24px
+  grid-template-columns: 1fr;
+
+  @include tablet-up {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem; // 32px
+  }
+
+  @include desktop-up {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include large-up {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+// Trust indicators responsive layout
+.trust-indicators {
+  display: grid;
+  gap: 1rem; // 16px
+  grid-template-columns: repeat(2, 1fr);
+
+  @include tablet-up {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem; // 32px
+  }
+
+  @include desktop-up {
+    gap: 3rem; // 48px
+  }
+}
+
+// Investment process responsive steps
+.investment-process {
+  display: grid;
+  gap: 2rem; // 32px
+  grid-template-columns: 1fr;
+
+  @include tablet-up {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include large-up {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem; // 24px
+  }
+
+  .process-step {
+    text-align: center;
+    position: relative;
+
+    @include large-up {
+      &:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        top: 2rem; // 32px
+        right: -0.75rem; // -12px
+        width: 1.5rem; // 24px
+        height: 2px;
+        background-color: $gray-300;
+        z-index: 1;
+      }
+    }
+  }
+}
+
+// Company stats responsive layout
+.company-stats {
+  display: grid;
+  gap: 1.5rem; // 24px
+  grid-template-columns: repeat(2, 1fr);
+  text-align: center;
+
+  @include tablet-up {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem; // 32px
+  }
+
+  .stat-item {
+    .stat-number {
+      font-size: 2rem; // 32px
+      font-weight: bold;
+      color: $secondary;
+
+      @include tablet-up {
+        font-size: 2.5rem; // 40px
+      }
+
+      @include desktop-up {
+        font-size: 3rem; // 48px
+      }
+    }
+
+    .stat-label {
+      font-size: 0.875rem; // 14px
+      color: $gray-600;
+      text-transform: uppercase;
+      letter-spacing: 0.025em;
+
+      @include tablet-up {
+        font-size: 1rem; // 16px
+      }
+    }
+  }
+}

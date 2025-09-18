@@ -1,0 +1,494 @@
+{#
+/**
+ * Accessibility Template Partials for Historic Equity Inc.
+ *
+ * Screen reader optimized content structure and ARIA labels
+ * for WCAG 2.1 AA compliance in SHTC investment website.
+ *
+ * @package HistoricEquity
+ */
+#}
+
+{# Skip Links for Keyboard Navigation #}
+<div class="skip-links" aria-label="Skip navigation links">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#main-navigation" class="skip-link">Skip to navigation</a>
+    <a href="#footer-content" class="skip-link">Skip to footer</a>
+    {% if contact_form %}
+        <a href="#contact-form" class="skip-link">Skip to contact form</a>
+    {% endif %}
+    {% if project_filters %}
+        <a href="#project-filters" class="skip-link">Skip to project filters</a>
+    {% endif %}
+</div>
+
+{# Screen Reader Announcements Area #}
+<div id="sr-announcements"
+     aria-live="polite"
+     aria-atomic="true"
+     class="sr-only">
+</div>
+
+{# Enhanced Page Structure for Screen Readers #}
+<div class="page-structure sr-only">
+    <h1>Page Structure for {{ site.name }}</h1>
+    <nav aria-label="Page contents">
+        <ol>
+            <li><a href="#main-navigation">Main Navigation</a></li>
+            <li><a href="#main-content">Main Content</a></li>
+            {% if sidebar %}
+                <li><a href="#sidebar">Sidebar Content</a></li>
+            {% endif %}
+            <li><a href="#footer-content">Footer Information</a></li>
+        </ol>
+    </nav>
+</div>
+
+{# ARIA Labels and Descriptions Macros #}
+{% macro project_card_aria(project) %}
+    aria-label="Historic rehabilitation project: {{ project.title }}{% if project.state %} in {{ project.state }}{% endif %}{% if project.qre %}, QRE value {{ project.qre | number_format }}{% endif %}"
+    aria-describedby="project-{{ project.id }}-details"
+{% endmacro %}
+
+{% macro form_field_aria(field_name, required = false, description = null) %}
+    {% if required %}aria-required="true"{% endif %}
+    {% if description %}aria-describedby="{{ field_name }}-description"{% endif %}
+    aria-invalid="false"
+{% endmacro %}
+
+{% macro button_aria(action, target = null) %}
+    {% if target %}
+        aria-controls="{{ target }}"
+        aria-expanded="false"
+    {% endif %}
+    aria-label="{{ action }}"
+{% endmacro %}
+
+{# Enhanced Project Card Structure #}
+{% macro accessible_project_card(project) %}
+<article class="project-card"
+         {{ _self.project_card_aria(project) }}
+         role="article">
+
+    {# Project Image with Enhanced Alt Text #}
+    {% if project.featured_image %}
+        <div class="project-image" role="img"
+             aria-label="Historic rehabilitation project image for {{ project.title }}">
+            <img src="{{ project.featured_image }}"
+                 alt="Historic rehabilitation of {{ project.title }}{% if project.property_type %}, a {{ project.property_type | lower }}{% endif %}{% if project.state %} located in {{ project.state }}{% endif %}"
+                 loading="lazy"
+                 decoding="async">
+        </div>
+    {% endif %}
+
+    {# Project Content #}
+    <div class="project-content">
+        <header class="project-header">
+            <h3 class="project-title">
+                <a href="{{ project.link }}"
+                   aria-label="View details for {{ project.title }} historic rehabilitation project">
+                    {{ project.title }}
+                </a>
+            </h3>
+
+            {# Project Meta Information #}
+            <div class="project-meta" id="project-{{ project.id }}-details">
+                {% if project.state %}
+                    <span class="project-state" aria-label="Project location">
+                        <span class="sr-only">Located in: </span>{{ project.state }}
+                    </span>
+                {% endif %}
+
+                {% if project.property_type %}
+                    <span class="project-type" aria-label="Property type">
+                        <span class="sr-only">Property type: </span>{{ project.property_type }}
+                    </span>
+                {% endif %}
+
+                {% if project.qre %}
+                    <span class="project-qre" aria-label="Qualified rehabilitation expenditures">
+                        <span class="sr-only">QRE: </span>${{ project.qre | number_format }}
+                    </span>
+                {% endif %}
+
+                {% if project.completion_year %}
+                    <span class="project-year" aria-label="Completion year">
+                        <span class="sr-only">Completed in: </span>{{ project.completion_year }}
+                    </span>
+                {% endif %}
+            </div>
+        </header>
+
+        {# Project Description #}
+        {% if project.excerpt %}
+            <div class="project-description">
+                <p>{{ project.excerpt }}</p>
+            </div>
+        {% endif %}
+
+        {# Call to Action #}
+        <footer class="project-footer">
+            <a href="{{ project.link }}"
+               class="btn btn--secondary"
+               aria-label="Learn more about {{ project.title }} SHTC project details">
+                View Project Details
+                <span class="sr-only"> for {{ project.title }}</span>
+            </a>
+        </footer>
+    </div>
+</article>
+{% endmacro %}
+
+{# Enhanced Contact Form Structure #}
+{% macro accessible_contact_form() %}
+<section class="contact-section" aria-labelledby="contact-heading">
+    <header>
+        <h2 id="contact-heading">Contact Historic Equity for SHTC Consultation</h2>
+        <p class="contact-intro">
+            Get expert evaluation of your historic rehabilitation project.
+            Our SHTC investment specialists will review your project details
+            and provide personalized consultation.
+        </p>
+    </header>
+
+    <form class="contact-form"
+          id="contact-form"
+          role="form"
+          aria-labelledby="contact-heading"
+          novalidate>
+
+        <fieldset class="contact-info">
+            <legend class="sr-only">Your Contact Information</legend>
+
+            <div class="form-group">
+                <label for="contact-name" class="form-label">
+                    Full Name <span class="required" aria-label="required">*</span>
+                </label>
+                <input type="text"
+                       id="contact-name"
+                       name="name"
+                       class="form-input"
+                       {{ _self.form_field_aria('name', true, 'Enter your full name for personalized consultation') }}
+                       autocomplete="name">
+                <div id="name-description" class="field-description">
+                    Enter your full name for personalized consultation
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="contact-email" class="form-label">
+                    Email Address <span class="required" aria-label="required">*</span>
+                </label>
+                <input type="email"
+                       id="contact-email"
+                       name="email"
+                       class="form-input"
+                       {{ _self.form_field_aria('email', true, 'We will use this email to send you SHTC consultation information') }}
+                       autocomplete="email">
+                <div id="email-description" class="field-description">
+                    We will use this email to send you SHTC consultation information
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="contact-phone" class="form-label">
+                    Phone Number
+                </label>
+                <input type="tel"
+                       id="contact-phone"
+                       name="phone"
+                       class="form-input"
+                       {{ _self.form_field_aria('phone', false, 'Optional phone number for direct consultation calls') }}
+                       autocomplete="tel">
+                <div id="phone-description" class="field-description">
+                    Optional phone number for direct consultation calls
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset class="project-info">
+            <legend>Historic Rehabilitation Project Information</legend>
+
+            <div class="form-group">
+                <label for="project-state" class="form-label">
+                    Project State <span class="required" aria-label="required">*</span>
+                </label>
+                <select id="project-state"
+                        name="project_state"
+                        class="form-select"
+                        {{ _self.form_field_aria('project_state', true, 'Select the state where your historic rehabilitation project is located') }}>
+                    <option value="">Select project state</option>
+                    <option value="missouri">Missouri</option>
+                    <option value="iowa">Iowa</option>
+                    <option value="kansas">Kansas</option>
+                    <option value="oklahoma">Oklahoma</option>
+                    {# Add all SHTC states #}
+                </select>
+                <div id="project_state-description" class="field-description">
+                    Select the state where your historic rehabilitation project is located
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="property-type" class="form-label">
+                    Property Type
+                </label>
+                <select id="property-type"
+                        name="property_type"
+                        class="form-select"
+                        {{ _self.form_field_aria('property_type', false, 'Type of historic property being rehabilitated') }}>
+                    <option value="">Select property type</option>
+                    <option value="commercial">Commercial Building</option>
+                    <option value="residential">Residential Property</option>
+                    <option value="industrial">Industrial Building</option>
+                    <option value="institutional">Institutional Building</option>
+                    <option value="mixed-use">Mixed Use Development</option>
+                </select>
+                <div id="property_type-description" class="field-description">
+                    Type of historic property being rehabilitated
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="project-value" class="form-label">
+                    Estimated Project Value
+                </label>
+                <input type="text"
+                       id="project-value"
+                       name="project_value"
+                       class="form-input"
+                       {{ _self.form_field_aria('project_value', false, 'Approximate total cost of historic rehabilitation project') }}
+                       placeholder="e.g., $2,500,000">
+                <div id="project_value-description" class="field-description">
+                    Approximate total cost of historic rehabilitation project
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset class="message-info">
+            <legend>Project Details and Questions</legend>
+
+            <div class="form-group">
+                <label for="contact-message" class="form-label">
+                    Project Description <span class="required" aria-label="required">*</span>
+                </label>
+                <textarea id="contact-message"
+                          name="message"
+                          class="form-textarea"
+                          rows="5"
+                          {{ _self.form_field_aria('message', true, 'Describe your historic rehabilitation project and specific SHTC consultation needs') }}>
+                </textarea>
+                <div id="message-description" class="field-description">
+                    Describe your historic rehabilitation project and specific SHTC consultation needs.
+                    Include property details, timeline, and any specific questions about State Historic Tax Credits.
+                </div>
+            </div>
+        </fieldset>
+
+        {# Form Actions #}
+        <div class="form-actions">
+            <button type="submit"
+                    class="btn btn--primary btn-submit"
+                    aria-describedby="submit-description">
+                <span class="btn-text">Get SHTC Consultation</span>
+                <span class="btn-spinner" aria-hidden="true"></span>
+            </button>
+            <div id="submit-description" class="submit-description">
+                Submit your information to receive expert SHTC consultation from Historic Equity specialists
+            </div>
+        </div>
+
+        {# Form Messages #}
+        <div class="form-messages" role="region" aria-live="polite" aria-atomic="true"></div>
+    </form>
+</section>
+{% endmacro %}
+
+{# Enhanced Navigation Structure #}
+{% macro accessible_navigation(menu) %}
+<nav class="main-navigation"
+     id="main-navigation"
+     role="navigation"
+     aria-label="Historic Equity main navigation">
+
+    <div class="nav-container">
+        {# Site Logo #}
+        <div class="site-logo">
+            <a href="{{ site.url }}"
+               aria-label="Historic Equity Inc. homepage - State Historic Tax Credit investment specialists">
+                <img src="{{ theme.link }}/static/images/logo/logo__black.png"
+                     alt="Historic Equity Inc. logo"
+                     width="200"
+                     height="60">
+            </a>
+        </div>
+
+        {# Main Menu #}
+        {% if menu and menu.items %}
+            <ul class="nav-menu" role="menubar" aria-label="Main navigation menu">
+                {% for item in menu.items %}
+                    <li class="nav-item{% if item.children %} has-dropdown{% endif %}" role="none">
+                        {% if item.children %}
+                            <a href="{{ item.link }}"
+                               class="nav-link dropdown-toggle"
+                               role="menuitem"
+                               aria-haspopup="true"
+                               aria-expanded="false"
+                               {{ _self.button_aria('Open ' ~ item.title ~ ' submenu', 'submenu-' ~ loop.index) }}>
+                                {{ item.title }}
+                                <span class="dropdown-icon" aria-hidden="true">▼</span>
+                            </a>
+
+                            <ul class="dropdown-menu"
+                                id="submenu-{{ loop.index }}"
+                                role="menu"
+                                aria-label="{{ item.title }} submenu">
+                                {% for child in item.children %}
+                                    <li class="dropdown-item" role="none">
+                                        <a href="{{ child.link }}"
+                                           class="dropdown-link"
+                                           role="menuitem">
+                                            {{ child.title }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        {% else %}
+                            <a href="{{ item.link }}"
+                               class="nav-link"
+                               role="menuitem"
+                               {% if item.title|lower == 'contact' %}
+                                   aria-label="Contact Historic Equity for SHTC consultation"
+                               {% endif %}>
+                                {{ item.title }}
+                            </a>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        {# Mobile Menu Toggle #}
+        <button class="mobile-menu-toggle"
+                aria-controls="mobile-menu"
+                aria-expanded="false"
+                aria-label="Toggle mobile navigation menu">
+            <span class="hamburger-lines" aria-hidden="true">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </span>
+            <span class="sr-only">Menu</span>
+        </button>
+    </div>
+</nav>
+{% endmacro %}
+
+{# Enhanced Footer Structure #}
+{% macro accessible_footer() %}
+<footer class="site-footer"
+        id="footer-content"
+        role="contentinfo"
+        aria-label="Historic Equity contact information and site links">
+
+    <div class="footer-container">
+        <div class="footer-main">
+            {# Company Information #}
+            <section class="footer-section company-info" aria-labelledby="company-heading">
+                <h3 id="company-heading" class="footer-heading">Historic Equity Inc.</h3>
+                <div class="company-description">
+                    <p>State Historic Tax Credit investment specialists since 2001.
+                       Maximizing returns on historic rehabilitation projects across 17+ states.</p>
+                </div>
+
+                <address class="company-address">
+                    <div class="address-label sr-only">Main Office Address:</div>
+                    <div class="address-line">St. Louis, Missouri</div>
+                    <div class="contact-info">
+                        <a href="tel:+1-314-555-0123"
+                           class="phone-link"
+                           aria-label="Call Historic Equity at 3 1 4 5 5 5 0 1 2 3">
+                            (314) 555-0123
+                        </a>
+                        <a href="mailto:info@historicequity.com"
+                           class="email-link"
+                           aria-label="Email Historic Equity at info@historicequity.com">
+                            info@historicequity.com
+                        </a>
+                    </div>
+                </address>
+            </section>
+
+            {# Services Information #}
+            <section class="footer-section services-info" aria-labelledby="services-heading">
+                <h3 id="services-heading" class="footer-heading">SHTC Services</h3>
+                <ul class="services-list" role="list">
+                    <li>State Historic Tax Credit Investment</li>
+                    <li>Project Evaluation & Analysis</li>
+                    <li>Historic Preservation Consulting</li>
+                    <li>Tax Credit Monetization</li>
+                    <li>Portfolio Management</li>
+                </ul>
+            </section>
+
+            {# Coverage Areas #}
+            <section class="footer-section coverage-info" aria-labelledby="coverage-heading">
+                <h3 id="coverage-heading" class="footer-heading">Coverage Areas</h3>
+                <div class="states-covered" aria-label="States where Historic Equity provides SHTC services">
+                    <p class="states-intro">Serving 17+ states including:</p>
+                    <div class="states-list">Missouri, Iowa, Kansas, Oklahoma, Minnesota, Wisconsin, Indiana, and more</div>
+                </div>
+            </section>
+        </div>
+
+        {# Footer Bottom #}
+        <div class="footer-bottom">
+            <div class="footer-legal">
+                <p class="copyright">
+                    <span aria-label="Copyright">©</span> {{ "now"|date("Y") }} Historic Equity Inc. All rights reserved.
+                </p>
+                <nav class="legal-links" aria-label="Legal and policy links">
+                    <a href="/privacy-policy" aria-label="View privacy policy">Privacy Policy</a>
+                    <a href="/terms-of-service" aria-label="View terms of service">Terms of Service</a>
+                    <a href="/accessibility" aria-label="View accessibility statement">Accessibility</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</footer>
+{% endmacro %}
+
+{# Enhanced Breadcrumb Structure #}
+{% macro accessible_breadcrumbs(breadcrumbs) %}
+{% if breadcrumbs %}
+    <nav class="breadcrumbs"
+         aria-label="Breadcrumb navigation"
+         role="navigation">
+        <ol class="breadcrumb-list" itemscope itemtype="https://schema.org/BreadcrumbList">
+            {% for crumb in breadcrumbs %}
+                <li class="breadcrumb-item"
+                    itemprop="itemListElement"
+                    itemscope
+                    itemtype="https://schema.org/ListItem">
+                    {% if not loop.last %}
+                        <a href="{{ crumb.url }}"
+                           itemprop="item"
+                           aria-label="Navigate to {{ crumb.title }}">
+                            <span itemprop="name">{{ crumb.title }}</span>
+                        </a>
+                        <meta itemprop="position" content="{{ loop.index }}">
+                        <span class="breadcrumb-separator" aria-hidden="true">›</span>
+                    {% else %}
+                        <span itemprop="name"
+                              aria-current="page"
+                              aria-label="Current page: {{ crumb.title }}">
+                            {{ crumb.title }}
+                        </span>
+                        <meta itemprop="position" content="{{ loop.index }}">
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ol>
+    </nav>
+{% endif %}
+{% endmacro %}
