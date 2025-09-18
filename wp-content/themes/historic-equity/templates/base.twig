@@ -5,12 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Historic Equity Inc. - State Historic Tax Credit investment specialists. Maximizing benefits for historic rehabilitation projects across 17+ states.">
     <title>{{ wp_title }}</title>
+
+    <!-- Font Optimization (Performance) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" as="style">
+
+    <!-- Performance Optimizations -->
+    <meta name="theme-color" content="{{ design_system.colors.primary_orange }}">
+    <meta name="msapplication-TileColor" content="{{ design_system.colors.primary_orange }}">
+
+    <!-- CSS with Cache Busting -->
     <link rel="stylesheet" href="{{ site.theme.link }}/static/css/style.css?v={{ "now"|date('U') }}">
+
     {{ wp_head }}
+
+    <!-- Critical CSS Inline (Typography Foundation) -->
+    <style>
+        :root {
+            --font-heading: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+            /* Typography Scale */
+            --text-h1-mobile: clamp(2.5rem, 8vw, 3.5rem);
+            --text-h1-desktop: clamp(3.5rem, 6vw, 5rem);
+            --text-h2-desktop: clamp(2.5rem, 4vw, 3.5rem);
+            --text-h3-mobile: clamp(1.75rem, 4vw, 2.25rem);
+            --text-h3-desktop: clamp(2.25rem, 3vw, 2.75rem);
+            --text-h4-desktop: clamp(1.5rem, 2vw, 1.875rem);
+            --text-h5-mobile: clamp(1.25rem, 3vw, 1.5rem);
+            --text-h5-desktop: clamp(1.5rem, 2vw, 1.75rem);
+            --text-h6-mobile: clamp(1.125rem, 2vw, 1.25rem);
+            --text-text-lg: clamp(1.125rem, 2vw, 1.25rem);
+            --text-text-xl: clamp(1.25rem, 2vw, 1.375rem);
+        }
+
+        .font-heading { font-family: var(--font-heading); }
+        .font-body { font-family: var(--font-body); }
+
+        /* Typography Classes */
+        .text-h1-mobile { font-size: var(--text-h1-mobile); }
+        .text-h1-desktop { font-size: var(--text-h1-desktop); }
+        .text-h2-desktop { font-size: var(--text-h2-desktop); }
+        .text-h3-mobile { font-size: var(--text-h3-mobile); }
+        .text-h3-desktop { font-size: var(--text-h3-desktop); }
+        .text-h4-desktop { font-size: var(--text-h4-desktop); }
+        .text-h5-mobile { font-size: var(--text-h5-mobile); }
+        .text-h5-desktop { font-size: var(--text-h5-desktop); }
+        .text-h6-mobile { font-size: var(--text-h6-mobile); }
+        .text-text-lg { font-size: var(--text-text-lg); }
+        .text-text-xl { font-size: var(--text-text-xl); }
+
+        @media (min-width: 1024px) {
+            .lg\:text-h1-desktop { font-size: var(--text-h1-desktop); }
+            .lg\:text-h2-desktop { font-size: var(--text-h2-desktop); }
+            .lg\:text-h3-desktop { font-size: var(--text-h3-desktop); }
+            .lg\:text-h4-desktop { font-size: var(--text-h4-desktop); }
+            .lg\:text-h5-desktop { font-size: var(--text-h5-desktop); }
+            .lg\:text-text-xl { font-size: var(--text-text-xl); }
+        }
+
+        /* Performance: Reduce layout shifts */
+        img { max-width: 100%; height: auto; }
+        [data-lazy] { opacity: 0; transition: opacity 0.3s; }
+        [data-lazy].loaded { opacity: 1; }
+    </style>
 </head>
-<body class="{{ body_class }} bg-neutral-50 text-navy-900 font-sans antialiased">
+<body class="{{ body_class }} bg-off-white text-navy-900 font-body antialiased">
+
+    <!-- Skip Links for Accessibility -->
+    <div class="skip-links sr-only focus:not-sr-only">
+        <a href="#main-content"
+           class="absolute top-0 left-0 z-50 px-4 py-2 bg-primary-600 text-white font-medium rounded-br-lg focus:translate-x-0 focus:translate-y-0 transform -translate-x-full -translate-y-full transition-transform duration-200">
+            Skip to main content
+        </a>
+        <a href="#main-navigation"
+           class="absolute top-0 left-20 z-50 px-4 py-2 bg-primary-600 text-white font-medium rounded-br-lg focus:translate-x-0 focus:translate-y-0 transform -translate-x-full -translate-y-full transition-transform duration-200">
+            Skip to navigation
+        </a>
+    </div>
 
     <!-- Header Component -->
     {% include 'components/header.twig' %}

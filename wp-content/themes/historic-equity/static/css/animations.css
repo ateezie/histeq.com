@@ -1,0 +1,268 @@
+/**
+ * Animation and Interaction Styles for Historic Equity Inc.
+ * Complements the main TailwindCSS implementation
+ */
+
+/* Scroll-triggered animations */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-on-scroll.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered animations for grid items */
+.animate-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.animate-item.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Enhanced button interactions */
+.btn,
+.inline-flex {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn::before,
+.inline-flex::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn:hover::before,
+.inline-flex:hover::before {
+    left: 100%;
+}
+
+/* Loading state for buttons */
+.btn.loading,
+.inline-flex.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.btn.loading::after,
+.inline-flex.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    margin: -8px 0 0 -8px;
+    border: 2px solid transparent;
+    border-top-color: currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Card hover effects */
+.project-card,
+.bg-white.rounded-xl {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover,
+.bg-white.rounded-xl:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Image lazy loading fade-in */
+img {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+img.loaded,
+img[src] {
+    opacity: 1;
+}
+
+/* Form enhancements */
+.form-group {
+    position: relative;
+}
+
+.form-group.focused input,
+.form-group.focused textarea {
+    border-color: #BD572B;
+    box-shadow: 0 0 0 3px rgba(189, 87, 43, 0.1);
+}
+
+.form-group.error input,
+.form-group.error textarea {
+    border-color: #ef4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.form-group.success input,
+.form-group.success textarea {
+    border-color: #10b981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+/* Header scroll behavior */
+.site-header {
+    transition: transform 0.3s ease;
+}
+
+.site-header.header-hidden {
+    transform: translateY(-100%);
+}
+
+/* Mobile menu animation enhancements */
+@media (max-width: 1023px) {
+    #mobile-menu {
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    #mobile-menu:not(.hidden) {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Notification styles */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 16px 24px;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    animation: slideIn 0.3s ease;
+}
+
+.notification--success {
+    border-left: 4px solid #10b981;
+    color: #065f46;
+}
+
+.notification--error {
+    border-left: 4px solid #ef4444;
+    color: #7f1d1d;
+}
+
+.notification--info {
+    border-left: 4px solid #3b82f6;
+    color: #1e3a8a;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Accessibility enhancements */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 2px solid #BD572B;
+    outline-offset: 2px;
+}
+
+/* Trust indicators animation */
+.stat-item {
+    counter-reset: stat-counter;
+}
+
+.stat-item.in-view .stat-number {
+    animation: countUp 2s ease-out;
+}
+
+@keyframes countUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Smooth transitions for interactive elements */
+.transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+}
+
+/* Enhanced link hover effects */
+a:not(.btn):not(.inline-flex) {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.menu-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #BD572B;
+    transition: width 0.3s ease;
+}
+
+.menu-link:hover::after {
+    width: 100%;
+}
+
+/* Section spacing improvements */
+section {
+    scroll-margin-top: 100px; /* Account for sticky header */
+}
+
+/* Enhanced responsiveness */
+@media (max-width: 640px) {
+    .animate-on-scroll {
+        transform: translateY(20px);
+    }
+
+    .project-card:hover,
+    .bg-white.rounded-xl:hover {
+        transform: translateY(-2px);
+    }
+}

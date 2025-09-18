@@ -73,7 +73,7 @@ module.exports = {
         },
         // Neutral Grays (from Variables.png)
         'neutral': {
-          50: '#ffffff',    // Neutral White
+          50: '#fefff8',    // Brand Off-White
           100: '#f7f7f7',   // Neutral Lightest
           200: '#e7e7e7',   // Neutral Lighter
           300: '#d1d1d1',   // Neutral Light
@@ -83,7 +83,9 @@ module.exports = {
           700: '#333333',   // Neutral Darkest
           800: '#1a1a1a',
           900: '#000000',
-        }
+        },
+        // Brand specific colors
+        'off-white': '#fefff8'
       },
 
       // Typography System (from Typography.png)
@@ -95,16 +97,16 @@ module.exports = {
       },
 
       fontSize: {
-        // Desktop Typography Scale
-        'h1-desktop': ['72px', { lineHeight: '120%', fontWeight: '800' }],
+        // Desktop Typography Scale (Enhanced for Figma alignment)
+        'h1-desktop': ['96px', { lineHeight: '110%', fontWeight: '800' }], // Increased from 72px (+33%)
         'h2-desktop': ['52px', { lineHeight: '120%', fontWeight: '700' }],
         'h3-desktop': ['44px', { lineHeight: '120%', fontWeight: '600' }],
         'h4-desktop': ['36px', { lineHeight: '130%', fontWeight: '600' }],
         'h5-desktop': ['28px', { lineHeight: '140%', fontWeight: '500' }],
         'h6-desktop': ['16px', { lineHeight: '150%', fontWeight: '500' }],
 
-        // Mobile Typography Scale
-        'h1-mobile': ['64px', { lineHeight: '120%', fontWeight: '800' }],
+        // Mobile Typography Scale (Enhanced for Figma alignment)
+        'h1-mobile': ['80px', { lineHeight: '115%', fontWeight: '800' }], // Increased from 64px (+25%)
         'h2-mobile': ['40px', { lineHeight: '120%', fontWeight: '700' }],
         'h3-mobile': ['32px', { lineHeight: '120%', fontWeight: '600' }],
         'h4-mobile': ['24px', { lineHeight: '130%', fontWeight: '600' }],

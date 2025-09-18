@@ -1,260 +1,206 @@
 <?php
 /**
- * Historic Equity WordPress Theme
- *
- * @package HistoricEquity
+ * Historic Equity WordPress Theme Functions
+ * Optimized for Timber v2.x with design system integration
  */
 
-// Autoload dependencies - check if file exists first
-if (file_exists(__DIR__ . '/vendor/autoload.php')) {
-    require_once __DIR__ . '/vendor/autoload.php';
-}
+// Theme constants
+define('HISTORIC_EQUITY_VERSION', '1.0.0');
+define('HISTORIC_EQUITY_THEME_PATH', get_template_directory());
+define('HISTORIC_EQUITY_THEME_URI', get_template_directory_uri());
 
-// Initialize Timber - check if Timber is available
-if (class_exists('Timber\Timber')) {
-    // Set Timber directory locations (no need to instantiate Timber in v2.x)
-    Timber\Timber::$dirname = array('templates', 'views');
-} else {
-    // Fallback if Timber is not available
-    add_action('admin_notices', function() {
-        echo '<div class="error"><p>Timber not found. Please install Timber plugin or check theme dependencies.</p></div>';
-    });
-}
-
-// Define theme support
+// Enhanced theme setup
 function historic_equity_theme_setup() {
-    // Add theme support
+    // Theme support
     add_theme_support('post-thumbnails');
     add_theme_support('menus');
-    add_theme_support('html5', array(
-        'search-form',
-        'comment-form',
-        'comment-list',
-        'gallery',
-        'caption',
-    ));
-
-    // Add image sizes for responsive design
-    add_image_size('project-thumbnail', 400, 300, true);
-    add_image_size('project-featured', 800, 600, true);
-    add_image_size('hero-image', 1920, 1080, true);
-
-    // Enable responsive images
+    add_theme_support('title-tag');
+    add_theme_support('html5', array('search-form', 'comment-form', 'comment-list', 'gallery', 'caption'));
     add_theme_support('responsive-embeds');
+    add_theme_support('wp-block-styles');
+    add_theme_support('editor-styles');
+
+    // Image sizes for design system
+    add_image_size('project-card', 400, 300, true);
+    add_image_size('hero-background', 1920, 1080, true);
+    add_image_size('team-photo', 300, 300, true);
 
     // Register navigation menus
     register_nav_menus(array(
-        'primary' => __('Primary Menu', 'historic-equity'),
-        'footer' => __('Footer Menu', 'historic-equity'),
-        'mobile' => __('Mobile Menu', 'historic-equity'),
+        'primary' => __('Primary Navigation', 'historic-equity'),
+        'footer' => __('Footer Navigation', 'historic-equity'),
     ));
 
-    // Add title tag support
-    add_theme_support('title-tag');
-
-    // Add custom logo support
-    add_theme_support('custom-logo', array(
-        'height' => 100,
-        'width' => 300,
-        'flex-height' => true,
-        'flex-width' => true,
-    ));
+    // Add editor style
+    add_editor_style('static/css/editor-style.css');
 }
 add_action('after_setup_theme', 'historic_equity_theme_setup');
 
-// Enqueue scripts and styles
+// Enhanced asset loading with performance optimization
 function historic_equity_scripts() {
-    // TailwindCSS and compiled assets
-    wp_enqueue_style('historic-equity-style', get_template_directory_uri() . '/static/css/style.css', array(), '1.0.0');
+    $version = HISTORIC_EQUITY_VERSION;
 
-    // Main JavaScript
-    wp_enqueue_script('historic-equity-script', get_template_directory_uri() . '/static/js/main.js', array('jquery'), '1.0.0', true);
-
-    // Contact form script
-    wp_enqueue_script('historic-equity-forms', get_template_directory_uri() . '/static/js/contact-forms.js', array('jquery'), '1.0.0', true);
-
-    // Project filtering
-    wp_enqueue_script('historic-equity-filters', get_template_directory_uri() . '/static/js/project-filtering.js', array('jquery'), '1.0.0', true);
-
-    // Localize script for AJAX
-    wp_localize_script('historic-equity-forms', 'historic_equity_ajax', array(
-        'ajax_url' => admin_url('admin-ajax.php'),
-        'nonce' => wp_create_nonce('historic_equity_nonce'),
-        'rest_url' => esc_url_raw(rest_url()),
-        'rest_nonce' => wp_create_nonce('wp_rest'),
-    ));
-
-    // Google Fonts - Montserrat and Sportscenter (if available)
-    wp_enqueue_style('historic-equity-fonts', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap', array(), null);
-}
-add_action('wp_enqueue_scripts', 'historic_equity_scripts');
-
-// Add to context - only if Timber is available
-if (class_exists('Timber\Timber')) {
-    function add_to_context($context) {
-        try {
-            // Timber v2.x: Use proper methods for menu and site
-            $context['menu'] = \Timber\Timber::get_menu_by('location', 'primary');
-            $context['site'] = new \Timber\Site();
-
-            // Add fallback menu if no WordPress menu is available
-            if (!$context['menu'] || !$context['menu']->items) {
-                $fallback_items = historic_equity_fallback_menu();
-                $context['fallback_menu'] = $fallback_items;
-            }
-
-            // Add ACF options only if ACF is available
-            if (function_exists('get_fields')) {
-                $context['options'] = get_fields('option') ?: array();
-            }
-        } catch (Exception $e) {
-            error_log('Timber context error: ' . $e->getMessage());
-            // Fallback for menu if build method fails
-            $context['menu'] = null;
-            $context['site'] = null;
-            $context['fallback_menu'] = historic_equity_fallback_menu();
-        }
-        return $context;
-    }
-    add_filter('timber/context', 'add_to_context');
-}
-
-// Enqueue scripts and styles
-function historic_equity_scripts() {
-    // Enqueue TailwindCSS compiled styles
+    // Main stylesheet with design system variables
     wp_enqueue_style(
-        'historic-equity-tailwind',
-        get_template_directory_uri() . '/static/css/style.css',
+        'historic-equity-style',
+        HISTORIC_EQUITY_THEME_URI . '/static/css/style.css',
         array(),
-        filemtime(get_template_directory() . '/static/css/style.css')
+        $version
     );
 
-    // Enqueue Google Fonts (Montserrat)
+    // Enhanced animations and interactions
+    wp_enqueue_style(
+        'historic-equity-animations',
+        HISTORIC_EQUITY_THEME_URI . '/static/css/animations.css',
+        array('historic-equity-style'),
+        $version
+    );
+
+    // Preload critical fonts
     wp_enqueue_style(
         'montserrat-font',
-        'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap',
+        'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap',
         array(),
         null
     );
 
-    // Enqueue main JavaScript file
+    // Main JavaScript with performance loading
     wp_enqueue_script(
         'historic-equity-main',
-        get_template_directory_uri() . '/static/js/main.js',
-        array(),
-        filemtime(get_template_directory() . '/static/js/main.js'),
+        HISTORIC_EQUITY_THEME_URI . '/static/js/main.js',
+        array('jquery'),
+        $version,
         true
     );
 
-    // Add inline styles for immediate font loading
-    wp_add_inline_style('historic-equity-tailwind', '
-        html { font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
-    ');
+    // Accessibility enhancements
+    if (file_exists(HISTORIC_EQUITY_THEME_PATH . '/static/js/accessibility.js')) {
+        wp_enqueue_script(
+            'historic-equity-accessibility',
+            HISTORIC_EQUITY_THEME_URI . '/static/js/accessibility.js',
+            array('jquery'),
+            $version,
+            true
+        );
+    }
+
+    // Localize scripts with enhanced data
+    wp_localize_script('historic-equity-main', 'HistoricEquity', array(
+        'ajax_url' => admin_url('admin-ajax.php'),
+        'rest_url' => esc_url_raw(rest_url()),
+        'nonce' => wp_create_nonce('historic_equity_nonce'),
+        'theme_uri' => HISTORIC_EQUITY_THEME_URI,
+        'is_mobile' => wp_is_mobile(),
+        'design_system' => array(
+            'breakpoints' => array(
+                'sm' => '640px',
+                'md' => '768px',
+                'lg' => '1024px',
+                'xl' => '1280px',
+                '2xl' => '1536px'
+            ),
+            'colors' => array(
+                'primary' => '#BD572B',
+                'secondary' => '#E6CD41',
+                'brown' => '#95816E',
+                'light_blue' => '#83ACD1',
+                'navy' => '#2D2E3D',
+                'off_white' => '#FEFFF8'
+            )
+        )
+    ));
 }
 add_action('wp_enqueue_scripts', 'historic_equity_scripts');
 
-// Add editor styles for Gutenberg
-function historic_equity_editor_styles() {
-    add_theme_support('editor-styles');
-    add_editor_style('static/css/style.css');
-}
-add_action('after_setup_theme', 'historic_equity_editor_styles');
+// Timber v2.x initialization with comprehensive context
+if (class_exists('Timber\Timber')) {
+    // Set Timber directories
+    Timber\Timber::$dirname = array('templates', 'views');
 
-// Create default navigation menu programmatically
-function historic_equity_create_default_menu() {
-    // Check if menu already exists
-    $menu_name = 'Historic Equity Primary Navigation';
-    $menu_exists = wp_get_nav_menu_object($menu_name);
+    // Enhanced Timber context
+    function historic_equity_add_to_context($context) {
+        // Basic site context
+        $context['site'] = new \Timber\Site();
+        $context['menu'] = new \Timber\Menu('primary');
 
-    if (!$menu_exists) {
-        // Create the menu
-        $menu_id = wp_create_nav_menu($menu_name);
-
-        if (!is_wp_error($menu_id)) {
-            // Create pages if they don't exist and add menu items
-            $menu_items = array(
-                array(
-                    'title' => 'About',
-                    'url' => home_url('/about/'),
-                    'page_title' => 'About Historic Equity',
-                    'page_content' => 'Learn about Historic Equity Inc., our mission, team, and commitment to historic preservation through State Historic Tax Credits.'
-                ),
-                array(
-                    'title' => 'Services',
-                    'url' => home_url('/services/'),
-                    'page_title' => 'SHTC Investment Services',
-                    'page_content' => 'Comprehensive State Historic Tax Credit investment services including evaluation, acquisition, and management.'
-                ),
-                array(
-                    'title' => 'Projects',
-                    'url' => home_url('/projects/'),
-                    'page_title' => 'Historic Rehabilitation Projects',
-                    'page_content' => 'Explore our portfolio of 200+ historic rehabilitation projects across 17+ states with over $1 billion in QRE.'
-                ),
-                array(
-                    'title' => 'States',
-                    'url' => home_url('/states/'),
-                    'page_title' => 'State Coverage',
-                    'page_content' => 'Historic Equity operates in 17+ states providing State Historic Tax Credit investment services.'
-                ),
-                array(
-                    'title' => 'Resources',
-                    'url' => home_url('/resources/'),
-                    'page_title' => 'SHTC Resources & Guides',
-                    'page_content' => 'Access comprehensive guides, news, and resources about State Historic Tax Credits and historic preservation.'
-                ),
-                array(
-                    'title' => 'Contact',
-                    'url' => home_url('/contact/'),
-                    'page_title' => 'Contact Historic Equity',
-                    'page_content' => 'Get started with your historic rehabilitation project. Contact our team for consultation and project evaluation.'
+        // Design system variables from Figma
+        $context['design_system'] = array(
+            'typography' => array(
+                'heading_font' => 'Montserrat',
+                'body_font' => 'Montserrat',
+                'font_weights' => array(
+                    'light' => 300,
+                    'regular' => 400,
+                    'medium' => 500,
+                    'semibold' => 600,
+                    'bold' => 700
                 )
-            );
+            ),
+            'colors' => array(
+                'primary_orange' => '#BD572B',
+                'primary_gold' => '#E6CD41',
+                'primary_brown' => '#95816E',
+                'light_blue' => '#83ACD1',
+                'off_white' => '#FEFFF8',
+                'dark_navy' => '#2D2E3D'
+            ),
+            'spacing' => array(
+                'container_max_width' => '1280px',
+                'section_padding' => 'py-16 lg:py-24',
+                'element_spacing' => 'space-y-6'
+            )
+        );
 
-            foreach ($menu_items as $index => $item) {
-                // Create page if it doesn't exist
-                $page_exists = get_page_by_path($item['title']);
-                if (!$page_exists) {
-                    $page_id = wp_insert_post(array(
-                        'post_title' => $item['page_title'],
-                        'post_content' => $item['page_content'],
-                        'post_status' => 'publish',
-                        'post_type' => 'page',
-                        'post_name' => strtolower($item['title'])
-                    ));
-                }
+        // Company information aligned with community focus
+        $context['company_info'] = array(
+            'name' => 'Historic Equity Inc.',
+            'founded' => '2001',
+            'years_experience' => '24',
+            'states_served' => '17',
+            'total_projects' => '200+',
+            'total_investment' => '1B+',
+            'mission' => 'Preserving History, Empowering Communities Through Strategic Investment',
+            'focus' => 'community', // Changed from 'business' to align with Figma
+            'phone' => get_theme_mod('company_phone', '(314) 555-SHTC'),
+            'email' => get_theme_mod('company_email', 'info@histeq.com')
+        );
 
-                // Add menu item
-                wp_update_nav_menu_item($menu_id, 0, array(
-                    'menu-item-title' => $item['title'],
-                    'menu-item-url' => $item['url'],
-                    'menu-item-status' => 'publish',
-                    'menu-item-position' => $index + 1
-                ));
-            }
+        // Trust indicators for community focus
+        $context['trust_indicators'] = array(
+            'years_experience' => '24',
+            'communities_served' => '17+',
+            'families_housed' => '1000+',
+            'buildings_preserved' => '200+'
+        );
 
-            // Assign menu to primary location
-            $locations = get_theme_mod('nav_menu_locations');
-            $locations['primary'] = $menu_id;
-            set_theme_mod('nav_menu_locations', $locations);
-        }
+        // Performance optimization flags
+        $context['performance'] = array(
+            'lazy_load_images' => true,
+            'optimize_fonts' => true,
+            'preload_critical' => true
+        );
+
+        return $context;
     }
-}
-add_action('after_setup_theme', 'historic_equity_create_default_menu', 20);
+    add_filter('timber/context', 'historic_equity_add_to_context');
 
-// Fallback navigation function for when no menu is assigned
-function historic_equity_fallback_menu() {
-    $fallback_items = array(
-        'About' => home_url('/about/'),
-        'Services' => home_url('/services/'),
-        'Projects' => home_url('/projects/'),
-        'States' => home_url('/states/'),
-        'Resources' => home_url('/resources/'),
-        'Contact' => home_url('/contact/')
-    );
+    // Load comprehensive Timber context if available
+    if (file_exists(HISTORIC_EQUITY_THEME_PATH . '/lib/timber-context.php')) {
+        require_once HISTORIC_EQUITY_THEME_PATH . '/lib/timber-context.php';
+    }
 
-    return $fallback_items;
+} else {
+    // Enhanced fallback notice
+    add_action('admin_notices', function() {
+        echo '<div class="notice notice-error"><p><strong>Historic Equity Theme:</strong> Timber plugin is required. Please install and activate Timber.</p></div>';
+    });
 }
 
-// Load theme setup and custom post types
-require_once get_template_directory() . '/lib/theme-setup.php';
+// Load Phase 3.5 optimization libraries
+require_once get_template_directory() . '/lib/seo-optimization.php';
+require_once get_template_directory() . '/lib/image-optimization.php';
+require_once get_template_directory() . '/lib/query-optimization.php';
+require_once get_template_directory() . '/lib/template-optimization.php';
+
+// Theme loaded
+?>
