@@ -207,4 +207,10 @@ module.exports = {
     require('@tailwindcss/typography'),
     require('@tailwindcss/aspect-ratio'),
   ],
+  // Add custom utilities for screen reader classes
+  safelist: [
+    'sr-only',
+    'not-sr-only',
+    'focus:not-sr-only'
+  ]
 }
