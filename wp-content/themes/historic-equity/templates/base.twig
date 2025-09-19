@@ -73,16 +73,34 @@
 </head>
 <body class="{{ body_class }} bg-off-white text-navy-900 font-body antialiased">
 
-    <!-- Skip Links for Accessibility -->
-    <div class="skip-links sr-only focus:not-sr-only">
-        <a href="#main-content"
-           class="absolute top-0 left-0 z-50 px-4 py-2 bg-primary-600 text-white font-medium rounded-br-lg focus:translate-x-0 focus:translate-y-0 transform -translate-x-full -translate-y-full transition-transform duration-200">
-            Skip to main content
-        </a>
-        <a href="#main-navigation"
-           class="absolute top-0 left-20 z-50 px-4 py-2 bg-primary-600 text-white font-medium rounded-br-lg focus:translate-x-0 focus:translate-y-0 transform -translate-x-full -translate-y-full transition-transform duration-200">
-            Skip to navigation
-        </a>
+    <!-- Skip Links for Accessibility (Hidden unless focused) -->
+    <style>
+        .skip-links a {
+            position: absolute !important;
+            left: -9999px !important;
+            width: 1px !important;
+            height: 1px !important;
+            overflow: hidden !important;
+        }
+        .skip-links a:focus {
+            position: absolute !important;
+            left: 8px !important;
+            top: 8px !important;
+            width: auto !important;
+            height: auto !important;
+            overflow: visible !important;
+            background: #BD572B !important;
+            color: white !important;
+            padding: 8px 16px !important;
+            border-radius: 4px !important;
+            text-decoration: none !important;
+            font-weight: 500 !important;
+            z-index: 9999 !important;
+        }
+    </style>
+    <div class="skip-links">
+        <a href="#main-content">Skip to main content</a>
+        <a href="#main-navigation">Skip to navigation</a>
     </div>
 
     <!-- Header Component -->

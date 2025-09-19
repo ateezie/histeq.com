@@ -38,7 +38,8 @@ add_action('after_setup_theme', 'historic_equity_theme_setup');
 
 // Enhanced asset loading with performance optimization
 function historic_equity_scripts() {
-    $version = HISTORIC_EQUITY_VERSION;
+    // Disable caching for development
+    $version = time();
 
     // Main stylesheet with design system variables
     wp_enqueue_style(
