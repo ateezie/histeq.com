@@ -97,21 +97,21 @@ module.exports = {
       },
 
       fontSize: {
-        // Desktop Typography Scale (Enhanced for Figma alignment)
-        'h1-desktop': ['96px', { lineHeight: '110%', fontWeight: '800' }], // Increased from 72px (+33%)
-        'h2-desktop': ['52px', { lineHeight: '120%', fontWeight: '700' }],
-        'h3-desktop': ['44px', { lineHeight: '120%', fontWeight: '600' }],
-        'h4-desktop': ['36px', { lineHeight: '130%', fontWeight: '600' }],
-        'h5-desktop': ['28px', { lineHeight: '140%', fontWeight: '500' }],
+        // Desktop Typography Scale (Professional Standards - Financial Services)
+        'h1-desktop': ['48px', { lineHeight: '110%', fontWeight: '700' }], // Professional size for investment company
+        'h2-desktop': ['32px', { lineHeight: '120%', fontWeight: '700' }],
+        'h3-desktop': ['24px', { lineHeight: '120%', fontWeight: '600' }],
+        'h4-desktop': ['20px', { lineHeight: '130%', fontWeight: '600' }],
+        'h5-desktop': ['18px', { lineHeight: '140%', fontWeight: '500' }],
         'h6-desktop': ['16px', { lineHeight: '150%', fontWeight: '500' }],
 
-        // Mobile Typography Scale (Enhanced for Figma alignment)
-        'h1-mobile': ['80px', { lineHeight: '115%', fontWeight: '800' }], // Increased from 64px (+25%)
-        'h2-mobile': ['40px', { lineHeight: '120%', fontWeight: '700' }],
-        'h3-mobile': ['32px', { lineHeight: '120%', fontWeight: '600' }],
-        'h4-mobile': ['24px', { lineHeight: '130%', fontWeight: '600' }],
-        'h5-mobile': ['20px', { lineHeight: '140%', fontWeight: '500' }],
-        'h6-mobile': ['18px', { lineHeight: '150%', fontWeight: '500' }],
+        // Mobile Typography Scale (Professional Standards - Financial Services)
+        'h1-mobile': ['40px', { lineHeight: '115%', fontWeight: '700' }], // Professional size for mobile
+        'h2-mobile': ['28px', { lineHeight: '120%', fontWeight: '700' }],
+        'h3-mobile': ['22px', { lineHeight: '120%', fontWeight: '600' }],
+        'h4-mobile': ['18px', { lineHeight: '130%', fontWeight: '600' }],
+        'h5-mobile': ['16px', { lineHeight: '140%', fontWeight: '500' }],
+        'h6-mobile': ['14px', { lineHeight: '150%', fontWeight: '500' }],
 
         // Body Text Scales
         'text-xl': ['22px', { lineHeight: '150%', fontWeight: '400' }],
@@ -207,6 +207,12 @@ module.exports = {
     require('@tailwindcss/typography'),
     require('@tailwindcss/aspect-ratio'),
   ],
+  corePlugins: {
+    // Let SCSS handle typography to avoid conflicts
+    fontSize: true,
+    fontWeight: true,
+    lineHeight: true,
+  },
   // Add custom utilities for screen reader classes
   safelist: [
     'sr-only',

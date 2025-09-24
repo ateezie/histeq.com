@@ -5,6 +5,15 @@
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* Load Sportscenter font for subheadings (as specified in brand guidelines) */
+@font-face {
+  font-family: 'Sportscenter';
+  src: url('../fonts/sportscenter.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Base Styles */
 @layer base {
   html {
@@ -327,6 +336,66 @@
 
   .text-responsive-h6 {
     @apply text-h6-mobile lg:text-h6-desktop;
+  }
+
+  /* States Coverage - Premium Badge Layout */
+  .region-group {
+    @apply mb-12;
+  }
+
+  .state-badge {
+    @apply relative bg-white rounded-xl p-4 text-center transition-all duration-300 shadow-sm border border-transparent cursor-pointer;
+  }
+
+  .state-badge:hover {
+    @apply -translate-y-0.5 shadow-lg;
+  }
+
+  .state-badge-primary {
+    @apply border-primary-600;
+  }
+
+  .state-badge-primary:hover {
+    box-shadow: 0 8px 25px rgba(189, 87, 43, 0.15);
+  }
+
+  .state-badge-secondary {
+    @apply border-secondary-500;
+  }
+
+  .state-badge-secondary:hover {
+    box-shadow: 0 8px 25px rgba(230, 205, 65, 0.15);
+  }
+
+  .state-badge-accent {
+    @apply border-light-blue-400;
+  }
+
+  .state-badge-accent:hover {
+    box-shadow: 0 8px 25px rgba(131, 172, 209, 0.15);
+  }
+
+  .state-abbr {
+    @apply block text-lg font-bold text-navy-900 mb-1;
+  }
+
+  .state-name {
+    @apply block text-xs text-neutral-500 font-medium;
+  }
+
+  .state-indicator {
+    @apply absolute top-2 right-2 w-1.5 h-1.5 rounded-full;
+    background: linear-gradient(135deg, #BD572B, #E6CD41);
+  }
+
+  .hq-indicator {
+    @apply bg-primary-600 w-2 h-2;
+  }
+
+  .hq-indicator::after {
+    content: "HQ";
+    @apply absolute -top-5 -right-2 text-xs font-bold text-primary-600 bg-white px-1 border border-primary-600 rounded-sm;
+    font-size: 8px;
   }
 
   /* Brand Color Utilities */

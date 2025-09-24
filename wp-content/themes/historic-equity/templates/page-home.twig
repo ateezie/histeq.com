@@ -1,0 +1,633 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <main class="main-content page-transition">
+
+        {# Hero Section - Enhanced Visual Impact #}
+        <section class="hero-section bg-white py-24" data-testid="hero-section">
+            <div class="content-container">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
+
+                    <!-- Hero Content - Left Column -->
+                    <div class="space-y-8 lg:space-y-10">
+                        <h1 class="brand-heading-xl text-brand-dark text-financial-hero">
+                            {{ fields.hero_title|default('State Historic Tax Credit<br>Investment & Consulting')|raw }}
+                        </h1>
+                        <div class="brand-accent-line"></div>
+                        {% if fields.hero_subtitle %}
+                            <p class="text-financial-subhead text-brand-neutral leading-relaxed max-w-lg">
+                                {{ fields.hero_subtitle }}
+                            </p>
+                        {% else %}
+                            <p class="text-financial-subhead text-brand-neutral leading-relaxed max-w-lg">
+                                Historic Equity, Inc. ("HEI") is a full service consultant and investor specializing in state historic tax credit ("SHTC") projects. As both partner and investor, HEI helps structure a legal framework that optimizes the sale and maximizes the financial benefits of various SHTC programs.
+                            </p>
+                        {% endif %}
+                    </div>
+
+                    <!-- Hero Image - Right Column -->
+                    <div class="image-hover-effect">
+                        {% if fields.hero_image %}
+                            <img src="{{ fields.hero_image.url }}"
+                                 alt="{{ fields.hero_image.alt|default('Historic building - example of historic preservation') }}"
+                                 class="w-full h-auto object-cover shadow-xl">
+                        {% else %}
+                            <img src="{{ theme.link }}/static/images/Union+Station+701+East+Douglas+Ave.,+Wichita,+KS+PE.webp"
+                                 alt="Historic Union Station building in Wichita, Kansas - a beautiful example of historic preservation"
+                                 class="w-full h-auto object-cover shadow-xl">
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {# Our Historic Mission Section - Consistent Spacing #}
+        <section id="mission" class="py-24 bg-white" data-testid="historic-mission">
+            <div class="content-container">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="brand-subheading brand-heading-md text-brand-primary content-spacing-md">
+                        {{ fields.mission_title|default('Our Track Record') }}
+                    </h2>
+                    <div class="brand-accent-line"></div>
+                    <p class="text-lg lg:text-xl text-brand-dark leading-relaxed max-w-3xl mx-auto brand-body content-spacing-lg">
+                        {{ fields.mission_content|default('Located in St. Louis, MO, HEI has participated in over 250+ state historic projects since 2001 with QRE totalling over $1 Billion. HEI provides expert guidance to structure the investment in a way that benefits the project owners. Beyond consulting, HEI actively participates as a capital partner, bringing both financial resources and specialized expertise to enhance the success of historic preservation projects.') }}
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        {# How We Preserve History Section - Consistent Spacing #}
+        <section id="services" class="py-24 bg-brand-off-white" data-testid="preserve-history">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="text-center mb-16 lg:mb-20">
+                    <h2 class="brand-heading-md text-brand-dark">
+                        {{ fields.services_title|default('Why Choose Historic Equity Inc?') }}
+                    </h2>
+                </div>
+
+                <!-- Content Sections Matching Mockup -->
+                <div class="max-w-4xl mx-auto space-y-16">
+
+                    {% if fields.service_items %}
+                        {% for item in fields.service_items %}
+                            <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                                {% if loop.index is odd %}
+                                    <div class="space-y-4 lg:space-y-6">
+                                        <h3 class="brand-title text-2xl lg:text-3xl text-brand-dark">
+                                            {{ item.title }}
+                                        </h3>
+                                        <p class="text-lg text-brand-dark leading-relaxed brand-body">
+                                            {{ item.content }}
+                                        </p>
+                                    </div>
+                                    <div class="image-hover-effect">
+                                        {% if item.image %}
+                                            <img src="{{ item.image.url }}"
+                                                 alt="{{ item.image.alt|default(item.title) }}"
+                                                 class="w-full h-64 object-cover shadow-lg">
+                                        {% endif %}
+                                    </div>
+                                {% else %}
+                                    <div class="lg:order-2 space-y-4 lg:space-y-6">
+                                        <h3 class="brand-title text-2xl lg:text-3xl text-brand-dark">
+                                            {{ item.title }}
+                                        </h3>
+                                        <p class="text-lg text-brand-dark leading-relaxed brand-body">
+                                            {{ item.content }}
+                                        </p>
+                                    </div>
+                                    <div class="lg:order-1 image-hover-effect">
+                                        {% if item.image %}
+                                            <img src="{{ item.image.url }}"
+                                                 alt="{{ item.image.alt|default(item.title) }}"
+                                                 class="w-full h-64 object-cover shadow-lg">
+                                        {% endif %}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <!-- Fallback content -->
+                        <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                            <div class="space-y-4 lg:space-y-6">
+                                <h3 class="brand-title text-2xl lg:text-3xl text-brand-dark">
+                                    Specialized Expertise
+                                </h3>
+                                <p class="text-lg text-brand-dark leading-relaxed brand-body">
+                                    Deep knowledge of state historic tax credit programs gained through 20+ years of experience and over 250+ projects across multiple states.
+                                </p>
+                            </div>
+                            <div>
+                                <img src="{{ theme.link }}/static/images/Springfield+Historiy+Museum+Park+Central+Square,+Springfield,+MO+crop.webp"
+                                     alt="Springfield History Museum - example of successful historic preservation"
+                                     class="w-full aspect-[4/3] object-cover rounded-lg shadow-md">
+                            </div>
+                        </div>
+
+                        <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                            <div class="lg:order-2 space-y-4 lg:space-y-6">
+                                <h3 class="brand-title text-2xl lg:text-3xl text-brand-dark">
+                                    Full-Service Partner
+                                </h3>
+                                <p class="text-lg text-brand-dark leading-relaxed brand-body">
+                                    Combining consulting, investment, and tax structuring services to provide comprehensive support throughout your historic preservation project.
+                                </p>
+                            </div>
+                            <div class="lg:order-1">
+                                <img src="{{ theme.link }}/static/images/Corrigan,+KC+PE+(1).webp"
+                                     alt="Corrigan Building Kansas City - leadership in historic preservation"
+                                     class="w-full aspect-[4/3] object-cover rounded-lg shadow-md">
+                            </div>
+                        </div>
+
+                        <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                            <div class="space-y-4 lg:space-y-6">
+                                <h3 class="brand-title text-2xl lg:text-3xl text-brand-dark">
+                                    Established Network
+                                </h3>
+                                <p class="text-lg text-brand-dark leading-relaxed brand-body">
+                                    Access to developers, tax credit buyers, and legal experts built over decades of successful partnerships in the historic preservation industry.
+                                </p>
+                            </div>
+                            <div>
+                                <img src="{{ theme.link }}/static/images/Union+Station+701+East+Douglas+Ave.,+Wichita,+KS+PE.webp"
+                                     alt="Union Station Wichita - network of successful projects"
+                                     class="w-full aspect-[4/3] object-cover rounded-lg shadow-md">
+                            </div>
+                        </div>
+
+                        <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                            <div class="lg:order-2 space-y-4 lg:space-y-6">
+                                <h3 class="brand-title text-2xl lg:text-3xl text-brand-dark">
+                                    Flexible Model
+                                </h3>
+                                <p class="text-lg text-brand-dark leading-relaxed brand-body">
+                                    Ability to step into a variety of project structures, adapting our approach to meet the unique needs and goals of each historic preservation project.
+                                </p>
+                            </div>
+                            <div class="lg:order-1">
+                                <img src="{{ theme.link }}/static/images/Tower+Theatre+Building,+Oklahoma+City,+OK+PE.webp"
+                                     alt="Tower Theatre Building - flexible project approach"
+                                     class="w-full aspect-[4/3] object-cover rounded-lg shadow-md">
+                            </div>
+                        </div>
+                    {% endif %}
+
+                </div>
+            </div>
+        </section>
+
+        {# Success Stories Section - Proper Section Structure #}
+        <section class="py-24 bg-white" data-testid="success-stories">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="text-center mb-16 lg:mb-20">
+                    <h2 class="text-h3-mobile lg:text-h3-desktop text-navy-900 mb-6 lg:mb-8">
+                        {{ fields.stats_title|default('Our successful preservation stories') }}
+                    </h2>
+                    <p class="text-text-lg lg:text-text-xl text-navy-700 max-w-2xl mx-auto">
+                        {{ fields.stats_subtitle|default('Across 17+ states, we\'ve helped preserve over 200 historic properties') }}
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                    {% if fields.stats_items %}
+                        {% for stat in fields.stats_items %}
+                            <div class="text-center p-6">
+                                <div class="text-h3-mobile lg:text-h3-desktop text-primary-600 mb-3">{{ stat.number }}</div>
+                                <div class="text-text-lg text-navy-700">{{ stat.label }}</div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <!-- Fallback content -->
+                        <div class="text-center p-6 glass-card">
+                            <div class="stat-number mb-3">23+</div>
+                            <div class="text-lg text-brand-dark brand-body">Years Experience</div>
+                        </div>
+                        <div class="text-center p-6 glass-card">
+                            <div class="stat-number mb-3">$1B+</div>
+                            <div class="text-lg text-brand-dark brand-body">Total QRE</div>
+                        </div>
+                        <div class="text-center p-6 glass-card">
+                            <div class="stat-number mb-3">250+</div>
+                            <div class="text-lg text-brand-dark brand-body">Projects Completed</div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+
+        {# States Coverage Section - Premium Badge Layout #}
+        <section class="py-24 bg-white" data-testid="states-coverage">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="text-center mb-16">
+                    <h2 class="text-h3-mobile lg:text-h3-desktop text-navy-900 mb-6">
+                        20 States, Endless Possibilities
+                    </h2>
+                    <p class="text-text-lg lg:text-text-xl text-navy-700 max-w-3xl mx-auto">
+                        Regional expertise meets local market knowledge across key historic preservation markets.
+                    </p>
+                </div>
+
+                <div class="max-w-6xl mx-auto space-y-12">
+                    {# Midwest Region #}
+                    <div class="region-group">
+                        <h3 class="text-xl font-semibold text-navy-900 mb-6 flex items-center">
+                            <div class="w-3 h-3 bg-primary-600 rounded-full mr-3"></div>
+                            Midwest Stronghold
+                        </h3>
+                        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                            <div class="state-badge state-badge-primary">
+                                <span class="state-abbr">MO</span>
+                                <span class="state-name">Missouri</span>
+                                <div class="state-indicator hq-indicator"></div>
+                            </div>
+                            <div class="state-badge state-badge-primary">
+                                <span class="state-abbr">IA</span>
+                                <span class="state-name">Iowa</span>
+                                <div class="state-indicator"></div>
+                            </div>
+                            <div class="state-badge state-badge-primary">
+                                <span class="state-abbr">IL</span>
+                                <span class="state-name">Illinois</span>
+                                <div class="state-indicator"></div>
+                            </div>
+                            <div class="state-badge state-badge-primary">
+                                <span class="state-abbr">IN</span>
+                                <span class="state-name">Indiana</span>
+                                <div class="state-indicator"></div>
+                            </div>
+                            <div class="state-badge state-badge-primary">
+                                <span class="state-abbr">KS</span>
+                                <span class="state-name">Kansas</span>
+                                <div class="state-indicator"></div>
+                            </div>
+                            <div class="state-badge state-badge-primary">
+                                <span class="state-abbr">MN</span>
+                                <span class="state-name">Minnesota</span>
+                                <div class="state-indicator"></div>
+                            </div>
+                            <div class="state-badge state-badge-primary">
+                                <span class="state-abbr">NE</span>
+                                <span class="state-name">Nebraska</span>
+                                <div class="state-indicator"></div>
+                            </div>
+                            <div class="state-badge state-badge-primary">
+                                <span class="state-abbr">OH</span>
+                                <span class="state-name">Ohio</span>
+                                <div class="state-indicator"></div>
+                            </div>
+                            <div class="state-badge state-badge-primary">
+                                <span class="state-abbr">WI</span>
+                                <span class="state-name">Wisconsin</span>
+                                <div class="state-indicator"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {# Southern Markets #}
+                    <div class="region-group">
+                        <h3 class="text-xl font-semibold text-navy-900 mb-6 flex items-center">
+                            <div class="w-3 h-3 bg-secondary-500 rounded-full mr-3"></div>
+                            Southern Markets
+                        </h3>
+                        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                            <div class="state-badge state-badge-secondary">
+                                <span class="state-abbr">AR</span>
+                                <span class="state-name">Arkansas</span>
+                                <div class="state-indicator"></div>
+                            </div>
+                            <div class="state-badge state-badge-secondary">
+                                <span class="state-abbr">GA</span>
+                                <span class="state-name">Georgia</span>
+                                <div class="state-indicator"></div>
+                            </div>
+                            <div class="state-badge state-badge-secondary">
+                                <span class="state-abbr">KY</span>
+                                <span class="state-name">Kentucky</span>
+                                <div class="state-indicator"></div>
+                            </div>
+                            <div class="state-badge state-badge-secondary">
+                                <span class="state-abbr">LA</span>
+                                <span class="state-name">Louisiana</span>
+                                <div class="state-indicator"></div>
+                            </div>
+                            <div class="state-badge state-badge-secondary">
+                                <span class="state-abbr">OK</span>
+                                <span class="state-name">Oklahoma</span>
+                                <div class="state-indicator"></div>
+                            </div>
+                            <div class="state-badge state-badge-secondary">
+                                <span class="state-abbr">SC</span>
+                                <span class="state-name">South Carolina</span>
+                                <div class="state-indicator"></div>
+                            </div>
+                            <div class="state-badge state-badge-secondary">
+                                <span class="state-abbr">TX</span>
+                                <span class="state-name">Texas</span>
+                                <div class="state-indicator"></div>
+                            </div>
+                            <div class="state-badge state-badge-secondary">
+                                <span class="state-abbr">VA</span>
+                                <span class="state-name">Virginia</span>
+                                <div class="state-indicator"></div>
+                            </div>
+                            <div class="state-badge state-badge-secondary">
+                                <span class="state-abbr">WV</span>
+                                <span class="state-name">West Virginia</span>
+                                <div class="state-indicator"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {# Northeastern Markets #}
+                    <div class="region-group">
+                        <h3 class="text-xl font-semibold text-navy-900 mb-6 flex items-center">
+                            <div class="w-3 h-3 bg-light-blue-400 rounded-full mr-3"></div>
+                            Northeastern Markets
+                        </h3>
+                        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                            <div class="state-badge state-badge-accent">
+                                <span class="state-abbr">CT</span>
+                                <span class="state-name">Connecticut</span>
+                                <div class="state-indicator"></div>
+                            </div>
+                            <div class="state-badge state-badge-accent">
+                                <span class="state-abbr">RI</span>
+                                <span class="state-name">Rhode Island</span>
+                                <div class="state-indicator"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {# Why Partner Section - Proper Section Structure #}
+        <section class="py-24 bg-brand-off-white" data-testid="why-partner">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="text-center mb-16 lg:mb-20">
+                    <h2 class="text-h3-mobile lg:text-h3-desktop text-navy-900">
+                        {{ fields.partner_title|default('Why partner with Historic Equity Inc?') }}
+                    </h2>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                    {% if fields.partner_items %}
+                        {% for item in fields.partner_items %}
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    {% if item.icon == 'users' %}
+                                        <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                                        </svg>
+                                    {% elseif item.icon == 'lightning' %}
+                                        <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                        </svg>
+                                    {% elseif item.icon == 'shield' %}
+                                        <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.998-.046A23.05 23.05 0 0122 12c0 2.72-.78 5.26-2.12 7.39a12.96 12.96 0 01-7.36 3.84 13.02 13.02 0 01-7.36-3.84C3.78 17.26 3 14.72 3 12a23.05 23.05 0 018.998-.046z"/>
+                                        </svg>
+                                    {% elseif item.icon == 'star' %}
+                                        <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+                                        </svg>
+                                    {% else %}
+                                        <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                        </svg>
+                                    {% endif %}
+                                </div>
+                                <h3 class="font-subheading text-h6-mobile lg:text-h6-mobile text-navy-900 mb-3">{{ item.title }}</h3>
+                                <p class="text-text-lg text-navy-700">{{ item.description }}</p>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <!-- Fallback content -->
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-subheading text-h6-mobile lg:text-h6-mobile text-navy-900 mb-3">Trusted expertise</h3>
+                            <p class="text-text-lg text-navy-700">Over two decades of specialized SHTC investment experience</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-subheading text-h6-mobile lg:text-h6-mobile text-navy-900 mb-3">Community matters</h3>
+                            <p class="text-text-lg text-navy-700">Building sustainable communities through strategic partnerships</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-subheading text-h6-mobile lg:text-h6-mobile text-navy-900 mb-3">Maximum impact</h3>
+                            <p class="text-text-lg text-navy-700">Optimizing benefits while preserving architectural heritage</p>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+
+        {# Join Our Preservation Mission Section - Exact /design/cta+footer.png Match #}
+        <section class="py-24 bg-white" data-testid="join-mission">
+            <div class="container mx-auto px-6 lg:px-12">
+                {# Centered Content #}
+                <div class="text-center max-w-4xl mx-auto">
+                    <h2 class="text-h3-mobile lg:text-h3-desktop text-navy-900 mb-6 lg:mb-8">
+                        {{ fields.cta_title|default('Start Your Historic Tax Credit Project') }}
+                    </h2>
+                    <p class="text-text-lg lg:text-text-xl text-navy-700 mb-8 lg:mb-12 leading-relaxed">
+                        {{ fields.cta_content|default('Ready to maximize your historic rehabilitation tax credit benefits? Our experienced team provides strategic guidance from project evaluation to final certification.') }}
+                    </p>
+                    {% if fields.cta_primary_button_text or fields.cta_secondary_button_text %}
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                            {% if fields.cta_primary_button_text %}
+                                <a href="{{ fields.cta_primary_button_link|default('/contact/') }}"
+                                   class="inline-flex items-center justify-center px-8 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors duration-200"
+                                   data-testid="mission-primary-cta">
+                                    {{ fields.cta_primary_button_text }}
+                                </a>
+                            {% endif %}
+                            {% if fields.cta_secondary_button_text %}
+                                <a href="{{ fields.cta_secondary_button_link|default('/meet-our-team/') }}"
+                                   class="inline-flex items-center justify-center px-8 py-3 bg-transparent border-2 border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition-colors duration-200"
+                                   data-testid="mission-secondary-cta">
+                                    {{ fields.cta_secondary_button_text }}
+                                </a>
+                            {% endif %}
+                        </div>
+                    {% else %}
+                        <!-- Business-focused fallback buttons -->
+                        <div class="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+                            <a href="/contact/"
+                               class="btn-brand-primary"
+                               data-testid="mission-consultation-cta">
+                                Schedule Consultation
+                            </a>
+                            <a href="/contact/"
+                               class="btn-brand-secondary"
+                               data-testid="mission-evaluate-cta">
+                                Evaluate My Project
+                            </a>
+                        </div>
+                    {% endif %}
+
+                    {# Large Image Below Content #}
+                    <div class="max-w-4xl mx-auto">
+                        {% if fields.cta_image %}
+                            <img src="{{ fields.cta_image.url }}"
+                                 alt="{{ fields.cta_image.alt|default('Historic building preservation project') }}"
+                                 class="w-full aspect-[16/9] rounded-lg shadow-lg object-cover">
+                        {% else %}
+                            <img src="{{ theme.link }}/static/images/Tower+Theatre+Building,+Oklahoma+City,+OK+PE.webp"
+                                 alt="Tower Theatre Building in Oklahoma City, OK - beautiful example of historic theater preservation"
+                                 class="w-full aspect-[16/9] rounded-lg shadow-lg object-cover">
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {# Building Images Carousel Section #}
+        <section class="py-24 bg-brand-off-white" data-testid="building-carousel">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="text-center mb-16 lg:mb-20">
+                    <h2 class="text-h3-mobile lg:text-h3-desktop text-navy-900 mb-6 lg:mb-8">
+                        {{ fields.carousel_title|default('Our Historic Preservation Portfolio') }}
+                    </h2>
+                    <p class="text-text-lg lg:text-text-xl text-navy-700 max-w-2xl mx-auto">
+                        {{ fields.carousel_subtitle|default('Discover the stunning historic buildings we\'ve helped preserve and revitalize across 17+ states') }}
+                    </p>
+                </div>
+
+                <div class="building-carousel-container relative">
+                    {% if fields.building_images %}
+                        <div class="building-carousel overflow-hidden rounded-lg shadow-lg">
+                            <div class="carousel-track flex transition-transform duration-500 ease-in-out">
+                                {% for image in fields.building_images %}
+                                    <div class="carousel-slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-2">
+                                        <div class="relative group">
+                                            <img src="{{ image.image.url }}"
+                                                 alt="{{ image.image.alt|default(image.title) }}"
+                                                 class="w-full h-64 lg:h-80 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105">
+
+                                            {% if image.title or image.location %}
+                                                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 rounded-b-lg">
+                                                    {% if image.title %}
+                                                        <h3 class="text-white font-semibold text-lg mb-1">{{ image.title }}</h3>
+                                                    {% endif %}
+                                                    {% if image.location %}
+                                                        <p class="text-white/90 text-sm">{{ image.location }}</p>
+                                                    {% endif %}
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <!-- Carousel Navigation -->
+                        <button class="carousel-prev absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-navy-900 p-3 rounded-full shadow-lg transition-all duration-200 z-10">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                            </svg>
+                        </button>
+                        <button class="carousel-next absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-navy-900 p-3 rounded-full shadow-lg transition-all duration-200 z-10">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+
+                        <!-- Carousel Indicators -->
+                        <div class="carousel-indicators flex justify-center mt-8 space-x-2">
+                            {% for image in fields.building_images %}
+                                <button class="carousel-indicator w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-colors duration-200 {% if loop.index0 == 0 %}bg-primary-600{% endif %}" data-slide="{{ loop.index0 }}"></button>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <!-- Fallback: Show existing building images -->
+                        <div class="building-carousel overflow-hidden rounded-lg shadow-lg">
+                            <div class="carousel-track flex transition-transform duration-500 ease-in-out">
+                                <div class="carousel-slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-2">
+                                    <div class="relative group">
+                                        <img src="{{ theme.link }}/static/images/Union+Station+701+East+Douglas+Ave.,+Wichita,+KS+PE.webp"
+                                             alt="Union Station, Wichita, KS"
+                                             class="w-full h-64 lg:h-80 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105">
+                                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 rounded-b-lg">
+                                            <h3 class="text-white font-semibold text-lg mb-1">Union Station</h3>
+                                            <p class="text-white/90 text-sm">Wichita, Kansas</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-2">
+                                    <div class="relative group">
+                                        <img src="{{ theme.link }}/static/images/Springfield+Historiy+Museum+Park+Central+Square,+Springfield,+MO+crop.webp"
+                                             alt="Springfield History Museum"
+                                             class="w-full h-64 lg:h-80 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105">
+                                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 rounded-b-lg">
+                                            <h3 class="text-white font-semibold text-lg mb-1">Springfield History Museum</h3>
+                                            <p class="text-white/90 text-sm">Springfield, Missouri</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-2">
+                                    <div class="relative group">
+                                        <img src="{{ theme.link }}/static/images/Tower+Theatre+Building,+Oklahoma+City,+OK+PE.webp"
+                                             alt="Tower Theatre Building"
+                                             class="w-full h-64 lg:h-80 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105">
+                                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 rounded-b-lg">
+                                            <h3 class="text-white font-semibold text-lg mb-1">Tower Theatre Building</h3>
+                                            <p class="text-white/90 text-sm">Oklahoma City, Oklahoma</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-2">
+                                    <div class="relative group">
+                                        <img src="{{ theme.link }}/static/images/Corrigan,+KC+PE+(1).webp"
+                                             alt="Corrigan Building"
+                                             class="w-full h-64 lg:h-80 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105">
+                                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 rounded-b-lg">
+                                            <h3 class="text-white font-semibold text-lg mb-1">Corrigan Building</h3>
+                                            <p class="text-white/90 text-sm">Kansas City, Missouri</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Carousel Navigation -->
+                        <button class="carousel-prev absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-navy-900 p-3 rounded-full shadow-lg transition-all duration-200 z-10">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                            </svg>
+                        </button>
+                        <button class="carousel-next absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-navy-900 p-3 rounded-full shadow-lg transition-all duration-200 z-10">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+
+                        <!-- Carousel Indicators -->
+                        <div class="carousel-indicators flex justify-center mt-8 space-x-2">
+                            <button class="carousel-indicator w-3 h-3 rounded-full bg-primary-600 transition-colors duration-200" data-slide="0"></button>
+                            <button class="carousel-indicator w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-colors duration-200" data-slide="1"></button>
+                            <button class="carousel-indicator w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-colors duration-200" data-slide="2"></button>
+                            <button class="carousel-indicator w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-colors duration-200" data-slide="3"></button>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+{% endblock %}

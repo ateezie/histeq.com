@@ -12,6 +12,15 @@
 // Styleguide shows Montserrat for both headings and body text
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap');
 
+// Load Sportscenter font for subheadings (as specified in brand guidelines)
+@font-face {
+  font-family: 'Sportscenter';
+  src: url('../fonts/sportscenter.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 // -----------------------------------------------------------------------------
 // BASE TYPOGRAPHY RESET
 // -----------------------------------------------------------------------------
@@ -96,8 +105,8 @@ body {
   color: $color;
 }
 
-// Subheading mixin (using Sportscenter font)
-@mixin subheading-style($size: $font-size-lg, $weight: $font-weight-semibold) {
+// Subheading mixin (using Sportscenter font per brand guidelines)
+@mixin subheading-style($size: $font-size-lg, $weight: normal) {
   font-family: $font-family-secondary;
   font-size: $size;
   font-weight: $weight;
@@ -132,6 +141,15 @@ body {
 h1, .h1 {
   @include responsive-heading($font-size-h1-desktop, $font-size-h1-mobile, $font-weight-bold, $line-height-tight);
   margin-bottom: map-get($spacing, 8);
+
+  // Override any conflicting styles with professional sizing
+  font-size: $font-size-h1-mobile !important;
+  line-height: 1.1 !important;
+  font-weight: $font-weight-bold !important;
+
+  @include tablet-up {
+    font-size: $font-size-h1-desktop !important;
+  }
 
   &.display {
     @include text-extra-bold;
@@ -501,6 +519,500 @@ li {
 
 .normal-case {
   text-transform: none;
+}
+
+// -----------------------------------------------------------------------------
+// BRAND-COMPLIANT TYPOGRAPHY UTILITIES
+// -----------------------------------------------------------------------------
+
+// Brand heading classes (Montserrat Bold per brand guidelines)
+.brand-heading {
+  font-family: $font-family-primary;
+  font-weight: $font-weight-bold;
+  color: $charade-base;
+  line-height: $line-height-tight;
+}
+
+.brand-heading-xl {
+  @extend .brand-heading;
+  font-size: $font-size-h1-mobile;
+
+  @include tablet-up {
+    font-size: $font-size-h1-desktop;
+  }
+}
+
+.brand-heading-lg {
+  @extend .brand-heading;
+  font-size: $font-size-h2-mobile;
+
+  @include tablet-up {
+    font-size: $font-size-h2-desktop;
+  }
+}
+
+.brand-heading-md {
+  @extend .brand-heading;
+  font-size: $font-size-h3-mobile;
+
+  @include tablet-up {
+    font-size: $font-size-h3-desktop;
+  }
+}
+
+// Brand subheading class (Sportscenter font per brand guidelines)
+.brand-subheading {
+  font-family: $font-family-secondary; // Sportscenter
+  font-size: $font-size-lg;
+  font-weight: normal;
+  line-height: $line-height-normal;
+  color: $primary;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-wide;
+  margin-bottom: map-get($spacing, 4);
+
+  &--sm {
+    font-size: $font-size-base;
+  }
+
+  &--lg {
+    font-size: $font-size-xl;
+  }
+}
+
+// Ensure Sportscenter font is loaded
+@font-face {
+  font-family: 'Sportscenter';
+  src: url('../fonts/sportscenter.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Brand title class (Montserrat SemiBold per brand guidelines)
+.brand-title {
+  font-family: $font-family-primary;
+  font-weight: $font-weight-semibold;
+  color: $charade-base;
+  line-height: $line-height-tight;
+}
+
+// Brand body text (Montserrat Regular per brand guidelines)
+.brand-body {
+  font-family: $font-family-primary;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-relaxed;
+  color: $charade-base;
+}
+
+// Brand quote text (Montserrat Italic per brand guidelines)
+.brand-quote {
+  @include quote-style;
+}
+
+// Brand caption text (Montserrat Light per brand guidelines)
+.brand-caption {
+  @include caption-style;
+}
+
+// Brand color utilities
+.text-brand-primary {
+  color: $primary !important;
+}
+
+.text-brand-secondary {
+  color: $secondary !important;
+}
+
+.text-brand-accent {
+  color: $accent !important;
+}
+
+.text-brand-neutral {
+  color: $neutral !important;
+}
+
+.text-brand-dark {
+  color: $dark !important;
+}
+
+.bg-brand-primary {
+  background-color: $primary !important;
+}
+
+.bg-brand-secondary {
+  background-color: $secondary !important;
+}
+
+.bg-brand-accent {
+  background-color: $accent !important;
+}
+
+.bg-brand-neutral {
+  background-color: $neutral !important;
+}
+
+.bg-brand-off-white {
+  background-color: $off-white !important;
+}
+
+// -----------------------------------------------------------------------------
+// ENHANCED VISUAL HIERARCHY & MODERN DESIGN
+// -----------------------------------------------------------------------------
+
+// Professional section spacing
+.section-spacing {
+  padding-top: map-get($spacing, 32);
+  padding-bottom: map-get($spacing, 32);
+
+  @include tablet-up {
+    padding-top: map-get($spacing, 40);
+    padding-bottom: map-get($spacing, 40);
+  }
+}
+
+// Modern card design
+.brand-card {
+  background: $off-white;
+  border-radius: $border-radius-xl;
+  box-shadow: $shadow-lg;
+  padding: map-get($spacing, 8);
+  transition: $transition-base;
+  border: 1px solid rgba($neutral, 0.1);
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-xl;
+  }
+}
+
+// Enhanced button styles
+.btn-brand-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: map-get($spacing, 4) map-get($spacing, 8);
+  background-color: $primary;
+  color: $off-white;
+  font-family: $font-family-primary;
+  font-weight: $font-weight-semibold;
+  font-size: $font-size-base;
+  border-radius: $border-radius-lg;
+  border: none;
+  transition: $transition-colors;
+  text-decoration: none;
+  box-shadow: $shadow-md;
+
+  &:hover {
+    background-color: $primary-dark;
+    color: $off-white;
+    text-decoration: none;
+    box-shadow: $shadow-lg;
+    transform: translateY(-2px);
+  }
+
+  &:focus {
+    outline: 2px solid $primary;
+    outline-offset: 2px;
+  }
+}
+
+.btn-brand-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: map-get($spacing, 4) map-get($spacing, 8);
+  background-color: transparent;
+  color: $primary;
+  font-family: $font-family-primary;
+  font-weight: $font-weight-semibold;
+  font-size: $font-size-base;
+  border: 2px solid $primary;
+  border-radius: $border-radius-lg;
+  transition: $transition-colors;
+  text-decoration: none;
+
+  &:hover {
+    background-color: rgba($primary, 0.05);
+    color: $primary-dark;
+    text-decoration: none;
+    border-color: $primary-dark;
+  }
+
+  &:focus {
+    outline: 2px solid $primary;
+    outline-offset: 2px;
+  }
+}
+
+// Professional spacing system
+.content-spacing-sm {
+  margin-bottom: map-get($spacing, 4);
+}
+
+.content-spacing-md {
+  margin-bottom: map-get($spacing, 6);
+}
+
+.content-spacing-lg {
+  margin-bottom: map-get($spacing, 8);
+}
+
+.content-spacing-xl {
+  margin-bottom: map-get($spacing, 12);
+}
+
+// Enhanced visual elements
+.brand-accent-line {
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, $primary, $secondary);
+  border-radius: $border-radius-base;
+  margin: map-get($spacing, 4) auto;
+}
+
+// Professional container max-widths
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 map-get($spacing, 6);
+
+  @include tablet-up {
+    padding: 0 map-get($spacing, 12);
+  }
+}
+
+// Professional text scaling for financial services
+.text-financial-hero {
+  font-size: 2rem !important;    // 32px mobile - more compact for professional look
+  line-height: 1.0 !important;   // Tighter line height
+  letter-spacing: -0.01em !important;
+  font-weight: 700 !important;
+
+  @include tablet-up {
+    font-size: 3rem !important;    // 48px desktop - professional standard
+    line-height: 1.1 !important;   // Slightly more line height on desktop
+  }
+}
+
+// Ensure H1 elements use professional sizing
+h1.brand-heading-xl,
+h1.text-financial-hero,
+.brand-heading-xl.text-financial-hero {
+  font-size: 2rem !important;    // 32px mobile - more compact
+  line-height: 1.0 !important;   // Tighter line height for mobile
+  font-weight: 700 !important;
+  letter-spacing: -0.01em !important;
+
+  @include tablet-up {
+    font-size: 3rem !important;    // 48px desktop
+    line-height: 1.1 !important;   // Proper line height for desktop
+  }
+}
+
+.text-financial-subhead {
+  font-size: 1.125rem;  // 18px
+  line-height: 1.5;
+  font-weight: $font-weight-medium;
+
+  @include tablet-up {
+    font-size: 1.25rem; // 20px - better proportion
+  }
+}
+
+// -----------------------------------------------------------------------------
+// MODERN UI POLISH & SOPHISTICATED INTERACTIONS
+// -----------------------------------------------------------------------------
+
+// Elegant fade-in animation
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Sophisticated hover effects for images
+.image-hover-effect {
+  overflow: hidden;
+  border-radius: $border-radius-xl;
+
+  img {
+    transition: transform 0.6s ease, filter 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+      filter: brightness(1.1);
+    }
+  }
+}
+
+// Professional glass-morphism effect
+.glass-card {
+  background: rgba($off-white, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba($neutral, 0.1);
+  border-radius: $border-radius-2xl;
+  box-shadow: 0 8px 32px rgba($primary, 0.1);
+  transition: $transition-base;
+
+  &:hover {
+    background: rgba($off-white, 0.95);
+    border-color: rgba($primary, 0.2);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba($primary, 0.15);
+  }
+}
+
+// Sophisticated loading states
+.loading-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba($neutral, 0.1),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+// Enhanced focus states for accessibility
+.focus-ring {
+  &:focus-visible {
+    outline: 2px solid $secondary;
+    outline-offset: 4px;
+    border-radius: $border-radius-lg;
+    box-shadow: 0 0 0 4px rgba($secondary, 0.2);
+  }
+}
+
+// Professional gradient text
+.gradient-text {
+  background: linear-gradient(135deg, $primary, $secondary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: gradient 6s ease infinite;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+// Smooth page transitions
+.page-transition {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+// Modern section dividers
+.section-divider {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, $neutral, transparent);
+  }
+}
+
+// Professional statistics display
+.stat-number {
+  font-family: $font-family-primary;
+  font-weight: $font-weight-bold;
+  background: linear-gradient(135deg, $primary, $secondary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2rem;     // 32px - more reasonable
+  line-height: 1;
+
+  @include tablet-up {
+    font-size: 2.5rem; // 40px - professional standard
+  }
+}
+
+// Elegant scroll indicators
+.scroll-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, $primary, $secondary);
+  transform-origin: 0%;
+  z-index: 9999;
+}
+
+// Modern form styling
+.form-modern {
+  .form-group {
+    position: relative;
+    margin-bottom: map-get($spacing, 6);
+  }
+
+  input, textarea, select {
+    width: 100%;
+    padding: map-get($spacing, 4) map-get($spacing, 5);
+    border: 2px solid rgba($neutral, 0.2);
+    border-radius: $border-radius-lg;
+    background: rgba($off-white, 0.8);
+    font-family: $font-family-primary;
+    font-size: $font-size-base;
+    transition: $transition-base;
+
+    &:focus {
+      outline: none;
+      border-color: $primary;
+      background: $off-white;
+      box-shadow: 0 0 0 4px rgba($primary, 0.1);
+    }
+
+    &::placeholder {
+      color: rgba($neutral, 0.6);
+    }
+  }
+}
+
+// Professional loading spinner
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba($primary, 0.1);
+  border-left: 4px solid $primary;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+
+  &--sm {
+    width: 20px;
+    height: 20px;
+    border-width: 2px;
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 // -----------------------------------------------------------------------------
