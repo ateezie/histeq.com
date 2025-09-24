@@ -522,6 +522,7 @@ Each specialist agent will focus on their domain while maintaining consistent co
 - Comprehensive design checklist in `/context/design-principles.md`
 - Brand style guide in `/context/style-guide.md`
 - When making visual (front-end, UI/UX) changes, always refer to these files for guidance
+- Do not use !important in CSS
 
 ### Quick Visual Check
 IMMEDIATELY after implementing any front-end change:
@@ -602,4 +603,7 @@ Invoke the `@agent-design-review` subagent for thorough design validation when:
 - Debug messages removed from homepage
 - Theme fully functional with Timber/Twig
 - All Phase 3.5 optimizations implemented
-- Design alignment in progress to match Figma specifications
+- **Latest Update (Sept 2025)**: Premium states coverage section implemented with authentic Historic Equity content
+- **Design Achievement**: Consistent vertical padding across all sections (96px standard)
+- **Content Integration**: Real company copy integrated from `/context/copy-document.md`
+- **States Display**: Professional badge layout with regional organization (20 states)
