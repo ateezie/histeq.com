@@ -62,8 +62,9 @@ deployment.log
 .mcp*.json
 playwright.config.js
 
-# WordPress uploads (managed on server)
+# WordPress uploads and backups (managed on server)
 wp-content/uploads/
+wp-content/ai1wm-backups/
 
 # Backup files
 *.bak
