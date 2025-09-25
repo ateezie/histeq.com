@@ -1,6 +1,10 @@
 # Dependencies
 node_modules/
+
+# Composer vendor (built on server)
 vendor/
+!wp-content/themes/historic-equity/composer.json
+!wp-content/themes/historic-equity/composer.lock
 
 # Build outputs
 dist/
@@ -72,7 +76,12 @@ wp-content/ai1wm-backups/
 *.backup
 *.sql
 
-# Additional WordPress core files
+# WordPress core files (managed on server)
 wp-admin/
 wp-includes/
 wp-config-sample.php
+index.php
+
+# Debug files (should not be in production)
+*-debug.php
+debug-*.php

@@ -58,6 +58,29 @@ try {
     $app_root = __DIR__;
     chdir($app_root);
 
+    // Install Composer dependencies for the theme
+    $theme_dir = 'wp-content/themes/historic-equity';
+    if (is_dir($theme_dir) && file_exists($theme_dir . '/composer.json')) {
+        log_message("Installing Composer dependencies for theme...");
+        chdir($theme_dir);
+
+        // Run composer install with production optimization
+        exec('composer install --no-dev --optimize-autoloader --no-interaction 2>&1', $composer_output, $composer_return);
+
+        if ($composer_return === 0) {
+            log_message("✅ Composer dependencies installed successfully");
+            log_message("Composer output: " . implode("\n", $composer_output));
+        } else {
+            log_message("❌ Composer install failed with code: " . $composer_return);
+            log_message("Composer error: " . implode("\n", $composer_output));
+        }
+
+        // Return to app root
+        chdir($app_root);
+    } else {
+        log_message("⚠️ Theme composer.json not found - skipping Composer install");
+    }
+
     // Clear WordPress cache if using caching plugins
     if (function_exists('wp_cache_flush')) {
         wp_cache_flush();
