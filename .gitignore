@@ -60,6 +60,7 @@ deployment.log
 
 # MCP Development Tools
 .mcp*.json
+.mcp.json
 playwright.config.js
 
 # WordPress uploads and backups (managed on server)
