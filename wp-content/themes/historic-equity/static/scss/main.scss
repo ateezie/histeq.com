@@ -37,6 +37,7 @@
 // text styles, headings, and responsive typography system.
 @import 'typography';
 @import 'colors';
+@import 'layout';
 
 // -----------------------------------------------------------------------------
 // 4. COMPONENT STYLES
@@ -51,6 +52,7 @@
 // Utility classes provide single-purpose styles for spacing, positioning,
 // display, colors, etc. These are used to fine-tune layouts and designs.
 @import 'utilities';
+@import 'responsive';
 
 // -----------------------------------------------------------------------------
 // 6. WORDPRESS INTEGRATION

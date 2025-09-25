@@ -1,0 +1,215 @@
+{
+  "timestamp": "2025-09-17T22:17:13.459Z",
+  "url": "http://localhost:8080",
+  "viewports": {
+    "desktop": {
+      "width": 1440,
+      "height": 900
+    },
+    "tablet": {
+      "width": 768,
+      "height": 1024
+    },
+    "mobile": {
+      "width": 375,
+      "height": 667
+    }
+  },
+  "navigation": [
+    {
+      "text": "",
+      "href": "http://localhost:8080/",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "http://localhost:8080/",
+      "visible": true
+    },
+    {
+      "text": "Meet Our Team",
+      "href": "http://localhost:8080/meet-our-team",
+      "visible": true
+    },
+    {
+      "text": "Contact",
+      "href": "http://localhost:8080/contact",
+      "visible": true
+    },
+    {
+      "text": "Home",
+      "href": "http://localhost:8080/",
+      "visible": false
+    },
+    {
+      "text": "Meet Our Team",
+      "href": "http://localhost:8080/meet-our-team",
+      "visible": false
+    },
+    {
+      "text": "Contact",
+      "href": "http://localhost:8080/contact",
+      "visible": false
+    }
+  ],
+  "buttons": [
+    {
+      "text": "",
+      "visible": true,
+      "disabled": false
+    }
+  ],
+  "forms": [],
+  "styles": {
+    "body": {
+      "color": "rgb(45, 46, 61)",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "fontFamily": "Montserrat, system-ui, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px"
+    },
+    "h1": {
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "fontFamily": "Montserrat, system-ui, sans-serif",
+      "fontSize": "72px",
+      "fontWeight": "800",
+      "lineHeight": "72px"
+    },
+    "h2": {
+      "color": "rgb(45, 46, 61)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "fontFamily": "Montserrat, system-ui, sans-serif",
+      "fontSize": "36px",
+      "fontWeight": "700",
+      "lineHeight": "40px"
+    },
+    "h3": {
+      "color": "rgb(45, 46, 61)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "fontFamily": "Montserrat, system-ui, sans-serif",
+      "fontSize": "24px",
+      "fontWeight": "700",
+      "lineHeight": "32px"
+    },
+    "primaryButton": null,
+    "navigation": {
+      "color": "rgb(45, 46, 61)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "fontFamily": "Montserrat, system-ui, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px"
+    }
+  },
+  "accessibility": {
+    "imagesWithoutAlt": 0,
+    "linksWithoutText": 2,
+    "buttonsWithoutText": 0,
+    "formFieldsWithoutLabels": 0,
+    "headingHierarchy": [
+      {
+        "tag": "h1",
+        "text": "Preserving History,\n                              "
+      },
+      {
+        "tag": "h2",
+        "text": "Our historic mission"
+      },
+      {
+        "tag": "h2",
+        "text": "Maximize Your Investment with Expert SHTC Partners"
+      },
+      {
+        "tag": "h3",
+        "text": "Tax Credit Monetization"
+      },
+      {
+        "tag": "h3",
+        "text": "Historic Preservation"
+      },
+      {
+        "tag": "h3",
+        "text": "Market Expertise"
+      },
+      {
+        "tag": "h3",
+        "text": "Our SHTC Investment Process"
+      },
+      {
+        "tag": "h4",
+        "text": "Project Evaluation"
+      },
+      {
+        "tag": "h4",
+        "text": "Investment Structuring"
+      },
+      {
+        "tag": "h4",
+        "text": "Capital Deployment"
+      },
+      {
+        "tag": "h4",
+        "text": "Project Completion"
+      },
+      {
+        "tag": "h2",
+        "text": "Featured Historic Preservation Projects"
+      },
+      {
+        "tag": "h3",
+        "text": "Historic Warehouse Lofts"
+      },
+      {
+        "tag": "h3",
+        "text": "Downtown Office Building"
+      },
+      {
+        "tag": "h3",
+        "text": "Art Deco Theater"
+      },
+      {
+        "tag": "h2",
+        "text": "Trusted SHTC Investment Partner Since 2001"
+      },
+      {
+        "tag": "h3",
+        "text": "Why Property Owners Choose Historic Equity"
+      },
+      {
+        "tag": "h2",
+        "text": "How we preserve history"
+      },
+      {
+        "tag": "h3",
+        "text": "Strategic tax credit investment with deep expertis"
+      },
+      {
+        "tag": "h2",
+        "text": "Ready to Maximize Your Historic Tax Credits?"
+      },
+      {
+        "tag": "h3",
+        "text": "Historic Equity Inc."
+      },
+      {
+        "tag": "h4",
+        "text": "Navigation"
+      }
+    ],
+    "focusableElements": 29
+  },
+  "console": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    }
+  ],
+  "errors": [],
+  "performance": {
+    "timing": {},
+    "navigation": {},
+    "memory": {}
+  }
+}

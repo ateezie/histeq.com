@@ -1,0 +1,53 @@
+name: Deploy to RunCloud
+
+on:
+  push:
+    branches: [ main, master, production ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci --only=production
+
+    - name: Build assets (if needed)
+      run: |
+        # Add any build commands here if you have asset compilation
+        # npm run build
+        echo "Build completed"
+
+    - name: Deploy to RunCloud
+      env:
+        RUNCLOUD_API_TOKEN: ${{ secrets.RUNCLOUD_API_TOKEN }}
+        RUNCLOUD_SERVER_ID: ${{ secrets.RUNCLOUD_SERVER_ID }}
+        RUNCLOUD_APP_ID: ${{ secrets.RUNCLOUD_APP_ID }}
+      run: |
+        curl -X POST \
+          "https://api.runcloud.io/v2/servers/$RUNCLOUD_SERVER_ID/webapps/$RUNCLOUD_APP_ID/git/deploy" \
+          -H "Authorization: Bearer $RUNCLOUD_API_TOKEN" \
+          -H "Content-Type: application/json" \
+          -d '{
+            "branch": "${{ github.ref_name }}",
+            "commit": "${{ github.sha }}"
+          }'
+
+    - name: Notify deployment status
+      if: always()
+      run: |
+        if [ $? -eq 0 ]; then
+          echo "✅ Deployment successful"
+        else
+          echo "❌ Deployment failed"
+          exit 1
+        fi

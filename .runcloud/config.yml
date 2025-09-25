@@ -1,0 +1,57 @@
+# RunCloud Configuration for Historic Equity Inc.
+# This file contains deployment settings for RunCloud
+
+deployment:
+  # Source settings
+  repository:
+    url: "git@github.com:ateezie/histeq.com.git"
+    branch: "main"
+
+  # Build settings
+  build:
+    enabled: false  # Set to true if you need to build assets
+    commands:
+      # - "npm ci --only=production"
+      # - "npm run build"
+
+  # Deployment settings
+  deploy:
+    # Exclude files from deployment
+    exclude:
+      - ".git/"
+      - ".github/"
+      - "node_modules/"
+      - "*.md"
+      - ".gitignore"
+      - "package-lock.json"
+      - "tests/"
+      - "playwright.config.js"
+      - "baseline-screenshots/"
+      - ".mcp*"
+
+    # Post-deployment hooks
+    hooks:
+      after_deploy:
+        - "php deploy.php"
+
+  # Environment settings
+  environment:
+    # WordPress specific settings
+    WP_ENV: "production"
+    WP_DEBUG: "false"
+    WP_DEBUG_LOG: "false"
+
+# Health check settings
+health_check:
+  url: "/"
+  method: "GET"
+  expected_status: 200
+  timeout: 30
+
+# Backup settings (optional)
+backup:
+  enabled: true
+  retention_days: 7
+  exclude_tables:
+    - "wp_posts_revisions"
+    - "wp_actionscheduler_*"

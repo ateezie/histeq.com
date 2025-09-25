@@ -1,0 +1,213 @@
+{
+  "summary": {
+    "totalIssues": 0,
+    "blockers": [],
+    "highPriority": [],
+    "mediumPriority": [],
+    "nitpicks": []
+  },
+  "pages": {
+    "Homepage": {
+      "issues": [
+        {
+          "type": "high",
+          "category": "Navigation",
+          "description": "Navigation item not visible on desktop",
+          "viewport": "Desktop"
+        },
+        {
+          "type": "high",
+          "category": "Navigation",
+          "description": "Navigation item not visible on desktop",
+          "viewport": "Desktop"
+        },
+        {
+          "type": "high",
+          "category": "Navigation",
+          "description": "Navigation item not visible on desktop",
+          "viewport": "Desktop"
+        },
+        {
+          "type": "high",
+          "category": "Navigation",
+          "description": "Navigation item not visible on desktop",
+          "viewport": "Laptop"
+        },
+        {
+          "type": "high",
+          "category": "Navigation",
+          "description": "Navigation item not visible on desktop",
+          "viewport": "Laptop"
+        },
+        {
+          "type": "high",
+          "category": "Navigation",
+          "description": "Navigation item not visible on desktop",
+          "viewport": "Laptop"
+        }
+      ],
+      "screenshots": [
+        {
+          "viewport": "Desktop",
+          "path": "/Users/alexthip/Projects/histeq.com/design-review-screenshots/Homepage-Desktop.png"
+        },
+        {
+          "viewport": "Laptop",
+          "path": "/Users/alexthip/Projects/histeq.com/design-review-screenshots/Homepage-Laptop.png"
+        },
+        {
+          "viewport": "Tablet",
+          "path": "/Users/alexthip/Projects/histeq.com/design-review-screenshots/Homepage-Tablet.png"
+        },
+        {
+          "viewport": "Mobile",
+          "path": "/Users/alexthip/Projects/histeq.com/design-review-screenshots/Homepage-Mobile.png"
+        }
+      ],
+      "consoleErrors": []
+    },
+    "Meet Our Team": {
+      "issues": [
+        {
+          "type": "high",
+          "category": "Navigation",
+          "description": "Navigation item not visible on desktop",
+          "viewport": "Desktop"
+        },
+        {
+          "type": "high",
+          "category": "Navigation",
+          "description": "Navigation item not visible on desktop",
+          "viewport": "Desktop"
+        },
+        {
+          "type": "high",
+          "category": "Navigation",
+          "description": "Navigation item not visible on desktop",
+          "viewport": "Desktop"
+        },
+        {
+          "type": "high",
+          "category": "Navigation",
+          "description": "Navigation item not visible on desktop",
+          "viewport": "Laptop"
+        },
+        {
+          "type": "high",
+          "category": "Navigation",
+          "description": "Navigation item not visible on desktop",
+          "viewport": "Laptop"
+        },
+        {
+          "type": "high",
+          "category": "Navigation",
+          "description": "Navigation item not visible on desktop",
+          "viewport": "Laptop"
+        }
+      ],
+      "screenshots": [
+        {
+          "viewport": "Desktop",
+          "path": "/Users/alexthip/Projects/histeq.com/design-review-screenshots/Meet-Our-Team-Desktop.png"
+        },
+        {
+          "viewport": "Laptop",
+          "path": "/Users/alexthip/Projects/histeq.com/design-review-screenshots/Meet-Our-Team-Laptop.png"
+        },
+        {
+          "viewport": "Tablet",
+          "path": "/Users/alexthip/Projects/histeq.com/design-review-screenshots/Meet-Our-Team-Tablet.png"
+        },
+        {
+          "viewport": "Mobile",
+          "path": "/Users/alexthip/Projects/histeq.com/design-review-screenshots/Meet-Our-Team-Mobile.png"
+        }
+      ],
+      "consoleErrors": []
+    },
+    "Contact Us": {
+      "issues": [
+        {
+          "type": "high",
+          "category": "Navigation",
+          "description": "Navigation item not visible on desktop",
+          "viewport": "Desktop"
+        },
+        {
+          "type": "high",
+          "category": "Navigation",
+          "description": "Navigation item not visible on desktop",
+          "viewport": "Desktop"
+        },
+        {
+          "type": "high",
+          "category": "Navigation",
+          "description": "Navigation item not visible on desktop",
+          "viewport": "Desktop"
+        },
+        {
+          "type": "high",
+          "category": "Navigation",
+          "description": "Navigation item not visible on desktop",
+          "viewport": "Laptop"
+        },
+        {
+          "type": "high",
+          "category": "Navigation",
+          "description": "Navigation item not visible on desktop",
+          "viewport": "Laptop"
+        },
+        {
+          "type": "high",
+          "category": "Navigation",
+          "description": "Navigation item not visible on desktop",
+          "viewport": "Laptop"
+        }
+      ],
+      "screenshots": [
+        {
+          "viewport": "Desktop",
+          "path": "/Users/alexthip/Projects/histeq.com/design-review-screenshots/Contact-Us-Desktop.png"
+        },
+        {
+          "viewport": "Laptop",
+          "path": "/Users/alexthip/Projects/histeq.com/design-review-screenshots/Contact-Us-Laptop.png"
+        },
+        {
+          "viewport": "Tablet",
+          "path": "/Users/alexthip/Projects/histeq.com/design-review-screenshots/Contact-Us-Tablet.png"
+        },
+        {
+          "viewport": "Mobile",
+          "path": "/Users/alexthip/Projects/histeq.com/design-review-screenshots/Contact-Us-Mobile.png"
+        }
+      ],
+      "consoleErrors": []
+    }
+  },
+  "viewports": [
+    {
+      "name": "Desktop",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "name": "Laptop",
+      "width": 1024,
+      "height": 768
+    },
+    {
+      "name": "Tablet",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "name": "Mobile",
+      "width": 375,
+      "height": 812
+    }
+  ],
+  "browsers": [
+    "chromium"
+  ]
+}

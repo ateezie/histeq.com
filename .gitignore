@@ -53,3 +53,24 @@ test-results/
 
 # Playwright
 playwright-report/
+
+# Deployment and CI/CD
+deployment.log
+.runcloud/secrets.yml
+
+# MCP Development Tools
+.mcp*.json
+playwright.config.js
+
+# WordPress uploads (managed on server)
+wp-content/uploads/
+
+# Backup files
+*.bak
+*.backup
+*.sql
+
+# Additional WordPress core files
+wp-admin/
+wp-includes/
+wp-config-sample.php

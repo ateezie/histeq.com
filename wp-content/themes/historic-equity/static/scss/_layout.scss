@@ -1,0 +1,1307 @@
+// =============================================================================
+// LAYOUT - Historic Equity Inc.
+// =============================================================================
+
+// Import variables
+@import 'variables';
+
+// -----------------------------------------------------------------------------
+// CONTAINER SYSTEM
+// -----------------------------------------------------------------------------
+
+// Base container
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: map-get($spacing, 4);
+  padding-right: map-get($spacing, 4);
+
+  @include mobile-only {
+    max-width: 100%;
+    padding-left: map-get($spacing, 4);
+    padding-right: map-get($spacing, 4);
+  }
+
+  @include tablet-up {
+    max-width: 768px;
+    padding-left: map-get($spacing, 6);
+    padding-right: map-get($spacing, 6);
+  }
+
+  @include desktop-up {
+    max-width: 1024px;
+    padding-left: map-get($spacing, 8);
+    padding-right: map-get($spacing, 8);
+  }
+
+  @include large-up {
+    max-width: 1280px;
+  }
+
+  @include large-up {
+    max-width: 1536px;
+  }
+}
+
+// Container variations
+.container-fluid {
+  width: 100%;
+  padding-left: map-get($spacing, 4);
+  padding-right: map-get($spacing, 4);
+
+  @include tablet-up {
+    padding-left: map-get($spacing, 6);
+    padding-right: map-get($spacing, 6);
+  }
+
+  @include desktop-up {
+    padding-left: map-get($spacing, 8);
+    padding-right: map-get($spacing, 8);
+  }
+}
+
+.container-narrow {
+  @extend .container;
+
+  @include desktop-up {
+    max-width: 800px;
+  }
+
+  @include large-up {
+    max-width: 900px;
+  }
+}
+
+.container-wide {
+  @extend .container;
+
+  @include desktop-up {
+    max-width: 1200px;
+  }
+
+  @include large-up {
+    max-width: 1400px;
+  }
+
+  @include large-up {
+    max-width: 1600px;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// GRID SYSTEM
+// -----------------------------------------------------------------------------
+
+// Grid container
+.grid {
+  display: grid;
+  gap: map-get($spacing, 4);
+
+  @include tablet-up {
+    gap: map-get($spacing, 6);
+  }
+
+  @include desktop-up {
+    gap: map-get($spacing, 8);
+  }
+}
+
+// Grid column utilities (CSS Grid approach)
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.grid-cols-5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.grid-cols-6 {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.grid-cols-12 {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+// Responsive grid columns
+@include mobile-only {
+  .grid-cols-1\@mobile {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .grid-cols-2\@mobile {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@include tablet-up {
+  .grid-cols-1\@tablet {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .grid-cols-2\@tablet {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .grid-cols-3\@tablet {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .grid-cols-4\@tablet {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@include desktop-up {
+  .grid-cols-1\@desktop {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .grid-cols-2\@desktop {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .grid-cols-3\@desktop {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .grid-cols-4\@desktop {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .grid-cols-5\@desktop {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .grid-cols-6\@desktop {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+@include large-up {
+  .grid-cols-3\@large {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .grid-cols-4\@large {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .grid-cols-6\@large {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+// Grid column span utilities
+.col-span-1 {
+  grid-column: span 1 / span 1;
+}
+
+.col-span-2 {
+  grid-column: span 2 / span 2;
+}
+
+.col-span-3 {
+  grid-column: span 3 / span 3;
+}
+
+.col-span-4 {
+  grid-column: span 4 / span 4;
+}
+
+.col-span-6 {
+  grid-column: span 6 / span 6;
+}
+
+.col-span-12 {
+  grid-column: span 12 / span 12;
+}
+
+.col-span-full {
+  grid-column: 1 / -1;
+}
+
+// Grid row utilities
+.grid-rows-1 {
+  grid-template-rows: repeat(1, minmax(0, 1fr));
+}
+
+.grid-rows-2 {
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+.grid-rows-3 {
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+}
+
+.row-span-1 {
+  grid-row: span 1 / span 1;
+}
+
+.row-span-2 {
+  grid-row: span 2 / span 2;
+}
+
+.row-span-3 {
+  grid-row: span 3 / span 3;
+}
+
+// Grid gap utilities
+.gap-0 {
+  gap: 0;
+}
+
+.gap-2 {
+  gap: map-get($spacing, 2);
+}
+
+.gap-4 {
+  gap: map-get($spacing, 4);
+}
+
+.gap-6 {
+  gap: map-get($spacing, 6);
+}
+
+.gap-8 {
+  gap: map-get($spacing, 8);
+}
+
+.gap-12 {
+  gap: map-get($spacing, 12);
+}
+
+// Column and row gap utilities
+.gap-x-2 {
+  column-gap: map-get($spacing, 2);
+}
+
+.gap-x-4 {
+  column-gap: map-get($spacing, 4);
+}
+
+.gap-x-6 {
+  column-gap: map-get($spacing, 6);
+}
+
+.gap-x-8 {
+  column-gap: map-get($spacing, 8);
+}
+
+.gap-y-2 {
+  row-gap: map-get($spacing, 2);
+}
+
+.gap-y-4 {
+  row-gap: map-get($spacing, 4);
+}
+
+.gap-y-6 {
+  row-gap: map-get($spacing, 6);
+}
+
+.gap-y-8 {
+  row-gap: map-get($spacing, 8);
+}
+
+// -----------------------------------------------------------------------------
+// FLEXBOX UTILITIES
+// -----------------------------------------------------------------------------
+
+// Flex container
+.flex {
+  display: flex;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+// Flex direction
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-col-reverse {
+  flex-direction: column-reverse;
+}
+
+// Flex wrap
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.flex-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+// Align items
+.items-start {
+  align-items: flex-start;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-baseline {
+  align-items: baseline;
+}
+
+.items-stretch {
+  align-items: stretch;
+}
+
+// Justify content
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+// Align content
+.content-start {
+  align-content: flex-start;
+}
+
+.content-end {
+  align-content: flex-end;
+}
+
+.content-center {
+  align-content: center;
+}
+
+.content-between {
+  align-content: space-between;
+}
+
+.content-around {
+  align-content: space-around;
+}
+
+.content-evenly {
+  align-content: space-evenly;
+}
+
+// Align self
+.self-auto {
+  align-self: auto;
+}
+
+.self-start {
+  align-self: flex-start;
+}
+
+.self-end {
+  align-self: flex-end;
+}
+
+.self-center {
+  align-self: center;
+}
+
+.self-stretch {
+  align-self: stretch;
+}
+
+.self-baseline {
+  align-self: baseline;
+}
+
+// Flex grow and shrink
+.flex-1 {
+  flex: 1 1 0%;
+}
+
+.flex-auto {
+  flex: 1 1 auto;
+}
+
+.flex-initial {
+  flex: 0 1 auto;
+}
+
+.flex-none {
+  flex: none;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.flex-grow-0 {
+  flex-grow: 0;
+}
+
+.flex-shrink {
+  flex-shrink: 1;
+}
+
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+
+// -----------------------------------------------------------------------------
+// SPACING UTILITIES
+// -----------------------------------------------------------------------------
+
+// Margin utilities
+.m-0 { margin: 0; }
+.m-1 { margin: map-get($spacing, 1); }
+.m-2 { margin: map-get($spacing, 2); }
+.m-3 { margin: map-get($spacing, 3); }
+.m-4 { margin: map-get($spacing, 4); }
+.m-5 { margin: map-get($spacing, 5); }
+.m-6 { margin: map-get($spacing, 6); }
+.m-8 { margin: map-get($spacing, 8); }
+.m-10 { margin: map-get($spacing, 10); }
+.m-12 { margin: map-get($spacing, 12); }
+.m-16 { margin: map-get($spacing, 16); }
+.m-20 { margin: map-get($spacing, 20); }
+.m-24 { margin: map-get($spacing, 24); }
+
+.m-auto { margin: auto; }
+
+// Margin directional utilities
+@each $side in (top, right, bottom, left) {
+  @each $size, $value in $spacing {
+    .m#{str-slice(#{$side}, 1, 1)}-#{$size} {
+      margin-#{$side}: $value;
+    }
+  }
+
+  .m#{str-slice(#{$side}, 1, 1)}-auto {
+    margin-#{$side}: auto;
+  }
+}
+
+// Margin x and y utilities
+@each $size, $value in $spacing {
+  .mx-#{$size} {
+    margin-left: $value;
+    margin-right: $value;
+  }
+
+  .my-#{$size} {
+    margin-top: $value;
+    margin-bottom: $value;
+  }
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+// Padding utilities
+.p-0 { padding: 0; }
+.p-1 { padding: map-get($spacing, 1); }
+.p-2 { padding: map-get($spacing, 2); }
+.p-3 { padding: map-get($spacing, 3); }
+.p-4 { padding: map-get($spacing, 4); }
+.p-5 { padding: map-get($spacing, 5); }
+.p-6 { padding: map-get($spacing, 6); }
+.p-8 { padding: map-get($spacing, 8); }
+.p-10 { padding: map-get($spacing, 10); }
+.p-12 { padding: map-get($spacing, 12); }
+.p-16 { padding: map-get($spacing, 16); }
+.p-20 { padding: map-get($spacing, 20); }
+.p-24 { padding: map-get($spacing, 24); }
+
+// Padding directional utilities
+@each $side in (top, right, bottom, left) {
+  @each $size, $value in $spacing {
+    .p#{str-slice(#{$side}, 1, 1)}-#{$size} {
+      padding-#{$side}: $value;
+    }
+  }
+}
+
+// Padding x and y utilities
+@each $size, $value in $spacing {
+  .px-#{$size} {
+    padding-left: $value;
+    padding-right: $value;
+  }
+
+  .py-#{$size} {
+    padding-top: $value;
+    padding-bottom: $value;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// POSITIONING UTILITIES
+// -----------------------------------------------------------------------------
+
+// Position
+.static {
+  position: static;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.sticky {
+  position: sticky;
+}
+
+// Position values
+.inset-0 {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.inset-auto {
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+}
+
+@each $size, $value in $spacing {
+  .top-#{$size} { top: $value; }
+  .right-#{$size} { right: $value; }
+  .bottom-#{$size} { bottom: $value; }
+  .left-#{$size} { left: $value; }
+}
+
+.top-0 { top: 0; }
+.right-0 { right: 0; }
+.bottom-0 { bottom: 0; }
+.left-0 { left: 0; }
+
+.top-auto { top: auto; }
+.right-auto { right: auto; }
+.bottom-auto { bottom: auto; }
+.left-auto { left: auto; }
+
+// Z-index
+.z-0 { z-index: 0; }
+.z-10 { z-index: 10; }
+.z-20 { z-index: 20; }
+.z-30 { z-index: 30; }
+.z-40 { z-index: 40; }
+.z-50 { z-index: 50; }
+.z-auto { z-index: auto; }
+
+// -----------------------------------------------------------------------------
+// DISPLAY UTILITIES
+// -----------------------------------------------------------------------------
+
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.inline {
+  display: inline;
+}
+
+.table {
+  display: table;
+}
+
+.table-caption {
+  display: table-caption;
+}
+
+.table-cell {
+  display: table-cell;
+}
+
+.table-column {
+  display: table-column;
+}
+
+.table-column-group {
+  display: table-column-group;
+}
+
+.table-footer-group {
+  display: table-footer-group;
+}
+
+.table-header-group {
+  display: table-header-group;
+}
+
+.table-row-group {
+  display: table-row-group;
+}
+
+.table-row {
+  display: table-row;
+}
+
+.hidden {
+  display: none;
+}
+
+// -----------------------------------------------------------------------------
+// VISIBILITY UTILITIES
+// -----------------------------------------------------------------------------
+
+.visible {
+  visibility: visible;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+// -----------------------------------------------------------------------------
+// OVERFLOW UTILITIES
+// -----------------------------------------------------------------------------
+
+.overflow-auto {
+  overflow: auto;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-visible {
+  overflow: visible;
+}
+
+.overflow-scroll {
+  overflow: scroll;
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
+
+.overflow-y-hidden {
+  overflow-y: hidden;
+}
+
+.overflow-x-visible {
+  overflow-x: visible;
+}
+
+.overflow-y-visible {
+  overflow-y: visible;
+}
+
+.overflow-x-scroll {
+  overflow-x: scroll;
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+
+// -----------------------------------------------------------------------------
+// RESPONSIVE DISPLAY UTILITIES
+// -----------------------------------------------------------------------------
+
+@include mobile-only {
+  .block\@mobile {
+    display: block;
+  }
+
+  .hidden\@mobile {
+    display: none;
+  }
+
+  .flex\@mobile {
+    display: flex;
+  }
+}
+
+@include tablet-up {
+  .block\@tablet {
+    display: block;
+  }
+
+  .hidden\@tablet {
+    display: none;
+  }
+
+  .flex\@tablet {
+    display: flex;
+  }
+}
+
+@include desktop-up {
+  .block\@desktop {
+    display: block;
+  }
+
+  .hidden\@desktop {
+    display: none;
+  }
+
+  .flex\@desktop {
+    display: flex;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// HISTORIC EQUITY LAYOUT COMPONENTS
+// -----------------------------------------------------------------------------
+
+// Hero section layout
+.hero-layout {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+
+  @include mobile-only {
+    min-height: 80vh;
+    padding-top: map-get($spacing, 16);
+    padding-bottom: map-get($spacing, 16);
+  }
+}
+
+// Section layout
+.section-layout {
+  padding-top: map-get($spacing, 16);
+  padding-bottom: map-get($spacing, 16);
+
+  @include tablet-up {
+    padding-top: map-get($spacing, 20);
+    padding-bottom: map-get($spacing, 20);
+  }
+
+  @include desktop-up {
+    padding-top: map-get($spacing, 24);
+    padding-bottom: map-get($spacing, 24);
+  }
+
+  &--large {
+    @include desktop-up {
+      padding-top: map-get($spacing, 32);
+      padding-bottom: map-get($spacing, 32);
+    }
+  }
+
+  &--small {
+    padding-top: map-get($spacing, 12);
+    padding-bottom: map-get($spacing, 12);
+
+    @include tablet-up {
+      padding-top: map-get($spacing, 16);
+      padding-bottom: map-get($spacing, 16);
+    }
+  }
+}
+
+// Content layout
+.content-layout {
+  max-width: 65ch;
+  margin-left: auto;
+  margin-right: auto;
+
+  &--narrow {
+    max-width: 50ch;
+  }
+
+  &--wide {
+    max-width: 80ch;
+  }
+}
+
+// Two-column layout
+.two-column-layout {
+  display: grid;
+  gap: map-get($spacing, 8);
+
+  @include tablet-up {
+    grid-template-columns: 1fr 1fr;
+    gap: map-get($spacing, 12);
+  }
+
+  @include desktop-up {
+    gap: map-get($spacing, 16);
+  }
+
+  &--sidebar {
+    @include desktop-up {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+
+  &--reverse {
+    @include desktop-up {
+      grid-template-columns: 1fr 2fr;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// BUILDING CAROUSEL COMPONENT
+// -----------------------------------------------------------------------------
+
+.building-carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: $dark;
+  border-radius: map-get($spacing, 2);
+
+  @include desktop-up {
+    border-radius: map-get($spacing, 3);
+  }
+
+  // Carousel container
+  .carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  // Carousel track
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+  }
+
+  // Individual slides
+  .carousel-slide {
+    flex: 0 0 100%;
+    position: relative;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+
+    @include tablet-up {
+      aspect-ratio: 21/9;
+    }
+
+    &.active {
+      .slide-image {
+        transform: scale(1.02);
+      }
+    }
+
+    // Slide image
+    .slide-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      will-change: transform;
+    }
+
+    // Slide overlay
+    .slide-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(
+        transparent 0%,
+        rgba($dark, 0.3) 50%,
+        rgba($dark, 0.8) 100%
+      );
+      padding: map-get($spacing, 6) map-get($spacing, 4) map-get($spacing, 4);
+      color: white;
+
+      @include tablet-up {
+        padding: map-get($spacing, 8) map-get($spacing, 6) map-get($spacing, 6);
+      }
+
+      @include desktop-up {
+        padding: map-get($spacing, 12) map-get($spacing, 8) map-get($spacing, 8);
+      }
+    }
+
+    // Slide content
+    .slide-title {
+      font-family: $font-family-primary;
+      font-weight: $font-weight-bold;
+      font-size: $font-size-lg;
+      line-height: $line-height-tight;
+      margin-bottom: map-get($spacing, 1);
+      color: white;
+
+      @include tablet-up {
+        font-size: $font-size-xl;
+      }
+
+      @include desktop-up {
+        font-size: 1.5rem;
+      }
+    }
+
+    .slide-location {
+      font-family: $font-family-primary;
+      font-weight: $font-weight-medium;
+      font-size: $font-size-sm;
+      color: $secondary;
+      margin-bottom: map-get($spacing, 2);
+
+      @include tablet-up {
+        font-size: $font-size-base;
+      }
+    }
+
+    .slide-year {
+      font-family: $font-family-primary;
+      font-weight: $font-weight-normal;
+      font-size: $font-size-xs;
+      color: rgba(white, 0.8);
+      margin-bottom: map-get($spacing, 1);
+
+      @include tablet-up {
+        font-size: $font-size-sm;
+      }
+    }
+
+    .slide-description {
+      font-family: $font-family-primary;
+      font-weight: $font-weight-normal;
+      font-size: $font-size-sm;
+      line-height: $line-height-relaxed;
+      color: rgba(white, 0.9);
+      display: none;
+
+      @include tablet-up {
+        display: block;
+        font-size: $font-size-base;
+      }
+    }
+  }
+
+  // Navigation buttons
+  .carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba($dark, 0.8);
+    border: none;
+    color: white;
+    width: map-get($spacing, 12);
+    height: map-get($spacing, 12);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    backdrop-filter: blur(8px);
+
+    @include desktop-up {
+      width: map-get($spacing, 16);
+      height: map-get($spacing, 16);
+    }
+
+    &:hover {
+      background: rgba($primary, 0.9);
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    &:focus {
+      outline: 2px solid $secondary;
+      outline-offset: 2px;
+    }
+
+    &:active {
+      transform: translateY(-50%) scale(0.95);
+    }
+
+    svg {
+      width: map-get($spacing, 6);
+      height: map-get($spacing, 6);
+      fill: currentColor;
+
+      @include desktop-up {
+        width: map-get($spacing, 8);
+        height: map-get($spacing, 8);
+      }
+    }
+
+    &.carousel-prev {
+      left: map-get($spacing, 4);
+
+      @include desktop-up {
+        left: map-get($spacing, 6);
+      }
+    }
+
+    &.carousel-next {
+      right: map-get($spacing, 4);
+
+      @include desktop-up {
+        right: map-get($spacing, 6);
+      }
+    }
+  }
+
+  // Indicators
+  .carousel-indicators {
+    position: absolute;
+    bottom: map-get($spacing, 4);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: map-get($spacing, 2);
+    z-index: 10;
+
+    @include desktop-up {
+      bottom: map-get($spacing, 6);
+      gap: map-get($spacing, 3);
+    }
+  }
+
+  .carousel-indicator {
+    width: map-get($spacing, 2);
+    height: map-get($spacing, 2);
+    border-radius: 50%;
+    background: rgba(white, 0.4);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    @include desktop-up {
+      width: map-get($spacing, 3);
+      height: map-get($spacing, 3);
+    }
+
+    &:hover {
+      background: rgba(white, 0.7);
+      transform: scale(1.2);
+    }
+
+    &:focus {
+      outline: 2px solid $secondary;
+      outline-offset: 2px;
+    }
+
+    &.active {
+      background: $secondary;
+      transform: scale(1.3);
+    }
+  }
+
+  // Loading state
+  &.loading {
+    .carousel-slide {
+      opacity: 0.7;
+    }
+
+    .carousel-nav,
+    .carousel-indicator {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+  }
+
+  // Accessibility enhancements
+  &:focus-within {
+    .carousel-nav,
+    .carousel-indicator {
+      opacity: 1;
+    }
+  }
+
+  // Reduced motion support
+  @media (prefers-reduced-motion: reduce) {
+    .carousel-track {
+      transition: none;
+    }
+
+    .slide-image,
+    .carousel-nav,
+    .carousel-indicator {
+      transition: none;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// STATES COVERAGE - PREMIUM BADGE LAYOUT
+// -----------------------------------------------------------------------------
+
+.region-group {
+  margin-bottom: 3rem;
+}
+
+.state-badge {
+  position: relative;
+  background: $white;
+  border-radius: $border-radius-xl; // 12px
+  padding: 16px 12px;
+  text-align: center;
+  transition: $transition-base;
+  box-shadow: $shadow-sm;
+  border: 1px solid transparent;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-lg;
+  }
+
+  // Primary variant (Midwest - Orange theme)
+  &-primary {
+    border-color: $primary;
+
+    &:hover {
+      border-color: $primary;
+      box-shadow: 0 8px 25px rgba(189, 87, 43, 0.15);
+    }
+  }
+
+  // Secondary variant (Southern - Gold theme)
+  &-secondary {
+    border-color: $secondary;
+
+    &:hover {
+      border-color: $secondary;
+      box-shadow: 0 8px 25px rgba(230, 205, 65, 0.15);
+    }
+  }
+
+  // Accent variant (Northeastern - Blue theme)
+  &-accent {
+    border-color: $accent;
+
+    &:hover {
+      border-color: $accent;
+      box-shadow: 0 8px 25px rgba(131, 172, 209, 0.15);
+    }
+  }
+}
+
+.state-abbr {
+  display: block;
+  font-size: 18px;
+  font-weight: $font-weight-bold;
+  color: $dark;
+  margin-bottom: 4px;
+}
+
+.state-name {
+  display: block;
+  font-size: 12px;
+  color: $gray-500;
+  font-weight: $font-weight-medium;
+}
+
+.state-indicator {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: $border-radius-full;
+  background: linear-gradient(135deg, $primary, $secondary);
+}
+
+.hq-indicator {
+  background: $primary;
+  width: 8px;
+  height: 8px;
+
+  &::after {
+    content: "HQ";
+    position: absolute;
+    top: -20px;
+    right: -8px;
+    font-size: 8px;
+    font-weight: $font-weight-bold;
+    color: $primary;
+    background: $white;
+    padding: 1px 3px;
+    border-radius: 3px;
+    border: 1px solid $primary;
+  }
+}
+
+// Responsive adjustments
+@include mobile-only {
+  .state-badge {
+    padding: 12px 8px;
+
+    .state-abbr {
+      font-size: 16px;
+    }
+
+    .state-name {
+      font-size: 11px;
+    }
+  }
+}

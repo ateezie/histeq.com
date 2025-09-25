@@ -1,0 +1,555 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <main class="main-content" id="main-content" role="main" aria-label="Contact Us">
+
+        {# Hero Section - Clean centered layout #}
+        <section class="py-24 lg:py-32 bg-white" data-testid="contact-hero">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="text-center max-w-4xl mx-auto">
+                    <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                        {{ fields.contact_hero_title|default('Contact Us') }}
+                    </h1>
+                    <p class="text-lg lg:text-xl text-gray-600 leading-relaxed">
+                        {{ fields.contact_hero_content|default('Connect with Historic Equity Inc. for expert consultation on your state historic tax credit project') }}
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        {# Contact Information Section #}
+        <section class="py-24 lg:py-32 bg-white" data-testid="contact-info">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 max-w-6xl mx-auto">
+
+                    <!-- Left: Contact Information -->
+                    <div>
+                        <div class="mb-8">
+                            <p class="font-subheading text-sm font-medium text-gray-500 uppercase tracking-wide mb-2">Contact</p>
+                            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">{{ fields.contact_title|default('Contact us') }}</h2>
+                            <p class="text-gray-600 text-lg">
+                                {{ fields.contact_description|default('We\'re here to help structure your state historic tax credit investment for maximum benefits') }}
+                            </p>
+                        </div>
+
+                        <!-- Contact Details -->
+                        <div class="space-y-6">
+                            <div class="flex items-center">
+                                <div class="w-5 h-5 mr-4">
+                                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-gray-900">Email</p>
+                                    <p class="text-gray-600">
+                                        <a href="mailto:{{ fields.email|default('info@histeq.com') }}" class="text-primary-600 hover:text-primary-700 transition-colors duration-200">
+                                            {{ fields.email|default('info@histeq.com') }}
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center">
+                                <div class="w-5 h-5 mr-4">
+                                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-gray-900">Phone</p>
+                                    <p class="text-gray-600">
+                                        <a href="tel:{{ fields.phone|default('314-862-1414') }}" class="text-primary-600 hover:text-primary-700 transition-colors duration-200">
+                                            {{ fields.phone|default('314-862-1414') }}
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center">
+                                <div class="w-5 h-5 mr-4">
+                                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-gray-900">Office</p>
+                                    <p class="text-gray-600">
+                                        <a href="https://www.google.com/maps/search/?api=1&query=1034%20South%20Brentwood%20Blvd%2C%20Ste%201480%2C%20Saint%20Louis%2C%20MO%2063117"
+                                           class="text-primary-600 hover:text-primary-700 transition-colors duration-200"
+                                           target="_blank" rel="noopener"
+                                           title="Open in Google Maps">
+                                            {{ fields.office_address|default('1034 South Brentwood Blvd, Ste 1480<br>Saint Louis, MO 63117')|raw }}
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Historic Building Image -->
+                    <div class="rounded-lg overflow-hidden h-96">
+                        <img src="{{ theme.uri }}/static/images/1712+Commerce+Lodging+PE+(1).webp"
+                             alt="Historic Commerce Building - Historic Tax Credit Project"
+                             class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {# Team Contact Information Section #}
+        <section class="py-16 bg-gray-50" data-testid="team-contacts">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Meet Our Team</h2>
+                        <p class="text-lg text-gray-600">Connect directly with our experienced professionals</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-white p-6 rounded-lg shadow-sm">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Philip Estep</h3>
+                            <p class="text-primary-600 font-medium mb-4">President</p>
+                            <p class="text-sm text-gray-600">Lead contact for strategic investment discussions and partnership opportunities.</p>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-lg shadow-sm">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Elise Westwood</h3>
+                            <p class="text-primary-600 font-medium mb-3">Vice President</p>
+                            <p class="text-sm text-gray-600 mb-3">Business development and project coordination specialist.</p>
+                            <p class="text-sm text-gray-600">
+                                <span class="inline-block">📧</span>
+                                <a href="mailto:elw@histeq.com" class="text-primary-600 hover:underline">elw@histeq.com</a>
+                            </p>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-lg shadow-sm">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Mary Carpenter</h3>
+                            <p class="text-primary-600 font-medium mb-3">Administrator</p>
+                            <p class="text-sm text-gray-600 mb-3">Handles billing, compliance, and administrative coordination.</p>
+                            <p class="text-sm text-gray-600">
+                                <span class="inline-block">📧</span>
+                                <a href="mailto:mc@histeq.com" class="text-primary-600 hover:underline">mc@histeq.com</a>
+                            </p>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-lg shadow-sm">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Jennifer Knobeloch</h3>
+                            <p class="text-primary-600 font-medium mb-3">Account Manager</p>
+                            <p class="text-sm text-gray-600 mb-3">Project invoicing, compliance, and partner relationship management.</p>
+                            <p class="text-sm text-gray-600">
+                                <span class="inline-block">📧</span>
+                                <a href="mailto:jhk@histeq.com" class="text-primary-600 hover:underline">jhk@histeq.com</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {# Contact Form Section #}
+        <section class="py-24 lg:py-32 bg-orange-50" style="background-color: #FDF6F0;" data-testid="contact-form">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 max-w-6xl mx-auto">
+
+                    <!-- Left: Form Description -->
+                    <div>
+                        <div class="mb-8">
+                            <p class="font-subheading text-sm font-medium text-gray-500 uppercase tracking-wide mb-2">Inquire</p>
+                            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">{{ fields.form_title|default('Send us a message') }}</h2>
+                            <p class="text-gray-600 text-lg">
+                                {{ fields.form_description|default('Share your project details and we\'ll respond promptly') }}
+                            </p>
+                        </div>
+
+                        <!-- Contact Info Repeat -->
+                        <div class="space-y-3">
+                            <div class="flex items-center">
+                                <svg class="w-4 h-4 text-gray-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                                <a href="mailto:{{ fields.email|default('info@histeq.com') }}" class="text-primary-600 hover:text-primary-700 transition-colors duration-200">
+                                    {{ fields.email|default('info@histeq.com') }}
+                                </a>
+                            </div>
+                            <div class="flex items-center">
+                                <svg class="w-4 h-4 text-gray-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                                </svg>
+                                <a href="tel:{{ fields.phone|default('314-862-1414') }}" class="text-primary-600 hover:text-primary-700 transition-colors duration-200">
+                                    {{ fields.phone|default('314-862-1414') }}
+                                </a>
+                            </div>
+                            <div class="flex items-center">
+                                <svg class="w-4 h-4 text-gray-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                </svg>
+                                <a href="https://www.google.com/maps/search/?api=1&query=1034%20South%20Brentwood%20Blvd%2C%20Ste%201480%2C%20Saint%20Louis%2C%20MO%2063117"
+                                   class="text-primary-600 hover:text-primary-700 transition-colors duration-200"
+                                   target="_blank" rel="noopener"
+                                   title="Open in Google Maps">
+                                    {{ fields.office_address|default('1034 South Brentwood Blvd, Ste 1480, Saint Louis, MO 63117') }}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Contact Form -->
+                    <div>
+                        {% if fields.gravity_form_id %}
+                            {# Gravity Forms shortcode integration #}
+                            {{ function('do_shortcode', '[gravityform id="' ~ fields.gravity_form_id ~ '" title="false" description="false"]') }}
+                        {% else %}
+                            {# Use default Gravity Form ID "1" if no ACF field is set #}
+                            {{ function('do_shortcode', '[gravityform id="1" title="false" description="false"]') }}
+                        {% endif %}
+
+                        {# Force load reCAPTCHA script if not already loaded #}
+                        <script>
+                        // Check if reCAPTCHA script is already loaded
+                        if (typeof grecaptcha === 'undefined') {
+                            // Create and load reCAPTCHA script
+                            var recaptchaScript = document.createElement('script');
+                            recaptchaScript.src = 'https://www.google.com/recaptcha/api.js?render=explicit';
+                            recaptchaScript.async = true;
+                            recaptchaScript.defer = true;
+                            document.head.appendChild(recaptchaScript);
+
+                            // Wait for script to load then render CAPTCHA
+                            recaptchaScript.onload = function() {
+                                setTimeout(function() {
+                                    var captchaContainer = document.querySelector('.ginput_recaptcha[data-sitekey]');
+                                    if (captchaContainer && typeof grecaptcha !== 'undefined') {
+                                        var sitekey = captchaContainer.getAttribute('data-sitekey');
+                                        if (sitekey) {
+                                            try {
+                                                grecaptcha.render(captchaContainer, {
+                                                    'sitekey': sitekey,
+                                                    'theme': 'light'
+                                                });
+                                            } catch(e) {
+                                                console.log('reCAPTCHA render error:', e);
+                                            }
+                                        }
+                                    }
+                                }, 500);
+                            };
+                        }
+                        </script>
+
+                            {# Custom CSS for Gravity Forms styling to match design #}
+                            <style>
+                                /* Reset and base form styles */
+                                .gform_wrapper .gform_fields {
+                                    display: block;
+                                    padding: 0;
+                                    margin: 0;
+                                }
+
+                                .gform_wrapper .gform_fields .gfield {
+                                    margin-bottom: 1.5rem;
+                                    list-style: none;
+                                    display: block;
+                                    width: 100%;
+                                }
+
+                                /* Precise targeting for Email and Phone fields to be side by side */
+                                /* Target Email field (field_1_2) and Phone field (field_1_4) based on HTML analysis */
+                                .gform_wrapper ul.gform_fields li#field_1_2,
+                                .gform_wrapper ul.gform_fields li#field_1_4 {
+                                    display: inline-block;
+                                    width: calc(50% - 0.75rem);
+                                    vertical-align: top;
+                                }
+
+                                .gform_wrapper ul.gform_fields li#field_1_2 {
+                                    margin-right: 1.5rem;
+                                }
+
+                                .gform_wrapper ul.gform_fields li#field_1_4 {
+                                    margin-right: 0;
+                                }
+
+                                /* Use Gravity Forms native width classes as primary method */
+                                .gform_wrapper .gform_fields .gfield--width-half {
+                                    display: inline-block !important;
+                                    width: calc(50% - 0.75rem) !important;
+                                    vertical-align: top;
+                                    margin-bottom: 1.5rem;
+                                }
+
+                                /* First field of each pair gets right margin */
+                                .gform_wrapper .gform_fields .gfield--width-half:nth-child(odd) {
+                                    margin-right: 1.5rem;
+                                }
+
+                                /* Second field of each pair gets no right margin */
+                                .gform_wrapper .gform_fields .gfield--width-half:nth-child(even) {
+                                    margin-right: 0;
+                                }
+
+                                /* Alternative specific targeting for better control */
+                                .gform_wrapper .gform_fields .gfield--width-half.gfield--type-text:first-of-type,
+                                .gform_wrapper .gform_fields .gfield--width-half.gfield--type-email {
+                                    margin-right: 1.5rem;
+                                }
+
+                                .gform_wrapper .gform_fields .gfield--width-half.gfield--type-text:nth-of-type(2),
+                                .gform_wrapper .gform_fields .gfield--width-half.gfield--type-phone {
+                                    margin-right: 0;
+                                }
+
+                                /* Fallback: If field IDs are different, target by field types */
+                                .gform_wrapper .gform_fields .gfield[id*="email"],
+                                .gform_wrapper .gform_fields .gfield[id*="phone"] {
+                                    display: inline-block;
+                                    width: calc(50% - 0.75rem);
+                                    vertical-align: top;
+                                }
+
+                                .gform_wrapper .gform_fields .gfield[id*="email"] {
+                                    margin-right: 1.5rem;
+                                }
+
+                                .gform_wrapper .gform_fields .gfield[id*="phone"] {
+                                    margin-right: 0;
+                                }
+
+                                /* Alternative approach: Target by input types within fields */
+                                .gform_wrapper .gform_fields li:has(input[type="email"]),
+                                .gform_wrapper .gform_fields li:has(input[type="tel"]) {
+                                    display: inline-block;
+                                    width: calc(50% - 0.75rem);
+                                    vertical-align: top;
+                                }
+
+                                .gform_wrapper .gform_fields li:has(input[type="email"]) {
+                                    margin-right: 1.5rem;
+                                }
+
+                                .gform_wrapper .gform_fields li:has(input[type="tel"]) {
+                                    margin-right: 0;
+                                }
+
+                                /* Ensure Name field (compound field) stays full width - it handles its own internal layout */
+                                .gform_wrapper .gform_fields .gfield .ginput_complex {
+                                    display: block;
+                                }
+
+                                .gform_wrapper .gform_fields .gfield .ginput_complex .ginput_left,
+                                .gform_wrapper .gform_fields .gfield .ginput_complex .ginput_right {
+                                    display: inline-block;
+                                    width: calc(50% - 0.5rem);
+                                    vertical-align: top;
+                                }
+
+                                .gform_wrapper .gform_fields .gfield .ginput_complex .ginput_left {
+                                    margin-right: 1rem;
+                                }
+
+                                /* Ensure Message, CAPTCHA, and Submit stay full width */
+                                .gform_wrapper .gform_fields .gfield[id*="message"],
+                                .gform_wrapper .gform_fields .gfield_captcha,
+                                .gform_wrapper .gform_footer {
+                                    display: block;
+                                    width: 100%;
+                                    margin-right: 0;
+                                }
+
+                                /* Responsive: Stack all fields on mobile */
+                                @media (max-width: 640px) {
+                                    .gform_wrapper .gform_fields .gfield--width-half,
+                                    .gform_wrapper ul.gform_fields li#field_1_2,
+                                    .gform_wrapper ul.gform_fields li#field_1_4,
+                                    .gform_wrapper .gform_fields .gfield[id*="email"],
+                                    .gform_wrapper .gform_fields .gfield[id*="phone"],
+                                    .gform_wrapper .gform_fields li:has(input[type="email"]),
+                                    .gform_wrapper .gform_fields li:has(input[type="tel"]) {
+                                        width: 100% !important;
+                                        margin-right: 0 !important;
+                                        display: block !important;
+                                    }
+
+                                    .gform_wrapper .gform_fields .gfield .ginput_complex .ginput_left,
+                                    .gform_wrapper .gform_fields .gfield .ginput_complex .ginput_right {
+                                        width: 100%;
+                                        margin-right: 0;
+                                        margin-bottom: 0.5rem;
+                                    }
+                                }
+
+                                .gform_wrapper .gform_fields .gfield input[type="text"],
+                                .gform_wrapper .gform_fields .gfield input[type="email"],
+                                .gform_wrapper .gform_fields .gfield input[type="tel"],
+                                .gform_wrapper .gform_fields .gfield select,
+                                .gform_wrapper .gform_fields .gfield textarea {
+                                    width: 100%;
+                                    padding: 0.75rem 1rem;
+                                    border: 1px solid #d1d5db;
+                                    border-radius: 0.5rem;
+                                    font-size: 1rem;
+                                    transition: border-color 0.2s, box-shadow 0.2s;
+                                }
+
+                                .gform_wrapper .gform_fields .gfield input:focus,
+                                .gform_wrapper .gform_fields .gfield select:focus,
+                                .gform_wrapper .gform_fields .gfield textarea:focus {
+                                    outline: none;
+                                    border-color: #ea580c;
+                                    box-shadow: 0 0 0 3px rgb(234 88 12 / 0.1);
+                                }
+
+                                .gform_wrapper .gform_fields .gfield_label {
+                                    font-weight: 500;
+                                    color: #374151;
+                                    margin-bottom: 0.5rem;
+                                    display: block;
+                                    font-size: 0.875rem;
+                                }
+
+                                .gform_wrapper .gform_button {
+                                    width: 100%;
+                                    background-color: #ea580c;
+                                    color: white;
+                                    font-weight: 600;
+                                    padding: 1rem 2rem;
+                                    border-radius: 0.5rem;
+                                    border: none;
+                                    cursor: pointer;
+                                    transition: all 0.2s ease-in-out;
+                                    font-size: 1.1rem;
+                                    text-transform: uppercase;
+                                    letter-spacing: 0.5px;
+                                    position: relative;
+                                    overflow: hidden;
+                                }
+
+                                .gform_wrapper .gform_button:hover {
+                                    background-color: #c2410c;
+                                    transform: translateY(-2px);
+                                    box-shadow: 0 4px 12px rgba(234, 88, 12, 0.3);
+                                }
+
+                                .gform_wrapper .gform_button:focus {
+                                    outline: none;
+                                    box-shadow: 0 0 0 3px rgb(234 88 12 / 0.3), 0 4px 12px rgba(234, 88, 12, 0.2);
+                                }
+
+                                .gform_wrapper .gform_button:active {
+                                    transform: translateY(0);
+                                }
+
+                                .gform_wrapper .gform_button:disabled {
+                                    background-color: #9ca3af;
+                                    cursor: not-allowed;
+                                    transform: none;
+                                }
+
+                                .gform_wrapper .gform_button::before {
+                                    content: '';
+                                    position: absolute;
+                                    top: 0;
+                                    left: -100%;
+                                    width: 100%;
+                                    height: 100%;
+                                    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+                                    transition: left 0.5s;
+                                }
+
+                                .gform_wrapper .gform_button:hover::before {
+                                    left: 100%;
+                                }
+
+                                .gform_wrapper .validation_error {
+                                    color: #dc2626;
+                                    font-size: 0.875rem;
+                                    margin-top: 0.25rem;
+                                    background-color: #fef2f2;
+                                    padding: 0.5rem;
+                                    border-radius: 0.375rem;
+                                    border-left: 4px solid #dc2626;
+                                }
+
+                                .gform_wrapper .gfield_error input,
+                                .gform_wrapper .gfield_error select,
+                                .gform_wrapper .gfield_error textarea {
+                                    border-color: #dc2626;
+                                    background-color: #fef2f2;
+                                    animation: shake 0.3s ease-in-out;
+                                }
+
+                                @keyframes shake {
+                                    0%, 100% { transform: translateX(0); }
+                                    25% { transform: translateX(-5px); }
+                                    75% { transform: translateX(5px); }
+                                }
+
+                                .gform_wrapper .gfield_error .gfield_label {
+                                    color: #dc2626;
+                                    font-weight: 600;
+                                }
+
+                                .gform_wrapper .gfield input:valid,
+                                .gform_wrapper .gfield select:valid,
+                                .gform_wrapper .gfield textarea:valid {
+                                    border-color: #10b981;
+                                }
+
+                                .gform_wrapper .gfield input:valid + .validation_message,
+                                .gform_wrapper .gfield select:valid + .validation_message,
+                                .gform_wrapper .gfield textarea:valid + .validation_message {
+                                    color: #10b981;
+                                    background-color: #ecfdf5;
+                                    border-left-color: #10b981;
+                                }
+
+                                .gform_wrapper .gform_fields .gfield_checkbox li input[type="checkbox"],
+                                .gform_wrapper .gform_fields .gfield_radio li input[type="radio"] {
+                                    width: auto;
+                                    margin-right: 0.5rem;
+                                    accent-color: #ea580c;
+                                }
+
+                                .gform_wrapper .gform_fields .gfield_checkbox ul,
+                                .gform_wrapper .gform_fields .gfield_radio ul {
+                                    list-style: none;
+                                    padding: 0;
+                                    margin: 0;
+                                    display: grid;
+                                    grid-template-columns: repeat(2, 1fr);
+                                    gap: 1rem;
+                                }
+
+                                .gform_wrapper .gform_fields .gfield_checkbox li,
+                                .gform_wrapper .gform_fields .gfield_radio li {
+                                    display: flex;
+                                    align-items: center;
+                                    margin: 0;
+                                }
+
+                                .gform_wrapper .gform_fields .gfield_checkbox li label,
+                                .gform_wrapper .gform_fields .gfield_radio li label {
+                                    font-size: 0.875rem;
+                                    color: #374151;
+                                    margin: 0;
+                                    font-weight: normal;
+                                }
+
+                                .gform_confirmation_message {
+                                    background-color: #ecfdf5;
+                                    border: 1px solid #10b981;
+                                    color: #047857;
+                                    padding: 1rem;
+                                    border-radius: 0.5rem;
+                                    margin: 1rem 0;
+                                }
+                            </style>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+{% endblock %}

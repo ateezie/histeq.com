@@ -1,0 +1,565 @@
+/**
+ * Cross-Browser Compatibility for Historic Equity Inc.
+ *
+ * Ensures consistent rendering across all major browsers and versions
+ * for optimal SHTC investment website experience.
+ *
+ * @package HistoricEquity
+ */
+
+/* ==========================================================================
+   Browser Reset & Normalization
+   ========================================================================== */
+
+/* Modern CSS Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Improve text rendering across browsers */
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Consistent line heights */
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   Internet Explorer Compatibility
+   ========================================================================== */
+
+/* IE11 Flexbox fixes */
+.flex-container {
+    display: -ms-flexbox; /* IE10+ */
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.flex-item {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+}
+
+/* IE11 Grid fallbacks */
+.grid-container {
+    display: -ms-grid; /* IE11 */
+    display: grid;
+}
+
+/* IE11 CSS Custom Properties fallback */
+:root {
+    /* Fallback colors for IE11 */
+    --primary-orange-fallback: #BD572B;
+    --primary-gold-fallback: #E6CD41;
+    --primary-brown-fallback: #95816E;
+    --light-blue-fallback: #83ACD1;
+    --off-white-fallback: #FEFFF8;
+    --dark-navy-fallback: #2D2E3D;
+}
+
+/* IE11 object-fit fallback */
+.project-image {
+    object-fit: cover;
+    /* IE11 fallback */
+    font-family: 'object-fit: cover;';
+}
+
+/* ==========================================================================
+   Safari Compatibility
+   ========================================================================== */
+
+/* Safari button appearance reset */
+button,
+input[type="submit"],
+input[type="button"] {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 0;
+}
+
+/* Safari date input fixes */
+input[type="date"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="time"],
+input[type="week"] {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/* Safari search input reset */
+input[type="search"] {
+    -webkit-appearance: none;
+    appearance: none;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/* Safari sticky positioning */
+.sticky-header {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+}
+
+/* Safari backdrop-filter fallback */
+.backdrop-blur {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    /* Fallback for older browsers */
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* ==========================================================================
+   Firefox Compatibility
+   ========================================================================== */
+
+/* Firefox button focus outline */
+button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/* Firefox input placeholder styling */
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: #999;
+    opacity: 1;
+}
+
+/* Firefox select styling */
+select {
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Firefox scrollbar styling */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #BD572B #f1f1f1;
+}
+
+/* ==========================================================================
+   Chrome/Edge/Webkit Compatibility
+   ========================================================================== */
+
+/* Chrome/Safari scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #BD572B;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: darken(#BD572B, 10%);
+}
+
+/* Chrome autofill styling */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    -webkit-text-fill-color: #2D2E3D !important;
+}
+
+/* Chrome input number spinners */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Chrome/Safari input focus outline */
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 2px solid #BD572B;
+    outline-offset: 2px;
+}
+
+/* ==========================================================================
+   Mobile Browser Compatibility
+   ========================================================================== */
+
+/* iOS Safari fixes */
+html {
+    -webkit-overflow-scrolling: touch;
+}
+
+/* iOS input zoom disable */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+textarea,
+select {
+    font-size: 16px; /* Prevents zoom on iOS */
+}
+
+/* Android browser fixes */
+input,
+textarea {
+    -webkit-user-select: text;
+    user-select: text;
+}
+
+/* Mobile click delay removal */
+a,
+button,
+input,
+select,
+textarea,
+[tabindex] {
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}
+
+/* ==========================================================================
+   CSS Grid & Flexbox Fallbacks
+   ========================================================================== */
+
+/* Progressive enhancement for CSS Grid */
+.projects-grid {
+    /* Fallback for older browsers */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    /* Modern browsers */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 1rem;
+}
+
+/* IE11 Grid fallback */
+@supports not (display: grid) {
+    .projects-grid {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -0.5rem;
+    }
+
+    .project-card {
+        flex: 1 1 calc(33.333% - 1rem);
+        margin: 0.5rem;
+        min-width: 300px;
+    }
+
+    @media (max-width: 768px) {
+        .project-card {
+            flex: 1 1 calc(50% - 1rem);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .project-card {
+            flex: 1 1 100%;
+        }
+    }
+}
+
+/* ==========================================================================
+   CSS Custom Properties Fallbacks
+   ========================================================================== */
+
+/* Color fallbacks for IE11 */
+.btn--primary {
+    background-color: #BD572B; /* Fallback */
+    background-color: var(--primary-orange, #BD572B);
+    color: white;
+}
+
+.btn--secondary {
+    background-color: #E6CD41; /* Fallback */
+    background-color: var(--primary-gold, #E6CD41);
+    color: #2D2E3D; /* Fallback */
+    color: var(--dark-navy, #2D2E3D);
+}
+
+.text-primary {
+    color: #BD572B; /* Fallback */
+    color: var(--primary-orange, #BD572B);
+}
+
+.bg-primary {
+    background-color: #BD572B; /* Fallback */
+    background-color: var(--primary-orange, #BD572B);
+}
+
+/* ==========================================================================
+   Modern CSS Feature Detection
+   ========================================================================== */
+
+/* CSS Supports queries for progressive enhancement */
+@supports (display: grid) {
+    .enhanced-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+}
+
+@supports (backdrop-filter: blur(10px)) {
+    .modern-backdrop {
+        backdrop-filter: blur(10px);
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+}
+
+@supports not (backdrop-filter: blur(10px)) {
+    .modern-backdrop {
+        background-color: rgba(255, 255, 255, 0.95);
+    }
+}
+
+@supports (object-fit: cover) {
+    .responsive-image {
+        object-fit: cover;
+    }
+}
+
+/* ==========================================================================
+   Print Styles
+   ========================================================================== */
+
+@media print {
+    /* Hide non-essential elements */
+    .mobile-menu,
+    .accessibility-toolbar,
+    .back-to-top,
+    .social-sharing,
+    .video-player {
+        display: none !important;
+    }
+
+    /* Ensure readability */
+    body {
+        font-size: 12pt;
+        line-height: 1.4;
+        color: black;
+        background: white;
+    }
+
+    /* Show link URLs */
+    a[href^="http"]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: #666;
+    }
+
+    /* Page breaks */
+    .project-card,
+    .team-member {
+        page-break-inside: avoid;
+    }
+
+    h1, h2, h3 {
+        page-break-after: avoid;
+    }
+}
+
+/* ==========================================================================
+   High Contrast Mode Support
+   ========================================================================== */
+
+/* Windows High Contrast Mode */
+@media (prefers-contrast: high) {
+    .btn,
+    .form-input,
+    .card {
+        border: 2px solid;
+    }
+
+    .focus-visible {
+        outline: 3px solid;
+        outline-offset: 2px;
+    }
+}
+
+/* Custom high contrast mode */
+.high-contrast {
+    background: black !important;
+    color: white !important;
+
+    .btn--primary {
+        background: white !important;
+        color: black !important;
+        border: 2px solid white !important;
+    }
+
+    .btn--secondary {
+        background: yellow !important;
+        color: black !important;
+        border: 2px solid yellow !important;
+    }
+
+    a {
+        color: cyan !important;
+    }
+
+    a:visited {
+        color: magenta !important;
+    }
+}
+
+/* ==========================================================================
+   Reduced Motion Support
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ==========================================================================
+   Dark Mode Support
+   ========================================================================== */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #1a1a1a;
+        --text-color: #ffffff;
+        --card-bg: #2d2d2d;
+    }
+
+    .auto-dark {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+    }
+
+    .auto-dark .card {
+        background-color: var(--card-bg);
+    }
+}
+
+/* ==========================================================================
+   Legacy Browser Specific Fixes
+   ========================================================================== */
+
+/* IE9 fixes */
+.ie9 {
+    .flex-container {
+        display: table;
+        width: 100%;
+    }
+
+    .flex-item {
+        display: table-cell;
+        vertical-align: top;
+    }
+}
+
+/* IE8 fixes (if supporting) */
+.ie8 {
+    .container {
+        width: 960px;
+        margin: 0 auto;
+    }
+
+    .grid-col-3 {
+        float: left;
+        width: 33.333%;
+    }
+
+    .clearfix {
+        zoom: 1;
+    }
+
+    .clearfix:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+/* ==========================================================================
+   Browser-Specific Bug Fixes
+   ========================================================================== */
+
+/* Fix for Chrome's aggressive font smoothing */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    .text-smooth {
+        -webkit-font-smoothing: subpixel-antialiased;
+    }
+}
+
+/* Fix for Safari's button styling */
+@media not all and (min-resolution: .001dpcm) {
+    @supports (-webkit-appearance: none) {
+        button,
+        .btn {
+            -webkit-appearance: none;
+            border-radius: 0;
+        }
+    }
+}
+
+/* Fix for Firefox's placeholder opacity */
+@-moz-document url-prefix() {
+    input::-moz-placeholder,
+    textarea::-moz-placeholder {
+        opacity: 1;
+    }
+}
+
+/* ==========================================================================
+   Performance Optimizations
+   ========================================================================== */
+
+/* Enable hardware acceleration for smooth animations */
+.animate {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    will-change: transform;
+}
+
+/* Optimize repaints */
+.optimized {
+    contain: layout style paint;
+}
+
+/* Reduce layout thrashing */
+.no-layout-thrash {
+    transform: translateX(0);
+    backface-visibility: hidden;
+    perspective: 1000;
+}

@@ -1,0 +1,148 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <main role="main" aria-label="Meet Our Team">
+
+        {# Hero Section #}
+        <section class="py-24 lg:py-32 bg-white">
+            <div class="container mx-auto px-6 lg:px-12 text-center">
+                <h1 class="text-4xl lg:text-5xl font-semibold mb-6 text-gray-900 leading-tight tracking-tight">
+                    {{ fields.team_hero_title|default('Meet Our Team') }}
+                </h1>
+                <p class="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    {{ fields.team_hero_content|default('Experienced professionals specializing in state historic tax credit consulting, investment, and project structuring') }}
+                </p>
+            </div>
+        </section>
+
+        {# Team Section #}
+        <section class="py-24 lg:py-32 bg-gray-50">
+            <div class="container mx-auto px-6 lg:px-12">
+
+                {# Section Header #}
+                <div class="text-center mb-16">
+                    <p class="font-subheading text-sm text-gray-500 uppercase tracking-wide mb-4">{{ fields.team_section_category|default('Leadership') }}</p>
+                    <h2 class="text-3xl lg:text-4xl font-semibold mb-6 text-gray-900">{{ fields.team_section_title|default('Historic Equity Inc. Team') }}</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                        {{ fields.team_section_subtitle|default('Combined decades of experience in historic preservation, tax credit structuring, and project management') }}
+                    </p>
+                </div>
+
+                {# Team Grid - Real Historic Equity Team Members #}
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 mb-16">
+                        {# Authentic team members with photos #}
+                        <div class="text-left bg-white p-8 rounded-lg shadow-sm">
+                            <div class="w-24 h-24 rounded-full mx-auto md:mx-0 mb-4 overflow-hidden">
+                                <img src="{{ theme.link }}/static/images/team/phil-estep.jpg"
+                                     alt="Philip Estep, President of Historic Equity Inc."
+                                     class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Philip Estep</h3>
+                            <p class="text-sm text-primary-600 mb-4 font-medium">President</p>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                Estep has over 30 years of experience in adaptive reuse of historic properties. A pioneer of loft conversion in New York City's Soho district, in 1974 he served as Treasurer of a corporation that converted a 70,000 square-foot warehouse into living lofts and art galleries using the J-51 Tax Abatement plan, and obtained the first oversize building variance that made Soho's spectacular transformation possible. Estep then spent 15 years in Paris, France, as an investor and design-builder working with 300-hundred-year old to new in-fill properties, some of which were featured in French architectural publications.
+                            </p>
+                        </div>
+
+                        <div class="text-left bg-white p-8 rounded-lg shadow-sm">
+                            <div class="w-24 h-24 rounded-full mx-auto md:mx-0 mb-4 overflow-hidden">
+                                <img src="{{ theme.link }}/static/images/team/elise-underwood.jpg"
+                                     alt="Elise Westwood, Vice President of Historic Equity Inc."
+                                     class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Elise Westwood</h3>
+                            <p class="text-sm text-primary-600 mb-4 font-medium">Vice President</p>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                A native of St. Louis, Missouri, Elise has served as Vice President of HEI for over 10 years. She brings a passion for historic real estate development and plays a pivotal role in shaping the company's long term vision. Her responsibilities at HEI include business development, organizing and assisting with all phases of historic tax credit projects partnered with HEI, coordinating closings with partners and business professionals, research of individual state regulations, oversight of compliance, and oversight of day to day company operations. Elise has a BS in Accounting from Webster University and a BA in Political Science from McKendree University.
+                            </p>
+                        </div>
+
+                        <div class="text-left bg-white p-8 rounded-lg shadow-sm">
+                            <div class="w-24 h-24 rounded-full mx-auto md:mx-0 mb-4 overflow-hidden">
+                                <img src="{{ theme.link }}/static/images/team/mary-carpenter.jpg"
+                                     alt="Mary Carpenter, Administrator of Historic Equity Inc."
+                                     class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Mary Carpenter</h3>
+                            <p class="text-sm text-primary-600 mb-4 font-medium">Administrator</p>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                Carpenter received her BA in Art History from Washington University in St. Louis and a MA in Valuation Sciences from Lindenwood University. She was an award-winning Senior Certified Fine Arts Appraiser and continues to instruct appraisal subjects at the college level. Carpenter's responsibilities at HEI involve billing and bookkeeping, collecting, and submitting tax reporting information, and supervising the daily activities of the business.
+                            </p>
+                        </div>
+
+                        <div class="text-left bg-white p-8 rounded-lg shadow-sm">
+                            <div class="w-24 h-24 rounded-full mx-auto md:mx-0 mb-4 overflow-hidden">
+                                <img src="{{ theme.link }}/static/images/team/jennifer-knobeloch.jpg"
+                                     alt="Jennifer Knobeloch, Account Manager of Historic Equity Inc."
+                                     class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Jennifer Knobeloch</h3>
+                            <p class="text-sm text-primary-600 mb-4 font-medium">Account Manager</p>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                Knobeloch received a BA in Health Care Administration from the University of Missouri-Columbia. Her duties at HEI involve project invoicing, collecting tax reports, compliance for state regulations, and developing relationships with partners as a point of contact for HEI.
+                            </p>
+                        </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        {# CTA Section #}
+        <section class="py-24 lg:py-32 bg-white">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="text-center max-w-4xl mx-auto">
+                    <h2 class="text-3xl lg:text-4xl font-semibold mb-6 text-gray-900 leading-tight">
+                        {{ fields.team_cta_title|default('Ready to discuss your historic tax credit project?') }}
+                    </h2>
+                    <p class="text-lg lg:text-xl mb-8 text-gray-600 leading-relaxed">
+                        {{ fields.team_cta_content|default('Connect with our experienced team to explore how we can maximize the benefits of your state historic tax credit project') }}
+                    </p>
+                    {% if fields.team_cta_primary_button_text or fields.team_cta_secondary_button_text %}
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                            {% if fields.team_cta_primary_button_text %}
+                                <a href="{{ fields.team_cta_primary_button_link|default('/contact') }}"
+                                   class="inline-flex items-center justify-center px-8 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors duration-200">
+                                    {{ fields.team_cta_primary_button_text }}
+                                </a>
+                            {% endif %}
+                            {% if fields.team_cta_secondary_button_text %}
+                                <a href="{{ fields.team_cta_secondary_button_link|default('/projects') }}"
+                                   class="inline-flex items-center justify-center px-8 py-3 bg-transparent border-2 border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition-colors duration-200">
+                                    {{ fields.team_cta_secondary_button_text }}
+                                </a>
+                            {% endif %}
+                        </div>
+                    {% else %}
+                        <!-- Fallback buttons -->
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                            <a href="/contact"
+                               class="inline-flex items-center justify-center px-8 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors duration-200">
+                                Contact
+                            </a>
+                            <a href="/projects"
+                               class="inline-flex items-center justify-center px-8 py-3 bg-transparent border-2 border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition-colors duration-200">
+                                Learn more
+                            </a>
+                        </div>
+                    {% endif %}
+
+                    {# Large Image Below Content #}
+                    <div class="max-w-4xl mx-auto">
+                        {% if fields.team_cta_image %}
+                            <img src="{{ fields.team_cta_image.url }}"
+                                 alt="{{ fields.team_cta_image.alt|default('Historic building investment project') }}"
+                                 class="w-full aspect-[16/9] rounded-lg shadow-lg object-cover">
+                        {% else %}
+                            <img src="{{ theme.link }}/static/images/705+Olive+STL+MO+crop.webp"
+                                 alt="Historic building investment project"
+                                 class="w-full aspect-[16/9] rounded-lg shadow-lg object-cover">
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+{% endblock %}
