@@ -241,8 +241,143 @@
 
                             {# Custom CSS for Gravity Forms styling to match design #}
                             <style>
+                                /* Reset and base form styles */
+                                .gform_wrapper .gform_fields {
+                                    display: block;
+                                    padding: 0;
+                                    margin: 0;
+                                }
+
                                 .gform_wrapper .gform_fields .gfield {
                                     margin-bottom: 1.5rem;
+                                    list-style: none;
+                                    display: block;
+                                    width: 100%;
+                                }
+
+                                /* Precise targeting for Email and Phone fields to be side by side */
+                                /* Target Email field (field_1_2) and Phone field (field_1_4) based on HTML analysis */
+                                .gform_wrapper ul.gform_fields li#field_1_2,
+                                .gform_wrapper ul.gform_fields li#field_1_4 {
+                                    display: inline-block;
+                                    width: calc(50% - 0.75rem);
+                                    vertical-align: top;
+                                }
+
+                                .gform_wrapper ul.gform_fields li#field_1_2 {
+                                    margin-right: 1.5rem;
+                                }
+
+                                .gform_wrapper ul.gform_fields li#field_1_4 {
+                                    margin-right: 0;
+                                }
+
+                                /* Use Gravity Forms native width classes as primary method */
+                                .gform_wrapper .gform_fields .gfield--width-half {
+                                    display: inline-block !important;
+                                    width: calc(50% - 0.75rem) !important;
+                                    vertical-align: top;
+                                    margin-bottom: 1.5rem;
+                                }
+
+                                /* First field of each pair gets right margin */
+                                .gform_wrapper .gform_fields .gfield--width-half:nth-child(odd) {
+                                    margin-right: 1.5rem;
+                                }
+
+                                /* Second field of each pair gets no right margin */
+                                .gform_wrapper .gform_fields .gfield--width-half:nth-child(even) {
+                                    margin-right: 0;
+                                }
+
+                                /* Alternative specific targeting for better control */
+                                .gform_wrapper .gform_fields .gfield--width-half.gfield--type-text:first-of-type,
+                                .gform_wrapper .gform_fields .gfield--width-half.gfield--type-email {
+                                    margin-right: 1.5rem;
+                                }
+
+                                .gform_wrapper .gform_fields .gfield--width-half.gfield--type-text:nth-of-type(2),
+                                .gform_wrapper .gform_fields .gfield--width-half.gfield--type-phone {
+                                    margin-right: 0;
+                                }
+
+                                /* Fallback: If field IDs are different, target by field types */
+                                .gform_wrapper .gform_fields .gfield[id*="email"],
+                                .gform_wrapper .gform_fields .gfield[id*="phone"] {
+                                    display: inline-block;
+                                    width: calc(50% - 0.75rem);
+                                    vertical-align: top;
+                                }
+
+                                .gform_wrapper .gform_fields .gfield[id*="email"] {
+                                    margin-right: 1.5rem;
+                                }
+
+                                .gform_wrapper .gform_fields .gfield[id*="phone"] {
+                                    margin-right: 0;
+                                }
+
+                                /* Alternative approach: Target by input types within fields */
+                                .gform_wrapper .gform_fields li:has(input[type="email"]),
+                                .gform_wrapper .gform_fields li:has(input[type="tel"]) {
+                                    display: inline-block;
+                                    width: calc(50% - 0.75rem);
+                                    vertical-align: top;
+                                }
+
+                                .gform_wrapper .gform_fields li:has(input[type="email"]) {
+                                    margin-right: 1.5rem;
+                                }
+
+                                .gform_wrapper .gform_fields li:has(input[type="tel"]) {
+                                    margin-right: 0;
+                                }
+
+                                /* Ensure Name field (compound field) stays full width - it handles its own internal layout */
+                                .gform_wrapper .gform_fields .gfield .ginput_complex {
+                                    display: block;
+                                }
+
+                                .gform_wrapper .gform_fields .gfield .ginput_complex .ginput_left,
+                                .gform_wrapper .gform_fields .gfield .ginput_complex .ginput_right {
+                                    display: inline-block;
+                                    width: calc(50% - 0.5rem);
+                                    vertical-align: top;
+                                }
+
+                                .gform_wrapper .gform_fields .gfield .ginput_complex .ginput_left {
+                                    margin-right: 1rem;
+                                }
+
+                                /* Ensure Message, CAPTCHA, and Submit stay full width */
+                                .gform_wrapper .gform_fields .gfield[id*="message"],
+                                .gform_wrapper .gform_fields .gfield_captcha,
+                                .gform_wrapper .gform_footer {
+                                    display: block;
+                                    width: 100%;
+                                    margin-right: 0;
+                                }
+
+                                /* Responsive: Stack all fields on mobile */
+                                @media (max-width: 640px) {
+                                    .gform_wrapper .gform_fields .gfield--width-half,
+                                    .gform_wrapper ul.gform_fields li#field_1_2,
+                                    .gform_wrapper ul.gform_fields li#field_1_4,
+                                    .gform_wrapper .gform_fields .gfield[id*="email"],
+                                    .gform_wrapper .gform_fields .gfield[id*="phone"],
+                                    .gform_wrapper .gform_fields li:has(input[type="email"]),
+                                    .gform_wrapper .gform_fields li:has(input[type="tel"]) {
+                                        width: 100% !important;
+                                        margin-right: 0 !important;
+                                        display: block !important;
+                                    }
+
+                                    .gform_wrapper .gform_fields .gfield .ginput_complex .ginput_left,
+                                    .gform_wrapper .gform_fields .gfield .ginput_complex .ginput_right {
+                                        width: 100%;
+                                        margin-right: 0;
+                                        margin-bottom: 0.5rem;
+                                    }
                                 }
 
                                 .gform_wrapper .gform_fields .gfield input[type="text"],
