@@ -1,0 +1,433 @@
+{
+  "timestamp": "2025-09-20T07-39-04",
+  "screenshots": [
+    {
+      "page": "homepage",
+      "viewport": "desktop",
+      "filename": "baseline-homepage-desktop-2025-09-20T07-39-04.png",
+      "path": "/Users/alexthip/Projects/histeq.com/baseline-screenshots/baseline-homepage-desktop-2025-09-20T07-39-04.png",
+      "dimensions": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "pageTitle": "Historic Equity Inc. State Historic Tax Credit Investment Specialists",
+      "fileSize": 980851
+    },
+    {
+      "page": "homepage",
+      "viewport": "mobile",
+      "filename": "baseline-homepage-mobile-2025-09-20T07-39-04.png",
+      "path": "/Users/alexthip/Projects/histeq.com/baseline-screenshots/baseline-homepage-mobile-2025-09-20T07-39-04.png",
+      "dimensions": {
+        "name": "mobile",
+        "width": 375,
+        "height": 812
+      },
+      "pageTitle": "Historic Equity Inc. State Historic Tax Credit Investment Specialists",
+      "fileSize": 573905
+    },
+    {
+      "page": "meet-our-team",
+      "viewport": "desktop",
+      "filename": "baseline-meet-our-team-desktop-2025-09-20T07-39-04.png",
+      "path": "/Users/alexthip/Projects/histeq.com/baseline-screenshots/baseline-meet-our-team-desktop-2025-09-20T07-39-04.png",
+      "dimensions": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "pageTitle": "Meet Our Team",
+      "fileSize": 252920
+    },
+    {
+      "page": "meet-our-team",
+      "viewport": "mobile",
+      "filename": "baseline-meet-our-team-mobile-2025-09-20T07-39-04.png",
+      "path": "/Users/alexthip/Projects/histeq.com/baseline-screenshots/baseline-meet-our-team-mobile-2025-09-20T07-39-04.png",
+      "dimensions": {
+        "name": "mobile",
+        "width": 375,
+        "height": 812
+      },
+      "pageTitle": "Meet Our Team",
+      "fileSize": 253945
+    },
+    {
+      "page": "contact",
+      "viewport": "desktop",
+      "filename": "baseline-contact-desktop-2025-09-20T07-39-04.png",
+      "path": "/Users/alexthip/Projects/histeq.com/baseline-screenshots/baseline-contact-desktop-2025-09-20T07-39-04.png",
+      "dimensions": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "pageTitle": "Contact Us",
+      "fileSize": 980851
+    },
+    {
+      "page": "contact",
+      "viewport": "mobile",
+      "filename": "baseline-contact-mobile-2025-09-20T07-39-04.png",
+      "path": "/Users/alexthip/Projects/histeq.com/baseline-screenshots/baseline-contact-mobile-2025-09-20T07-39-04.png",
+      "dimensions": {
+        "name": "mobile",
+        "width": 375,
+        "height": 812
+      },
+      "pageTitle": "Contact Us",
+      "fileSize": 573905
+    }
+  ],
+  "errors": [],
+  "consoleMessages": [
+    {
+      "page": "homepage",
+      "viewport": "desktop",
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "location": {
+        "url": "http://localhost:8080/wp-content/themes/historic-equity/static/images/community-preservation.jpg",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "page": "homepage",
+      "viewport": "desktop",
+      "type": "log",
+      "text": "Historic Equity theme loaded successfully",
+      "location": {
+        "url": "http://localhost:8080/wp-content/themes/historic-equity/static/js/main.js?ver=1758353944",
+        "lineNumber": 17,
+        "columnNumber": 20
+      }
+    },
+    {
+      "page": "homepage",
+      "viewport": "desktop",
+      "type": "log",
+      "text": "Historic Equity Accessibility features initialized",
+      "location": {
+        "url": "http://localhost:8080/wp-content/themes/historic-equity/static/js/accessibility.js?ver=1758353944",
+        "lineNumber": 41,
+        "columnNumber": 20
+      }
+    },
+    {
+      "page": "homepage",
+      "viewport": "desktop",
+      "type": "warning",
+      "text": "The resource http://localhost:8080/wp-content/themes/historic-equity/static/js/main.js was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.",
+      "location": {
+        "url": "http://localhost:8080/",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "page": "homepage",
+      "viewport": "desktop",
+      "type": "warning",
+      "text": "The resource http://localhost:8080/wp-content/themes/historic-equity/static/css/style.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.",
+      "location": {
+        "url": "http://localhost:8080/",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "page": "homepage",
+      "viewport": "mobile",
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "location": {
+        "url": "http://localhost:8080/wp-content/themes/historic-equity/static/images/community-preservation.jpg",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "page": "homepage",
+      "viewport": "mobile",
+      "type": "log",
+      "text": "Historic Equity theme loaded successfully",
+      "location": {
+        "url": "http://localhost:8080/wp-content/themes/historic-equity/static/js/main.js?ver=1758353948",
+        "lineNumber": 17,
+        "columnNumber": 20
+      }
+    },
+    {
+      "page": "homepage",
+      "viewport": "mobile",
+      "type": "log",
+      "text": "Historic Equity Accessibility features initialized",
+      "location": {
+        "url": "http://localhost:8080/wp-content/themes/historic-equity/static/js/accessibility.js?ver=1758353948",
+        "lineNumber": 41,
+        "columnNumber": 20
+      }
+    },
+    {
+      "page": "homepage",
+      "viewport": "mobile",
+      "type": "warning",
+      "text": "The resource http://localhost:8080/wp-content/themes/historic-equity/static/js/main.js was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.",
+      "location": {
+        "url": "http://localhost:8080/",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "page": "homepage",
+      "viewport": "mobile",
+      "type": "warning",
+      "text": "The resource http://localhost:8080/wp-content/themes/historic-equity/static/css/style.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.",
+      "location": {
+        "url": "http://localhost:8080/",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "page": "meet-our-team",
+      "viewport": "desktop",
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "location": {
+        "url": "http://localhost:8080/wp-content/themes/historic-equity/static/images/historic-investment-team.jpg",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "page": "meet-our-team",
+      "viewport": "desktop",
+      "type": "log",
+      "text": "Historic Equity theme loaded successfully",
+      "location": {
+        "url": "http://localhost:8080/wp-content/themes/historic-equity/static/js/main.js?ver=1758353952",
+        "lineNumber": 17,
+        "columnNumber": 20
+      }
+    },
+    {
+      "page": "meet-our-team",
+      "viewport": "desktop",
+      "type": "log",
+      "text": "Historic Equity Accessibility features initialized",
+      "location": {
+        "url": "http://localhost:8080/wp-content/themes/historic-equity/static/js/accessibility.js?ver=1758353952",
+        "lineNumber": 41,
+        "columnNumber": 20
+      }
+    },
+    {
+      "page": "meet-our-team",
+      "viewport": "desktop",
+      "type": "warning",
+      "text": "The resource http://localhost:8080/wp-content/themes/historic-equity/static/js/main.js was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.",
+      "location": {
+        "url": "http://localhost:8080/meet-our-team/",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "page": "meet-our-team",
+      "viewport": "desktop",
+      "type": "warning",
+      "text": "The resource http://localhost:8080/wp-content/themes/historic-equity/static/css/style.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.",
+      "location": {
+        "url": "http://localhost:8080/meet-our-team/",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "page": "meet-our-team",
+      "viewport": "mobile",
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "location": {
+        "url": "http://localhost:8080/wp-content/themes/historic-equity/static/images/historic-investment-team.jpg",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "page": "meet-our-team",
+      "viewport": "mobile",
+      "type": "log",
+      "text": "Historic Equity theme loaded successfully",
+      "location": {
+        "url": "http://localhost:8080/wp-content/themes/historic-equity/static/js/main.js?ver=1758353956",
+        "lineNumber": 17,
+        "columnNumber": 20
+      }
+    },
+    {
+      "page": "meet-our-team",
+      "viewport": "mobile",
+      "type": "log",
+      "text": "Historic Equity Accessibility features initialized",
+      "location": {
+        "url": "http://localhost:8080/wp-content/themes/historic-equity/static/js/accessibility.js?ver=1758353956",
+        "lineNumber": 41,
+        "columnNumber": 20
+      }
+    },
+    {
+      "page": "meet-our-team",
+      "viewport": "mobile",
+      "type": "warning",
+      "text": "The resource http://localhost:8080/wp-content/themes/historic-equity/static/js/main.js was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.",
+      "location": {
+        "url": "http://localhost:8080/meet-our-team/",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "page": "meet-our-team",
+      "viewport": "mobile",
+      "type": "warning",
+      "text": "The resource http://localhost:8080/wp-content/themes/historic-equity/static/css/style.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.",
+      "location": {
+        "url": "http://localhost:8080/meet-our-team/",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "page": "contact",
+      "viewport": "desktop",
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "location": {
+        "url": "http://localhost:8080/wp-content/themes/historic-equity/static/images/community-preservation.jpg",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "page": "contact",
+      "viewport": "desktop",
+      "type": "log",
+      "text": "Historic Equity theme loaded successfully",
+      "location": {
+        "url": "http://localhost:8080/wp-content/themes/historic-equity/static/js/main.js?ver=1758353960",
+        "lineNumber": 17,
+        "columnNumber": 20
+      }
+    },
+    {
+      "page": "contact",
+      "viewport": "desktop",
+      "type": "log",
+      "text": "Historic Equity Accessibility features initialized",
+      "location": {
+        "url": "http://localhost:8080/wp-content/themes/historic-equity/static/js/accessibility.js?ver=1758353960",
+        "lineNumber": 41,
+        "columnNumber": 20
+      }
+    },
+    {
+      "page": "contact",
+      "viewport": "desktop",
+      "type": "warning",
+      "text": "The resource http://localhost:8080/wp-content/themes/historic-equity/static/js/main.js was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.",
+      "location": {
+        "url": "http://localhost:8080/contact-us/",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "page": "contact",
+      "viewport": "desktop",
+      "type": "warning",
+      "text": "The resource http://localhost:8080/wp-content/themes/historic-equity/static/css/style.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.",
+      "location": {
+        "url": "http://localhost:8080/contact-us/",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "page": "contact",
+      "viewport": "mobile",
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "location": {
+        "url": "http://localhost:8080/wp-content/themes/historic-equity/static/images/community-preservation.jpg",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "page": "contact",
+      "viewport": "mobile",
+      "type": "log",
+      "text": "Historic Equity theme loaded successfully",
+      "location": {
+        "url": "http://localhost:8080/wp-content/themes/historic-equity/static/js/main.js?ver=1758353964",
+        "lineNumber": 17,
+        "columnNumber": 20
+      }
+    },
+    {
+      "page": "contact",
+      "viewport": "mobile",
+      "type": "log",
+      "text": "Historic Equity Accessibility features initialized",
+      "location": {
+        "url": "http://localhost:8080/wp-content/themes/historic-equity/static/js/accessibility.js?ver=1758353964",
+        "lineNumber": 41,
+        "columnNumber": 20
+      }
+    },
+    {
+      "page": "contact",
+      "viewport": "mobile",
+      "type": "warning",
+      "text": "The resource http://localhost:8080/wp-content/themes/historic-equity/static/js/main.js was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.",
+      "location": {
+        "url": "http://localhost:8080/contact-us/",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "page": "contact",
+      "viewport": "mobile",
+      "type": "warning",
+      "text": "The resource http://localhost:8080/wp-content/themes/historic-equity/static/css/style.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.",
+      "location": {
+        "url": "http://localhost:8080/contact-us/",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    }
+  ],
+  "designMockups": [
+    {
+      "page": "homepage",
+      "mockup": "/Users/alexthip/Projects/histeq.com/design/home__desktop.png",
+      "exists": true
+    },
+    {
+      "page": "meet-our-team",
+      "mockup": "/Users/alexthip/Projects/histeq.com/design/meet__desktop.png",
+      "exists": true
+    },
+    {
+      "page": "contact",
+      "mockup": "/Users/alexthip/Projects/histeq.com/design/contact-focus.png",
+      "exists": true
+    }
+  ]
+}

@@ -36,8 +36,8 @@ class TimberContext {
         // Base context from functions.php
         $context = historic_equity_add_to_context($context);
 
-        // Custom post type collections
-        $context = array_merge($context, self::get_custom_post_collections());
+        // Custom post type collections (now using ACF Pro instead)
+        // $context = array_merge($context, self::get_custom_post_collections());
 
         // SHTC industry data
         $context = array_merge($context, self::get_shtc_industry_data());

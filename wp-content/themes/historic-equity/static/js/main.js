@@ -21,6 +21,7 @@
             this.setupLoadingAnimations();
             this.setupIntersectionObserver();
             this.setupPerformanceOptimizations();
+            this.setupCarousel();
         }
 
         // Enhanced smooth scrolling with offset for sticky header
@@ -183,6 +184,170 @@
 
             // Preload critical resources
             this.preloadCriticalResources();
+        }
+
+        // Building Images Carousel
+        setupCarousel() {
+            const carousel = document.querySelector('.building-carousel');
+            if (!carousel) return;
+
+            const track = carousel.querySelector('.carousel-track');
+            const slides = carousel.querySelectorAll('.carousel-slide');
+            const prevButton = carousel.querySelector('.carousel-prev');
+            const nextButton = carousel.querySelector('.carousel-next');
+            const indicators = carousel.querySelectorAll('.carousel-indicator');
+
+            if (!track || slides.length === 0) return;
+
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+            let autoPlayInterval;
+            let isPlaying = true;
+
+            // Initialize carousel
+            this.updateCarousel(track, slides, indicators, currentSlide);
+
+            // Previous button
+            if (prevButton) {
+                prevButton.addEventListener('click', () => {
+                    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                    this.updateCarousel(track, slides, indicators, currentSlide);
+                    this.resetAutoPlay();
+                });
+            }
+
+            // Next button
+            if (nextButton) {
+                nextButton.addEventListener('click', () => {
+                    currentSlide = (currentSlide + 1) % totalSlides;
+                    this.updateCarousel(track, slides, indicators, currentSlide);
+                    this.resetAutoPlay();
+                });
+            }
+
+            // Indicator clicks
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    currentSlide = index;
+                    this.updateCarousel(track, slides, indicators, currentSlide);
+                    this.resetAutoPlay();
+                });
+            });
+
+            // Touch/swipe support
+            let startX = 0;
+            let endX = 0;
+
+            track.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
+            }, { passive: true });
+
+            track.addEventListener('touchmove', (e) => {
+                endX = e.touches[0].clientX;
+            }, { passive: true });
+
+            track.addEventListener('touchend', () => {
+                const diffX = startX - endX;
+                const threshold = 50;
+
+                if (Math.abs(diffX) > threshold) {
+                    if (diffX > 0) {
+                        // Swipe left - next slide
+                        currentSlide = (currentSlide + 1) % totalSlides;
+                    } else {
+                        // Swipe right - previous slide
+                        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                    }
+                    this.updateCarousel(track, slides, indicators, currentSlide);
+                    this.resetAutoPlay();
+                }
+            });
+
+            // Keyboard navigation
+            carousel.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') {
+                    e.preventDefault();
+                    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                    this.updateCarousel(track, slides, indicators, currentSlide);
+                    this.resetAutoPlay();
+                } else if (e.key === 'ArrowRight') {
+                    e.preventDefault();
+                    currentSlide = (currentSlide + 1) % totalSlides;
+                    this.updateCarousel(track, slides, indicators, currentSlide);
+                    this.resetAutoPlay();
+                }
+            });
+
+            // Auto-play functionality
+            const startAutoPlay = () => {
+                if (totalSlides > 1) {
+                    autoPlayInterval = setInterval(() => {
+                        currentSlide = (currentSlide + 1) % totalSlides;
+                        this.updateCarousel(track, slides, indicators, currentSlide);
+                    }, 5000); // Change slide every 5 seconds
+                }
+            };
+
+            const stopAutoPlay = () => {
+                clearInterval(autoPlayInterval);
+            };
+
+            this.resetAutoPlay = () => {
+                stopAutoPlay();
+                if (isPlaying) {
+                    startAutoPlay();
+                }
+            };
+
+            // Pause auto-play on hover
+            carousel.addEventListener('mouseenter', stopAutoPlay);
+            carousel.addEventListener('mouseleave', () => {
+                if (isPlaying) startAutoPlay();
+            });
+
+            // Pause auto-play when page is not visible
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) {
+                    stopAutoPlay();
+                } else if (isPlaying) {
+                    startAutoPlay();
+                }
+            });
+
+            // Start auto-play
+            startAutoPlay();
+        }
+
+        // Update carousel position and active states
+        updateCarousel(track, slides, indicators, currentSlide) {
+            // Move track
+            const slideWidth = slides[0].offsetWidth;
+            const offset = -currentSlide * slideWidth;
+            track.style.transform = `translateX(${offset}px)`;
+
+            // Update slide states
+            slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === currentSlide);
+                slide.setAttribute('aria-hidden', index !== currentSlide);
+            });
+
+            // Update indicators
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentSlide);
+                indicator.setAttribute('aria-selected', index === currentSlide);
+            });
+
+            // Update button states
+            const carousel = track.closest('.building-carousel');
+            const prevButton = carousel.querySelector('.carousel-prev');
+            const nextButton = carousel.querySelector('.carousel-next');
+
+            if (prevButton) {
+                prevButton.setAttribute('aria-label', `Previous slide (${currentSlide + 1} of ${slides.length})`);
+            }
+            if (nextButton) {
+                nextButton.setAttribute('aria-label', `Next slide (${currentSlide + 1} of ${slides.length})`);
+            }
         }
 
         // Preload critical resources

@@ -1,0 +1,76 @@
+{
+  "timestamp": "2025-09-19T19-56-22",
+  "screenshots": [],
+  "errors": [
+    {
+      "page": "meet-our-team",
+      "viewport": "desktop",
+      "error": "page.screenshot: options.quality is unsupported for the png screenshots",
+      "stack": "page.screenshot: options.quality is unsupported for the png screenshots\n    at captureBaselineScreenshots (/Users/alexthip/Projects/histeq.com/baseline-screenshots.js:118:22)"
+    },
+    {
+      "page": "meet-our-team",
+      "viewport": "mobile",
+      "error": "page.screenshot: options.quality is unsupported for the png screenshots",
+      "stack": "page.screenshot: options.quality is unsupported for the png screenshots\n    at captureBaselineScreenshots (/Users/alexthip/Projects/histeq.com/baseline-screenshots.js:118:22)"
+    },
+    {
+      "page": "contact",
+      "viewport": "desktop",
+      "error": "page.screenshot: options.quality is unsupported for the png screenshots",
+      "stack": "page.screenshot: options.quality is unsupported for the png screenshots\n    at captureBaselineScreenshots (/Users/alexthip/Projects/histeq.com/baseline-screenshots.js:118:22)"
+    },
+    {
+      "page": "contact",
+      "viewport": "mobile",
+      "error": "page.screenshot: options.quality is unsupported for the png screenshots",
+      "stack": "page.screenshot: options.quality is unsupported for the png screenshots\n    at captureBaselineScreenshots (/Users/alexthip/Projects/histeq.com/baseline-screenshots.js:118:22)"
+    }
+  ],
+  "consoleMessages": [
+    {
+      "page": "meet-our-team",
+      "viewport": "desktop",
+      "type": "warning",
+      "text": "cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation",
+      "location": {
+        "url": "https://cdn.tailwindcss.com/",
+        "lineNumber": 63,
+        "columnNumber": 1710
+      }
+    },
+    {
+      "page": "meet-our-team",
+      "viewport": "mobile",
+      "type": "warning",
+      "text": "cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation",
+      "location": {
+        "url": "https://cdn.tailwindcss.com/",
+        "lineNumber": 63,
+        "columnNumber": 1710
+      }
+    },
+    {
+      "page": "contact",
+      "viewport": "desktop",
+      "type": "warning",
+      "text": "cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation",
+      "location": {
+        "url": "https://cdn.tailwindcss.com/",
+        "lineNumber": 63,
+        "columnNumber": 1710
+      }
+    },
+    {
+      "page": "contact",
+      "viewport": "mobile",
+      "type": "warning",
+      "text": "cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation",
+      "location": {
+        "url": "https://cdn.tailwindcss.com/",
+        "lineNumber": 63,
+        "columnNumber": 1710
+      }
+    }
+  ]
+}

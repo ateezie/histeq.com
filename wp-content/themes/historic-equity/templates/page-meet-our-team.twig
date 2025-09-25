@@ -4,229 +4,141 @@
     <main role="main" aria-label="Meet Our Team">
 
         {# Hero Section #}
-        <section class="py-16 lg:py-20 bg-white">
+        <section class="py-24 lg:py-32 bg-white">
             <div class="container mx-auto px-6 lg:px-12 text-center">
-                <h1 class="text-4xl lg:text-5xl font-bold mb-6 text-gray-900 leading-tight">
-                    Meet our experts
+                <h1 class="text-4xl lg:text-5xl font-semibold mb-6 text-gray-900 leading-tight tracking-tight">
+                    {{ fields.team_hero_title|default('Meet Our Team') }}
                 </h1>
-                <p class="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
-                    Dedicated professionals transforming historic rehabilitation projects through strategic tax credit investments
+                <p class="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    {{ fields.team_hero_content|default('Experienced professionals specializing in state historic tax credit consulting, investment, and project structuring') }}
                 </p>
             </div>
         </section>
 
         {# Team Section #}
-        <section class="py-16 lg:py-20 bg-gray-50">
+        <section class="py-24 lg:py-32 bg-gray-50">
             <div class="container mx-auto px-6 lg:px-12">
 
                 {# Section Header #}
                 <div class="text-center mb-16">
-                    <p class="text-sm text-gray-500 uppercase tracking-wide mb-4">Innovators</p>
-                    <h2 class="text-3xl lg:text-4xl font-bold mb-6 text-gray-900">Our team</h2>
-                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                        Experienced professionals driving value in historic property investments
+                    <p class="font-subheading text-sm text-gray-500 uppercase tracking-wide mb-4">{{ fields.team_section_category|default('Leadership') }}</p>
+                    <h2 class="text-3xl lg:text-4xl font-semibold mb-6 text-gray-900">{{ fields.team_section_title|default('Historic Equity Inc. Team') }}</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                        {{ fields.team_section_subtitle|default('Combined decades of experience in historic preservation, tax credit structuring, and project management') }}
                     </p>
                 </div>
 
-                {# Team Grid #}
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 mb-16">
+                {# Team Grid - Real Historic Equity Team Members #}
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 mb-16">
+                        {# Authentic team members with photos #}
+                        <div class="text-left bg-white p-8 rounded-lg shadow-sm">
+                            <div class="w-24 h-24 rounded-full mx-auto md:mx-0 mb-4 overflow-hidden">
+                                <img src="{{ theme.link }}/static/images/team/phil-estep.jpg"
+                                     alt="Philip Estep, President of Historic Equity Inc."
+                                     class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Philip Estep</h3>
+                            <p class="text-sm text-primary-600 mb-4 font-medium">President</p>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                Estep has over 30 years of experience in adaptive reuse of historic properties. A pioneer of loft conversion in New York City's Soho district, in 1974 he served as Treasurer of a corporation that converted a 70,000 square-foot warehouse into living lofts and art galleries using the J-51 Tax Abatement plan, and obtained the first oversize building variance that made Soho's spectacular transformation possible. Estep then spent 15 years in Paris, France, as an investor and design-builder working with 300-hundred-year old to new in-fill properties, some of which were featured in French architectural publications.
+                            </p>
+                        </div>
 
-                    {# Team Member 1 #}
-                    <div class="text-center">
-                        <div class="w-24 h-24 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center">
-                            <span class="text-gray-500 text-lg font-semibold">MR</span>
+                        <div class="text-left bg-white p-8 rounded-lg shadow-sm">
+                            <div class="w-24 h-24 rounded-full mx-auto md:mx-0 mb-4 overflow-hidden">
+                                <img src="{{ theme.link }}/static/images/team/elise-underwood.jpg"
+                                     alt="Elise Westwood, Vice President of Historic Equity Inc."
+                                     class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Elise Westwood</h3>
+                            <p class="text-sm text-primary-600 mb-4 font-medium">Vice President</p>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                A native of St. Louis, Missouri, Elise has served as Vice President of HEI for over 10 years. She brings a passion for historic real estate development and plays a pivotal role in shaping the company's long term vision. Her responsibilities at HEI include business development, organizing and assisting with all phases of historic tax credit projects partnered with HEI, coordinating closings with partners and business professionals, research of individual state regulations, oversight of compliance, and oversight of day to day company operations. Elise has a BS in Accounting from Webster University and a BA in Political Science from McKendree University.
+                            </p>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Michael Rodriguez</h3>
-                        <p class="text-sm text-gray-600 mb-3">Managing Director</p>
-                        <p class="text-sm text-gray-600 mb-4">
-                            Leads strategic initiatives with over 15 years of historic tax credit expertise
-                        </p>
-                        <div class="flex justify-center space-x-3">
-                            <a href="#" class="text-gray-400 hover:text-gray-600"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
-                            <a href="#" class="text-gray-400 hover:text-gray-600"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-                            <a href="#" class="text-gray-400 hover:text-gray-600"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.618 5.367 11.986 11.988 11.986 6.618 0 11.986-5.368 11.986-11.986C24.003 5.367 18.635.001 12.017.001z"/></svg></a>
-                        </div>
-                    </div>
 
-                    {# Team Member 2 #}
-                    <div class="text-center">
-                        <div class="w-24 h-24 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center">
-                            <span class="text-gray-500 text-lg font-semibold">ST</span>
+                        <div class="text-left bg-white p-8 rounded-lg shadow-sm">
+                            <div class="w-24 h-24 rounded-full mx-auto md:mx-0 mb-4 overflow-hidden">
+                                <img src="{{ theme.link }}/static/images/team/mary-carpenter.jpg"
+                                     alt="Mary Carpenter, Administrator of Historic Equity Inc."
+                                     class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Mary Carpenter</h3>
+                            <p class="text-sm text-primary-600 mb-4 font-medium">Administrator</p>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                Carpenter received her BA in Art History from Washington University in St. Louis and a MA in Valuation Sciences from Lindenwood University. She was an award-winning Senior Certified Fine Arts Appraiser and continues to instruct appraisal subjects at the college level. Carpenter's responsibilities at HEI involve billing and bookkeeping, collecting, and submitting tax reporting information, and supervising the daily activities of the business.
+                            </p>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Sarah Thompson</h3>
-                        <p class="text-sm text-gray-600 mb-3">Senior Analyst</p>
-                        <p class="text-sm text-gray-600 mb-4">
-                            Specializes in market research and consulting for complex federal tax rehabilitation projects
-                        </p>
-                        <div class="flex justify-center space-x-3">
-                            <a href="#" class="text-gray-400 hover:text-gray-600"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
-                            <a href="#" class="text-gray-400 hover:text-gray-600"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-                            <a href="#" class="text-gray-400 hover:text-gray-600"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.618 5.367 11.986 11.988 11.986 6.618 0 11.986-5.368 11.986-11.986C24.003 5.367 18.635.001 12.017.001z"/></svg></a>
-                        </div>
-                    </div>
 
-                    {# Team Member 3 #}
-                    <div class="text-center">
-                        <div class="w-24 h-24 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center">
-                            <span class="text-gray-500 text-lg font-semibold">DC</span>
+                        <div class="text-left bg-white p-8 rounded-lg shadow-sm">
+                            <div class="w-24 h-24 rounded-full mx-auto md:mx-0 mb-4 overflow-hidden">
+                                <img src="{{ theme.link }}/static/images/team/jennifer-knobeloch.jpg"
+                                     alt="Jennifer Knobeloch, Account Manager of Historic Equity Inc."
+                                     class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Jennifer Knobeloch</h3>
+                            <p class="text-sm text-primary-600 mb-4 font-medium">Account Manager</p>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                Knobeloch received a BA in Health Care Administration from the University of Missouri-Columbia. Her duties at HEI involve project invoicing, collecting tax reports, compliance for state regulations, and developing relationships with partners as a point of contact for HEI.
+                            </p>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">David Chen</h3>
-                        <p class="text-sm text-gray-600 mb-3">Investment Director</p>
-                        <p class="text-sm text-gray-600 mb-4">
-                            Manages diversified portfolio and identifying unique investment opportunities nationwide
-                        </p>
-                        <div class="flex justify-center space-x-3">
-                            <a href="#" class="text-gray-400 hover:text-gray-600"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
-                            <a href="#" class="text-gray-400 hover:text-gray-600"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-                            <a href="#" class="text-gray-400 hover:text-gray-600"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.618 5.367 11.986 11.988 11.986 6.618 0 11.986-5.368 11.986-11.986C24.003 5.367 18.635.001 12.017.001z"/></svg></a>
-                        </div>
-                    </div>
 
-                    {# Team Member 4 #}
-                    <div class="text-center">
-                        <div class="w-24 h-24 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center">
-                            <span class="text-gray-500 text-lg font-semibold">EG</span>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Emily Garcia</h3>
-                        <p class="text-sm text-gray-600 mb-3">Compliance Manager</p>
-                        <p class="text-sm text-gray-600 mb-4">
-                            Ensures rigorous adherence to state and federal historic tax credit regulations
-                        </p>
-                        <div class="flex justify-center space-x-3">
-                            <a href="#" class="text-gray-400 hover:text-gray-600"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
-                            <a href="#" class="text-gray-400 hover:text-gray-600"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-                            <a href="#" class="text-gray-400 hover:text-gray-600"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.618 5.367 11.986 11.988 11.986 6.618 0 11.986-5.368 11.986-11.986C24.003 5.367 18.635.001 12.017.001z"/></svg></a>
-                        </div>
-                    </div>
-
-                    {# Team Member 5 #}
-                    <div class="text-center">
-                        <div class="w-24 h-24 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center">
-                            <span class="text-gray-500 text-lg font-semibold">RK</span>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Robert Kim</h3>
-                        <p class="text-sm text-gray-600 mb-3">Financial Strategist</p>
-                        <p class="text-sm text-gray-600 mb-4">
-                            Develops innovative financial structures to maximize tax credit benefits for clients
-                        </p>
-                        <div class="flex justify-center space-x-3">
-                            <a href="#" class="text-gray-400 hover:text-gray-600"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
-                            <a href="#" class="text-gray-400 hover:text-gray-600"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-                            <a href="#" class="text-gray-400 hover:text-gray-600"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.618 5.367 11.986 11.988 11.986 6.618 0 11.986-5.368 11.986-11.986C24.003 5.367 18.635.001 12.017.001z"/></svg></a>
-                        </div>
-                    </div>
-
-                    {# Team Member 6 #}
-                    <div class="text-center">
-                        <div class="w-24 h-24 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center">
-                            <span class="text-gray-500 text-lg font-semibold">JM</span>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Jessica Martinez</h3>
-                        <p class="text-sm text-gray-600 mb-3">Project Coordinator</p>
-                        <p class="text-sm text-gray-600 mb-4">
-                            Manages complex project details and supports seamless investment execution
-                        </p>
-                        <div class="flex justify-center space-x-3">
-                            <a href="#" class="text-gray-400 hover:text-gray-600"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
-                            <a href="#" class="text-gray-400 hover:text-gray-600"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-                            <a href="#" class="text-gray-400 hover:text-gray-600"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.618 5.367 11.986 11.988 11.986 6.618 0 11.986-5.368 11.986-11.986C24.003 5.367 18.635.001 12.017.001z"/></svg></a>
-                        </div>
-                    </div>
                 </div>
 
-                {# We're Hiring Section #}
-                <div class="text-center bg-white rounded-lg p-8 shadow-sm">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">We're hiring!</h3>
-                    <p class="text-gray-600 mb-6">Join our dynamic team and help transform historic properties</p>
-                    <a href="/careers" class="inline-flex items-center justify-center px-6 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors duration-200">
-                        Open positions
-                    </a>
-                </div>
             </div>
         </section>
 
-        {# Client Testimonials Section #}
-        <section class="py-16 lg:py-20 bg-orange-50">
-            <div class="container mx-auto px-6 lg:px-12">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl lg:text-4xl font-bold mb-6 text-gray-900">Client testimonials</h2>
-                    <p class="text-lg text-gray-600">What our partners say about working with Historic Equity Inc</p>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-                    {# Testimonial 1 #}
-                    <div class="bg-white p-8 rounded-lg shadow-sm">
-                        <div class="flex items-center mb-4">
-                            <svg class="w-6 h-6 text-gray-400 mr-3" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
-                            </svg>
-                            <span class="font-semibold text-gray-900">Webflow</span>
-                        </div>
-                        <p class="text-gray-700 mb-6">
-                            "Historic Equity transformed our challenging rehabilitation project into a financial success story."
-                        </p>
-                        <div class="flex items-center">
-                            <div class="w-10 h-10 bg-gray-300 rounded-full mr-3 flex items-center justify-center">
-                                <span class="text-gray-600 text-sm font-semibold">JA</span>
-                            </div>
-                            <div>
-                                <p class="font-semibold text-gray-900">John Anderson</p>
-                                <p class="text-sm text-gray-600">CEO, Landmark Developments</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    {# Testimonial 2 #}
-                    <div class="bg-white p-8 rounded-lg shadow-sm">
-                        <div class="flex items-center mb-4">
-                            <svg class="w-6 h-6 text-gray-400 mr-3" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
-                            </svg>
-                            <span class="font-semibold text-gray-900">Webflow</span>
-                        </div>
-                        <p class="text-gray-700 mb-6">
-                            "Their expertise and dedication made our historic preservation project possible"
-                        </p>
-                        <div class="flex items-center">
-                            <div class="w-10 h-10 bg-gray-300 rounded-full mr-3 flex items-center justify-center">
-                                <span class="text-gray-600 text-sm font-semibold">ER</span>
-                            </div>
-                            <div>
-                                <p class="font-semibold text-gray-900">Elizabeth Roberts</p>
-                                <p class="text-sm text-gray-600">Director, Heritage Restoration Group</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         {# CTA Section #}
-        <section class="py-16 lg:py-20 bg-white">
+        <section class="py-24 lg:py-32 bg-white">
             <div class="container mx-auto px-6 lg:px-12">
                 <div class="text-center max-w-4xl mx-auto">
-                    <h2 class="text-3xl lg:text-4xl font-bold mb-6 text-gray-900 leading-tight">
-                        Ready to explore historic investments
+                    <h2 class="text-3xl lg:text-4xl font-semibold mb-6 text-gray-900 leading-tight">
+                        {{ fields.team_cta_title|default('Ready to discuss your historic tax credit project?') }}
                     </h2>
                     <p class="text-lg lg:text-xl mb-8 text-gray-600 leading-relaxed">
-                        Connect with our team to unlock the potential of historic tax credit investments
+                        {{ fields.team_cta_content|default('Connect with our experienced team to explore how we can maximize the benefits of your state historic tax credit project') }}
                     </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-                        <a href="/contact"
-                           class="inline-flex items-center justify-center px-8 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors duration-200">
-                            Contact
-                        </a>
-                        <a href="/projects"
-                           class="inline-flex items-center justify-center px-8 py-3 bg-transparent border-2 border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition-colors duration-200">
-                            Learn more
-                        </a>
-                    </div>
+                    {% if fields.team_cta_primary_button_text or fields.team_cta_secondary_button_text %}
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                            {% if fields.team_cta_primary_button_text %}
+                                <a href="{{ fields.team_cta_primary_button_link|default('/contact') }}"
+                                   class="inline-flex items-center justify-center px-8 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors duration-200">
+                                    {{ fields.team_cta_primary_button_text }}
+                                </a>
+                            {% endif %}
+                            {% if fields.team_cta_secondary_button_text %}
+                                <a href="{{ fields.team_cta_secondary_button_link|default('/projects') }}"
+                                   class="inline-flex items-center justify-center px-8 py-3 bg-transparent border-2 border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition-colors duration-200">
+                                    {{ fields.team_cta_secondary_button_text }}
+                                </a>
+                            {% endif %}
+                        </div>
+                    {% else %}
+                        <!-- Fallback buttons -->
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                            <a href="/contact"
+                               class="inline-flex items-center justify-center px-8 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors duration-200">
+                                Contact
+                            </a>
+                            <a href="/projects"
+                               class="inline-flex items-center justify-center px-8 py-3 bg-transparent border-2 border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition-colors duration-200">
+                                Learn more
+                            </a>
+                        </div>
+                    {% endif %}
 
                     {# Large Image Below Content #}
                     <div class="max-w-4xl mx-auto">
-                        <img src="{{ theme.link }}/static/images/historic-investment-team.jpg"
-                             alt="Historic investment consultation meeting"
-                             class="w-full h-auto rounded-lg shadow-lg object-cover">
+                        {% if fields.team_cta_image %}
+                            <img src="{{ fields.team_cta_image.url }}"
+                                 alt="{{ fields.team_cta_image.alt|default('Historic building investment project') }}"
+                                 class="w-full aspect-[16/9] rounded-lg shadow-lg object-cover">
+                        {% else %}
+                            <img src="{{ theme.link }}/static/images/705+Olive+STL+MO+crop.webp"
+                                 alt="Historic building investment project"
+                                 class="w-full aspect-[16/9] rounded-lg shadow-lg object-cover">
+                        {% endif %}
                     </div>
                 </div>
             </div>

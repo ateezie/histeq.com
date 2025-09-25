@@ -7,15 +7,14 @@
 
 namespace HistoricEquity;
 
-// Initialize custom post types
+// Initialize custom post types (keeping contact-lead for form submissions)
 require_once __DIR__ . '/post-types/contact-lead.php';
-require_once __DIR__ . '/post-types/project-showcase.php';
-require_once __DIR__ . '/post-types/service-info.php';
-require_once __DIR__ . '/post-types/state-coverage.php';
-require_once __DIR__ . '/post-types/company-profile.php';
+// Removed project-showcase and state-coverage - using ACF Pro for content management
+// require_once __DIR__ . '/post-types/service-info.php';
+// require_once __DIR__ . '/post-types/company-profile.php';
 
-// Initialize API endpoints
-require_once __DIR__ . '/api/contact-form-endpoint.php';
+// Initialize API endpoints (removed contact-form-endpoint.php - using Gravity Forms now)
+// require_once __DIR__ . '/api/contact-form-endpoint.php';
 require_once __DIR__ . '/api/projects-endpoint.php';
 require_once __DIR__ . '/api/project-single-endpoint.php';
 

@@ -8,12 +8,18 @@
         <div class="flex items-center justify-between py-3">
             <!-- Logo Section -->
             <div class="site-branding">
-                <a href="{{ site.url }}" class="inline-flex items-center group" title="Historic Equity Inc. - Home">
+                <a href="{{ site.url }}" class="inline-flex items-center group" title="{{ global_fields.company_name|default('Historic Equity Inc.') }} - Home">
                     <div class="flex-shrink-0">
                         {# Historic Equity Logo - Actual logo image #}
-                        <img src="{{ site.theme.path }}/static/images/logo__black.png"
-                             alt="Historic Equity Inc. Logo"
-                             class="h-8 lg:h-10 w-auto transition-all duration-200 group-hover:opacity-80">
+                        {% if global_fields.site_logo %}
+                            <img src="{{ global_fields.site_logo.url }}"
+                                 alt="{{ global_fields.site_logo.alt|default(global_fields.company_name ~ ' Logo')|default('Historic Equity Inc. Logo') }}"
+                                 class="h-8 lg:h-10 w-auto transition-all duration-200 group-hover:opacity-80">
+                        {% else %}
+                            <img src="{{ site.theme.path }}/static/images/logo__black.png"
+                                 alt="Historic Equity Inc. Logo"
+                                 class="h-8 lg:h-10 w-auto transition-all duration-200 group-hover:opacity-80">
+                        {% endif %}
                     </div>
                 </a>
             </div>
@@ -38,8 +44,8 @@
 
             <!-- CTA Button (Desktop) - Styleguide Compliant -->
             <div class="hidden lg:block">
-                <a href="/contact" class="inline-flex items-center justify-center px-6 py-2.5 bg-primary-600 text-white text-sm font-medium rounded-lg hover:bg-primary-700 transition-colors duration-200">
-                    Contact
+                <a href="{{ global_fields.navigation_cta_link|default('/contact') }}" class="inline-flex items-center justify-center px-6 py-2.5 bg-primary-600 text-white text-sm font-medium rounded-lg hover:bg-primary-700 transition-colors duration-200">
+                    {{ global_fields.navigation_cta_text|default('Contact') }}
                 </a>
             </div>
 
@@ -70,8 +76,8 @@
                         </a>
                     </li>
                     <li class="pt-4 mt-4 border-t border-neutral-200">
-                        <a href="/contact" class="inline-flex items-center justify-center w-full px-6 py-3 bg-primary-600 text-white text-sm font-medium rounded-lg hover:bg-primary-700 transition-colors duration-200">
-                            Contact
+                        <a href="{{ global_fields.navigation_cta_link|default('/contact') }}" class="inline-flex items-center justify-center w-full px-6 py-3 bg-primary-600 text-white text-sm font-medium rounded-lg hover:bg-primary-700 transition-colors duration-200">
+                            {{ global_fields.navigation_cta_text|default('Contact') }}
                         </a>
                     </li>
                 </ul>

@@ -1,0 +1,104 @@
+{
+  "timestamp": "2025-09-19T19-56-44",
+  "screenshots": [
+    {
+      "page": "meet-our-team",
+      "viewport": "desktop",
+      "filename": "baseline-meet-our-team-desktop-2025-09-19T19-56-44.png",
+      "path": "/Users/alexthip/Projects/histeq.com/baseline-screenshots/baseline-meet-our-team-desktop-2025-09-19T19-56-44.png",
+      "dimensions": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "pageTitle": "Meet Our Team - Historic Equity Inc.",
+      "fileSize": 257393
+    },
+    {
+      "page": "meet-our-team",
+      "viewport": "mobile",
+      "filename": "baseline-meet-our-team-mobile-2025-09-19T19-56-44.png",
+      "path": "/Users/alexthip/Projects/histeq.com/baseline-screenshots/baseline-meet-our-team-mobile-2025-09-19T19-56-44.png",
+      "dimensions": {
+        "name": "mobile",
+        "width": 375,
+        "height": 667
+      },
+      "pageTitle": "Meet Our Team - Historic Equity Inc.",
+      "fileSize": 258055
+    },
+    {
+      "page": "contact",
+      "viewport": "desktop",
+      "filename": "baseline-contact-desktop-2025-09-19T19-56-44.png",
+      "path": "/Users/alexthip/Projects/histeq.com/baseline-screenshots/baseline-contact-desktop-2025-09-19T19-56-44.png",
+      "dimensions": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "pageTitle": "Contact Us - Historic Equity Inc.",
+      "fileSize": 256153
+    },
+    {
+      "page": "contact",
+      "viewport": "mobile",
+      "filename": "baseline-contact-mobile-2025-09-19T19-56-44.png",
+      "path": "/Users/alexthip/Projects/histeq.com/baseline-screenshots/baseline-contact-mobile-2025-09-19T19-56-44.png",
+      "dimensions": {
+        "name": "mobile",
+        "width": 375,
+        "height": 667
+      },
+      "pageTitle": "Contact Us - Historic Equity Inc.",
+      "fileSize": 228731
+    }
+  ],
+  "errors": [],
+  "consoleMessages": [
+    {
+      "page": "meet-our-team",
+      "viewport": "desktop",
+      "type": "warning",
+      "text": "cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation",
+      "location": {
+        "url": "https://cdn.tailwindcss.com/",
+        "lineNumber": 63,
+        "columnNumber": 1710
+      }
+    },
+    {
+      "page": "meet-our-team",
+      "viewport": "mobile",
+      "type": "warning",
+      "text": "cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation",
+      "location": {
+        "url": "https://cdn.tailwindcss.com/",
+        "lineNumber": 63,
+        "columnNumber": 1710
+      }
+    },
+    {
+      "page": "contact",
+      "viewport": "desktop",
+      "type": "warning",
+      "text": "cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation",
+      "location": {
+        "url": "https://cdn.tailwindcss.com/",
+        "lineNumber": 63,
+        "columnNumber": 1710
+      }
+    },
+    {
+      "page": "contact",
+      "viewport": "mobile",
+      "type": "warning",
+      "text": "cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation",
+      "location": {
+        "url": "https://cdn.tailwindcss.com/",
+        "lineNumber": 63,
+        "columnNumber": 1710
+      }
+    }
+  ]
+}

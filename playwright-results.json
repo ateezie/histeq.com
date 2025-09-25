@@ -1,0 +1,379 @@
+{
+  "config": {
+    "configFile": "/Users/alexthip/Projects/histeq.com/playwright.config.js",
+    "rootDir": "/Users/alexthip/Projects/histeq.com/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": "/Users/alexthip/Projects/histeq.com/tests/global-setup.js",
+    "globalTeardown": "/Users/alexthip/Projects/histeq.com/tests/global-teardown.js",
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 4
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        {
+          "outputFolder": "playwright-report"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "playwright-results.json"
+        }
+      ],
+      [
+        "list",
+        null
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/alexthip/Projects/histeq.com/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "Desktop Chrome - 1440px",
+        "name": "Desktop Chrome - 1440px",
+        "testDir": "/Users/alexthip/Projects/histeq.com/tests",
+        "testIgnore": [
+          "**/node_modules/**",
+          "**/dist/**",
+          "**/build/**"
+        ],
+        "testMatch": [
+          "**/tests/**/*.spec.js",
+          "**/tests/**/*.test.js",
+          "**/*{.,_}test.js",
+          "**/*{.,_}spec.js"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/Users/alexthip/Projects/histeq.com/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "Desktop Firefox - 1440px",
+        "name": "Desktop Firefox - 1440px",
+        "testDir": "/Users/alexthip/Projects/histeq.com/tests",
+        "testIgnore": [
+          "**/node_modules/**",
+          "**/dist/**",
+          "**/build/**"
+        ],
+        "testMatch": [
+          "**/tests/**/*.spec.js",
+          "**/tests/**/*.test.js",
+          "**/*{.,_}test.js",
+          "**/*{.,_}spec.js"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/Users/alexthip/Projects/histeq.com/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "Desktop Safari - 1440px",
+        "name": "Desktop Safari - 1440px",
+        "testDir": "/Users/alexthip/Projects/histeq.com/tests",
+        "testIgnore": [
+          "**/node_modules/**",
+          "**/dist/**",
+          "**/build/**"
+        ],
+        "testMatch": [
+          "**/tests/**/*.spec.js",
+          "**/tests/**/*.test.js",
+          "**/*{.,_}test.js",
+          "**/*{.,_}spec.js"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/Users/alexthip/Projects/histeq.com/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "Mobile Chrome - 375px",
+        "name": "Mobile Chrome - 375px",
+        "testDir": "/Users/alexthip/Projects/histeq.com/tests",
+        "testIgnore": [
+          "**/node_modules/**",
+          "**/dist/**",
+          "**/build/**"
+        ],
+        "testMatch": [
+          "**/tests/**/*.spec.js",
+          "**/tests/**/*.test.js",
+          "**/*{.,_}test.js",
+          "**/*{.,_}spec.js"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/Users/alexthip/Projects/histeq.com/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "Mobile Safari - 375px",
+        "name": "Mobile Safari - 375px",
+        "testDir": "/Users/alexthip/Projects/histeq.com/tests",
+        "testIgnore": [
+          "**/node_modules/**",
+          "**/dist/**",
+          "**/build/**"
+        ],
+        "testMatch": [
+          "**/tests/**/*.spec.js",
+          "**/tests/**/*.test.js",
+          "**/*{.,_}test.js",
+          "**/*{.,_}spec.js"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/Users/alexthip/Projects/histeq.com/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "Tablet iPad - 768px",
+        "name": "Tablet iPad - 768px",
+        "testDir": "/Users/alexthip/Projects/histeq.com/tests",
+        "testIgnore": [
+          "**/node_modules/**",
+          "**/dist/**",
+          "**/build/**"
+        ],
+        "testMatch": [
+          "**/tests/**/*.spec.js",
+          "**/tests/**/*.test.js",
+          "**/*{.,_}test.js",
+          "**/*{.,_}spec.js"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/Users/alexthip/Projects/histeq.com/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "Large Desktop - 1920px",
+        "name": "Large Desktop - 1920px",
+        "testDir": "/Users/alexthip/Projects/histeq.com/tests",
+        "testIgnore": [
+          "**/node_modules/**",
+          "**/dist/**",
+          "**/build/**"
+        ],
+        "testMatch": [
+          "**/tests/**/*.spec.js",
+          "**/tests/**/*.test.js",
+          "**/*{.,_}test.js",
+          "**/*{.,_}spec.js"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.55.0",
+    "workers": 5,
+    "webServer": {
+      "command": "echo \"WordPress server should be running on localhost:8080\"",
+      "url": "http://localhost:8080",
+      "reuseExistingServer": true,
+      "timeout": 10000
+    }
+  },
+  "suites": [
+    {
+      "title": "setup-verification.spec.js",
+      "file": "setup-verification.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Playwright Setup Verification",
+          "file": "setup-verification.spec.js",
+          "line": 8,
+          "column": 6,
+          "specs": [
+            {
+              "title": "WordPress server is accessible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Chrome - 1440px",
+                  "projectName": "Desktop Chrome - 1440px",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 992,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-20T07:42:05.519Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "47c5d12a2aec665bef2e-0b0fe986671c227ec979",
+              "file": "setup-verification.spec.js",
+              "line": 10,
+              "column": 3
+            },
+            {
+              "title": "Meet Our Team page loads",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Chrome - 1440px",
+                  "projectName": "Desktop Chrome - 1440px",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 2087,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-20T07:42:05.520Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "47c5d12a2aec665bef2e-9a86b17a57d508566978",
+              "file": "setup-verification.spec.js",
+              "line": 32,
+              "column": 3
+            },
+            {
+              "title": "Contact Us page loads",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Chrome - 1440px",
+                  "projectName": "Desktop Chrome - 1440px",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 1952,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-20T07:42:05.516Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "47c5d12a2aec665bef2e-7a594c8ef11fc1ae79c9",
+              "file": "setup-verification.spec.js",
+              "line": 42,
+              "column": 3
+            },
+            {
+              "title": "Responsive viewports work correctly",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Chrome - 1440px",
+                  "projectName": "Desktop Chrome - 1440px",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 1210,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-20T07:42:05.518Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "47c5d12a2aec665bef2e-f40300387411ae021956",
+              "file": "setup-verification.spec.js",
+              "line": 52,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-09-20T07:42:02.313Z",
+    "duration": 5470.688,
+    "expected": 4,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

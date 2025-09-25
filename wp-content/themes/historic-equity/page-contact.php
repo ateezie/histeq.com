@@ -5,11 +5,11 @@
  */
 
 // Initialize Timber context
-$context = Timber::get_context();
+$context = \Timber\Timber::get_context();
 
 // Set page-specific data
-$context['page'] = Timber::get_post();
+$context['page'] = \Timber\Timber::get_post();
 $context['page_title'] = 'Contact Us';
 
 // Render the Twig template
-Timber::render('page-contact.twig', $context);
+\Timber\Timber::render('page-contact.twig', $context);

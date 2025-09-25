@@ -9,6 +9,11 @@ define('HISTORIC_EQUITY_VERSION', '1.0.0');
 define('HISTORIC_EQUITY_THEME_PATH', get_template_directory());
 define('HISTORIC_EQUITY_THEME_URI', get_template_directory_uri());
 
+// Load Composer dependencies (including Timber)
+if (file_exists(__DIR__ . '/vendor/autoload.php')) {
+    require_once(__DIR__ . '/vendor/autoload.php');
+}
+
 // Enhanced theme setup
 function historic_equity_theme_setup() {
     // Theme support
@@ -122,7 +127,18 @@ if (class_exists('Timber\Timber')) {
     function historic_equity_add_to_context($context) {
         // Basic site context
         $context['site'] = new \Timber\Site();
-        $context['menu'] = new \Timber\Menu('primary');
+        $context['menu'] = \Timber\Timber::get_menu('primary');
+
+        // Load ACF fields for current post/page
+        if (function_exists('get_fields')) {
+            global $post;
+            if ($post) {
+                $context['fields'] = get_fields($post->ID);
+            }
+
+            // Load global ACF fields (stored in options)
+            $context['global_fields'] = get_fields('option');
+        }
 
         // Design system variables from Figma
         $context['design_system'] = array(
@@ -202,6 +218,13 @@ require_once get_template_directory() . '/lib/seo-optimization.php';
 require_once get_template_directory() . '/lib/image-optimization.php';
 require_once get_template_directory() . '/lib/query-optimization.php';
 require_once get_template_directory() . '/lib/template-optimization.php';
+
+// Custom post types removed - using ACF Pro for content management
+
+// Load ACF field groups for content management
+if (file_exists(HISTORIC_EQUITY_THEME_PATH . '/lib/acf-field-groups.php')) {
+    require_once HISTORIC_EQUITY_THEME_PATH . '/lib/acf-field-groups.php';
+}
 
 // Theme loaded
 ?>
