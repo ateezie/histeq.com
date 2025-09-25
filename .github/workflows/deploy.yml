@@ -2,7 +2,7 @@ name: Deploy to RunCloud
 
 on:
   push:
-    branches: [ main, master, production ]
+    branches: [ master ]
   workflow_dispatch:
 
 jobs:
@@ -18,14 +18,21 @@ jobs:
         node-version: '18'
         cache: 'npm'
 
-    - name: Install dependencies
+    - name: Install root dependencies
       run: npm ci --only=production
 
-    - name: Build assets (if needed)
+    - name: Build WordPress theme assets
       run: |
-        # Add any build commands here if you have asset compilation
-        # npm run build
-        echo "Build completed"
+        echo "Building Historic Equity theme assets..."
+        npm run build
+        echo "✅ Theme build completed successfully"
+
+    - name: Verify build output
+      run: |
+        echo "Verifying build artifacts..."
+        ls -la wp-content/themes/historic-equity/static/css/
+        ls -la wp-content/themes/historic-equity/static/js/
+        echo "✅ Build verification completed"
 
     - name: Deploy to RunCloud
       env:

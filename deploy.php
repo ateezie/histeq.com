@@ -4,10 +4,29 @@
  * This script handles post-deployment tasks after code is pulled from GitHub
  */
 
-// Security check - only allow POST requests
+// Enhanced security checks
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
     die('Method Not Allowed');
+}
+
+// Additional security: Check if accessed via command line or specific user agent
+$allowed_user_agents = ['RunCloud-Webhook', 'GitHub-Hookshot'];
+$is_cli = php_sapi_name() === 'cli';
+$valid_user_agent = false;
+
+if (isset($_SERVER['HTTP_USER_AGENT'])) {
+    foreach ($allowed_user_agents as $agent) {
+        if (strpos($_SERVER['HTTP_USER_AGENT'], $agent) !== false) {
+            $valid_user_agent = true;
+            break;
+        }
+    }
+}
+
+if (!$is_cli && !$valid_user_agent) {
+    http_response_code(403);
+    die('Access forbidden');
 }
 
 // Verify the request is from GitHub (optional webhook secret verification)
@@ -51,6 +70,31 @@ try {
         log_message("OpCache cleared");
     }
 
+    // Clear expired transients
+    if (function_exists('delete_expired_transients')) {
+        delete_expired_transients(true);
+        log_message("Expired transients cleared");
+    }
+
+    // Flush rewrite rules for custom post types and permalinks
+    if (function_exists('flush_rewrite_rules')) {
+        flush_rewrite_rules(true);
+        log_message("WordPress rewrite rules flushed");
+    }
+
+    // Clear Redis cache if available
+    if (class_exists('Redis')) {
+        try {
+            $redis = new Redis();
+            if ($redis->connect('127.0.0.1', 6379)) {
+                $redis->flushDB();
+                log_message("Redis cache cleared");
+            }
+        } catch (Exception $e) {
+            log_message("Redis cache clear failed: " . $e->getMessage());
+        }
+    }
+
     // Update file permissions for WordPress
     exec('find . -type f -exec chmod 644 {} \;', $output, $return_code);
     if ($return_code === 0) {
@@ -77,11 +121,32 @@ try {
         log_message("Uploads directory permissions updated");
     }
 
-    // Update WordPress database if needed (uncomment if you have migrations)
-    // exec('wp core update-db --quiet', $output, $return_code);
-    // if ($return_code === 0) {
-    //     log_message("WordPress database updated");
-    // }
+    // WordPress-specific file permissions
+    exec('find wp-content/themes -type f -exec chmod 644 {} \; 2>/dev/null', $output, $return_code);
+    if ($return_code === 0) {
+        log_message("Theme file permissions updated");
+    }
+
+    exec('find wp-content/plugins -type f -exec chmod 644 {} \; 2>/dev/null', $output, $return_code);
+    if ($return_code === 0) {
+        log_message("Plugin file permissions updated");
+    }
+
+    // Ensure uploads directory is properly configured
+    if (is_dir('wp-content/uploads')) {
+        exec('find wp-content/uploads -type d -exec chmod 755 {} \; 2>/dev/null');
+        exec('find wp-content/uploads -type f -exec chmod 644 {} \; 2>/dev/null');
+        log_message("Uploads directory permissions updated");
+    }
+
+    // Update WordPress database if WP-CLI is available
+    exec('which wp 2>/dev/null', $output, $return_code);
+    if ($return_code === 0) {
+        exec('wp core update-db --quiet 2>/dev/null', $output, $return_code);
+        if ($return_code === 0) {
+            log_message("WordPress database updated via WP-CLI");
+        }
+    }
 
     log_message("Deployment completed successfully");
 

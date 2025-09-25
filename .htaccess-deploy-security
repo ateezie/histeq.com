@@ -1,0 +1,24 @@
+# Security rules for deploy.php - Add to your main .htaccess file
+# Restrict access to deployment script
+
+<Files "deploy.php">
+    # Allow access only from RunCloud webhook IPs and localhost
+    Order deny,allow
+    Deny from all
+
+    # Allow localhost for testing
+    Allow from 127.0.0.1
+    Allow from ::1
+
+    # Allow common RunCloud IP ranges (update as needed)
+    # You should get the actual webhook IP from RunCloud dashboard
+    Allow from 104.248.0.0/16
+    Allow from 159.89.0.0/16
+    Allow from 178.128.0.0/16
+</Files>
+
+# Alternative: Block all web access to deployment files
+<FilesMatch "^(deploy|deployment)\.php$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>

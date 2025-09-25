@@ -1,4 +1,14 @@
 {
+  "name": "historic-equity-website",
+  "version": "1.0.0",
+  "description": "Historic Equity Inc. WordPress Website CI/CD",
+  "scripts": {
+    "build": "cd wp-content/themes/historic-equity && npm ci && npm run build",
+    "build:theme": "cd wp-content/themes/historic-equity && npm run build",
+    "tailwind:build": "cd wp-content/themes/historic-equity && npm run tailwind-build",
+    "test": "cd wp-content/themes/historic-equity && npm run test",
+    "postinstall": "cd wp-content/themes/historic-equity && npm install"
+  },
   "dependencies": {
     "@playwright/test": "^1.55.0",
     "pixelmatch": "^7.1.0",

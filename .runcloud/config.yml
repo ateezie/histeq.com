@@ -5,7 +5,7 @@ deployment:
   # Source settings
   repository:
     url: "git@github.com:ateezie/histeq.com.git"
-    branch: "main"
+    branch: "master"
 
   # Build settings
   build:

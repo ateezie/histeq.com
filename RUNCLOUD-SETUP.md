@@ -38,6 +38,8 @@ This guide walks you through setting up continuous deployment from GitHub to you
 5. Paste the key and give it a name: "RunCloud Deploy Key"
 6. Enable `Allow write access` if needed
 
+**⚠️ IMPORTANT**: Make sure to set the branch to `master` in RunCloud (not `main`)
+
 ### B. Configure GitHub Secrets (for advanced CI/CD)
 
 If using the GitHub Actions workflow, add these secrets in your repository:
@@ -109,6 +111,19 @@ Configure automatic database backups:
 1. Go to Database section
 2. Enable automatic backups
 3. Set retention period
+
+### D. Build Process
+The deployment now includes automatic asset building:
+- TailwindCSS compilation and minification
+- JavaScript bundling and optimization
+- SCSS processing
+- Image optimization
+
+### E. Enhanced Security
+The `deploy.php` script now includes:
+- User agent validation for webhook requests
+- IP-based access restrictions (see `.htaccess-deploy-security`)
+- Enhanced logging and error handling
 
 ## Step 6: Monitoring and Maintenance
 
