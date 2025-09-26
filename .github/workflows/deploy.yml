@@ -34,27 +34,27 @@ jobs:
         ls -la wp-content/themes/historic-equity/static/js/
         echo "✅ Build verification completed"
 
-    - name: Deploy to RunCloud
-      env:
-        RUNCLOUD_API_TOKEN: ${{ secrets.RUNCLOUD_API_TOKEN }}
-        RUNCLOUD_SERVER_ID: ${{ secrets.RUNCLOUD_SERVER_ID }}
-        RUNCLOUD_APP_ID: ${{ secrets.RUNCLOUD_APP_ID }}
+    - name: Commit built assets
       run: |
-        curl -X POST \
-          "https://api.runcloud.io/v2/servers/$RUNCLOUD_SERVER_ID/webapps/$RUNCLOUD_APP_ID/git/deploy" \
-          -H "Authorization: Bearer $RUNCLOUD_API_TOKEN" \
-          -H "Content-Type: application/json" \
-          -d '{
-            "branch": "${{ github.ref_name }}",
-            "commit": "${{ github.sha }}"
-          }'
+        # Configure git for GitHub Actions
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
-    - name: Notify deployment status
-      if: always()
-      run: |
-        if [ $? -eq 0 ]; then
-          echo "✅ Deployment successful"
+        # Add built assets to git
+        git add wp-content/themes/historic-equity/static/dist/
+
+        # Check if there are changes to commit
+        if git diff --staged --quiet; then
+          echo "No changes to built assets"
         else
-          echo "❌ Deployment failed"
-          exit 1
+          echo "Committing built assets..."
+          git commit -m "🤖 Auto-build assets for deployment [skip ci]"
+          git push origin master
+          echo "✅ Built assets committed and pushed"
         fi
+
+    - name: Deployment notification
+      run: |
+        echo "✅ Assets built and committed"
+        echo "RunCloud will auto-deploy via webhook or manual deployment"
+        echo "Built assets are now available for RunCloud deployment"

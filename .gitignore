@@ -6,9 +6,10 @@ vendor/
 !wp-content/themes/historic-equity/composer.json
 !wp-content/themes/historic-equity/composer.lock
 
-# Build outputs
+# Build outputs (exclude built theme assets for deployment)
 dist/
 build/
+!wp-content/themes/historic-equity/static/dist/
 
 # Environment files
 .env
@@ -76,11 +77,11 @@ wp-content/ai1wm-backups/
 *.backup
 *.sql
 
-# WordPress core files (managed on server)
-wp-admin/
-wp-includes/
-wp-config-sample.php
-index.php
+# WordPress core files (managed on server - commented out to include in deployment)
+# wp-admin/
+# wp-includes/
+# wp-config-sample.php
+# index.php
 
 # Debug files (should not be in production)
 *-debug.php
