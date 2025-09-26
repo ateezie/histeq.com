@@ -5,7 +5,14 @@ node_modules/
 vendor/
 !wp-content/themes/historic-equity/composer.json
 !wp-content/themes/historic-equity/composer.lock
+# Include essential plugin vendor files
 !wp-content/plugins/advanced-custom-fields-pro/vendor/
+!wp-content/plugins/google-site-kit/includes/vendor/
+!wp-content/plugins/google-site-kit/third-party/vendor/
+!wp-content/plugins/all-in-one-wp-migration/lib/vendor/
+!wp-content/plugins/gravityforms/vendor/
+!wp-content/plugins/seo-by-rank-math/vendor/
+!wp-content/plugins/seo-by-rank-math-pro/vendor/
 
 # Build outputs (exclude built theme assets for deployment)
 dist/
