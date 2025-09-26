@@ -455,7 +455,7 @@
 
   &--overlay {
     @include overlay($charade-base, 0.6);
-    background-image: url('/wp-content/themes/historic-equity/static/images/hero-bg.jpg');
+    /* background-image: url('/wp-content/themes/historic-equity/static/images/hero-bg.jpg'); */
     background-size: cover;
     background-position: center;
   }
