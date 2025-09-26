@@ -46,21 +46,25 @@ function historic_equity_scripts() {
     // Disable caching for development
     $version = time();
 
-    // Main stylesheet with design system variables
-    wp_enqueue_style(
-        'historic-equity-style',
-        HISTORIC_EQUITY_THEME_URI . '/static/css/style.css',
-        array(),
-        $version
-    );
-
-    // Enhanced animations and interactions
-    wp_enqueue_style(
-        'historic-equity-animations',
-        HISTORIC_EQUITY_THEME_URI . '/static/css/animations.css',
-        array('historic-equity-style'),
-        $version
-    );
+    // Load built CSS from webpack dist
+    $css_files = glob(HISTORIC_EQUITY_THEME_PATH . '/static/dist/style.*.css');
+    if (!empty($css_files)) {
+        $css_file = basename($css_files[0]);
+        wp_enqueue_style(
+            'historic-equity-style',
+            HISTORIC_EQUITY_THEME_URI . '/static/dist/' . $css_file,
+            array(),
+            null // No version needed as hash is in filename
+        );
+    } else {
+        // Fallback to main CSS
+        wp_enqueue_style(
+            'historic-equity-style',
+            HISTORIC_EQUITY_THEME_URI . '/static/css/style.css',
+            array(),
+            $version
+        );
+    }
 
     // Preload critical fonts
     wp_enqueue_style(
@@ -70,14 +74,27 @@ function historic_equity_scripts() {
         null
     );
 
-    // Main JavaScript with performance loading
-    wp_enqueue_script(
-        'historic-equity-main',
-        HISTORIC_EQUITY_THEME_URI . '/static/js/main.js',
-        array('jquery'),
-        $version,
-        true
-    );
+    // Load built JavaScript from webpack dist
+    $js_files = glob(HISTORIC_EQUITY_THEME_PATH . '/static/dist/main.*.js');
+    if (!empty($js_files)) {
+        $js_file = basename($js_files[0]);
+        wp_enqueue_script(
+            'historic-equity-main',
+            HISTORIC_EQUITY_THEME_URI . '/static/dist/' . $js_file,
+            array('jquery'),
+            null, // No version needed as hash is in filename
+            true
+        );
+    } else {
+        // Fallback to source JS
+        wp_enqueue_script(
+            'historic-equity-main',
+            HISTORIC_EQUITY_THEME_URI . '/static/js/main.js',
+            array('jquery'),
+            $version,
+            true
+        );
+    }
 
     // Accessibility enhancements
     if (file_exists(HISTORIC_EQUITY_THEME_PATH . '/static/js/accessibility.js')) {
