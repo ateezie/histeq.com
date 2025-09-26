@@ -5,6 +5,7 @@ node_modules/
 vendor/
 !wp-content/themes/historic-equity/composer.json
 !wp-content/themes/historic-equity/composer.lock
+!wp-content/plugins/advanced-custom-fields-pro/vendor/
 
 # Build outputs (exclude built theme assets for deployment)
 dist/
