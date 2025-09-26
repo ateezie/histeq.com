@@ -1,6 +1,6 @@
 # Historic Equity WordPress Theme
 
-✅ **CI/CD Pipeline**: Fully automated GitHub → RunCloud deployment
+✅ **CI/CD Pipeline**: Fully automated GitHub → RunCloud deployment (Webhook configured)
 
 > **Professional WordPress theme designed to match Figma specifications with community-focused messaging**
 
