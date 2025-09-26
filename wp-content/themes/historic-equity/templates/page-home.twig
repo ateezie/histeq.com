@@ -324,17 +324,17 @@
                         {{ fields.cta_content|default('Ready to maximize your historic rehabilitation tax credit benefits? Our experienced team provides strategic guidance from project evaluation to final certification.') }}
                     </p>
                     {% if fields.cta_primary_button_text or fields.cta_secondary_button_text %}
-                        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                        <div class="flex flex-col sm:flex-row gap-6 justify-center mb-12">
                             {% if fields.cta_primary_button_text %}
                                 <a href="{{ fields.cta_primary_button_link|default('/contact/') }}"
-                                   class="inline-flex items-center justify-center px-8 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors duration-200"
+                                   class="btn-brand-primary"
                                    data-testid="mission-primary-cta">
                                     {{ fields.cta_primary_button_text }}
                                 </a>
                             {% endif %}
                             {% if fields.cta_secondary_button_text %}
                                 <a href="{{ fields.cta_secondary_button_link|default('/meet-our-team/') }}"
-                                   class="inline-flex items-center justify-center px-8 py-3 bg-transparent border-2 border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition-colors duration-200"
+                                   class="btn-brand-secondary"
                                    data-testid="mission-secondary-cta">
                                     {{ fields.cta_secondary_button_text }}
                                 </a>
@@ -363,8 +363,8 @@
                                  alt="{{ fields.cta_image.alt|default('Historic building preservation project') }}"
                                  class="w-full aspect-[16/9] rounded-lg shadow-lg object-cover">
                         {% else %}
-                            <img src="{{ theme.link }}/static/images/Tower+Theatre+Building,+Oklahoma+City,+OK+PE.webp"
-                                 alt="Tower Theatre Building in Oklahoma City, OK - beautiful example of historic theater preservation"
+                            <img src="{{ theme.link }}/static/images/Union+Station+701+East+Douglas+Ave.,+Wichita,+KS+PE.webp"
+                                 alt="Union Station in Wichita, KS - stunning example of historic railroad station preservation"
                                  class="w-full aspect-[16/9] rounded-lg shadow-lg object-cover">
                         {% endif %}
                     </div>
