@@ -1,5 +1,7 @@
 # Historic Equity WordPress Theme
 
+✅ **CI/CD Pipeline**: Fully automated GitHub → RunCloud deployment
+
 > **Professional WordPress theme designed to match Figma specifications with community-focused messaging**
 
 A comprehensive WordPress theme built specifically for Historic Equity Inc., featuring clean design aligned with original Figma mockups, community-centered messaging, and optimized performance. Successfully transformed from business-heavy approach to "Preserving History, Empowering Communities" vision.
