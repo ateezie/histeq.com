@@ -17,11 +17,14 @@ jobs:
       with:
         node-version: '18'
         cache: 'npm'
+        cache-dependency-path: 'wp-content/themes/historic-equity/package-lock.json'
 
-    - name: Install root dependencies
+    - name: Install theme dependencies
+      working-directory: wp-content/themes/historic-equity
       run: npm ci --only=production
 
     - name: Build WordPress theme assets
+      working-directory: wp-content/themes/historic-equity
       run: |
         echo "Building Historic Equity theme assets..."
         npm run build
