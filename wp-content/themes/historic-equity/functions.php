@@ -243,5 +243,15 @@ if (file_exists(HISTORIC_EQUITY_THEME_PATH . '/lib/acf-field-groups.php')) {
     require_once HISTORIC_EQUITY_THEME_PATH . '/lib/acf-field-groups.php';
 }
 
+// Load carousel assets management
+if (file_exists(HISTORIC_EQUITY_THEME_PATH . '/lib/carousel-assets.php')) {
+    require_once HISTORIC_EQUITY_THEME_PATH . '/lib/carousel-assets.php';
+}
+
+// Load carousel context for Timber
+if (file_exists(HISTORIC_EQUITY_THEME_PATH . '/lib/carousel-context.php')) {
+    require_once HISTORIC_EQUITY_THEME_PATH . '/lib/carousel-context.php';
+}
+
 // Theme loaded
 ?>
