@@ -24,29 +24,32 @@
                 </a>
             </div>
 
-            <!-- Desktop Navigation -->
-            <nav id="main-navigation" class="main-navigation hidden lg:block" role="navigation" aria-label="Primary Navigation">
-                <ul class="flex items-center space-x-6 lg:space-x-8 xl:space-x-10">
-                    <li class="menu-item">
-                        <a href="{{ site.url }}"
-                           class="menu-link text-base font-medium text-navy-900 hover:text-primary-600 transition-colors duration-200">
-                            Home
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="/meet-our-team"
-                           class="menu-link text-base font-medium text-navy-900 hover:text-primary-600 transition-colors duration-200">
-                            Meet Our Team
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+            <!-- Right-aligned Navigation Section -->
+            <div class="flex items-center space-x-6 lg:space-x-8 xl:space-x-10 max-lg:hidden">
+                <!-- Desktop Navigation -->
+                <nav id="main-navigation" class="main-navigation" role="navigation" aria-label="Primary Navigation">
+                    <ul class="flex items-center space-x-6 lg:space-x-8 xl:space-x-10">
+                        <li class="menu-item">
+                            <a href="{{ site.url }}"
+                               class="menu-link text-base font-medium text-navy-900 hover:text-primary-600 transition-colors duration-200">
+                                Home
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/meet-our-team"
+                               class="menu-link text-base font-medium text-navy-900 hover:text-primary-600 transition-colors duration-200">
+                                Meet Our Team
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
 
-            <!-- CTA Button (Desktop) - Styleguide Compliant -->
-            <div class="hidden lg:block">
-                <a href="{{ global_fields.navigation_cta_link|default('/contact') }}" class="inline-flex items-center justify-center px-6 py-2.5 bg-primary-600 text-white text-sm font-medium rounded-lg hover:bg-primary-700 transition-colors duration-200">
-                    {{ global_fields.navigation_cta_text|default('Contact') }}
-                </a>
+                <!-- CTA Button (Desktop) - Styleguide Compliant -->
+                <div>
+                    <a href="{{ global_fields.navigation_cta_link|default('/contact') }}" class="inline-flex items-center justify-center px-6 py-2.5 bg-primary-600 text-white text-sm font-medium rounded-lg transition-all duration-200 hover:bg-navy-900 hover:scale-105">
+                        {{ global_fields.navigation_cta_text|default('Contact') }}
+                    </a>
+                </div>
             </div>
 
             <!-- Mobile Menu Button -->
