@@ -21,7 +21,7 @@ jobs:
 
     - name: Install theme dependencies
       working-directory: wp-content/themes/historic-equity
-      run: npm ci --only=production
+      run: npm ci
 
     - name: Build WordPress theme assets
       working-directory: wp-content/themes/historic-equity
