@@ -94,3 +94,9 @@ wp-content/ai1wm-backups/
 # Debug files (should not be in production)
 *-debug.php
 debug-*.php
+
+# Backup archives (too large for Git)
+*.tar.gz
+current-backup-*.tar.gz
+backups/
+wordpress-backup-*
