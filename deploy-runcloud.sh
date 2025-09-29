@@ -8,9 +8,9 @@ set -e  # Exit on any error
 
 # Configuration
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-DEPLOYMENT_LOG="/var/log/historic-equity-deploy.log"
-BACKUP_DIR="/var/backups/historic-equity"
-THEME_DIR="/home/runcloud/webapps/histeq/wp-content/themes/historic-equity"
+DEPLOYMENT_LOG="${DEPLOYMENT_LOG:-/tmp/historic-equity-deploy.log}"
+BACKUP_DIR="${BACKUP_DIR:-/tmp/historic-equity-backups}"
+THEME_DIR="${THEME_DIR:-/tmp/historic-equity-theme-test}"
 
 # Colors for output
 RED='\033[0;31m'
