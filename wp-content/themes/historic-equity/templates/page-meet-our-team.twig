@@ -4,7 +4,7 @@
     <main role="main" aria-label="Meet Our Team">
 
         {# Hero Section #}
-        <section class="py-24 lg:py-32 bg-white">
+        <section class="py-12 lg:py-16 bg-white">
             <div class="container mx-auto px-6 lg:px-12 text-center">
                 <h1 class="text-4xl lg:text-5xl font-semibold mb-6 text-gray-900 leading-tight tracking-tight">
                     {{ fields.team_hero_title|default('Meet Our Team') }}
@@ -99,31 +99,19 @@
                     <p class="text-lg lg:text-xl mb-8 text-gray-600 leading-relaxed">
                         {{ fields.team_cta_content|default('Connect with our experienced team to explore how we can maximize the benefits of your state historic tax credit project') }}
                     </p>
-                    {% if fields.team_cta_primary_button_text or fields.team_cta_secondary_button_text %}
-                        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-                            {% if fields.team_cta_primary_button_text %}
-                                <a href="{{ fields.team_cta_primary_button_link|default('/contact') }}"
-                                   class="inline-flex items-center justify-center px-8 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors duration-200">
-                                    {{ fields.team_cta_primary_button_text }}
-                                </a>
-                            {% endif %}
-                            {% if fields.team_cta_secondary_button_text %}
-                                <a href="{{ fields.team_cta_secondary_button_link|default('/projects') }}"
-                                   class="inline-flex items-center justify-center px-8 py-3 bg-transparent border-2 border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition-colors duration-200">
-                                    {{ fields.team_cta_secondary_button_text }}
-                                </a>
-                            {% endif %}
+                    {% if fields.team_cta_primary_button_text %}
+                        <div class="flex justify-center mb-12">
+                            <a href="{{ fields.team_cta_primary_button_link|default('/contact') }}"
+                               class="inline-flex items-center justify-center px-8 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors duration-200">
+                                {{ fields.team_cta_primary_button_text }}
+                            </a>
                         </div>
                     {% else %}
-                        <!-- Fallback buttons -->
-                        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                        <!-- Fallback button -->
+                        <div class="flex justify-center mb-12">
                             <a href="/contact"
                                class="inline-flex items-center justify-center px-8 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors duration-200">
                                 Contact
-                            </a>
-                            <a href="/projects"
-                               class="inline-flex items-center justify-center px-8 py-3 bg-transparent border-2 border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition-colors duration-200">
-                                Learn more
                             </a>
                         </div>
                     {% endif %}
