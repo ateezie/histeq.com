@@ -6,11 +6,19 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy:
+  build:
+    name: Build and Deploy WordPress Theme
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: read
+      deployments: write
+
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
 
     - name: Setup Node.js
       uses: actions/setup-node@v4
@@ -21,43 +29,144 @@ jobs:
 
     - name: Install theme dependencies
       working-directory: wp-content/themes/historic-equity
-      run: npm ci
+      run: |
+        echo "🔄 Installing dependencies for Historic Equity theme..."
+        npm ci
+        echo "✅ Dependencies installed successfully"
 
     - name: Build WordPress theme assets
       working-directory: wp-content/themes/historic-equity
       run: |
-        echo "Building Historic Equity theme assets..."
+        echo "🔄 Building Historic Equity theme assets..."
         npm run build
         echo "✅ Theme build completed successfully"
 
     - name: Verify build output
       run: |
-        echo "Verifying build artifacts..."
-        ls -la wp-content/themes/historic-equity/static/css/
-        ls -la wp-content/themes/historic-equity/static/js/
-        echo "✅ Build verification completed"
+        echo "🔍 Verifying build artifacts..."
+        echo "Dist directory contents:"
+        ls -la wp-content/themes/historic-equity/static/dist/
 
-    - name: Commit built assets
-      run: |
-        # Configure git for GitHub Actions
-        git config --global user.name 'github-actions[bot]'
-        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-
-        # Add built assets to git
-        git add wp-content/themes/historic-equity/static/dist/
-
-        # Check if there are changes to commit
-        if git diff --staged --quiet; then
-          echo "No changes to built assets"
+        echo "Checking for required assets..."
+        if [ -f "wp-content/themes/historic-equity/static/dist/style."*.css ]; then
+          echo "✅ CSS assets found"
         else
-          echo "Committing built assets..."
-          git commit -m "🤖 Auto-build assets for deployment [skip ci]"
-          git push origin master
-          echo "✅ Built assets committed and pushed"
+          echo "❌ CSS assets missing"
+          exit 1
         fi
 
-    - name: Deployment notification
+        if [ -f "wp-content/themes/historic-equity/static/dist/main."*.js ]; then
+          echo "✅ JS assets found"
+        else
+          echo "❌ JS assets missing"
+          exit 1
+        fi
+
+        echo "✅ Build verification completed"
+
+    - name: Create deployment artifact
       run: |
-        echo "✅ Assets built and committed"
-        echo "RunCloud will auto-deploy via webhook or manual deployment"
-        echo "Built assets are now available for RunCloud deployment"
+        echo "📦 Creating deployment artifact..."
+
+        # Create deployment directory
+        mkdir -p deployment-artifact
+
+        # Copy WordPress theme files (excluding node_modules and dev files)
+        rsync -av \
+          --exclude='node_modules' \
+          --exclude='package*.json' \
+          --exclude='webpack.config.js' \
+          --exclude='tailwind.config.js' \
+          --exclude='postcss.config.js' \
+          --exclude='.git*' \
+          --exclude='tests' \
+          --exclude='playwright*' \
+          --exclude='*.md' \
+          wp-content/themes/historic-equity/ \
+          deployment-artifact/theme/
+
+        # Copy essential WordPress files (if needed)
+        if [ -f "wp-config-sample.php" ]; then
+          cp wp-config-sample.php deployment-artifact/
+        fi
+
+        # Create deployment info
+        cat > deployment-artifact/deployment-info.json << EOF
+        {
+          "commit": "${{ github.sha }}",
+          "branch": "${{ github.ref_name }}",
+          "timestamp": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+          "workflow_run": "${{ github.run_id }}",
+          "actor": "${{ github.actor }}"
+        }
+        EOF
+
+        echo "✅ Deployment artifact created"
+
+    - name: Upload deployment artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: historic-equity-deployment
+        path: deployment-artifact/
+        retention-days: 30
+
+    - name: Trigger RunCloud deployment
+      env:
+        RUNCLOUD_WEBHOOK_URL: ${{ secrets.RUNCLOUD_WEBHOOK_URL }}
+      run: |
+        echo "🚀 Triggering RunCloud deployment..."
+
+        if [ -n "$RUNCLOUD_WEBHOOK_URL" ]; then
+          # Trigger RunCloud webhook with deployment info
+          curl -X POST "$RUNCLOUD_WEBHOOK_URL" \
+            -H "Content-Type: application/json" \
+            -H "User-Agent: GitHub-Actions-Deploy" \
+            -d '{
+              "event": "deployment",
+              "repository": "${{ github.repository }}",
+              "commit": "${{ github.sha }}",
+              "branch": "${{ github.ref_name }}",
+              "actor": "${{ github.actor }}",
+              "workflow_run": "${{ github.run_id }}",
+              "artifact_name": "historic-equity-deployment"
+            }' \
+            --max-time 30 \
+            --retry 3 \
+            --retry-delay 5
+
+          if [ $? -eq 0 ]; then
+            echo "✅ RunCloud deployment triggered successfully"
+          else
+            echo "⚠️ RunCloud webhook call failed, but artifacts are available for manual deployment"
+          fi
+        else
+          echo "ℹ️ RunCloud webhook URL not configured"
+          echo "📋 Manual deployment required:"
+          echo "   1. Download the 'historic-equity-deployment' artifact"
+          echo "   2. Extract to your RunCloud server"
+          echo "   3. Update file permissions as needed"
+        fi
+
+    - name: Deployment summary
+      run: |
+        echo "## Deployment Summary" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "🚀 **Historic Equity WordPress Theme Deployment**" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "- **Commit:** \`${{ github.sha }}\`" >> $GITHUB_STEP_SUMMARY
+        echo "- **Branch:** \`${{ github.ref_name }}\`" >> $GITHUB_STEP_SUMMARY
+        echo "- **Trigger:** ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Actor:** ${{ github.actor }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Workflow Run:** [${{ github.run_id }}](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### Assets Built:" >> $GITHUB_STEP_SUMMARY
+        echo "- ✅ CSS assets compiled" >> $GITHUB_STEP_SUMMARY
+        echo "- ✅ JavaScript assets bundled" >> $GITHUB_STEP_SUMMARY
+        echo "- ✅ WordPress theme files prepared" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### Next Steps:" >> $GITHUB_STEP_SUMMARY
+        echo "1. RunCloud webhook triggered (if configured)" >> $GITHUB_STEP_SUMMARY
+        echo "2. Monitor deployment status on RunCloud dashboard" >> $GITHUB_STEP_SUMMARY
+        echo "3. Verify website functionality at staging URL" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "**Staging URL:** http://histeq.com.vbb6nz2mqj-lxd6rweqy39g.p.temp-site.link/" >> $GITHUB_STEP_SUMMARY

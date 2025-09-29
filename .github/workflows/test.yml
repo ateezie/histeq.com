@@ -1,0 +1,197 @@
+name: Test WordPress Theme
+
+on:
+  pull_request:
+    branches: [ master ]
+    paths:
+      - 'wp-content/themes/historic-equity/**'
+      - '.github/workflows/**'
+  push:
+    branches: [ feature/*, fix/* ]
+    paths:
+      - 'wp-content/themes/historic-equity/**'
+
+jobs:
+  test:
+    name: Build and Test Theme
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18, 20]
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        cache-dependency-path: 'wp-content/themes/historic-equity/package-lock.json'
+
+    - name: Install dependencies
+      working-directory: wp-content/themes/historic-equity
+      run: |
+        echo "🔄 Installing dependencies for Node.js ${{ matrix.node-version }}..."
+        npm ci
+
+    - name: Lint and validate
+      working-directory: wp-content/themes/historic-equity
+      run: |
+        echo "🔍 Running code quality checks..."
+
+        # Check for common issues in package.json
+        if ! npm ls > /dev/null 2>&1; then
+          echo "⚠️ Dependency issues detected"
+          npm ls
+        else
+          echo "✅ Dependencies are healthy"
+        fi
+
+        # Validate critical config files exist
+        config_files=("webpack.config.js" "tailwind.config.js" "postcss.config.js")
+        for file in "${config_files[@]}"; do
+          if [ ! -f "$file" ]; then
+            echo "❌ Missing config file: $file"
+            exit 1
+          else
+            echo "✅ Found config file: $file"
+          fi
+        done
+
+    - name: Build theme assets
+      working-directory: wp-content/themes/historic-equity
+      run: |
+        echo "🔨 Building theme assets for testing..."
+        npm run build
+        echo "✅ Build completed successfully"
+
+    - name: Verify build output
+      working-directory: wp-content/themes/historic-equity
+      run: |
+        echo "🔍 Verifying build output..."
+
+        # Check if dist directory was created
+        if [ ! -d "static/dist" ]; then
+          echo "❌ Build output directory not created"
+          exit 1
+        fi
+
+        # List all built files
+        echo "Built files:"
+        find static/dist -type f -exec basename {} \; | sort
+
+        # Check for CSS files
+        css_count=$(find static/dist -name "*.css" | wc -l)
+        if [ "$css_count" -eq 0 ]; then
+          echo "❌ No CSS files generated"
+          exit 1
+        fi
+        echo "✅ CSS files: $css_count"
+
+        # Check for JS files
+        js_count=$(find static/dist -name "*.js" | wc -l)
+        if [ "$js_count" -eq 0 ]; then
+          echo "❌ No JS files generated"
+          exit 1
+        fi
+        echo "✅ JS files: $js_count"
+
+        # Check file sizes (warn if too large)
+        large_files=$(find static/dist -size +1M -type f)
+        if [ -n "$large_files" ]; then
+          echo "⚠️ Large files detected (>1MB):"
+          echo "$large_files" | while read file; do
+            size=$(stat -f%z "$file" 2>/dev/null || stat -c%s "$file" 2>/dev/null)
+            echo "   $(basename "$file"): $((size/1024/1024))MB"
+          done
+        fi
+
+        echo "✅ Build verification completed"
+
+    - name: Test WordPress theme structure
+      run: |
+        echo "🔍 Validating WordPress theme structure..."
+
+        theme_dir="wp-content/themes/historic-equity"
+
+        # Check required WordPress theme files
+        required_files=("style.css" "index.php" "functions.php")
+        for file in "${required_files[@]}"; do
+          if [ ! -f "$theme_dir/$file" ]; then
+            echo "❌ Missing required WordPress file: $file"
+            exit 1
+          else
+            echo "✅ Found required file: $file"
+          fi
+        done
+
+        # Validate style.css header
+        if ! head -10 "$theme_dir/style.css" | grep -q "Theme Name:"; then
+          echo "❌ style.css missing WordPress theme header"
+          exit 1
+        fi
+        echo "✅ WordPress theme header found"
+
+        # Check for Timber/Twig templates
+        twig_count=$(find "$theme_dir" -name "*.twig" | wc -l)
+        if [ "$twig_count" -eq 0 ]; then
+          echo "⚠️ No Twig templates found"
+        else
+          echo "✅ Twig templates: $twig_count"
+        fi
+
+        echo "✅ WordPress theme structure validation completed"
+
+    - name: Check for security issues
+      working-directory: wp-content/themes/historic-equity
+      run: |
+        echo "🔒 Running security checks..."
+
+        # Check for potential security issues in PHP files
+        if find . -name "*.php" -exec grep -l "eval\|exec\|system\|shell_exec\|passthru" {} \; | head -1; then
+          echo "⚠️ Potentially dangerous PHP functions found"
+          find . -name "*.php" -exec grep -l "eval\|exec\|system\|shell_exec\|passthru" {} \;
+        else
+          echo "✅ No dangerous PHP functions detected"
+        fi
+
+        # Check for hardcoded credentials
+        if find . -name "*.php" -o -name "*.js" -o -name "*.css" | xargs grep -i "password\|secret\|api_key" | grep -v "placeholder\|example"; then
+          echo "⚠️ Potential hardcoded credentials found"
+        else
+          echo "✅ No hardcoded credentials detected"
+        fi
+
+        echo "✅ Security checks completed"
+
+    - name: Upload test artifacts
+      if: failure()
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-failure-${{ matrix.node-version }}-${{ github.run_id }}
+        path: |
+          wp-content/themes/historic-equity/static/dist/
+          wp-content/themes/historic-equity/npm-debug.log*
+        retention-days: 3
+
+    - name: Test summary
+      if: always()
+      run: |
+        echo "## Test Results - Node.js ${{ matrix.node-version }}" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+
+        if [ "${{ job.status }}" = "success" ]; then
+          echo "✅ **All tests passed**" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- Theme builds successfully" >> $GITHUB_STEP_SUMMARY
+          echo "- WordPress structure valid" >> $GITHUB_STEP_SUMMARY
+          echo "- Assets generated correctly" >> $GITHUB_STEP_SUMMARY
+          echo "- Security checks passed" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "❌ **Tests failed**" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Check the workflow logs for detailed error information." >> $GITHUB_STEP_SUMMARY
+        fi

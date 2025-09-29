@@ -1,0 +1,171 @@
+name: Deploy to Staging
+
+on:
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Deployment environment'
+        required: true
+        default: 'staging'
+        type: choice
+        options:
+        - staging
+        - preview
+
+jobs:
+  build-and-deploy:
+    name: Build and Deploy to Staging
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      pull-requests: write
+      deployments: write
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: 'wp-content/themes/historic-equity/package-lock.json'
+
+    - name: Install dependencies and build
+      working-directory: wp-content/themes/historic-equity
+      run: |
+        echo "🔄 Installing dependencies for staging deployment..."
+        npm ci
+        echo "🔄 Building assets for staging..."
+        npm run build
+        echo "✅ Staging build completed"
+
+    - name: Run quality checks
+      working-directory: wp-content/themes/historic-equity
+      run: |
+        echo "🔍 Running quality checks..."
+
+        # Check if critical files exist
+        if [ ! -d "static/dist" ]; then
+          echo "❌ Build output directory missing"
+          exit 1
+        fi
+
+        # Validate CSS and JS files exist
+        css_files=$(find static/dist -name "*.css" | wc -l)
+        js_files=$(find static/dist -name "*.js" | wc -l)
+
+        if [ "$css_files" -eq 0 ]; then
+          echo "❌ No CSS files found in build output"
+          exit 1
+        fi
+
+        if [ "$js_files" -eq 0 ]; then
+          echo "❌ No JS files found in build output"
+          exit 1
+        fi
+
+        echo "✅ Quality checks passed"
+        echo "   - CSS files: $css_files"
+        echo "   - JS files: $js_files"
+
+    - name: Create staging artifact
+      run: |
+        echo "📦 Creating staging deployment artifact..."
+
+        mkdir -p staging-artifact
+
+        # Copy theme files optimized for staging
+        rsync -av \
+          --exclude='node_modules' \
+          --exclude='package*.json' \
+          --exclude='webpack.config.js' \
+          --exclude='tailwind.config.js' \
+          --exclude='postcss.config.js' \
+          --exclude='.git*' \
+          --exclude='tests' \
+          --exclude='playwright*' \
+          --exclude='*.md' \
+          --exclude='CAROUSEL-OVERLAY-FIX.md' \
+          --exclude='carousel-*.html' \
+          --exclude='*-debug.*' \
+          --exclude='*-test.*' \
+          --exclude='mobile-*.*' \
+          wp-content/themes/historic-equity/ \
+          staging-artifact/theme/
+
+        # Create staging configuration
+        cat > staging-artifact/staging-config.json << EOF
+        {
+          "environment": "staging",
+          "commit": "${{ github.sha }}",
+          "pr_number": "${{ github.event.pull_request.number }}",
+          "branch": "${{ github.head_ref || github.ref_name }}",
+          "timestamp": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+          "workflow_run": "${{ github.run_id }}",
+          "actor": "${{ github.actor }}"
+        }
+        EOF
+
+        echo "✅ Staging artifact created"
+
+    - name: Upload staging artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: historic-equity-staging-${{ github.run_id }}
+        path: staging-artifact/
+        retention-days: 7
+
+    - name: Comment on PR
+      if: github.event_name == 'pull_request'
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const { owner, repo } = context.repo;
+          const pr_number = context.issue.number;
+          const run_id = context.runId;
+
+          const comment = `## 🚀 Staging Deployment Ready
+
+          **Branch:** \`${{ github.head_ref }}\`
+          **Commit:** \`${{ github.sha }}\`
+          **Workflow:** [#${run_id}](${{ github.server_url }}/${{ github.repository }}/actions/runs/${run_id})
+
+          ### Manual Deployment Steps:
+          1. Download the \`historic-equity-staging-${run_id}\` artifact
+          2. Extract to staging server directory
+          3. Update file permissions: \`chmod -R 755 theme/\`
+          4. Clear any server-side caches
+
+          ### Testing Checklist:
+          - [ ] Homepage loads correctly
+          - [ ] Navigation functions properly
+          - [ ] Contact forms work
+          - [ ] Mobile responsiveness verified
+          - [ ] Assets load without errors
+
+          **Staging URL:** http://histeq.com.vbb6nz2mqj-lxd6rweqy39g.p.temp-site.link/`;
+
+          github.rest.issues.createComment({
+            owner,
+            repo,
+            issue_number: pr_number,
+            body: comment
+          });
+
+    - name: Deployment summary
+      run: |
+        echo "## Staging Deployment Summary" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "🎭 **Environment:** Staging" >> $GITHUB_STEP_SUMMARY
+        echo "🔧 **Build Status:** Success" >> $GITHUB_STEP_SUMMARY
+        echo "📦 **Artifact:** \`historic-equity-staging-${{ github.run_id }}\`" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### Ready for Manual Deployment" >> $GITHUB_STEP_SUMMARY
+        echo "The staging artifact is ready for deployment to RunCloud." >> $GITHUB_STEP_SUMMARY

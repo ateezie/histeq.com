@@ -14,10 +14,15 @@ vendor/
 !wp-content/plugins/seo-by-rank-math/vendor/
 !wp-content/plugins/seo-by-rank-math-pro/vendor/
 
-# Build outputs (exclude built theme assets for deployment)
+# Build outputs - exclude built assets from repository
+# Assets are built in CI/CD pipeline and included in deployment artifacts
 dist/
 build/
-!wp-content/themes/historic-equity/static/dist/
+wp-content/themes/historic-equity/static/dist/
+
+# Development artifacts
+*.cache
+.webpack/
 
 # Environment files
 .env
