@@ -1,0 +1,32 @@
+{
+  "timestamp": "2025-09-27T18:22:52.494Z",
+  "viewport": "375x667 (iPhone SE)",
+  "findings": {
+    "horizontalOverflow": false,
+    "bodyPadding": {
+      "paddingLeft": "32px",
+      "paddingRight": "32px",
+      "marginLeft": "0px",
+      "marginRight": "0px"
+    },
+    "containerPadding": [],
+    "smallTouchTargets": [],
+    "smallFonts": {
+      "div": [
+        {
+          "fontSize": 14,
+          "text": "Error establishing a database "
+        }
+      ],
+      "h1": []
+    },
+    "consoleErrors": []
+  },
+  "screenshots": {
+    "homepage": "mobile-homepage-full.png",
+    "menuOpen": "mobile-menu-open.png",
+    "carousel": "mobile-carousel-detail.png",
+    "teamPage": "mobile-team-full.png",
+    "contactPage": "mobile-contact-full.png"
+  }
+}

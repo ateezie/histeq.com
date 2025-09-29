@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historic Equity - Carousel Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Historic Equity Brand Styles */
+        :root {
+            --color-brand-primary: #BD572B;
+            --color-brand-secondary: #E6CD41;
+            --color-brand-neutral: #95816E;
+            --color-brand-accent: #83ACD1;
+            --color-brand-off-white: #FEFFF8;
+            --color-brand-dark: #2D2E3D;
+        }
+
+        body {
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--color-brand-off-white);
+            color: var(--color-brand-dark);
+        }
+
+        .text-h3-mobile { font-size: 1.5rem; font-weight: 700; }
+        .text-h3-desktop { font-size: 1.875rem; font-weight: 700; }
+        .text-text-lg { font-size: 1.125rem; }
+        .text-text-xl { font-size: 1.25rem; }
+        .text-navy-900 { color: var(--color-brand-dark); }
+        .text-navy-700 { color: var(--color-brand-neutral); }
+
+        /* Ensure text overlays are always visible */
+        .carousel-slide .absolute {
+            z-index: 20 !important;
+            position: absolute !important;
+        }
+
+        /* Make sure backdrop blur works */
+        .backdrop-blur-sm {
+            backdrop-filter: blur(4px);
+        }
+
+        /* Line clamp utility */
+        .line-clamp-2 {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+        }
+
+        /* Test border for debugging */
+        .debug-border {
+            border: 2px solid red !important;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Building Images Carousel Section - EXACT COPY FROM TWIG TEMPLATE -->
+    <section class="py-24 bg-gray-100" data-testid="building-carousel">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="text-center mb-16 lg:mb-20">
+                <h2 class="text-h3-mobile lg:text-h3-desktop text-navy-900 mb-6 lg:mb-8">
+                    Our Historic Preservation Portfolio
+                </h2>
+                <p class="text-text-lg lg:text-text-xl text-navy-700 max-w-2xl mx-auto">
+                    Discover the stunning historic buildings we've helped preserve and revitalize across 17+ states
+                </p>
+            </div>
+
+            <div class="building-carousel-container relative">
+                <!-- Fallback: Show all 11 building images -->
+                <div class="building-carousel overflow-hidden">
+                    <div class="carousel-track flex transition-transform duration-500 ease-in-out">
+                        <div class="carousel-slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-2">
+                            <div class="relative bg-white rounded-lg shadow-sm overflow-hidden">
+                                <img src="/wp-content/themes/historic-equity/static/images/Union+Station+701+East+Douglas+Ave.,+Wichita,+KS+PE.webp"
+                                     alt="Union Station, Wichita, KS"
+                                     class="w-full h-64 lg:h-80 object-cover">
+                                <div class="absolute top-4 right-4 bg-white/95 backdrop-blur-sm p-2 rounded-lg w-[120px]">
+                                    <h3 class="text-gray-900 font-semibold text-xs mb-1 truncate">Union Station</h3>
+                                    <p class="text-gray-700 text-xs font-medium mb-1">1913</p>
+                                    <p class="text-gray-600 text-xs mb-2">Wichita, Kansas</p>
+                                    <p class="text-gray-700 text-xs leading-tight line-clamp-2">Historic railway station converted into mixed-use development</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-2">
+                            <div class="relative bg-white rounded-lg shadow-sm overflow-hidden">
+                                <img src="/wp-content/themes/historic-equity/static/images/Springfield+Historiy+Museum+Park+Central+Square,+Springfield,+MO+crop.webp"
+                                     alt="Springfield History Museum"
+                                     class="w-full h-64 lg:h-80 object-cover">
+                                <div class="absolute top-4 right-4 bg-white/95 backdrop-blur-sm p-2 rounded-lg w-[120px]">
+                                    <h3 class="text-gray-900 font-semibold text-xs mb-1 truncate">Springfield History Museum</h3>
+                                    <p class="text-gray-700 text-xs font-medium mb-1">1912</p>
+                                    <p class="text-gray-600 text-xs mb-2">Springfield, Missouri</p>
+                                    <p class="text-gray-700 text-xs leading-tight line-clamp-2">Former federal building transformed into a community history museum</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-2">
+                            <div class="relative bg-white rounded-lg shadow-sm overflow-hidden">
+                                <img src="/wp-content/themes/historic-equity/static/images/Tower+Theatre+Building,+Oklahoma+City,+OK+PE.webp"
+                                     alt="Tower Theatre Building"
+                                     class="w-full h-64 lg:h-80 object-cover">
+                                <div class="absolute top-4 right-4 bg-white/95 backdrop-blur-sm p-2 rounded-lg w-[120px]">
+                                    <h3 class="text-gray-900 font-semibold text-xs mb-1 truncate">Tower Theatre Building</h3>
+                                    <p class="text-gray-700 text-xs font-medium mb-1">1937</p>
+                                    <p class="text-gray-600 text-xs mb-2">Oklahoma City, Oklahoma</p>
+                                    <p class="text-gray-700 text-xs leading-tight line-clamp-2">Art Deco theatre restored as entertainment and retail destination</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-2">
+                            <div class="relative bg-white rounded-lg shadow-sm overflow-hidden">
+                                <img src="/wp-content/themes/historic-equity/static/images/Corrigan,+KC+PE+(1).webp"
+                                     alt="Corrigan Building"
+                                     class="w-full h-64 lg:h-80 object-cover">
+                                <div class="absolute top-4 right-4 bg-white/95 backdrop-blur-sm p-2 rounded-lg w-[120px]">
+                                    <h3 class="text-gray-900 font-semibold text-xs mb-1 truncate">Corrigan Building</h3>
+                                    <p class="text-gray-700 text-xs font-medium mb-1">1925</p>
+                                    <p class="text-gray-600 text-xs mb-2">Kansas City, Missouri</p>
+                                    <p class="text-gray-700 text-xs leading-tight line-clamp-2">Historic commercial building converted to modern office space</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-2">
+                            <div class="relative bg-white rounded-lg shadow-sm overflow-hidden">
+                                <img src="/wp-content/themes/historic-equity/static/images/1712+Commerce+Lodging+PE+(1).webp"
+                                     alt="1712 Commerce Lodging"
+                                     class="w-full h-64 lg:h-80 object-cover">
+                                <div class="absolute top-4 right-4 bg-white/95 backdrop-blur-sm p-2 rounded-lg w-[120px]">
+                                    <h3 class="text-gray-900 font-semibold text-xs mb-1 truncate">1712 Commerce Lodging</h3>
+                                    <p class="text-gray-700 text-xs font-medium mb-1">1908</p>
+                                    <p class="text-gray-600 text-xs mb-2">Kansas City, Missouri</p>
+                                    <p class="text-gray-700 text-xs leading-tight line-clamp-2">Historic commercial building transformed into boutique lodging</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-2">
+                            <div class="relative bg-white rounded-lg shadow-sm overflow-hidden">
+                                <img src="/wp-content/themes/historic-equity/static/images/3514+Jefferson+St.,+Kansas+City,+MO+Norman+crop.webp"
+                                     alt="3514 Jefferson Street Building"
+                                     class="w-full h-64 lg:h-80 object-cover">
+                                <div class="absolute top-4 right-4 bg-white/95 backdrop-blur-sm p-2 rounded-lg w-[120px]">
+                                    <h3 class="text-gray-900 font-semibold text-xs mb-1 truncate">Norman Building</h3>
+                                    <p class="text-gray-700 text-xs font-medium mb-1">1922</p>
+                                    <p class="text-gray-600 text-xs mb-2">Kansas City, Missouri</p>
+                                    <p class="text-gray-700 text-xs leading-tight line-clamp-2">Historic apartment building renovated for modern residential use</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-2">
+                            <div class="relative bg-white rounded-lg shadow-sm overflow-hidden">
+                                <img src="/wp-content/themes/historic-equity/static/images/400+South+Boston,+OK+PE.webp"
+                                     alt="400 South Boston Building"
+                                     class="w-full h-64 lg:h-80 object-cover">
+                                <div class="absolute top-4 right-4 bg-white/95 backdrop-blur-sm p-2 rounded-lg w-[120px]">
+                                    <h3 class="text-gray-900 font-semibold text-xs mb-1 truncate">400 South Boston</h3>
+                                    <p class="text-gray-700 text-xs font-medium mb-1">1928</p>
+                                    <p class="text-gray-600 text-xs mb-2">Tulsa, Oklahoma</p>
+                                    <p class="text-gray-700 text-xs leading-tight line-clamp-2">Art Deco office tower restored to its original grandeur</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-2">
+                            <div class="relative bg-white rounded-lg shadow-sm overflow-hidden">
+                                <img src="/wp-content/themes/historic-equity/static/images/705+Olive+STL+MO+crop.webp"
+                                     alt="705 Olive Street Building"
+                                     class="w-full h-64 lg:h-80 object-cover">
+                                <div class="absolute top-4 right-4 bg-white/95 backdrop-blur-sm p-2 rounded-lg w-[120px]">
+                                    <h3 class="text-gray-900 font-semibold text-xs mb-1 truncate">705 Olive Street</h3>
+                                    <p class="text-gray-700 text-xs font-medium mb-1">1916</p>
+                                    <p class="text-gray-600 text-xs mb-2">St. Louis, Missouri</p>
+                                    <p class="text-gray-700 text-xs leading-tight line-clamp-2">Downtown office building converted to mixed-use development</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-2">
+                            <div class="relative bg-white rounded-lg shadow-sm overflow-hidden">
+                                <img src="/wp-content/themes/historic-equity/static/images/Broadway+Monett+MO+PE.webp"
+                                     alt="Broadway Building"
+                                     class="w-full h-64 lg:h-80 object-cover">
+                                <div class="absolute top-4 right-4 bg-white/95 backdrop-blur-sm p-2 rounded-lg w-[120px]">
+                                    <h3 class="text-gray-900 font-semibold text-xs mb-1 truncate">Broadway Building</h3>
+                                    <p class="text-gray-700 text-xs font-medium mb-1">1920</p>
+                                    <p class="text-gray-600 text-xs mb-2">Monett, Missouri</p>
+                                    <p class="text-gray-700 text-xs leading-tight line-clamp-2">Main street commercial building revitalized for community use</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-2">
+                            <div class="relative bg-white rounded-lg shadow-sm overflow-hidden">
+                                <img src="/wp-content/themes/historic-equity/static/images/Exact+Main+KC+MO+PE.webp"
+                                     alt="Exact Main Building"
+                                     class="w-full h-64 lg:h-80 object-cover">
+                                <div class="absolute top-4 right-4 bg-white/95 backdrop-blur-sm p-2 rounded-lg w-[120px]">
+                                    <h3 class="text-gray-900 font-semibold text-xs mb-1 truncate">Exact Main Building</h3>
+                                    <p class="text-gray-700 text-xs font-medium mb-1">1911</p>
+                                    <p class="text-gray-600 text-xs mb-2">Kansas City, Missouri</p>
+                                    <p class="text-gray-700 text-xs leading-tight line-clamp-2">Historic warehouse transformed into creative office space</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-2">
+                            <div class="relative bg-white rounded-lg shadow-sm overflow-hidden">
+                                <img src="/wp-content/themes/historic-equity/static/images/Spaghetti+Works+Building+619+E.+Williams+St.,+Wichita,+KS+PE+(1).webp"
+                                     alt="Spaghetti Works Building"
+                                     class="w-full h-64 lg:h-80 object-cover">
+                                <div class="absolute top-4 right-4 bg-white/95 backdrop-blur-sm p-2 rounded-lg w-[120px]">
+                                    <h3 class="text-gray-900 font-semibold text-xs mb-1 truncate">Spaghetti Works Building</h3>
+                                    <p class="text-gray-700 text-xs font-medium mb-1">1905</p>
+                                    <p class="text-gray-600 text-xs mb-2">Wichita, Kansas</p>
+                                    <p class="text-gray-700 text-xs leading-tight line-clamp-2">Historic manufacturing building adapted for restaurant and retail</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXACT CAROUSEL JAVASCRIPT FROM TWIG TEMPLATE -->
+    <script>
+    (function() {
+        'use strict';
+
+        function initHistoricEquityCarousel() {
+            const carouselContainer = document.querySelector('.building-carousel-container');
+            if (!carouselContainer) return;
+
+            const carousel = carouselContainer.querySelector('.building-carousel');
+            const track = carousel?.querySelector('.carousel-track');
+            const slides = carousel?.querySelectorAll('.carousel-slide');
+
+            if (!carousel || !track || !slides.length) return;
+
+            // Remove any existing navigation to prevent duplicates
+            const existingPrev = carouselContainer.querySelector('.carousel-prev');
+            const existingNext = carouselContainer.querySelector('.carousel-next');
+            const existingIndicators = carouselContainer.querySelector('.carousel-indicators');
+
+            if (existingPrev) existingPrev.remove();
+            if (existingNext) existingNext.remove();
+            if (existingIndicators) existingIndicators.remove();
+
+            // Create navigation buttons
+            const prevButton = document.createElement('button');
+            prevButton.className = 'carousel-prev absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 p-3 rounded-full shadow-lg transition-all duration-200 z-10';
+            prevButton.innerHTML = `
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+            `;
+            prevButton.setAttribute('aria-label', 'Previous slide');
+
+            const nextButton = document.createElement('button');
+            nextButton.className = 'carousel-next absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 p-3 rounded-full shadow-lg transition-all duration-200 z-10';
+            nextButton.innerHTML = `
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+            `;
+            nextButton.setAttribute('aria-label', 'Next slide');
+
+            // Add buttons to carousel container
+            carouselContainer.appendChild(prevButton);
+            carouselContainer.appendChild(nextButton);
+
+            // Create indicators container
+            const indicatorsContainer = document.createElement('div');
+            indicatorsContainer.className = 'carousel-indicators flex justify-center mt-8 space-x-2';
+
+            // Calculate responsive layout
+            const getSlidesPerView = () => {
+                return window.innerWidth >= 1024 ? 3 : (window.innerWidth >= 768 ? 2 : 1);
+            };
+
+            const getTotalPages = () => {
+                return Math.ceil(slides.length / getSlidesPerView());
+            };
+
+            // Create indicators
+            const totalPages = getTotalPages();
+            for (let i = 0; i < totalPages; i++) {
+                const indicator = document.createElement('button');
+                indicator.className = `carousel-indicator w-3 h-3 rounded-full transition-colors duration-200 ${i === 0 ? '' : 'bg-gray-300 hover:bg-gray-400'}`;
+                if (i === 0) {
+                    indicator.style.backgroundColor = '#bd572b';
+                }
+                indicator.setAttribute('data-slide', i.toString());
+                indicator.setAttribute('aria-label', `Go to slide group ${i + 1}`);
+                indicatorsContainer.appendChild(indicator);
+            }
+
+            carouselContainer.appendChild(indicatorsContainer);
+
+            // Carousel state management
+            let currentSlide = 0;
+            let autoPlayInterval;
+            let isPlaying = true;
+
+            // Get indicators after they've been added to DOM
+            const indicators = carouselContainer.querySelectorAll('.carousel-indicator');
+
+            // Update carousel position and states
+            const updateCarousel = (slideIndex) => {
+                const slidesPerView = getSlidesPerView();
+                const containerWidth = carousel.offsetWidth;
+                const slideWidth = containerWidth / slidesPerView;
+                const offset = -slideIndex * slideWidth * slidesPerView;
+
+                track.style.transform = `translateX(${offset}px)`;
+
+                // Update indicators
+                indicators.forEach((indicator, index) => {
+                    if (index === slideIndex) {
+                        indicator.classList.remove('bg-gray-300');
+                        indicator.style.backgroundColor = '#bd572b';
+                    } else {
+                        indicator.style.backgroundColor = '';
+                        indicator.classList.add('bg-gray-300');
+                    }
+                });
+
+                currentSlide = slideIndex;
+            };
+
+            // Auto-play functionality
+            const startAutoPlay = () => {
+                if (getTotalPages() > 1) {
+                    autoPlayInterval = setInterval(() => {
+                        currentSlide = (currentSlide + 1) % getTotalPages();
+                        updateCarousel(currentSlide);
+                    }, 5000); // Change slide every 5 seconds
+                }
+            };
+
+            const stopAutoPlay = () => {
+                clearInterval(autoPlayInterval);
+            };
+
+            const resetAutoPlay = () => {
+                stopAutoPlay();
+                if (isPlaying) {
+                    startAutoPlay();
+                }
+            };
+
+            // Navigation button events
+            prevButton.addEventListener('click', () => {
+                currentSlide = (currentSlide - 1 + getTotalPages()) % getTotalPages();
+                updateCarousel(currentSlide);
+                resetAutoPlay();
+            });
+
+            nextButton.addEventListener('click', () => {
+                currentSlide = (currentSlide + 1) % getTotalPages();
+                updateCarousel(currentSlide);
+                resetAutoPlay();
+            });
+
+            // Indicator events
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    currentSlide = index;
+                    updateCarousel(currentSlide);
+                    resetAutoPlay();
+                });
+            });
+
+            // Touch/swipe support
+            let startX = 0;
+            let endX = 0;
+
+            track.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
+            }, { passive: true });
+
+            track.addEventListener('touchmove', (e) => {
+                endX = e.touches[0].clientX;
+            }, { passive: true });
+
+            track.addEventListener('touchend', () => {
+                const diffX = startX - endX;
+                const threshold = 50;
+
+                if (Math.abs(diffX) > threshold) {
+                    if (diffX > 0) {
+                        // Swipe left - next slide
+                        currentSlide = (currentSlide + 1) % getTotalPages();
+                    } else {
+                        // Swipe right - previous slide
+                        currentSlide = (currentSlide - 1 + getTotalPages()) % getTotalPages();
+                    }
+                    updateCarousel(currentSlide);
+                    resetAutoPlay();
+                }
+            });
+
+            // Keyboard navigation
+            carouselContainer.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') {
+                    e.preventDefault();
+                    currentSlide = (currentSlide - 1 + getTotalPages()) % getTotalPages();
+                    updateCarousel(currentSlide);
+                    resetAutoPlay();
+                } else if (e.key === 'ArrowRight') {
+                    e.preventDefault();
+                    currentSlide = (currentSlide + 1) % getTotalPages();
+                    updateCarousel(currentSlide);
+                    resetAutoPlay();
+                }
+            });
+
+            // Pause auto-play on hover
+            carouselContainer.addEventListener('mouseenter', stopAutoPlay);
+            carouselContainer.addEventListener('mouseleave', () => {
+                if (isPlaying) startAutoPlay();
+            });
+
+            // Pause auto-play when page is not visible
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) {
+                    stopAutoPlay();
+                } else if (isPlaying) {
+                    startAutoPlay();
+                }
+            });
+
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                updateCarousel(currentSlide);
+            });
+
+            // Initialize carousel
+            updateCarousel(0);
+
+            // Start auto-play
+            startAutoPlay();
+
+            console.log('Historic Equity Carousel initialized successfully', {
+                slides: slides.length,
+                totalPages: getTotalPages(),
+                indicators: indicators.length,
+                slidesPerView: getSlidesPerView()
+            });
+        }
+
+        // Initialize when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initHistoricEquityCarousel);
+        } else {
+            initHistoricEquityCarousel();
+        }
+
+        // Debug: Log overlay info
+        document.addEventListener('DOMContentLoaded', () => {
+            const overlays = document.querySelectorAll('.carousel-slide .absolute');
+            console.log('Found carousel text overlays:', overlays.length);
+
+            overlays.forEach((overlay, index) => {
+                console.log(`Overlay ${index}:`, {
+                    visible: overlay.offsetWidth > 0 && overlay.offsetHeight > 0,
+                    content: overlay.textContent.trim().substring(0, 50) + '...',
+                    position: window.getComputedStyle(overlay).position,
+                    zIndex: window.getComputedStyle(overlay).zIndex
+                });
+            });
+        });
+
+    })();
+    </script>
+
+    <!-- Test Results Display -->
+    <div class="fixed bottom-4 left-4 bg-white p-4 rounded-lg shadow-lg max-w-sm">
+        <h3 class="font-bold text-sm mb-2">Carousel Test Results:</h3>
+        <div id="test-results" class="text-xs">
+            <div>Slides: <span id="slide-count">Loading...</span></div>
+            <div>Overlays: <span id="overlay-count">Loading...</span></div>
+            <div>Status: <span id="carousel-status">Loading...</span></div>
+        </div>
+    </div>
+
+    <script>
+        // Update test results
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.carousel-slide');
+            const overlays = document.querySelectorAll('.carousel-slide .absolute');
+
+            document.getElementById('slide-count').textContent = slides.length;
+            document.getElementById('overlay-count').textContent = overlays.length;
+            document.getElementById('carousel-status').textContent = overlays.length > 0 ? 'TEXT OVERLAYS WORKING!' : 'No overlays found';
+        });
+    </script>
+
+</body>
+</html>

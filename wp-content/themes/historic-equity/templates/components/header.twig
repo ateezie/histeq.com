@@ -25,7 +25,7 @@
             </div>
 
             <!-- Right-aligned Navigation Section -->
-            <div class="flex items-center space-x-6 lg:space-x-8 xl:space-x-10 max-lg:hidden">
+            <div class="desktop-navigation items-center space-x-6 lg:space-x-8 xl:space-x-10">
                 <!-- Desktop Navigation -->
                 <nav id="main-navigation" class="main-navigation" role="navigation" aria-label="Primary Navigation">
                     <ul class="flex items-center space-x-6 lg:space-x-8 xl:space-x-10">
@@ -172,5 +172,47 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileMenuToggle.setAttribute('aria-label', 'Open mobile menu');
         mobileMenuToggle.setAttribute('aria-controls', 'mobile-menu');
     }
+
 });
 </script>
+
+<style>
+/* Responsive Navigation - CSS Media Queries */
+.desktop-navigation {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .desktop-navigation {
+        display: flex;
+    }
+
+    #mobile-menu-toggle {
+        display: none;
+    }
+}
+
+@media (max-width: 1023px) {
+    .desktop-navigation {
+        display: none;
+    }
+
+    #mobile-menu-toggle {
+        display: flex;
+    }
+}
+
+/* Mobile 15px padding fix */
+@media (max-width: 767px) {
+    .container, .content-container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    /* Reduce hero section top spacing by half on mobile */
+    .hero-section.py-24 {
+        padding-top: 3rem !important; /* 48px instead of 96px */
+        padding-bottom: 3rem !important;
+    }
+}
+</style>

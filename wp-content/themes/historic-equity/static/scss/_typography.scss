@@ -775,10 +775,10 @@ li {
 .content-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 map-get($spacing, 6);
+  padding: 0 map-get($spacing, 6) !important; // Force 24px padding on mobile
 
   @include tablet-up {
-    padding: 0 map-get($spacing, 12);
+    padding: 0 map-get($spacing, 12) !important; // Force 48px padding on tablet+
   }
 }
 

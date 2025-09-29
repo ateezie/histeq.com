@@ -1,0 +1,3849 @@
+{
+  "timestamp": "2025-09-29T17:22:01.812Z",
+  "summary": {
+    "totalIssues": 379,
+    "critical": 297,
+    "high": 82,
+    "medium": 0,
+    "low": 0,
+    "readyForClient": false
+  },
+  "pages": {
+    "Homepage": {
+      "issues": [
+        {
+          "id": "issue-1",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "Container 1 has insufficient horizontal padding. Left: 0px, Right: 0px. Should be minimum 15px. Class: content-container",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-2",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "Container 2 has insufficient horizontal padding. Left: 0px, Right: 0px. Should be minimum 15px. Class: content-container",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-3",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "Container 9 has insufficient horizontal padding. Left: 0px, Right: 0px. Should be minimum 15px. Class: building-carousel-container relative",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-4",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "HTML.scroll-smooth - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-5",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "HTML.scroll-smooth - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-6",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "BODY.home - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-7",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "BODY.home - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-8",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.skip-links - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-9",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.skip-links - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-10",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "HEADER.site-header - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-11",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "HEADER.site-header - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-12",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-13",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-14",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "MAIN.site-content - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-15",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "MAIN.site-content - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-16",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "MAIN.main-content - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-17",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "MAIN.main-content - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-18",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.hero-section - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-19",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.hero-section - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-20",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.content-container - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-21",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.content-container - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-22",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.grid - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-23",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.grid - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-24",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.space-y-8 - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-25",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.space-y-8 - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-26",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "H1.brand-heading-xl - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-27",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "H1.brand-heading-xl - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-28",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.brand-accent-line - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-29",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.brand-accent-line - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-30",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "P.text-financial-subhead - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-31",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "P.text-financial-subhead - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-32",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.pt-4 - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-33",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.pt-4 - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-34",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "A.inline-flex - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-35",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.image-hover-effect - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-36",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.image-hover-effect - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-37",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "IMG.w-full - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-38",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "IMG.w-full - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-39",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.py-24 - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-40",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.py-24 - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-41",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.content-container - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-42",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.content-container - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-43",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.max-w-4xl - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-44",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.max-w-4xl - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-45",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "H2.brand-subheading - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-46",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "H2.brand-subheading - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-47",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.brand-accent-line - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-48",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.brand-accent-line - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-49",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "P.text-lg - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-50",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "P.text-lg - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-51",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.py-24 - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-52",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.py-24 - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-53",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-54",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-55",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.py-24 - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-56",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.py-24 - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-57",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-58",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-59",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.py-24 - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-60",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.py-24 - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-61",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-62",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-63",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.py-24 - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-64",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.py-24 - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-65",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-66",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-67",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.py-24 - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-68",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.py-24 - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-69",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-70",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-71",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.py-24 - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-72",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.py-24 - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-73",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-74",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-75",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.carousel-slide - Content too close to right edge. Position: left=undefined, right=678",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-76",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.relative - Content too close to right edge. Position: left=undefined, right=670",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-77",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "IMG.w-full - Content too close to right edge. Position: left=undefined, right=670",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-78",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.absolute - Content too close to right edge. Position: left=undefined, right=670",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-79",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "H3.text-white - Content too close to right edge. Position: left=undefined, right=646",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-80",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "P.text-white/90 - Content too close to right edge. Position: left=undefined, right=646",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-81",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "P.text-white/90 - Content too close to right edge. Position: left=undefined, right=646",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-82",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.carousel-slide - Content too close to right edge. Position: left=undefined, right=1005",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-83",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.relative - Content too close to right edge. Position: left=undefined, right=997",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-84",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "IMG.w-full - Content too close to right edge. Position: left=undefined, right=997",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-85",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.absolute - Content too close to right edge. Position: left=undefined, right=997",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-86",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "H3.text-white - Content too close to right edge. Position: left=undefined, right=973",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-87",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "P.text-white/90 - Content too close to right edge. Position: left=undefined, right=973",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-88",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "P.text-white/90 - Content too close to right edge. Position: left=undefined, right=973",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-89",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.carousel-slide - Content too close to right edge. Position: left=undefined, right=1332",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-90",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.relative - Content too close to right edge. Position: left=undefined, right=1324",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-91",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "IMG.w-full - Content too close to right edge. Position: left=undefined, right=1324",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-92",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.absolute - Content too close to right edge. Position: left=undefined, right=1324",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-93",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "H3.text-white - Content too close to right edge. Position: left=undefined, right=1300",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-94",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "P.text-white/90 - Content too close to right edge. Position: left=undefined, right=1300",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-95",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "P.text-white/90 - Content too close to right edge. Position: left=undefined, right=1300",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-96",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "FOOTER.site-footer - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-97",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "FOOTER.site-footer - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-98",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-99",
+          "page": "Homepage",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.778Z"
+        },
+        {
+          "id": "issue-100",
+          "page": "Homepage",
+          "category": "Content Readability",
+          "severity": "HIGH",
+          "description": "Poor color contrast: SPAN.w-6 - rgb(45, 46, 61)",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.780Z"
+        },
+        {
+          "id": "issue-101",
+          "page": "Homepage",
+          "category": "Content Readability",
+          "severity": "HIGH",
+          "description": "Poor color contrast: SPAN.w-6 - rgb(45, 46, 61)",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.780Z"
+        },
+        {
+          "id": "issue-102",
+          "page": "Homepage",
+          "category": "Content Readability",
+          "severity": "HIGH",
+          "description": "Poor color contrast: SPAN.w-6 - rgb(45, 46, 61)",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.780Z"
+        },
+        {
+          "id": "issue-103",
+          "page": "Homepage",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: A (1x1px, should be 44x44px minimum) - \"Skip to main content\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.781Z"
+        },
+        {
+          "id": "issue-104",
+          "page": "Homepage",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: A (1x1px, should be 44x44px minimum) - \"Skip to navigation\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.781Z"
+        },
+        {
+          "id": "issue-105",
+          "page": "Homepage",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: A.inline-flex (193x32px, should be 44x44px minimum) - \"\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.781Z"
+        },
+        {
+          "id": "issue-106",
+          "page": "Homepage",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: BUTTON.lg:hidden (32x32px, should be 44x44px minimum) - \"\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.781Z"
+        },
+        {
+          "id": "issue-107",
+          "page": "Homepage",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: BUTTON.carousel-indicator (12x12px, should be 44x44px minimum) - \"submit\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.781Z"
+        },
+        {
+          "id": "issue-108",
+          "page": "Homepage",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: BUTTON.carousel-indicator (12x12px, should be 44x44px minimum) - \"submit\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.781Z"
+        },
+        {
+          "id": "issue-109",
+          "page": "Homepage",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: BUTTON.carousel-indicator (12x12px, should be 44x44px minimum) - \"submit\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.781Z"
+        },
+        {
+          "id": "issue-110",
+          "page": "Homepage",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: BUTTON.carousel-indicator (12x12px, should be 44x44px minimum) - \"submit\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.781Z"
+        },
+        {
+          "id": "issue-111",
+          "page": "Homepage",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: A.text-sm (245x41px, should be 44x44px minimum) - \"1034 South Brentwood Blvd, Ste\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.781Z"
+        },
+        {
+          "id": "issue-112",
+          "page": "Homepage",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: A.hover:text-gray-900 (93x17px, should be 44x44px minimum) - \"314-862-1414\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.781Z"
+        },
+        {
+          "id": "issue-113",
+          "page": "Homepage",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: A.hover:text-gray-900 (108x17px, should be 44x44px minimum) - \"info@histeq.com\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.781Z"
+        },
+        {
+          "id": "issue-114",
+          "page": "Homepage",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: A.text-gray-600 (20x20px, should be 44x44px minimum) - \"\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.781Z"
+        },
+        {
+          "id": "issue-115",
+          "page": "Homepage",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: A.text-gray-600 (20x20px, should be 44x44px minimum) - \"\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.781Z"
+        },
+        {
+          "id": "issue-116",
+          "page": "Homepage",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: A.block (327x20px, should be 44x44px minimum) - \"Home\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.781Z"
+        },
+        {
+          "id": "issue-117",
+          "page": "Homepage",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: A.block (327x20px, should be 44x44px minimum) - \"Meet Our Team\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.781Z"
+        },
+        {
+          "id": "issue-118",
+          "page": "Homepage",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: A.block (327x20px, should be 44x44px minimum) - \"Contact\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.781Z"
+        },
+        {
+          "id": "issue-119",
+          "page": "Homepage",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: A.text-sm (89x20px, should be 44x44px minimum) - \"Privacy Policy\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.781Z"
+        },
+        {
+          "id": "issue-120",
+          "page": "Homepage",
+          "category": "Visual Hierarchy",
+          "severity": "HIGH",
+          "description": "Insufficient section spacing: Section 2 - 0px",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.782Z"
+        },
+        {
+          "id": "issue-121",
+          "page": "Homepage",
+          "category": "Visual Hierarchy",
+          "severity": "HIGH",
+          "description": "Insufficient section spacing: Section 3 - 0px",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.782Z"
+        },
+        {
+          "id": "issue-122",
+          "page": "Homepage",
+          "category": "Visual Hierarchy",
+          "severity": "HIGH",
+          "description": "Insufficient section spacing: Section 4 - 0px",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.782Z"
+        },
+        {
+          "id": "issue-123",
+          "page": "Homepage",
+          "category": "Visual Hierarchy",
+          "severity": "HIGH",
+          "description": "Insufficient section spacing: Section 5 - 0px",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.782Z"
+        },
+        {
+          "id": "issue-124",
+          "page": "Homepage",
+          "category": "Visual Hierarchy",
+          "severity": "HIGH",
+          "description": "Insufficient section spacing: Section 6 - 0px",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.782Z"
+        },
+        {
+          "id": "issue-125",
+          "page": "Homepage",
+          "category": "Visual Hierarchy",
+          "severity": "HIGH",
+          "description": "Insufficient section spacing: Section 7 - 0px",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.782Z"
+        },
+        {
+          "id": "issue-126",
+          "page": "Homepage",
+          "category": "Visual Hierarchy",
+          "severity": "HIGH",
+          "description": "Insufficient section spacing: Section 8 - 0px",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.782Z"
+        },
+        {
+          "id": "issue-127",
+          "page": "Homepage",
+          "category": "Technical Issues",
+          "severity": "CRITICAL",
+          "description": "Element overflow: DIV.carousel-slide - Width: 327px, viewport: 375px",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.783Z"
+        },
+        {
+          "id": "issue-128",
+          "page": "Homepage",
+          "category": "Technical Issues",
+          "severity": "CRITICAL",
+          "description": "Element overflow: DIV.relative - Width: 311px, viewport: 375px",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.783Z"
+        },
+        {
+          "id": "issue-129",
+          "page": "Homepage",
+          "category": "Technical Issues",
+          "severity": "CRITICAL",
+          "description": "Element overflow: IMG.w-full - Width: 311px, viewport: 375px",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.783Z"
+        },
+        {
+          "id": "issue-130",
+          "page": "Homepage",
+          "category": "Technical Issues",
+          "severity": "CRITICAL",
+          "description": "Element overflow: DIV.absolute - Width: 311px, viewport: 375px",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.783Z"
+        },
+        {
+          "id": "issue-131",
+          "page": "Homepage",
+          "category": "Technical Issues",
+          "severity": "CRITICAL",
+          "description": "Element overflow: H3.text-white - Width: 263px, viewport: 375px",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.783Z"
+        },
+        {
+          "id": "issue-132",
+          "page": "Homepage",
+          "category": "Technical Issues",
+          "severity": "CRITICAL",
+          "description": "Element overflow: P.text-white/90 - Width: 263px, viewport: 375px",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.783Z"
+        },
+        {
+          "id": "issue-133",
+          "page": "Homepage",
+          "category": "Technical Issues",
+          "severity": "CRITICAL",
+          "description": "Element overflow: P.text-white/90 - Width: 263px, viewport: 375px",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.783Z"
+        },
+        {
+          "id": "issue-134",
+          "page": "Homepage",
+          "category": "Technical Issues",
+          "severity": "CRITICAL",
+          "description": "Element overflow: DIV.carousel-slide - Width: 327px, viewport: 375px",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.783Z"
+        },
+        {
+          "id": "issue-135",
+          "page": "Homepage",
+          "category": "Technical Issues",
+          "severity": "CRITICAL",
+          "description": "Element overflow: DIV.relative - Width: 311px, viewport: 375px",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.783Z"
+        },
+        {
+          "id": "issue-136",
+          "page": "Homepage",
+          "category": "Technical Issues",
+          "severity": "CRITICAL",
+          "description": "Element overflow: IMG.w-full - Width: 311px, viewport: 375px",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.783Z"
+        },
+        {
+          "id": "issue-137",
+          "page": "Homepage",
+          "category": "Technical Issues",
+          "severity": "CRITICAL",
+          "description": "Element overflow: DIV.absolute - Width: 311px, viewport: 375px",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.783Z"
+        },
+        {
+          "id": "issue-138",
+          "page": "Homepage",
+          "category": "Technical Issues",
+          "severity": "CRITICAL",
+          "description": "Element overflow: H3.text-white - Width: 263px, viewport: 375px",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.783Z"
+        },
+        {
+          "id": "issue-139",
+          "page": "Homepage",
+          "category": "Technical Issues",
+          "severity": "CRITICAL",
+          "description": "Element overflow: P.text-white/90 - Width: 263px, viewport: 375px",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.783Z"
+        },
+        {
+          "id": "issue-140",
+          "page": "Homepage",
+          "category": "Technical Issues",
+          "severity": "CRITICAL",
+          "description": "Element overflow: P.text-white/90 - Width: 263px, viewport: 375px",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.783Z"
+        },
+        {
+          "id": "issue-141",
+          "page": "Homepage",
+          "category": "Technical Issues",
+          "severity": "CRITICAL",
+          "description": "Element overflow: DIV.carousel-slide - Width: 327px, viewport: 375px",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.783Z"
+        },
+        {
+          "id": "issue-142",
+          "page": "Homepage",
+          "category": "Technical Issues",
+          "severity": "CRITICAL",
+          "description": "Element overflow: DIV.relative - Width: 311px, viewport: 375px",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.783Z"
+        },
+        {
+          "id": "issue-143",
+          "page": "Homepage",
+          "category": "Technical Issues",
+          "severity": "CRITICAL",
+          "description": "Element overflow: IMG.w-full - Width: 311px, viewport: 375px",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.783Z"
+        },
+        {
+          "id": "issue-144",
+          "page": "Homepage",
+          "category": "Technical Issues",
+          "severity": "CRITICAL",
+          "description": "Element overflow: DIV.absolute - Width: 311px, viewport: 375px",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.783Z"
+        },
+        {
+          "id": "issue-145",
+          "page": "Homepage",
+          "category": "Technical Issues",
+          "severity": "CRITICAL",
+          "description": "Element overflow: H3.text-white - Width: 263px, viewport: 375px",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.783Z"
+        },
+        {
+          "id": "issue-146",
+          "page": "Homepage",
+          "category": "Technical Issues",
+          "severity": "CRITICAL",
+          "description": "Element overflow: P.text-white/90 - Width: 263px, viewport: 375px",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.783Z"
+        },
+        {
+          "id": "issue-147",
+          "page": "Homepage",
+          "category": "Technical Issues",
+          "severity": "CRITICAL",
+          "description": "Element overflow: P.text-white/90 - Width: 263px, viewport: 375px",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:05.783Z"
+        }
+      ]
+    },
+    "Meet Our Team": {
+      "issues": [
+        {
+          "id": "issue-148",
+          "page": "Meet Our Team",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "HTML.scroll-smooth - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.693Z"
+        },
+        {
+          "id": "issue-149",
+          "page": "Meet Our Team",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "HTML.scroll-smooth - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.693Z"
+        },
+        {
+          "id": "issue-150",
+          "page": "Meet Our Team",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "BODY.wp-singular - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.693Z"
+        },
+        {
+          "id": "issue-151",
+          "page": "Meet Our Team",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "BODY.wp-singular - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.693Z"
+        },
+        {
+          "id": "issue-152",
+          "page": "Meet Our Team",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.skip-links - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.693Z"
+        },
+        {
+          "id": "issue-153",
+          "page": "Meet Our Team",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.skip-links - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.693Z"
+        },
+        {
+          "id": "issue-154",
+          "page": "Meet Our Team",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "HEADER.site-header - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.693Z"
+        },
+        {
+          "id": "issue-155",
+          "page": "Meet Our Team",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "HEADER.site-header - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.693Z"
+        },
+        {
+          "id": "issue-156",
+          "page": "Meet Our Team",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.693Z"
+        },
+        {
+          "id": "issue-157",
+          "page": "Meet Our Team",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.693Z"
+        },
+        {
+          "id": "issue-158",
+          "page": "Meet Our Team",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "MAIN.site-content - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.693Z"
+        },
+        {
+          "id": "issue-159",
+          "page": "Meet Our Team",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "MAIN.site-content - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.693Z"
+        },
+        {
+          "id": "issue-160",
+          "page": "Meet Our Team",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "MAIN - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.693Z"
+        },
+        {
+          "id": "issue-161",
+          "page": "Meet Our Team",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "MAIN - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.693Z"
+        },
+        {
+          "id": "issue-162",
+          "page": "Meet Our Team",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.py-24 - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.693Z"
+        },
+        {
+          "id": "issue-163",
+          "page": "Meet Our Team",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.py-24 - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.693Z"
+        },
+        {
+          "id": "issue-164",
+          "page": "Meet Our Team",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.693Z"
+        },
+        {
+          "id": "issue-165",
+          "page": "Meet Our Team",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.693Z"
+        },
+        {
+          "id": "issue-166",
+          "page": "Meet Our Team",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.py-24 - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.693Z"
+        },
+        {
+          "id": "issue-167",
+          "page": "Meet Our Team",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.py-24 - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.693Z"
+        },
+        {
+          "id": "issue-168",
+          "page": "Meet Our Team",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.693Z"
+        },
+        {
+          "id": "issue-169",
+          "page": "Meet Our Team",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.693Z"
+        },
+        {
+          "id": "issue-170",
+          "page": "Meet Our Team",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.py-24 - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.693Z"
+        },
+        {
+          "id": "issue-171",
+          "page": "Meet Our Team",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.py-24 - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.693Z"
+        },
+        {
+          "id": "issue-172",
+          "page": "Meet Our Team",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.693Z"
+        },
+        {
+          "id": "issue-173",
+          "page": "Meet Our Team",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.693Z"
+        },
+        {
+          "id": "issue-174",
+          "page": "Meet Our Team",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "FOOTER.site-footer - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.693Z"
+        },
+        {
+          "id": "issue-175",
+          "page": "Meet Our Team",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "FOOTER.site-footer - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.693Z"
+        },
+        {
+          "id": "issue-176",
+          "page": "Meet Our Team",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.693Z"
+        },
+        {
+          "id": "issue-177",
+          "page": "Meet Our Team",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.693Z"
+        },
+        {
+          "id": "issue-178",
+          "page": "Meet Our Team",
+          "category": "Content Readability",
+          "severity": "HIGH",
+          "description": "Poor color contrast: SPAN.w-6 - rgb(45, 46, 61)",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.694Z"
+        },
+        {
+          "id": "issue-179",
+          "page": "Meet Our Team",
+          "category": "Content Readability",
+          "severity": "HIGH",
+          "description": "Poor color contrast: SPAN.w-6 - rgb(45, 46, 61)",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.694Z"
+        },
+        {
+          "id": "issue-180",
+          "page": "Meet Our Team",
+          "category": "Content Readability",
+          "severity": "HIGH",
+          "description": "Poor color contrast: SPAN.w-6 - rgb(45, 46, 61)",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.694Z"
+        },
+        {
+          "id": "issue-181",
+          "page": "Meet Our Team",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: A (1x1px, should be 44x44px minimum) - \"Skip to main content\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.695Z"
+        },
+        {
+          "id": "issue-182",
+          "page": "Meet Our Team",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: A (1x1px, should be 44x44px minimum) - \"Skip to navigation\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.695Z"
+        },
+        {
+          "id": "issue-183",
+          "page": "Meet Our Team",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: A.inline-flex (193x32px, should be 44x44px minimum) - \"\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.695Z"
+        },
+        {
+          "id": "issue-184",
+          "page": "Meet Our Team",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: BUTTON.lg:hidden (32x32px, should be 44x44px minimum) - \"\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.695Z"
+        },
+        {
+          "id": "issue-185",
+          "page": "Meet Our Team",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: A.text-sm (245x41px, should be 44x44px minimum) - \"1034 South Brentwood Blvd, Ste\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.695Z"
+        },
+        {
+          "id": "issue-186",
+          "page": "Meet Our Team",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: A.hover:text-gray-900 (93x17px, should be 44x44px minimum) - \"314-862-1414\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.695Z"
+        },
+        {
+          "id": "issue-187",
+          "page": "Meet Our Team",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: A.hover:text-gray-900 (108x17px, should be 44x44px minimum) - \"info@histeq.com\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.695Z"
+        },
+        {
+          "id": "issue-188",
+          "page": "Meet Our Team",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: A.text-gray-600 (20x20px, should be 44x44px minimum) - \"\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.695Z"
+        },
+        {
+          "id": "issue-189",
+          "page": "Meet Our Team",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: A.text-gray-600 (20x20px, should be 44x44px minimum) - \"\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.695Z"
+        },
+        {
+          "id": "issue-190",
+          "page": "Meet Our Team",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: A.block (327x20px, should be 44x44px minimum) - \"Home\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.695Z"
+        },
+        {
+          "id": "issue-191",
+          "page": "Meet Our Team",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: A.block (327x20px, should be 44x44px minimum) - \"Meet Our Team\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.695Z"
+        },
+        {
+          "id": "issue-192",
+          "page": "Meet Our Team",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: A.block (327x20px, should be 44x44px minimum) - \"Contact\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.695Z"
+        },
+        {
+          "id": "issue-193",
+          "page": "Meet Our Team",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: A.text-sm (89x20px, should be 44x44px minimum) - \"Privacy Policy\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.695Z"
+        },
+        {
+          "id": "issue-194",
+          "page": "Meet Our Team",
+          "category": "Visual Hierarchy",
+          "severity": "HIGH",
+          "description": "Insufficient section spacing: Section 2 - 0px",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.696Z"
+        },
+        {
+          "id": "issue-195",
+          "page": "Meet Our Team",
+          "category": "Visual Hierarchy",
+          "severity": "HIGH",
+          "description": "Insufficient section spacing: Section 3 - 0px",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:08.696Z"
+        }
+      ]
+    },
+    "Contact": {
+      "issues": [
+        {
+          "id": "issue-196",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "Container 5 has insufficient horizontal padding. Left: 0px, Right: 0px. Should be minimum 15px. Class: ginput_container ginput_container_text",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-197",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "Container 6 has insufficient horizontal padding. Left: 0px, Right: 0px. Should be minimum 15px. Class: ginput_container ginput_container_text",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-198",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "Container 7 has insufficient horizontal padding. Left: 0px, Right: 0px. Should be minimum 15px. Class: ginput_container ginput_container_email",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-199",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "Container 8 has insufficient horizontal padding. Left: 0px, Right: 0px. Should be minimum 15px. Class: ginput_container ginput_container_phone",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-200",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "Container 9 has insufficient horizontal padding. Left: 0px, Right: 0px. Should be minimum 15px. Class: ginput_container ginput_container_textarea",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-201",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "Container 10 has insufficient horizontal padding. Left: 0px, Right: 0px. Should be minimum 15px. Class: ginput_container ginput_recaptcha",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-202",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "HTML.scroll-smooth - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-203",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "HTML.scroll-smooth - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-204",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "BODY.wp-singular - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-205",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "BODY.wp-singular - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-206",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.skip-links - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-207",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.skip-links - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-208",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "HEADER.site-header - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-209",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "HEADER.site-header - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-210",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-211",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-212",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "MAIN.site-content - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-213",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "MAIN.site-content - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-214",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "MAIN.main-content - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-215",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "MAIN.main-content - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-216",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.py-24 - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-217",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.py-24 - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-218",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-219",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-220",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.py-24 - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-221",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.py-24 - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-222",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-223",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-224",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.py-16 - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-225",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.py-16 - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-226",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-227",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-228",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.py-24 - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-229",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.py-24 - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-230",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-231",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-232",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.grecaptcha-badge - Content too close to right edge. Position: left=undefined, right=561",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-233",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.grecaptcha-logo - Content too close to right edge. Position: left=undefined, right=561",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-234",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "IFRAME - Content too close to right edge. Position: left=undefined, right=561",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-235",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.grecaptcha-error - Content too close to right edge. Position: left=undefined, right=561",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-236",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "FOOTER.site-footer - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-237",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "FOOTER.site-footer - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-238",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-239",
+          "page": "Contact",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to right edge. Position: left=undefined, right=375",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.525Z"
+        },
+        {
+          "id": "issue-240",
+          "page": "Contact",
+          "category": "Content Readability",
+          "severity": "HIGH",
+          "description": "Poor color contrast: SPAN.w-6 - rgb(45, 46, 61)",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.526Z"
+        },
+        {
+          "id": "issue-241",
+          "page": "Contact",
+          "category": "Content Readability",
+          "severity": "HIGH",
+          "description": "Poor color contrast: SPAN.w-6 - rgb(45, 46, 61)",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.526Z"
+        },
+        {
+          "id": "issue-242",
+          "page": "Contact",
+          "category": "Content Readability",
+          "severity": "HIGH",
+          "description": "Poor color contrast: SPAN.w-6 - rgb(45, 46, 61)",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.526Z"
+        },
+        {
+          "id": "issue-243",
+          "page": "Contact",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: A (1x1px, should be 44x44px minimum) - \"Skip to main content\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.526Z"
+        },
+        {
+          "id": "issue-244",
+          "page": "Contact",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: A (1x1px, should be 44x44px minimum) - \"Skip to navigation\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.526Z"
+        },
+        {
+          "id": "issue-245",
+          "page": "Contact",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: A.inline-flex (193x32px, should be 44x44px minimum) - \"\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.526Z"
+        },
+        {
+          "id": "issue-246",
+          "page": "Contact",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: BUTTON.lg:hidden (32x32px, should be 44x44px minimum) - \"\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.526Z"
+        },
+        {
+          "id": "issue-247",
+          "page": "Contact",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: A.text-primary-600 (121x18px, should be 44x44px minimum) - \"info@histeq.com\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.526Z"
+        },
+        {
+          "id": "issue-248",
+          "page": "Contact",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: A.text-primary-600 (104x18px, should be 44x44px minimum) - \"314-862-1414\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.526Z"
+        },
+        {
+          "id": "issue-249",
+          "page": "Contact",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: A.text-primary-600 (106x17px, should be 44x44px minimum) - \"elw@histeq.com\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.526Z"
+        },
+        {
+          "id": "issue-250",
+          "page": "Contact",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: A.text-primary-600 (104x17px, should be 44x44px minimum) - \"mc@histeq.com\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.526Z"
+        },
+        {
+          "id": "issue-251",
+          "page": "Contact",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: A.text-primary-600 (103x17px, should be 44x44px minimum) - \"jhk@histeq.com\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.526Z"
+        },
+        {
+          "id": "issue-252",
+          "page": "Contact",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: A.text-primary-600 (121x24px, should be 44x44px minimum) - \"info@histeq.com\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.526Z"
+        },
+        {
+          "id": "issue-253",
+          "page": "Contact",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: A.text-primary-600 (104x24px, should be 44x44px minimum) - \"314-862-1414\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.526Z"
+        },
+        {
+          "id": "issue-254",
+          "page": "Contact",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: A.text-sm (245x41px, should be 44x44px minimum) - \"1034 South Brentwood Blvd, Ste\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.526Z"
+        },
+        {
+          "id": "issue-255",
+          "page": "Contact",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: A.hover:text-gray-900 (93x17px, should be 44x44px minimum) - \"314-862-1414\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.526Z"
+        },
+        {
+          "id": "issue-256",
+          "page": "Contact",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: A.hover:text-gray-900 (108x17px, should be 44x44px minimum) - \"info@histeq.com\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.526Z"
+        },
+        {
+          "id": "issue-257",
+          "page": "Contact",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: A.text-gray-600 (20x20px, should be 44x44px minimum) - \"\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.526Z"
+        },
+        {
+          "id": "issue-258",
+          "page": "Contact",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: A.text-gray-600 (20x20px, should be 44x44px minimum) - \"\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.526Z"
+        },
+        {
+          "id": "issue-259",
+          "page": "Contact",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: A.block (327x20px, should be 44x44px minimum) - \"Home\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.526Z"
+        },
+        {
+          "id": "issue-260",
+          "page": "Contact",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: A.block (327x20px, should be 44x44px minimum) - \"Meet Our Team\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.526Z"
+        },
+        {
+          "id": "issue-261",
+          "page": "Contact",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: A.block (327x20px, should be 44x44px minimum) - \"Contact\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.526Z"
+        },
+        {
+          "id": "issue-262",
+          "page": "Contact",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Touch target too small: A.text-sm (89x20px, should be 44x44px minimum) - \"Privacy Policy\"",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.526Z"
+        },
+        {
+          "id": "issue-263",
+          "page": "Contact",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Form issue - Input too small: TEXTAREA[type=\"textarea\"] (undefined)",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.527Z"
+        },
+        {
+          "id": "issue-264",
+          "page": "Contact",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Form issue - Input too small: INPUT[type=\"hidden\"] (undefined)",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.527Z"
+        },
+        {
+          "id": "issue-265",
+          "page": "Contact",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Form issue - Input too small: INPUT[type=\"hidden\"] (undefined)",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.527Z"
+        },
+        {
+          "id": "issue-266",
+          "page": "Contact",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Form issue - Input too small: INPUT[type=\"hidden\"] (undefined)",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.527Z"
+        },
+        {
+          "id": "issue-267",
+          "page": "Contact",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Form issue - Input too small: INPUT[type=\"hidden\"] (undefined)",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.527Z"
+        },
+        {
+          "id": "issue-268",
+          "page": "Contact",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Form issue - Input too small: INPUT[type=\"hidden\"] (undefined)",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.527Z"
+        },
+        {
+          "id": "issue-269",
+          "page": "Contact",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Form issue - Input too small: INPUT[type=\"hidden\"] (undefined)",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.527Z"
+        },
+        {
+          "id": "issue-270",
+          "page": "Contact",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Form issue - Input too small: INPUT[type=\"hidden\"] (undefined)",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.527Z"
+        },
+        {
+          "id": "issue-271",
+          "page": "Contact",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Form issue - Input too small: INPUT[type=\"hidden\"] (undefined)",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.527Z"
+        },
+        {
+          "id": "issue-272",
+          "page": "Contact",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Form issue - Input too small: INPUT[type=\"hidden\"] (undefined)",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.527Z"
+        },
+        {
+          "id": "issue-273",
+          "page": "Contact",
+          "category": "Interactive Elements",
+          "severity": "HIGH",
+          "description": "Form issue - Input too small: INPUT[type=\"hidden\"] (undefined)",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.527Z"
+        },
+        {
+          "id": "issue-274",
+          "page": "Contact",
+          "category": "Visual Hierarchy",
+          "severity": "HIGH",
+          "description": "Insufficient section spacing: Section 2 - 0px",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.527Z"
+        },
+        {
+          "id": "issue-275",
+          "page": "Contact",
+          "category": "Visual Hierarchy",
+          "severity": "HIGH",
+          "description": "Insufficient section spacing: Section 3 - 0px",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.527Z"
+        },
+        {
+          "id": "issue-276",
+          "page": "Contact",
+          "category": "Visual Hierarchy",
+          "severity": "HIGH",
+          "description": "Insufficient section spacing: Section 4 - 0px",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.527Z"
+        },
+        {
+          "id": "issue-277",
+          "page": "Contact",
+          "category": "Technical Issues",
+          "severity": "CRITICAL",
+          "description": "Element overflow: DIV.grecaptcha-badge - Width: 256px, viewport: 375px",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.528Z"
+        },
+        {
+          "id": "issue-278",
+          "page": "Contact",
+          "category": "Technical Issues",
+          "severity": "CRITICAL",
+          "description": "Element overflow: DIV.grecaptcha-logo - Width: 256px, viewport: 375px",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.528Z"
+        },
+        {
+          "id": "issue-279",
+          "page": "Contact",
+          "category": "Technical Issues",
+          "severity": "CRITICAL",
+          "description": "Element overflow: IFRAME - Width: 256px, viewport: 375px",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.528Z"
+        },
+        {
+          "id": "issue-280",
+          "page": "Contact",
+          "category": "Technical Issues",
+          "severity": "CRITICAL",
+          "description": "Element overflow: DIV.grecaptcha-error - Width: 256px, viewport: 375px",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:11.528Z"
+        }
+      ]
+    },
+    "Homepage (390px)": {
+      "issues": [
+        {
+          "id": "issue-281",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "Container 1 has insufficient horizontal padding. Left: 0px, Right: 0px. Should be minimum 15px. Class: content-container",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-282",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "Container 2 has insufficient horizontal padding. Left: 0px, Right: 0px. Should be minimum 15px. Class: content-container",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-283",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "Container 9 has insufficient horizontal padding. Left: 0px, Right: 0px. Should be minimum 15px. Class: building-carousel-container relative",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-284",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "HTML.scroll-smooth - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-285",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "HTML.scroll-smooth - Content too close to right edge. Position: left=undefined, right=390",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-286",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "BODY.home - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-287",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "BODY.home - Content too close to right edge. Position: left=undefined, right=390",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-288",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.skip-links - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-289",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.skip-links - Content too close to right edge. Position: left=undefined, right=390",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-290",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "HEADER.site-header - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-291",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "HEADER.site-header - Content too close to right edge. Position: left=undefined, right=390",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-292",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-293",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to right edge. Position: left=undefined, right=390",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-294",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "MAIN.site-content - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-295",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "MAIN.site-content - Content too close to right edge. Position: left=undefined, right=390",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-296",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "MAIN.main-content - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-297",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "MAIN.main-content - Content too close to right edge. Position: left=undefined, right=390",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-298",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.hero-section - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-299",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.hero-section - Content too close to right edge. Position: left=undefined, right=390",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-300",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.content-container - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-301",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.content-container - Content too close to right edge. Position: left=undefined, right=390",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-302",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.grid - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-303",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.grid - Content too close to right edge. Position: left=undefined, right=390",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-304",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.space-y-8 - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-305",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.space-y-8 - Content too close to right edge. Position: left=undefined, right=390",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-306",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "H1.brand-heading-xl - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-307",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "H1.brand-heading-xl - Content too close to right edge. Position: left=undefined, right=390",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-308",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.brand-accent-line - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-309",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.brand-accent-line - Content too close to right edge. Position: left=undefined, right=390",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-310",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "P.text-financial-subhead - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-311",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "P.text-financial-subhead - Content too close to right edge. Position: left=undefined, right=390",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-312",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.pt-4 - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-313",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.pt-4 - Content too close to right edge. Position: left=undefined, right=390",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-314",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "A.inline-flex - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-315",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.image-hover-effect - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-316",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.image-hover-effect - Content too close to right edge. Position: left=undefined, right=390",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-317",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "IMG.w-full - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-318",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "IMG.w-full - Content too close to right edge. Position: left=undefined, right=390",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-319",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.py-24 - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-320",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.py-24 - Content too close to right edge. Position: left=undefined, right=390",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-321",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.content-container - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-322",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.content-container - Content too close to right edge. Position: left=undefined, right=390",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-323",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.max-w-4xl - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-324",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.max-w-4xl - Content too close to right edge. Position: left=undefined, right=390",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-325",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "H2.brand-subheading - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-326",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "H2.brand-subheading - Content too close to right edge. Position: left=undefined, right=390",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-327",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.brand-accent-line - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-328",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.brand-accent-line - Content too close to right edge. Position: left=undefined, right=390",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-329",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "P.text-lg - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-330",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "P.text-lg - Content too close to right edge. Position: left=undefined, right=390",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-331",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.py-24 - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-332",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.py-24 - Content too close to right edge. Position: left=undefined, right=390",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-333",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-334",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to right edge. Position: left=undefined, right=390",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-335",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.py-24 - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-336",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.py-24 - Content too close to right edge. Position: left=undefined, right=390",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-337",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-338",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to right edge. Position: left=undefined, right=390",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-339",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.py-24 - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-340",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.py-24 - Content too close to right edge. Position: left=undefined, right=390",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-341",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-342",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to right edge. Position: left=undefined, right=390",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-343",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.py-24 - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-344",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.py-24 - Content too close to right edge. Position: left=undefined, right=390",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-345",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-346",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to right edge. Position: left=undefined, right=390",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-347",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.py-24 - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-348",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.py-24 - Content too close to right edge. Position: left=undefined, right=390",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-349",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-350",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to right edge. Position: left=undefined, right=390",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-351",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.py-24 - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-352",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "SECTION.py-24 - Content too close to right edge. Position: left=undefined, right=390",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-353",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-354",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to right edge. Position: left=undefined, right=390",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-355",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.carousel-slide - Content too close to right edge. Position: left=undefined, right=708",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-356",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.relative - Content too close to right edge. Position: left=undefined, right=700",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-357",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "IMG.w-full - Content too close to right edge. Position: left=undefined, right=700",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-358",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.absolute - Content too close to right edge. Position: left=undefined, right=700",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-359",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "H3.text-white - Content too close to right edge. Position: left=undefined, right=676",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-360",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "P.text-white/90 - Content too close to right edge. Position: left=undefined, right=676",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-361",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "P.text-white/90 - Content too close to right edge. Position: left=undefined, right=676",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-362",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.carousel-slide - Content too close to right edge. Position: left=undefined, right=1050",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-363",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.relative - Content too close to right edge. Position: left=undefined, right=1042",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-364",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "IMG.w-full - Content too close to right edge. Position: left=undefined, right=1042",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-365",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.absolute - Content too close to right edge. Position: left=undefined, right=1042",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-366",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "H3.text-white - Content too close to right edge. Position: left=undefined, right=1018",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-367",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "P.text-white/90 - Content too close to right edge. Position: left=undefined, right=1018",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-368",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "P.text-white/90 - Content too close to right edge. Position: left=undefined, right=1018",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-369",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.carousel-slide - Content too close to right edge. Position: left=undefined, right=1392",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-370",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.relative - Content too close to right edge. Position: left=undefined, right=1384",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-371",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "IMG.w-full - Content too close to right edge. Position: left=undefined, right=1384",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-372",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.absolute - Content too close to right edge. Position: left=undefined, right=1384",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-373",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "H3.text-white - Content too close to right edge. Position: left=undefined, right=1360",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-374",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "P.text-white/90 - Content too close to right edge. Position: left=undefined, right=1360",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-375",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "P.text-white/90 - Content too close to right edge. Position: left=undefined, right=1360",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-376",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "FOOTER.site-footer - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-377",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "FOOTER.site-footer - Content too close to right edge. Position: left=undefined, right=390",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-378",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to left edge. Position: left=0, right=undefined",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        },
+        {
+          "id": "issue-379",
+          "page": "Homepage (390px)",
+          "category": "Global Layout & Spacing",
+          "severity": "CRITICAL",
+          "description": "DIV.container - Content too close to right edge. Position: left=undefined, right=390",
+          "element": null,
+          "screenshot": null,
+          "timestamp": "2025-09-29T17:22:13.652Z"
+        }
+      ]
+    }
+  },
+  "recommendations": [
+    {
+      "priority": "IMMEDIATE",
+      "title": "Fix Critical Mobile Padding Issues",
+      "description": "Add minimum 15px horizontal padding to all container elements on mobile",
+      "impact": "Professional appearance, client presentation readiness",
+      "files": [
+        "wp-content/themes/historic-equity/static/scss/_layout.scss",
+        "wp-content/themes/historic-equity/static/scss/_responsive.scss"
+      ]
+    },
+    {
+      "priority": "IMMEDIATE",
+      "title": "Eliminate Horizontal Scrolling",
+      "description": "Fix elements causing horizontal overflow on mobile viewports",
+      "impact": "Core user experience, mobile usability",
+      "files": [
+        "Various template files and CSS"
+      ]
+    },
+    {
+      "priority": "BEFORE-CLIENT",
+      "title": "Optimize Touch Targets",
+      "description": "Ensure all interactive elements meet 44px minimum touch target size",
+      "impact": "Mobile usability, accessibility compliance",
+      "files": [
+        "wp-content/themes/historic-equity/static/scss/_components.scss"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel Debug - Historic Equity</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Debug styles to make text overlay issues visible */
+        .debug-overlay {
+            background: red !important;
+            border: 2px solid blue !important;
+            color: white !important;
+            z-index: 999 !important;
+        }
+
+        /* Ensure text is visible */
+        .carousel-slide .absolute {
+            z-index: 10 !important;
+        }
+
+        /* Debug container styles */
+        .debug-container {
+            border: 2px dashed green;
+            position: relative;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-8">
+    <h1 class="text-2xl font-bold mb-8">Carousel Text Overlay Debug</h1>
+
+    <!-- Test 1: Simple overlay test -->
+    <section class="mb-16">
+        <h2 class="text-xl font-semibold mb-4">Test 1: Basic Overlay Test</h2>
+        <div class="relative w-full h-64 bg-gray-800 rounded-lg overflow-hidden debug-container">
+            <img src="/wp-content/themes/historic-equity/static/images/Union+Station+701+East+Douglas+Ave.,+Wichita,+KS+PE.webp"
+                 alt="Test building"
+                 class="w-full h-full object-cover">
+            <div class="absolute top-4 right-4 bg-white/95 backdrop-blur-sm p-2 rounded-lg w-[120px] debug-overlay">
+                <h3 class="text-gray-900 font-semibold text-xs mb-1 truncate">Test Building</h3>
+                <p class="text-gray-700 text-xs font-medium mb-1">1913</p>
+                <p class="text-gray-600 text-xs mb-2">Test City</p>
+                <p class="text-gray-700 text-xs leading-tight line-clamp-2">Test description text</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Test 2: Exact carousel structure -->
+    <section class="mb-16">
+        <h2 class="text-xl font-semibold mb-4">Test 2: Exact Carousel Structure</h2>
+        <div class="building-carousel-container relative debug-container">
+            <div class="building-carousel overflow-hidden">
+                <div class="carousel-track flex transition-transform duration-500 ease-in-out">
+                    <div class="carousel-slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-2">
+                        <div class="relative bg-white rounded-lg shadow-sm overflow-hidden debug-container">
+                            <img src="/wp-content/themes/historic-equity/static/images/Union+Station+701+East+Douglas+Ave.,+Wichita,+KS+PE.webp"
+                                 alt="Union Station, Wichita, KS"
+                                 class="w-full h-64 lg:h-80 object-cover">
+                            <div class="absolute top-4 right-4 bg-white/95 backdrop-blur-sm p-2 rounded-lg w-[120px] debug-overlay">
+                                <h3 class="text-gray-900 font-semibold text-xs mb-1 truncate">Union Station</h3>
+                                <p class="text-gray-700 text-xs font-medium mb-1">1913</p>
+                                <p class="text-gray-600 text-xs mb-2">Wichita, Kansas</p>
+                                <p class="text-gray-700 text-xs leading-tight line-clamp-2">Historic railway station converted into mixed-use development</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-2">
+                        <div class="relative bg-white rounded-lg shadow-sm overflow-hidden debug-container">
+                            <img src="/wp-content/themes/historic-equity/static/images/Springfield+Historiy+Museum+Park+Central+Square,+Springfield,+MO+crop.webp"
+                                 alt="Springfield History Museum"
+                                 class="w-full h-64 lg:h-80 object-cover">
+                            <div class="absolute top-4 right-4 bg-white/95 backdrop-blur-sm p-2 rounded-lg w-[120px] debug-overlay">
+                                <h3 class="text-gray-900 font-semibold text-xs mb-1 truncate">Springfield History Museum</h3>
+                                <p class="text-gray-700 text-xs font-medium mb-1">1912</p>
+                                <p class="text-gray-600 text-xs mb-2">Springfield, Missouri</p>
+                                <p class="text-gray-700 text-xs leading-tight line-clamp-2">Former federal building transformed into a community history museum</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Test 3: Minimal reproduction -->
+    <section class="mb-16">
+        <h2 class="text-xl font-semibold mb-4">Test 3: Minimal Reproduction</h2>
+        <div class="w-96 h-64 relative bg-blue-500 rounded-lg overflow-hidden debug-container">
+            <div class="absolute top-4 right-4 bg-red-500 text-white p-4 rounded">
+                <p>Overlay Text Should Be Visible</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        console.log('Debug script loaded');
+
+        // Check if elements exist
+        document.addEventListener('DOMContentLoaded', function() {
+            const overlays = document.querySelectorAll('.debug-overlay');
+            console.log('Found overlays:', overlays.length);
+
+            overlays.forEach((overlay, index) => {
+                console.log(`Overlay ${index}:`, {
+                    element: overlay,
+                    visible: window.getComputedStyle(overlay).display !== 'none',
+                    position: window.getComputedStyle(overlay).position,
+                    zIndex: window.getComputedStyle(overlay).zIndex,
+                    top: window.getComputedStyle(overlay).top,
+                    right: window.getComputedStyle(overlay).right
+                });
+            });
+
+            // Test if carousel elements exist
+            const carouselSlides = document.querySelectorAll('.carousel-slide');
+            console.log('Found carousel slides:', carouselSlides.length);
+
+            carouselSlides.forEach((slide, index) => {
+                const overlay = slide.querySelector('.absolute');
+                console.log(`Slide ${index} overlay:`, {
+                    exists: !!overlay,
+                    element: overlay,
+                    bounds: overlay ? overlay.getBoundingClientRect() : null
+                });
+            });
+        });
+    </script>
+</body>
+</html>

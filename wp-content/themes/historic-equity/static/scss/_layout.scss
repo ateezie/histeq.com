@@ -920,6 +920,13 @@
   background: $dark;
   border-radius: map-get($spacing, 2);
 
+  // Ensure no mobile overflow
+  @include mobile-only {
+    max-width: 100vw;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
   @include desktop-up {
     border-radius: map-get($spacing, 3);
   }
@@ -944,6 +951,14 @@
     position: relative;
     aspect-ratio: 16/9;
     overflow: hidden;
+
+    // Fix mobile overflow - remove horizontal padding on mobile
+    @include mobile-only {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
 
     @include tablet-up {
       aspect-ratio: 21/9;

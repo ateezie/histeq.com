@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historic Equity Mobile Layout Test</title>
+
+    <!-- Load the actual theme styles -->
+    <link rel="stylesheet" href="wp-content/themes/historic-equity/static/css/style.css">
+
+    <style>
+        /* Critical CSS for mobile testing */
+        :root {
+            --font-heading: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        /* Debugging styles for mobile audit */
+        .debug-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 0, 0, 0.3);
+            padding: 8px;
+            font-size: 12px;
+            z-index: 9999;
+            color: white;
+        }
+
+        .container-debug {
+            outline: 2px solid red !important;
+        }
+
+        .overflow-debug {
+            background: rgba(255, 255, 0, 0.3) !important;
+        }
+
+        /* Mobile navigation styles based on theme structure */
+        .site-header {
+            background: #fefff8;
+            border-bottom: 1px solid rgba(149, 129, 110, 0.1);
+            position: relative;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.5rem;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .site-branding img {
+            height: 40px;
+            width: auto;
+        }
+
+        /* Desktop navigation - hidden on mobile */
+        .desktop-nav {
+            display: none;
+        }
+
+        @media (min-width: 1280px) {
+            .desktop-nav {
+                display: flex;
+            }
+        }
+
+        /* Mobile menu button */
+        .mobile-menu-btn {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 30px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1001;
+        }
+
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 3px;
+            background: #2d2e3d;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-btn.is-open span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .mobile-menu-btn.is-open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.is-open span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        /* Mobile menu */
+        .mobile-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #fefff8;
+            border-top: 1px solid rgba(149, 129, 110, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .mobile-menu.is-open {
+            max-height: 400px;
+        }
+
+        .mobile-menu nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mobile-menu nav ul li {
+            border-bottom: 1px solid rgba(149, 129, 110, 0.1);
+        }
+
+        .mobile-menu nav ul li:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-menu nav ul li a {
+            display: block;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            color: #2d2e3d;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+        }
+
+        .mobile-menu nav ul li a:hover {
+            background-color: rgba(189, 87, 43, 0.05);
+            color: #bd572b;
+        }
+
+        .mobile-menu nav ul li.mobile-cta a {
+            background-color: #bd572b;
+            color: #fefff8;
+            margin: 1rem 1.5rem;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+
+        @media (min-width: 1280px) {
+            .mobile-menu-btn {
+                display: none;
+            }
+        }
+
+        /* Test content sections */
+        .test-section {
+            padding: 2rem 1.5rem;
+            margin-bottom: 1rem;
+            background: #fefff8;
+        }
+
+        .test-hero {
+            background: linear-gradient(135deg, #BD572B, #E6CD41);
+            color: white;
+            padding: 4rem 1.5rem;
+            text-align: center;
+        }
+
+        .test-hero h1 {
+            font-size: 2.5rem;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .test-hero h1 {
+                font-size: 3rem;
+            }
+        }
+
+        /* Container testing */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 3rem;
+            }
+        }
+
+        /* Icon testing */
+        .test-icons {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .test-icon {
+            width: 24px;
+            height: 24px;
+            background: #bd572b;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        .test-icon.large {
+            width: 48px;
+            height: 48px;
+        }
+
+        .test-icon.small {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Touch target testing */
+        .test-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .test-btn {
+            padding: 0.75rem 1.5rem;
+            background: #bd572b;
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-size: 1rem;
+            min-height: 44px;
+            min-width: 44px;
+        }
+
+        .test-btn.small {
+            padding: 0.25rem 0.5rem;
+            font-size: 0.75rem;
+            min-height: auto;
+            min-width: auto;
+        }
+    </style>
+</head>
+<body class="bg-off-white text-navy-900 font-body antialiased">
+    <!-- Debug info overlay -->
+    <div class="debug-overlay">
+        <span id="viewport-info">Viewport: Loading...</span> |
+        <span id="container-info">Container: Loading...</span>
+    </div>
+
+    <!-- Header Component Test -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo Section -->
+                <div class="site-branding">
+                    <a href="#" title="Historic Equity Inc. - Home">
+                        <img src="wp-content/themes/historic-equity/static/images/logo__black.png"
+                             alt="Historic Equity Inc. Logo"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                        <span style="display:none; font-weight: bold; color: #bd572b;">Historic Equity</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation - Hidden on mobile/tablet -->
+                <div class="desktop-nav hidden xl:flex items-center space-x-6 xl:space-x-8">
+                    <nav class="main-navigation" role="navigation" aria-label="Primary Navigation">
+                        <ul class="flex items-center space-x-6 xl:space-x-8">
+                            <li class="menu-item">
+                                <a href="#" class="menu-link text-base font-medium text-navy-900 hover:text-primary-600 transition-colors duration-200">Home</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#" class="menu-link text-base font-medium text-navy-900 hover:text-primary-600 transition-colors duration-200">Meet Our Team</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <a href="#" class="inline-flex items-center justify-center px-6 py-2.5 bg-primary-600 text-white text-sm font-medium rounded-lg hover:bg-primary-700 transition-colors duration-200">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-toggle" class="mobile-menu-btn" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation Menu -->
+            <div id="mobile-menu" class="mobile-menu" role="navigation" aria-label="Mobile Navigation">
+                <nav>
+                    <ul>
+                        <li class="menu-item">
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#">Meet Our Team</a>
+                        </li>
+                        <li class="mobile-cta">
+                            <a href="#">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="site-content">
+        <!-- Hero Section Test -->
+        <section class="test-hero">
+            <div class="container">
+                <h1>Historic Equity Inc.</h1>
+                <p class="text-lg">State Historic Tax Credit Investment Specialists</p>
+                <div class="test-buttons">
+                    <button class="test-btn">Learn More</button>
+                    <button class="test-btn">Contact Us</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Container Padding Test -->
+        <section class="test-section">
+            <div class="container">
+                <h2>Container Padding Test</h2>
+                <p>This section tests the container padding and responsiveness. The content should have proper spacing on all sides without overflowing the viewport.</p>
+
+                <div style="background: rgba(189, 87, 43, 0.1); padding: 1rem; margin: 1rem 0; border-radius: 0.5rem;">
+                    <strong>Container Debug:</strong> This highlighted box should not extend beyond the viewport edges.
+                </div>
+            </div>
+        </section>
+
+        <!-- Icon Sizing Test -->
+        <section class="test-section">
+            <div class="container">
+                <h2>Icon Sizing Test</h2>
+                <p>Testing various icon sizes for mobile optimization:</p>
+                <div class="test-icons">
+                    <span class="test-icon small" title="Small icon (16px)"></span>
+                    <span class="test-icon" title="Normal icon (24px)"></span>
+                    <span class="test-icon large" title="Large icon (48px)"></span>
+                    <span style="width: 80px; height: 80px; background: #bd572b; border-radius: 4px; display: inline-block;" title="Oversized icon (80px)"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Touch Target Test -->
+        <section class="test-section">
+            <div class="container">
+                <h2>Touch Target Test</h2>
+                <p>Testing touch target sizes (minimum 44px recommended):</p>
+                <div class="test-buttons">
+                    <button class="test-btn">Standard Button</button>
+                    <button class="test-btn small">Small Button</button>
+                    <a href="#" style="display: inline-block; padding: 0.75rem 1.5rem; background: #83acd1; color: white; text-decoration: none; border-radius: 0.5rem; min-height: 44px; min-width: 44px; text-align: center;">Link Button</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wide Content Test -->
+        <section class="test-section">
+            <div style="width: 500px; background: rgba(255, 0, 0, 0.1); padding: 1rem; margin: 0 auto;">
+                <h3>Wide Content Test</h3>
+                <p>This section is 500px wide to test horizontal overflow on mobile (375px viewport).</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Test -->
+    <footer style="background: #2d2e3d; color: #fefff8; padding: 2rem 0;">
+        <div class="container">
+            <p>&copy; 2025 Historic Equity Inc. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const viewportInfo = document.getElementById('viewport-info');
+            const containerInfo = document.getElementById('container-info');
+
+            // Update debug info
+            function updateDebugInfo() {
+                viewportInfo.textContent = `Viewport: ${window.innerWidth}x${window.innerHeight}px`;
+
+                const container = document.querySelector('.container');
+                if (container) {
+                    const rect = container.getBoundingClientRect();
+                    containerInfo.textContent = `Container: ${Math.round(rect.width)}px (${Math.round(rect.left)} to ${Math.round(rect.right)})`;
+
+                    // Highlight overflow issues
+                    if (rect.right > window.innerWidth || rect.left < 0) {
+                        container.classList.add('overflow-debug');
+                    } else {
+                        container.classList.remove('overflow-debug');
+                    }
+                }
+            }
+
+            updateDebugInfo();
+            window.addEventListener('resize', updateDebugInfo);
+
+            if (mobileMenuToggle && mobileMenu) {
+                let isMenuOpen = false;
+
+                function toggleMenu() {
+                    isMenuOpen = !isMenuOpen;
+
+                    if (isMenuOpen) {
+                        mobileMenu.classList.add('is-open');
+                        mobileMenuToggle.classList.add('is-open');
+                        mobileMenuToggle.setAttribute('aria-expanded', 'true');
+                        mobileMenuToggle.setAttribute('aria-label', 'Close mobile menu');
+                    } else {
+                        mobileMenu.classList.remove('is-open');
+                        mobileMenuToggle.classList.remove('is-open');
+                        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                        mobileMenuToggle.setAttribute('aria-label', 'Open mobile menu');
+                    }
+                }
+
+                mobileMenuToggle.addEventListener('click', toggleMenu);
+
+                // Close menu when clicking on menu links
+                const menuLinks = mobileMenu.querySelectorAll('a');
+                menuLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (isMenuOpen) {
+                            toggleMenu();
+                        }
+                    });
+                });
+
+                // Close menu on escape key
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && isMenuOpen) {
+                        toggleMenu();
+                    }
+                });
+
+                // Initialize ARIA attributes
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                mobileMenuToggle.setAttribute('aria-label', 'Open mobile menu');
+                mobileMenuToggle.setAttribute('aria-controls', 'mobile-menu');
+            }
+
+            // Test for overflow elements
+            function checkOverflows() {
+                const elements = document.querySelectorAll('*');
+                const overflows = [];
+
+                elements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.width > window.innerWidth || rect.right > window.innerWidth + 10) {
+                        overflows.push({
+                            element: el.tagName + (el.className ? '.' + el.className.split(' ').slice(0, 2).join('.') : ''),
+                            width: rect.width,
+                            right: rect.right
+                        });
+                    }
+                });
+
+                if (overflows.length > 0) {
+                    console.log('🚨 Overflow elements detected:', overflows);
+                }
+            }
+
+            setTimeout(checkOverflows, 1000);
+        });
+    </script>
+</body>
+</html>
