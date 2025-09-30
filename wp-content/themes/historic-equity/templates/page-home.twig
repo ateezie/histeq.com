@@ -240,11 +240,13 @@
                     </p>
                 </div>
 
-                <div class="max-w-5xl mx-auto text-center">
-                    <div class="bg-white rounded-lg overflow-hidden inline-block">
-                        <img src="{{ theme.link }}/static/images/work-map.jpg"
-                             alt="Map showing states where Historic Equity Inc. provides State Historic Tax Credit services - highlighted in blue across the United States"
-                             class="w-auto h-[335px]">
+                <div class="text-center">
+                    <div class="states-map-container">
+                        <div class="bg-white rounded-lg overflow-hidden inline-block">
+                            <img src="{{ theme.link }}/static/images/work-map.jpg"
+                                 alt="Map showing states where Historic Equity Inc. provides State Historic Tax Credit services - highlighted in blue across the United States"
+                                 class="states-map-image">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -643,6 +645,38 @@
         [data-testid="building-carousel"] p,
         [data-testid="join-mission"] h2 {
             text-transform: capitalize;
+        }
+
+        /* States coverage map responsive sizing */
+        .states-map-image {
+            width: 100%;
+            height: auto;
+            max-width: 800px; /* Control maximum size */
+        }
+
+        /* Responsive container for the map */
+        .states-map-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Device-specific optimizations */
+        @media (max-width: 768px) {
+            .states-map-image {
+                max-width: 100%;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .states-map-image {
+                max-width: 600px;
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .states-map-image {
+                max-width: 700px;
+            }
         }
 
         /* Contact Us button hover effects */
