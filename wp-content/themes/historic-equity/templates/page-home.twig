@@ -498,8 +498,137 @@
 
     </main>
 
-    {# Carousel functionality now handled by dedicated module: /static/js/modules/carousel.js #}
-    <script src="{{ theme.uri }}/static/dist/carousel.dbbab20bc6bd4ad4d8e4.js"></script>
+    {# Carousel functionality - embedded implementation (working solution) #}
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const carouselContainer = document.querySelector('.building-carousel-container');
+        if (!carouselContainer) return;
+
+        const carousel = carouselContainer.querySelector('.building-carousel');
+        const track = carousel.querySelector('.carousel-track');
+        const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+        const prevBtn = carouselContainer.querySelector('.carousel-prev');
+        const nextBtn = carouselContainer.querySelector('.carousel-next');
+        const indicators = Array.from(carouselContainer.querySelectorAll('.carousel-indicator'));
+
+        let currentSlide = 0;
+        let autoPlayInterval;
+
+        // Apply overlay styles to ensure text is visible (from documentation fix)
+        const applyOverlayStyles = () => {
+            const allOverlays = carouselContainer.querySelectorAll('.carousel-slide .absolute');
+            allOverlays.forEach((overlay) => {
+                // Only apply to text overlays, not navigation elements
+                if (overlay.querySelector('h3, p') && !overlay.querySelector('svg')) {
+                    overlay.style.cssText = `
+                        position: absolute !important;
+                        bottom: 0 !important;
+                        left: 0 !important;
+                        right: 0 !important;
+                        background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%) !important;
+                        padding: 24px !important;
+                        border-radius: 0 0 8px 8px !important;
+                        z-index: 10 !important;
+                        display: block !important;
+                        visibility: visible !important;
+                        opacity: 1 !important;
+                    `;
+
+                    // Style text elements
+                    const textElements = overlay.querySelectorAll('h3, p');
+                    textElements.forEach(el => {
+                        el.style.color = 'white !important';
+                        el.style.textShadow = '0 1px 3px rgba(0,0,0,0.8)';
+                        el.style.margin = '0';
+
+                        if (el.tagName === 'H3') {
+                            el.style.fontSize = '18px';
+                            el.style.fontWeight = '600';
+                            el.style.marginBottom = '8px';
+                            el.style.lineHeight = '1.3';
+                        } else {
+                            el.style.fontSize = '14px';
+                            el.style.marginBottom = '4px';
+                            el.style.lineHeight = '1.4';
+
+                            // Style amount text (last paragraph) with gold color
+                            if (el === overlay.querySelector('p:last-child')) {
+                                el.style.fontWeight = '700';
+                                el.style.marginBottom = '0';
+                                el.style.color = '#E6CD41'; // Historic Equity gold
+                            }
+                        }
+                    });
+                }
+            });
+            console.log('Applied overlay styles to', allOverlays.length, 'carousel overlays');
+        };
+
+        // Update carousel position
+        const updateCarousel = (index, animate = true) => {
+            currentSlide = index;
+            const slideWidth = slides[0].offsetWidth;
+            const offset = -currentSlide * slideWidth;
+
+            track.style.transition = animate ? 'transform 500ms ease-in-out' : 'none';
+            track.style.transform = `translateX(${offset}px)`;
+
+            // Update indicators
+            indicators.forEach((indicator, i) => {
+                indicator.classList.toggle('bg-primary-600', i === currentSlide);
+                indicator.classList.toggle('bg-gray-300', i !== currentSlide);
+            });
+        };
+
+        // Navigation functions
+        const goToSlide = (index) => {
+            if (index < 0) index = slides.length - 1;
+            if (index >= slides.length) index = 0;
+            updateCarousel(index);
+            resetAutoPlay();
+        };
+
+        const nextSlide = () => goToSlide(currentSlide + 1);
+        const prevSlide = () => goToSlide(currentSlide - 1);
+
+        // Auto-play functions
+        const startAutoPlay = () => {
+            if (slides.length <= 1) return;
+            autoPlayInterval = setInterval(nextSlide, 5000);
+        };
+
+        const stopAutoPlay = () => {
+            if (autoPlayInterval) {
+                clearInterval(autoPlayInterval);
+                autoPlayInterval = null;
+            }
+        };
+
+        const resetAutoPlay = () => {
+            stopAutoPlay();
+            startAutoPlay();
+        };
+
+        // Event listeners
+        if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+        if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => goToSlide(index));
+        });
+
+        // Pause on hover
+        carouselContainer.addEventListener('mouseenter', stopAutoPlay);
+        carouselContainer.addEventListener('mouseleave', startAutoPlay);
+
+        // Initialize
+        applyOverlayStyles();
+        updateCarousel(0);
+        startAutoPlay();
+
+        console.log('🎠 Carousel initialized with', slides.length, 'slides');
+    });
+    </script>
 
     {# CSS-based styling fixes #}
     <style>
